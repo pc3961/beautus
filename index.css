@@ -332,12 +332,19 @@
 }
 
 .section_categories {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding-top: 120px;
   max-width: 100%;
   background: #c1eaf3;
-  height: auto;
+  height: 903px;
 }
 
+.section_categories .flex.relative {
+  position: relative;
+  height: 100%;
+}
 .categories {
   color: #3a50b3;
   font-size: 46px;
