@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Baloo:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=League Spartan:wght@400&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .form {
+        width: 100%;
+        background: #fff;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 15px;
+        border-bottom: solid #b2b2b2;
+      }
+      .hovered-design {
+        color: #3a50b3; /* Change to the color you want */
+      }
+    </style>
+
+    <title>Features | Wicked Wipes</title>
+  </head>
+  <body>
+    <section class="flex flex-col items-center w-full overflow-hidden h-screen">
+      <div class="flex flex-col w-full items-center justify-between relative">
+        <video
+          class="absolute top-0 left-0 w-full object-cover"
+          src="./public/bg-video.mp4"
+          autoplay
+          loop
+          muted
+          type="video/mp4"
+        ></video>
+        <div>
+          <img
+            src="./public/blue-color.svg"
+            class="flex absolute top-0 left-24 z-100 p-10"
+            alt=""
+          />
+
+          <nav
+            class="flex justify-center items-center rounded-full bg-gray-300 absolute top-0 right-0 m-10"
+          >
+            <ul
+              id="menu"
+              class="flex justify-center items-center text-center px-16 gap-x-8 text-white text-xl font-normal"
+            >
+              <li>
+                <a href="features.html">Features</a>
+              </li>
+              <li>
+                <a href="seller.html">Private Label</a>
+              </li>
+              <li>
+                <a href="buyer.html">Who We are</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </section>
+    <!-- Wicked Wipes Design Section -->
+    <section class="px-36 py-28 w-full" id="design-section">
+      <div class="flex w-full gap-x-6">
+        <div class="flex flex-col w-full">
+          <h1
+            class="text-[78px] text-[#97CAEB] font-medium concert-one-regular"
+          >
+            Wicked Wipes
+          </h1>
+          <h1
+            class="text-[78px] text-[#97CAEB] font-medium concert-one-regular hover:text-[#3A50B3]"
+            id="design-heading"
+          >
+            Design
+          </h1>
+          <div>
+            <p
+              class="text-xl pt-10 font-['League Spartan']"
+              data-aos="fade-right"
+              data-aos-duration="700"
+            >
+              The container pod is a two-chamber system. The cleansing solution
+              is held in the outer chamber. The inner chamber contains a
+              compressed cellulose cloth wipe. The two chambers are separated
+              from each other until activated for use. 
+            </p>
+            <p
+              class="text-xl pt-10 font-['League Spartan']"
+              data-aos="fade-right"
+              data-aos-duration="700"
+            >
+              When pressure is applied to the middle of the top of the pod, by
+              thumb or finger, the container opens the valve at the bottom and
+              the cleansing solution from the outer chamber reaches the cloth
+              wipe in the inner chamber. The wipe then fully absorbs the
+              cleanser and rises vertically to be removed easily and put to use.
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-col w-full justify-center">
+          <img src="/public/features1.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <!-- How to use Wicked Wipes -->
+    <section class="px-36 py-32 bg-[#3A50B3]">
+      <div class="flex w-full">
+        <div class="flex flex-col w-full">
+          <h1 class="text-white text-[78px] concert-one-regular font-medium">
+            How to Use
+          </h1>
+          <h1
+            class="text-[#97CAEB] text-[78px] concert-one-regular font-medium"
+          >
+            Wicked Wipes
+          </h1>
+        </div>
+        <div class="flex flex-col w-full">
+          <h1 class="text-white text-[46px] concert-one-regular font-medium">
+            Step 1
+          </h1>
+          <p class="text-xl text-white">
+            Place the Wicked Wipes pod on the table. The product is made up of
+            two parts - the dry compressed cloth hand wipe and the gentle
+            cleansing formulation. The hand wipe is kept dry to maintain
+            moisture and freshness.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Why use Wicked Wipes Section -->
+    <section class="py-36">
+      <img src="/public/Why use.svg" alt="" class="w-full h-auto" />
+      <img src="/public/Why use.svg" alt="" class="w-full h-auto" />
+    </section>
+    <!-- Features Section -->
+    <section class="px-24 py-36">
+      <div class="flex w-full justify-center items-center">
+        <div class="w-full">
+          <div
+            class="text-4xl text-[#3a50b3] font-bold bg-[#B5EA72] rounded-full h-56 w-56 text-center flex justify-center items-center"
+          >
+            <h2>Innovative</h2>
+          </div>
+        </div>
+        <div>
+          <ul class="list-disc">
+            <li class="text-xl">
+              Sealed individual pods ensure safety and security with no risk of
+              contamination from dirt and germs
+            </li>
+            <li class="text-xl">
+              Unique no-leak design means the single-use cloths never dry out
+              and are always fresh and moist every single time
+            </li>
+            <li class="text-xl">
+              Cloths are fully biodegradable, and the pods are recyclable
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flex w-full justify-between items-center pt-16">
+        <div class="w-full">
+          <ul class="list-disc">
+            <li class="text-xl">
+              No alcohol, no chemicals, no colour additives
+            </li>
+            <li class="text-xl">
+              Complies with health and safety regulations 
+            </li>
+            <li class="text-xl">
+              Natural and pure, dermatologically tested, hypoallergenic liquid
+              soap 
+            </li>
+            <li class="text-xl">
+              Gentle and moisturizing on hands and safe for all
+            </li>
+            <li class="text-xl">
+              Hand-woven cellulose cloth hand wipes are soft to the touch yet
+              strong and sturdy for a complete clean-up 
+            </li>
+          </ul>
+        </div>
+        <div class="w-full flex justify-end">
+          <div
+            class="text-4xl text-[#3a50b3] font-bold bg-[#97CAEB] rounded-full h-56 w-56 text-right flex text-nowrap justify-end items-center"
+          >
+            <h2>Skin-safe <br />Cleaning Solution</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex w-full justify-center items-center pt-16">
+        <div class="w-full">
+          <div
+            class="text-4xl text-[#3a50b3] font-bold bg-[#B5EA72] rounded-full h-56 w-56 text-left flex justify-start items-center"
+          >
+            <h2>Environmentally Friendly</h2>
+          </div>
+        </div>
+        <div>
+          <ul class="list-disc">
+            <li class="text-xl">
+              Cloth hand wipes are botanic and biodegradable
+            </li>
+            <li class="text-xl">
+              Pods are made from PP5 plastic and are 100% recyclable
+            </li>
+            <li class="text-xl">
+              Saves Water. Wicked Wipes use only about 5 ml. of cleansing fluid
+              per pod.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flex w-full justify-between items-center pt-16">
+        <div class="w-full flex flex-col">
+          <ul class="list-disc">
+            <li class="text-xl">Cool, Lemon, Green Tea, Unscented</li>
+          </ul>
+          <div class="flex gap-2">
+            <img src="./public/green 5.svg" alt="" />
+            <img src="./public/green 6.svg" alt="" />
+            <img src="./public/yellow 3.svg" alt="" />
+            <img src="./public/blue 2.svg" alt="" />
+            <img src="./public/white 3.svg" alt="" />
+          </div>
+        </div>
+        <div class="w-full flex justify-end">
+          <div
+            class="text-4xl text-[#3a50b3] font-bold bg-[#B5EA72] rounded-full h-48 w-48 text-right flex text-nowrap justify-end items-center"
+          >
+            <h2>Natural <br />Fragrances</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Form Section -->
+    <section class="px-36 py-28 w-full">
+      <div class="flex w-full">
+        <div class="flex flex-col w-3/5 bg-[#3A50B3] p-20 shadow-md rounded-md">
+          <h1 class="text-white text-2xl font-['Urbanist'] font-bold">
+            Get in Touch with Us
+          </h1>
+          <h2 class="text-white text-xl font-['Urbanist'] font-bold">
+            to discuss your issues in Wicked Wipes
+          </h2>
+          <div class="w-full px-8 pt-24 flex gap-x-6">
+            <img src="/public/bxs_phone-call.svg" alt="" />
+            <div class="flex flex-col w-full">
+              <a href="tel:+12898372548" class="text-white">+1 289 837 2548</a>
+              <a href="tel:+12898372547" class="text-white">+1 289 837 2547</a>
+            </div>
+          </div>
+          <div class="w-full px-8 pt-24 flex gap-x-6">
+            <img src="/public/carbon_location-filled.svg" alt="" />
+            <div class="flex flex-col w-full">
+              <p class="text-white">
+                2030 Bristol Circle, Suite 210,<br />
+                Oakville, ON - L6H 0H2
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col w-full shadow-md rounded-md p-10">
+          <form action="" class="w-full flex flex-col gap-y-6">
+            <div class="flex justify-between w-full gap-x-6">
+              <input
+                type="text"
+                label="First Name"
+                id="fname"
+                placeholder="First Name"
+                name="fname"
+                class="form"
+              />
+              <input
+                type="text"
+                label="Last Name"
+                id="lname"
+                placeholder="Last Name"
+                name="fname"
+                class="form"
+              />
+            </div>
+            <div class="flex justify-between w-full gap-x-6">
+              <input
+                type="email"
+                label="Business Email"
+                id="bemail"
+                placeholder="Business Email"
+                name="fname"
+                class="form"
+              />
+              <input
+                type="tel"
+                label="Phone Number"
+                id="pnum"
+                placeholder="Phone Number"
+                name="fname"
+                class="form"
+              />
+            </div>
+
+            <input
+              type="text"
+              label="Company Name"
+              id="company"
+              placeholder="Company Name"
+              name="cname"
+              class="form"
+            />
+            <input
+              type="tel"
+              label="Message"
+              id="message"
+              placeholder="Message"
+              name="msg"
+              class="form"
+            />
+          </form>
+          <div class="w-full flex justify-end">
+            <button
+              class="flex justify-center w-1/2 text-white text-base font-medium bg-[#3A50B3] hover:bg-blue-700 rounded-md mt-28 py-4"
+            >
+              Send Message
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section-->
+    <section>
+      <div class="bg-[#3A50B3] px-16 py-10 flex justify-between">
+        <div class="w-full flex gap-x-16">
+          <img
+            class="blue-color-icon"
+            loading="lazy"
+            alt=""
+            src="./public/blue-color.svg"
+          />
+          <nav class="w-full flex">
+            <ul class="flex flex-col gap-y-1">
+              <li>
+                <a href="features.html" class="text-white">Wicked Wipes</a>
+              </li>
+              <li><a href="features.html" class="text-white">Features</a></li>
+              <li>
+                <a href="features.html" class="text-white">Private Label</a>
+              </li>
+              <li><a href="features.html" class="text-white">Who We are</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="flex flex-col gap-2">
+          <h1 class="text-white font-['League Spartan'] font-bold text-base">
+            Follow Us
+          </h1>
+          <div class="flex gap-3 items-center">
+            <img src="./public/Fb.svg" class="size-7" alt="fb" />
+            <img src="./public/Instagram.svg" class="size-7" alt="fb" />
+            <img src="./public/Dribbble.svg" class="size-7" alt="fb" />
+            <img src="./public/LinkedIn.svg" class="size-7" alt="fb" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script>
+      const designSection = document.getElementById("design-section");
+      const designHeading = document.getElementById("design-heading");
+
+      designSection.addEventListener("mouseover", function () {
+        designHeading.classList.add("text-[#3A50B3]");
+      });
+    </script>
+  </body>
+</html>
