@@ -370,6 +370,12 @@
   font-weight: 400;
   font-style: normal;
 }
+.league-spartan {
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
 
 @keyframes slideInLeft {
   0% {
@@ -384,4 +390,12 @@
 
 .slide-in-left {
   animation: slideInLeft 1s ease-out forwards;
+}
+.wow-text {
+  -webkit-text-stroke: 1.5px #3A50B3; 
+  color: #97CAEB; /* Fill color of the text */
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }
