@@ -105,34 +105,48 @@
           and natural products that are good for people and the environment. 
         </p>
       </div>
-      <div class="flex w-full gap-x-20 justify-center">
-        <div
-          class="rounded-full w-96 h-[600px] duration-300 ease-in-out bg-[#4446D9]"
-          id="design-heading"
-        >
-          <img
-            src="./public/testimonial-1.jpg"
-            alt=""
-            class="rounded-full h-full object-cover duration-300 ease-in-out translate-y-16 hover:translate-y-0"
-          />
-        </div>
-        <div
-          class="rounded-full w-96 h-[600px] duration-300 ease-in-out bg-[#97CAEB]" 
-        >
-          <img
-            src="./public/testimonial-2.jpg"
-            alt=""
-            class="rounded-full h-full object-cover duration-300 ease-in-out translate-y-16 hover:translate-y-0"
-          />
+      <div class="flex justify-center">
+        <div class="flex justify-center group" id="document-section">
+          <div
+            class="rounded-full w-96 h-[600px] duration-300 ease-in-out bg-[#4446D9] mx-10"
+          >
+            <img
+              src="./public/testimonial-1.jpg"
+              alt=""
+              class="rounded-full h-full object-cover duration-300 ease-in-out translate-y-16 group-hover:translate-y-0"
+            />
+            <h1
+              class="text-xl font-bold text-center text-[#3A50B3] league-spartan pt-4"
+            >
+              Shailesh Merai
+            </h1>
+          </div>
+          <div
+            class="rounded-full w-96 h-[600px] duration-300 ease-in-out bg-[#97CAEB] mx-10"
+          >
+            <img
+              src="./public/testimonial-2.jpg"
+              alt=""
+              class="rounded-full h-full object-cover duration-300 ease-in-out translate-y-16 group-hover:translate-y-0"
+            />
+            <h1
+              class="text-xl font-bold text-center text-[#3A50B3] league-spartan pt-4"
+            >
+              John Sasso
+            </h1>
+          </div>
         </div>
       </div>
-      <div class="px-24 py-16 flex flex-col justify-center w-full items-center">
+      <div class="px-24 py-20 flex flex-col justify-center w-full items-center">
         <h1
           class="text-[78px] concert-one-regular font-medium w-full text-[#97CAEB] text-center"
         >
           Who We are
         </h1>
-        <p class="text-xl league-spartan text-center">
+        <p
+          class="text-xl league-spartan text-center duration-300 ease-in-out"
+          id="document-heading"
+        >
           We are Shailesh and John, business owners in our own right who have
           successfully worked together on a number of projects over the past 20
           years. We both feel that WICKED WIPES is a unique product that is
@@ -273,6 +287,18 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
+    </script>
+    <script>
+      const documentSection = document.getElementById("document-section");
+      const documentHeading = document.getElementById("document-heading");
+      documentSection.addEventListener("mouseover", function (e) {
+        console.log("mouseover")
+        documentHeading.classList.add("opacity-0");
+      });
+      documentSection.addEventListener("mouseout", function (e) {
+        console.log("mouseout")
+        documentHeading.classList.remove("opacity-0");
+      });
     </script>
   </body>
 </html>
