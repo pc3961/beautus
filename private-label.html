@@ -6,6 +6,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="./index.css" />
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -105,13 +106,22 @@
           One of a Kind
         </h1>
       </div>
-      <div class="py-6 w-full flex justify-center bg-blue-100 rounded-full hover:scale-105 duration-200">
+      <div
+        class="py-6 w-full flex justify-center bg-blue-100 rounded-full"
+        data-aos="zoom-in"
+        data-aos-duration="1000"
+      >
         <h2 class="text-xl league-spartan">
           Wicked Wipes will give you an edge over your competition
         </h2>
       </div>
       <div class="flex flex-col w-full justify-center px-16 py-20">
-        <img src="/public/tissue.png" alt="" class="hover:scale-105 duration-150" />
+        <img
+          src="/public/tissue.png"
+          alt=""
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+        />
         <h2 class="text-xl text-[#3A50B3] text-center pt-10 font-medium">
           Being the only hand wipe of its kind elevates your business
           immediately.
@@ -124,34 +134,52 @@
         <h1 class="text-[200px] wow-text text-nowrap">WOW FACTOR</h1>
       </div>
 
-      <div class="flex flex-col w-full px-16 gap-y-10">
-        <div class="flex w-full justify-between gap-x-24">
-          <div class="text-xl bg-blue-300 rounded-full p-8 w-full">
-            When your guests press the centre of the pod they will experience
-            the fun and surprise effect of watching the cloth rise up and
-            unfurl.
+      <div class="w-full" id="document-section">
+        <div
+          class="flex flex-col w-full px-16 gap-y-10 duration-300 ease-in-out opacity-0"
+          id="document-heading"
+        >
+          <div class="flex w-full justify-between gap-x-24">
+            <div
+              class="text-xl bg-blue-300 rounded-full p-8 w-full slide-in-left"
+            >
+              When your guests press the centre of the pod they will experience
+              the fun and surprise effect of watching the cloth rise up and
+              unfurl.
+            </div>
+            <div
+              class="flex w-full justify-end slide-in-right delay"
+              id="document-heading1"
+            >
+              <img src="/public/product-1.png" alt="" />
+            </div>
           </div>
-          <div class="flex w-full justify-end">
-            <img src="/public/product-1.png" alt="" />
+          <div class="flex w-full justify-between gap-x-24">
+            <div
+              class="flex w-full justify-start slide-in-left delay2"
+            >
+              <img src="/public/product-2.png" alt="" />
+            </div>
+            <div
+              class="text-xl bg-blue-300 rounded-full p-8 w-full slide-in-right"
+            >
+              They will be pleased to know that the wipes are natural and
+              eco-friendly, and a means of reducing the spread of viruses and
+              bacteria.
+            </div>
           </div>
-        </div>
-        <div class="flex w-full justify-between gap-x-24">
-          <div class="flex w-full justify-start">
-            <img src="/public/product-2.png" alt="" />
-          </div>
-          <div class="text-xl bg-blue-300 rounded-full p-8 w-full">
-            They will be pleased to know that the wipes are natural and
-            eco-friendly, and a means of reducing the spread of viruses and
-            bacteria.
-          </div>
-        </div>
-        <div class="flex w-full justify-between gap-x-24">
-          <div class="text-xl bg-blue-300 rounded-full p-8 w-full">
-            These plush and strong cloth hand wipes add charm and delight to the
-            whole dining experience.
-          </div>
-          <div class="flex w-full justify-end">
-            <img src="/public/product-3.png" alt="" />
+          <div class="flex w-full justify-between gap-x-24">
+            <div
+              class="text-xl bg-blue-300 rounded-full p-8 w-full slide-in-left"
+            >
+              These plush and strong cloth hand wipes add charm and delight to
+              the whole dining experience.
+            </div>
+            <div
+              class="flex w-full justify-end slide-in-right delay3"
+            >
+              <img src="/public/product-3.png" alt="" />
+            </div>
           </div>
         </div>
       </div>
@@ -167,15 +195,9 @@
           function and originality.
         </h2>
       </div>
-      <div
-        class="flex w-full justify-center gap-x-10 py-20"
-      >
+      <div class="flex w-full justify-center gap-x-10 py-20">
         <div class="rounded-full h-[450px] w-96 overflow-hidden">
-          <img
-            src="/public/gallery1.jpg"
-            alt=""
-            class="h-full object-cover"
-          />
+          <img src="/public/gallery1.jpg" alt="" class="h-full object-cover" />
         </div>
         <div class="rounded-full h-[450px] w-96 overflow-hidden">
           <img src="/public/gallery2.jpg" alt="" class="h-full object-cover" />
@@ -325,5 +347,16 @@
         </div>
       </div>
     </section>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script>
+      const documentSection = document.getElementById("document-section");
+      const documentHeading = document.getElementById("document-heading");
+      documentSection.addEventListener("mouseover", function (e) {
+        documentHeading.classList.add("opacity-100");
+      });
+    </script>
   </body>
 </html>

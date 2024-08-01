@@ -144,7 +144,7 @@
           Who We are
         </h1>
         <p
-          class="text-xl league-spartan text-center duration-300 ease-in-out"
+          class="text-xl league-spartan text-center duration-300 ease-in-out opacity-0"
           id="document-heading"
         >
           We are Shailesh and John, business owners in our own right who have
@@ -292,12 +292,10 @@
       const documentSection = document.getElementById("document-section");
       const documentHeading = document.getElementById("document-heading");
       documentSection.addEventListener("mouseover", function (e) {
-        console.log("mouseover")
-        documentHeading.classList.add("opacity-0");
+        documentHeading.classList.add("opacity-100");
       });
       documentSection.addEventListener("mouseout", function (e) {
-        console.log("mouseout")
-        documentHeading.classList.remove("opacity-0");
+        documentHeading.classList.remove("opacity-100");
       });
     </script>
   </body>

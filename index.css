@@ -387,8 +387,50 @@
     opacity: 1;
   }
 }
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.slide-in-up {
+  animation: slideInUp 2s ease-in-out forwards;
+}
 .slide-in-left {
-  animation: slideInLeft 1s ease-out forwards;
+  animation: slideInLeft 2s ease-in-out forwards;
+}
+.slide-in-right {
+  animation: slideInRight 2s ease-in-out forwards;
+}
+.slide-in-left1 {
+  animation: slideInLeft 2s ease-in-out forwards;
+}
+.slide-in-right2 {
+  animation: slideInRight 2s ease-in-out forwards;
+}
+
+.delay{
+  animation-delay: 1000ms;
+}
+.delay2{
+  animation-delay: 2000ms;
+}
+.delay3{
+  animation-delay: 3000ms;
 }
 .wow-text {
   -webkit-text-stroke: 1.5px #3a50b3;

@@ -6,6 +6,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="./index.css" />
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
@@ -84,13 +85,22 @@
     <section class="bg-white">
 
     </section>
-  <section>
-    <div class="px-40 py-40  gap-x-40 flex justify-between">
-      <div class="flex flex-col gap-4">
-        <h1 class="text-[72px] text-gradient font-normal">Make It <br> Yours </h1>
-        <p class=" text-[20px] font-['League Spartan'] font-normal text-[#3A50B3] word-wrap">Wicked Wipes is an original advertising opportunity for businesses and a successful marketing tool that will surprise and delight your customers. Easily add your brand to customize the pod</p>
+  <section class="px-40 py-40">
+    <div class="w-full group" id="document-section">
+      <div class="gap-x-40 flex justify-between opacity-0 transition-opacity duration-150 group-hover:opacity-100" id="document-heading1">
+        <div class="flex flex-col gap-4">
+          <h1 class="text-[72px] text-gradient font-normal">Make It <br> Yours </h1>
+          <p class=" text-[20px] font-['League Spartan'] font-normal text-[#3A50B3] word-wrap">Wicked Wipes is an original advertising opportunity for businesses and a successful marketing tool that will surprise and delight your customers. Easily add your brand to customize the pod</p>
+        </div>
+        <div class="flex"><img class="white-color-icon" src="./public/whitelogo.svg"  alt="logo"></div>
       </div>
-      <div class="flex"><img class="white-color-icon" src="./public/whitelogo.svg"  alt="logo"></div>
+    </div>
+    <div class="w-full flex justify-start ease-in-out opacity-0 transition-opacity duration-150 group-hover:opacity-100" id="document-heading">
+      <button
+        class="flex justify-center font-['Baloo'] px-10 text-white text-lg font-medium bg-[#3A50B3] rounded-full mt-6 py-2"
+      >
+        ADD YOUR BRAND
+      </button>
     </div>
   </section>
       <!-- Footer Section-->
@@ -123,5 +133,17 @@
             </div>
         </div>
       </section>
+      <script>
+        AOS.init();
+      </script>
+      <script>
+        const documentSection = document.getElementById("document-section");
+        const documentHeading = document.getElementById("document-heading");
+        const documentHeading1 = document.getElementById("document-heading1");
+        documentSection.addEventListener("mouseover", function (e) {
+          documentHeading1.classList.add("slide-in-up");
+          documentHeading.classList.add("slide-in-left");
+        });
+      </script>
   </body>
 </html>
