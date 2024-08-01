@@ -358,7 +358,7 @@
   font-family: "Concert One", sans-serif;
   font-weight: 400;
   font-style: normal;
-  background: linear-gradient(90deg, #3A50B3, #37A3F1);
+  background: linear-gradient(90deg, #3a50b3, #37a3f1);
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
@@ -387,15 +387,22 @@
     opacity: 1;
   }
 }
-
 .slide-in-left {
   animation: slideInLeft 1s ease-out forwards;
 }
 .wow-text {
-  -webkit-text-stroke: 1.5px #3A50B3; 
-  color: #97CAEB; /* Fill color of the text */
+  -webkit-text-stroke: 1.5px #3a50b3;
+  color: #97caeb; /* Fill color of the text */
   font-family: "Space Grotesk", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
+}
+
+.translate {
+  transform: translateY(4rem);
+}
+
+.translateOnHover {
+  transform: translateY(0);
 }

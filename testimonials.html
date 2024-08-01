@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap"
       rel="stylesheet"
@@ -63,7 +64,13 @@
         <img src="./public/linkedin-social.svg" class="size-7" alt="fb" />
       </div>
       <div class="flex flex-col w-full mt-96 pt-20">
-        <h1 class="text-5xl font-bold concert-one-regular">About US</h1>
+        <h1
+          class="text-5xl font-bold concert-one-regular"
+          data-aos="fade-right"
+          data-aos-duration="700"
+        >
+          About US
+        </h1>
         <p class="text-xl pt-10">
           WICKED WIPES is a brand new business run under the auspices of our
           founding company, Beatus Concepts Inc. Beatus (pronounced beahtus)
@@ -73,34 +80,49 @@
           customers in the hospitality industry across Canada.
         </p>
       </div>
-      <div class="flex bg-blue-100 my-8 px-64 py-3 rounded-full"></div>
+      <div
+        class="flex bg-blue-100 my-8 px-64 py-3 rounded-full"
+        data-aos="fade-left"
+        data-aos-duration="700"
+      ></div>
     </section>
     <!-- About Us Section -->
     <section class="px-28 py-36">
       <div class="px-24 py-16 flex justify-between w-full items-center">
         <h1
           class="text-[78px] concert-one-regular font-bold w-full text-[#97CAEB]"
+          data-aos="fade-right"
+          data-aos-duration="700"
         >
           Our Mission
         </h1>
-        <p class="text-xl league-spartan">
+        <p
+          class="text-xl league-spartan"
+          data-aos="fade-left"
+          data-aos-duration="700"
+        >
           Our mission is to help people and spread goodwill via sharing useful
           and natural products that are good for people and the environment. 
         </p>
       </div>
       <div class="flex w-full gap-x-20 justify-center">
-        <div class="rounded-full h-[550px] w-96 overflow-hidden">
+        <div
+          class="rounded-full w-96 h-[600px] duration-300 ease-in-out bg-[#4446D9]"
+          id="design-heading"
+        >
           <img
             src="./public/testimonial-1.jpg"
             alt=""
-            class="h-full object-cover"
+            class="rounded-full h-full object-cover duration-300 ease-in-out translate-y-16 hover:translate-y-0"
           />
         </div>
-        <div class="rounded-full h-[550px] w-96 overflow-hidden">
+        <div
+          class="rounded-full w-96 h-[600px] duration-300 ease-in-out bg-[#97CAEB]" 
+        >
           <img
             src="./public/testimonial-2.jpg"
             alt=""
-            class="h-full object-cover"
+            class="rounded-full h-full object-cover duration-300 ease-in-out translate-y-16 hover:translate-y-0"
           />
         </div>
       </div>
@@ -248,5 +270,9 @@
         </div>
       </div>
     </section>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
