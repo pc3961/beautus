@@ -151,14 +151,20 @@
               class="flex w-full justify-end slide-in-right delay"
               id="document-heading1"
             >
-              <img src="/public/product-1.png" alt="" />
+              <img
+                src="/public/product-1.png"
+                alt=""
+                class="hidden slide-left"
+              />
             </div>
           </div>
           <div class="flex w-full justify-between gap-x-24">
-            <div
-              class="flex w-full justify-start slide-in-left delay2"
-            >
-              <img src="/public/product-2.png" alt="" />
+            <div class="flex w-full justify-start slide-in-left delay2">
+              <img
+                src="/public/product-2.png"
+                alt=""
+                class="hidden slide-right"
+              />
             </div>
             <div
               class="text-xl bg-blue-300 rounded-full p-8 w-full slide-in-right"
@@ -175,10 +181,12 @@
               These plush and strong cloth hand wipes add charm and delight to
               the whole dining experience.
             </div>
-            <div
-              class="flex w-full justify-end slide-in-right delay3"
-            >
-              <img src="/public/product-3.png" alt="" />
+            <div class="flex w-full justify-end slide-in-right delay3">
+              <img
+                src="/public/product-3.png"
+                alt=""
+                class="hidden slide-left"
+              />
             </div>
           </div>
         </div>
@@ -353,6 +361,20 @@
       const documentHeading = document.getElementById("document-heading");
       documentSection.addEventListener("mouseover", function (e) {
         documentHeading.classList.add("opacity-100");
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const images = document.querySelectorAll(".slide-left");
+        images.forEach((image) => {
+          image.classList.remove("hidden");
+          image.classList.add("show-during-animation");
+        });
+        const images1 = document.querySelectorAll(".slide-right");
+        images1.forEach((image) => {
+          image.classList.remove("hidden");
+          image.classList.add("show-during-animation");
+        });
       });
     </script>
   </body>

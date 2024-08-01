@@ -416,22 +416,7 @@
 .slide-in-right {
   animation: slideInRight 2s ease-in-out forwards;
 }
-.slide-in-left1 {
-  animation: slideInLeft 2s ease-in-out forwards;
-}
-.slide-in-right2 {
-  animation: slideInRight 2s ease-in-out forwards;
-}
 
-.delay{
-  animation-delay: 1000ms;
-}
-.delay2{
-  animation-delay: 2000ms;
-}
-.delay3{
-  animation-delay: 3000ms;
-}
 .wow-text {
   -webkit-text-stroke: 1.5px #3a50b3;
   color: #97caeb; /* Fill color of the text */
@@ -447,4 +432,49 @@
 
 .translateOnHover {
   transform: translateY(0);
+}
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight1 {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-left {
+  animation: slideInLeft 1s forwards;
+}
+.slide-right {
+  animation: slideInRight1 1s forwards;
+}
+.slide-left-1 {
+  animation: slideInLeft 1s forwards;
+}
+
+.hidden.show-during-animation {
+  display: block !important;
+}
+
+.delay {
+  animation-delay: 0.5s;
+}
+.delay2 {
+  animation-delay: 0.75s;
+}
+.delay3 {
+  animation-delay: 1s;
 }
