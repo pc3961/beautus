@@ -100,8 +100,8 @@
       </div>
     </section>
     <!-- One of a Kind Section -->
-    <section class="px-28 py-20 w-full">
-      <div class="w-full flex justify-center py-10">
+    <section class="px-28 py-20 w-full" id="document-one">
+      <div class="w-full flex justify-center py-10" id="one-kind">
         <h1 class="text-[48px] text-[#3A50B3] concert-one-regular font-medium">
           One of a Kind
         </h1>
@@ -194,8 +194,8 @@
     </section>
     <!-- Gallery Section -->
     <section class="px-28 py-20 w-full">
-      <div class="w-full px-40 flex justify-center">
-        <h2 class="text-xl text-[#3A50B3] league-spartan text-center">
+      <div class="w-full px-40 flex justify-center" id="gallery">
+        <h2 class="text-xl text-[#3A50B3] league-spartan text-center" id="gallery-one">
           Perfect for all areas of the hospitality industry, including
           restaurants, hotels and golf clubs, events and casinos, the pod is
           stylish, surprising and unique and is a successful advertising tool.
@@ -357,8 +357,22 @@
     </section>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
+      AOS.init();
+    </script>
+    <script>
       const documentSection = document.getElementById("document-section");
+      const documentOne = document.getElementById("document-one");
+      const documentOneHeading = document.getElementById("one-kind");
       const documentHeading = document.getElementById("document-heading");
+      const documentGallery =document.getElementById("gallery");
+      const documentGalleryOne = document.getElementById("gallery-one");
+
+      documentGallery.addEventListener("mouseover", function(e){
+        documentGalleryOne.classList.add("slide-in-up");
+      });
+      documentOne.addEventListener("mouseover", function (e) {
+        documentOneHeading.classList.add("slide-right");
+      });
       documentSection.addEventListener("mouseover", function (e) {
         documentHeading.classList.add("opacity-100");
       });
