@@ -14,7 +14,7 @@
   <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=League Spartan:wght@400&display=swap"/>
   <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   </head>
   <body>
     <section class="px-40 py-16 flex flex-col items-center  w-full" style="background: radial-gradient(circle, #37A3F1 32%, #3A50B3 100%);">
@@ -72,6 +72,7 @@
         <h1 class="px-10 py-10 text-[#acd5ef] font-['Mitr'] text-6xl text-center hover:text-[#3A50B3] font-medium">Let’s make hygiene not only a priority but desirable too!</h1>
       </div>
     </section>
+    <!-- Categories Section -->
     <section class="section_categories">
       <h1 class="px-24 text-[#3a50b3] text-[46px] font-['Mitr']">
         Refreshing natural Fragnances
@@ -98,6 +99,39 @@
         </div>
       </div>
 
+    </section>
+    <!-- Image Gallery Section -->
+    <section class="py-24 relative">
+      <div class="swiper-container z-50">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div  class="image-container">
+                <img src="/public/showcase-1.jpg" class="h-full" alt="">
+              </div>
+            </div>
+            <div class="swiper-slide">              
+              <div  class="image-container">
+                <img src="/public/showcase-2.png" class="h-full" alt="">
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div  class="image-container">
+                <img src="/public/showcase-3.png" class="h-full" alt="">
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div  class="image-container">
+                <img src="/public/showcase-4.jpg" class="h-full" alt="">
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div  class="image-container">
+                <img src="/public/showcase-5.jpg" class="h-full" alt="">
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-white relative bottom-20 h-40 w-full z-[100] rounded-[50%]"></div>
     </section>
   <section class="px-40 py-40">
     <div class="w-full group" id="document-section">
@@ -164,6 +198,21 @@
           documentTitle.classList.remove("opacity-0");
           documentTitle.classList.add("opacity-100");
         });
+      </script>
+      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+      <script>
+          var swiper = new Swiper('.swiper-container', {
+              slidesPerView: 3,
+              spaceBetween: 30,
+              pagination: {
+                  el: '.swiper-pagination',
+                  clickable: true,
+              },
+              navigation: {
+                  nextEl: '.swiper-button-next',
+                  prevEl: '.swiper-button-prev',
+              },
+          });
       </script>
   </body>
 </html>
