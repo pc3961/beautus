@@ -408,7 +408,7 @@
   }
 }
 .slide-in-up {
-  animation: slideInUp 2s ease-in-out forwards;
+  animation: slideInUp 1s ease-in-out forwards;
 }
 .slide-in-left {
   animation: slideInLeft 2s ease-in-out forwards;
@@ -477,4 +477,10 @@
 }
 .delay3 {
   animation-delay: 1s;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #97caeb 0%, #0d269f 50%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

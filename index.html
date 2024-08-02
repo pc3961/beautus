@@ -19,7 +19,9 @@
   <body>
     <section class="px-40 py-16 flex flex-col items-center  w-full" style="background: radial-gradient(circle, #37A3F1 32%, #3A50B3 100%);">
     <div class="flex w-full items-center justify-between">
-      <img src="./public/blue-color.svg" alt="">
+      <a href="index.html">
+        <img src="./public/blue-color.svg" alt="">
+      </a>
       <nav class="flex items-center justify-center bg-blue-300 rounded-full">
         <ul
         id="menu"
@@ -41,7 +43,7 @@
       </nav>
     </div>
     <div class="flex">
-      <div class="flex flex-col py-64 items-start w-full">
+      <div class="flex flex-col mt-96 items-start w-full">
         <h1 class="text-white text-[40px] concert-one-regular font-normal w-full">Hygienic, Safe, Natural, Environmentally 
           Friendly Wipes</h1>
         <p class="text-white text-xl font-normal py-5">A creative solution to clean and freshen hands</p>
@@ -51,8 +53,24 @@
       </div>
     </div>
     </section>
-    <section class="bg-white mw-100% h-[1024px] flex items-end">
-      <h1 class="mt-96  px-10 py-10 text-[#acd5ef] font-['Mitr'] text-6xl text-center ">Let’s make hygiene not only a priority but desirable too!</h1>
+    <section class="w-full flex flex-col" id="document-heading2">
+      <div class="w-full flex px-24 py-16 gap-x-6 opacity-0" id="document-title">
+        <div class="w-full">
+          <h1 class="text-4xl text-nowrap font-['Mitr'] font-medium gradient-text">Stylish single-use <br> hand wipes</h1>
+        </div>
+        <div class="flex flex-col w-full">
+          <p class="league-spartan text-xl">The compressed, high-quality cloth hand wipe inside an attractive and compact pod, cleans and refreshes your hands. The unique no-leak design of the sealed, individual pods ensures the single-use wipes are hygienic and safe</p>
+          <p class="league-spartan text-xl">
+          So easy and fun to use. Just press firmly in the centre of the pod with your thumb. Feel the seal break and watch as the cloth absorbs the pleasantly scented, natural soap contained within, and unfurls almost magically for use!</p>
+        </div>
+
+      </div>
+      <div class="w-full h-[700px] my-10">
+        <video src="/public/bg-ad.mp4" class="w-full h-full object-cover" type="video/mp4" autoplay muted loop></video>
+      </div>
+      <div class="flex w-full my-10">
+        <h1 class="px-10 py-10 text-[#acd5ef] font-['Mitr'] text-6xl text-center hover:text-[#3A50B3] font-medium">Let’s make hygiene not only a priority but desirable too!</h1>
+      </div>
     </section>
     <section class="section_categories">
       <h1 class="px-24 text-[#3a50b3] text-[46px] font-['Mitr']">
@@ -79,10 +97,6 @@
          <img src="./public/green 3.svg"  class="absolute w-[503px] h-[432px] bottom-0 right-0" alt>
         </div>
       </div>
-
-    </section>
-
-    <section class="bg-white">
 
     </section>
   <section class="px-40 py-40">
@@ -140,9 +154,15 @@
         const documentSection = document.getElementById("document-section");
         const documentHeading = document.getElementById("document-heading");
         const documentHeading1 = document.getElementById("document-heading1");
+        const documentHeading2 = document.getElementById("document-heading2");
+        const documentTitle = document.getElementById("document-title");
         documentSection.addEventListener("mouseover", function (e) {
           documentHeading1.classList.add("slide-in-up");
           documentHeading.classList.add("slide-in-left");
+        });
+        documentHeading2.addEventListener("mouseover", function (e) {
+          documentTitle.classList.remove("opacity-0");
+          documentTitle.classList.add("opacity-100");
         });
       </script>
   </body>
