@@ -52,10 +52,22 @@
     <title>Features | Wicked Wipes</title>
   </head>
   <body>
-    <section class="flex flex-col items-center w-full overflow-hidden h-screen">
-      <div class="flex flex-col w-full items-center justify-between relative">
+    <section
+      class="flex flex-col items-center w-full overflow-hidden h-[1024px]"
+    >
+      <div
+        class="flex flex-col w-full justify-between relative"
+      >
+      <div class="bg-[#3A50B3] absolute opacity-30 w-1/2 h-full">    
+      </div>
+      <div class="flex flex-col absolute top-56 left-32 leading-[50px]">
+        <h2 class="text-[48px] text-[#97CAEB] font-['Mitr'] font-medium">An elegant way to</h2>
+        <h2 class="text-[68px] concert-one-regular font-medium text-white">cleanse your hands</h2>
+      </div>
+      <div class="absolute rounded-full w-96 h-96 bg-[#37a3f1] top-56 left-24 blur-2xl opacity-50"></div>
+      <div class="absolute rounded-full w-64 h-64 bg-[#37a3f1] bottom-20 left-[550px] blur-2xl opacity-50"></div>
         <video
-          class="absolute top-0 left-0 w-full object-cover"
+          class="w-full object-cover"
           src="./public/bg-video.mp4"
           autoplay
           loop
@@ -68,7 +80,6 @@
             class="flex absolute top-0 left-24 z-100 p-10"
             alt=""
           />
-
           <nav
             class="flex justify-center items-center rounded-full bg-gray-300 absolute top-0 right-0 m-10"
           >
@@ -90,6 +101,23 @@
               </li>
             </ul>
           </nav>
+        </div>
+        <div class="absolute bottom-28 left-32">
+          <h2 class="text-white text-3xl font-bold league-spartan">
+            Three components make up 
+            the<br /> complete product:
+          </h2>
+          <div class="flex flex-col pt-6">
+            <p class="text-white text-xl">
+              1. Recyclable light weight container pod
+            </p>
+            <p class="text-white text-xl">
+              2. Gentle and hypoallergenic cleansing solution
+            </p>
+            <p class="text-white text-xl">
+              3. Biodegradable compressed cellulose cloth wipe
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -168,13 +196,14 @@
         </div>
       </div>
       <div class="w-full flex py-28">
+        <!-- Step 2 -->
         <div
           class="flex flex-col justify-center items-center w-full"
           style="
             background: radial-gradient(
               circle at center,
               #37a3f1 1%,
-              #3a50b3 50%
+              #3a50b3 55%
             );
           "
         >
@@ -183,12 +212,28 @@
               STEP 2
             </h2>
             <div
-              class="p-2 bg-[#C1DFF3] rounded-full my-3 w-full hover:bg-[#97CAEB]"
+              class="p-2 bg-[#C1DFF3] rounded-full my-3 w-full hover:bg-[#97CAEB] transition-scale duration-300"
+              id="step-2"
             ></div>
           </div>
-          <div class="flex flex-col w-6/12 justify-center">
+          <div
+            class="flex flex-col w-6/12 justify-center transition-scale duration-300"
+            id="logo"
+          >
             <img src="/public/step2.1.png" alt="" />
             <img src="/public/step2.2.png" alt="" />
+          </div>
+        </div>
+        <div class="flex justify-center items-center">
+          <!-- Step 2 Information -->
+          <div
+            class="hidden border-2 border-white px-4 rounded-lg w-full justify-center items-center h-[200px]"
+          >
+            <p class="text-xl text-white font-bold">
+              Press down on the centre of the pod to activate the process. This
+              breaks the seal and allows the cleansing solution to soak into the
+              dry cloth. Watch as it unfurl
+            </p>
           </div>
         </div>
         <div
@@ -197,7 +242,7 @@
             background: radial-gradient(
               circle at center,
               #37a3f1 1%,
-              #3a50b3 50%
+              #3a50b3 55%
             );
           "
         >
@@ -221,7 +266,7 @@
             background: radial-gradient(
               circle at center,
               #37a3f1 1%,
-              #3a50b3 50%
+              #3a50b3 55%
             );
           "
         >
@@ -238,9 +283,23 @@
       </div>
     </section>
     <!-- Why use Wicked Wipes Section -->
-    <section class="py-36">
-      <img src="/public/Why use.svg" alt="" class="w-full h-auto" />
-      <img src="/public/Why use.svg" alt="" class="w-full h-auto" />
+    <section class="py-10 w-full">
+      <marquee
+        behavior="scroll"
+        scrollamount="20"
+        loop="infinite"
+        direction="left"
+        class="wicked-text text-[200px] w-full flex justify-center font-bold text-nowrap"
+        >Why use Wicked Wipes</marquee
+      >
+      <marquee
+        behavior="scroll"
+        scrollamount="15"
+        loop="infinite"
+        direction="right"
+        class="wicked-text text-[200px] w-full flex justify-center font-bold text-nowrap"
+        >Why use Wicked Wipes</marquee
+      >
     </section>
     <!-- Features Section -->
     <section class="px-24 py-36">
@@ -486,6 +545,17 @@
 
       designSection.addEventListener("mouseover", function () {
         designHeading.classList.add("text-[#3A50B3]");
+      });
+    </script>
+    <script>
+      const Step2 = document.getElementById("step-2");
+      const Logo = document.getElementById("logo");
+
+      Step2.addEventListener("mouseover", function () {
+        Logo.classList.add("scale-150");
+      });
+      Step2.addEventListener("mouseout", function (e) {
+        Logo.classList.remove("scale-150");
       });
     </script>
   </body>

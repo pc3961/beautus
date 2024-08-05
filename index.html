@@ -82,15 +82,16 @@
       <h1 class="px-24 text-[#3a50b3] text-[46px] font-['Mitr']">
         Refreshing natural Fragnances
       </h1>
-      <div class="flex gap-2 px-24">
-        <img src="./public/green 5.svg" alt="">
-        <img src="./public/green 6.svg" alt="">
-        <img src="./public/yellow 3.svg" alt="">
-        <img src="./public/blue 2.svg" alt="">
-        <img src="./public/white 3.svg" alt="">
-      </div>
-      <div class="bg-[]">
-
+      <div class="flex flex-col">
+        <div class="flex gap-x-2 px-24">
+          <img src="./public/green 5.svg" alt="">
+          <img src="./public/green 6.svg" alt="">
+          <img src="./public/yellow 3.svg" alt="">
+          <img src="./public/blue 2.svg" alt="">
+          <img src="./public/white 3.svg" alt="">
+        </div>
+        <div class="mx-24 bg-white p-3 w-36 rounded-full flex justify-center items-center">
+        </div>
       </div>
       <div class="flex justify-between">
        <div class="flex">
@@ -107,7 +108,17 @@
         </div>
       </div>
     </section>
-
+    <!-- Title Content Section -->
+    <section class="px-24 py-16" id="document-title1">
+      <div class="flex flex-col justify-center items-center w-full gap-y-10 opacity-0 transition-opacity duration-150 group-hover:opacity-100" id="document-title2">
+        <div class="flex w-full px-10 justify-center">
+          <h1 class="text-[78px] concert-one-regular gradient-text font-medium"> Wicked Wipes is a smart <br> choice for your business</h1>
+        </div>
+        <div class="flex w-full px-10 justify-center">
+          <p class="text-xl league-spartan font-medium">Elevate your customer experience at your fine dining establishment. Hand hygiene is the primary means of reducing <br> the spread of viruses and bacteria. Your customers will appreciate your commitment to their health and safety! </p>
+        </div>
+      </div>
+    </section>
     <!-- Image Gallery Section -->
 
     <section class="py-24 relative">
@@ -199,6 +210,8 @@
         const documentHeading1 = document.getElementById("document-heading1");
         const documentHeading2 = document.getElementById("document-heading2");
         const documentTitle = document.getElementById("document-title");
+        const documentTitle1 = document.getElementById("document-title1");
+        const documentTitle2 = document.getElementById("document-title2");
         documentSection.addEventListener("mouseover", function (e) {
           documentHeading1.classList.add("slide-in-up");
           documentHeading.classList.add("slide-in-left");
@@ -206,6 +219,9 @@
         documentHeading2.addEventListener("mouseover", function (e) {
           documentTitle.classList.remove("opacity-0");
           documentTitle.classList.add("opacity-100");
+        });
+        documentTitle1.addEventListener("mouseover", function (e) {
+          documentTitle2.classList.add("slide-in-up");
         });
       </script>
       <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

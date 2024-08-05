@@ -335,8 +335,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 120px;
-  max-width: 100%;
+  padding-top: 100px;
   background: #c1eaf3;
   height: 903px;
 }
@@ -373,7 +372,6 @@
 .league-spartan {
   font-family: "League Spartan", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
   font-style: normal;
 }
 
@@ -423,6 +421,14 @@
   font-family: "Space Grotesk", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
+  font-style: normal;
+}
+.wicked-text {
+  -webkit-text-stroke: 2px #3a50b3;
+  color: white; /* Fill color of the text */
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -507,3 +513,10 @@
   height: 100%;
   object-fit: cover;
 }
+.gradient-text {
+  background-image: linear-gradient(to bottom, #97CAEB, #3A50B3);
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
