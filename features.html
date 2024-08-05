@@ -53,19 +53,27 @@
   </head>
   <body>
     <section
-      class="flex flex-col items-center w-full overflow-hidden h-[1024px]"
+      class="flex flex-col items-center w-full overflow-hidden h-[1024px]" id="video-heading"
     >
-      <div
-        class="flex flex-col w-full justify-between relative"
-      >
-      <div class="bg-[#3A50B3] absolute opacity-30 w-1/2 h-full">    
-      </div>
-      <div class="flex flex-col absolute top-56 left-32 leading-[50px]">
-        <h2 class="text-[48px] text-[#97CAEB] font-['Mitr'] font-medium">An elegant way to</h2>
-        <h2 class="text-[68px] concert-one-regular font-medium text-white">cleanse your hands</h2>
-      </div>
-      <div class="absolute rounded-full w-96 h-96 bg-[#37a3f1] top-56 left-24 blur-2xl opacity-50"></div>
-      <div class="absolute rounded-full w-64 h-64 bg-[#37a3f1] bottom-20 left-[550px] blur-2xl opacity-50"></div>
+      <div class="flex flex-col w-full justify-between relative">
+        <div class="bg-[#3A50B3] absolute opacity-30 w-1/2 h-full"></div>
+        <div
+          class="flex flex-col absolute z-[100] top-56 left-32 leading-[50px]"
+          id="video-section"
+        >
+          <h2 class="text-[48px] text-[#97CAEB] font-['Mitr'] font-medium">
+            An elegant way to
+          </h2>
+          <h2 class="text-[68px] concert-one-regular font-medium text-white">
+            cleanse your hands
+          </h2>
+        </div>
+        <div
+          class="absolute rounded-full w-96 h-96 bg-[#37a3f1] top-56 left-24 blur-2xl opacity-50"
+        ></div>
+        <div
+          class="absolute rounded-full w-64 h-64 bg-[#37a3f1] bottom-20 left-[550px] blur-2xl opacity-50"
+        ></div>
         <video
           class="w-full object-cover"
           src="./public/bg-video.mp4"
@@ -77,7 +85,7 @@
         <div>
           <img
             src="./public/blue-color.svg"
-            class="flex absolute top-0 left-24 z-100 p-10"
+            class="flex absolute top-0 left-24 z-[100] p-10"
             alt=""
           />
           <nav
@@ -104,8 +112,8 @@
         </div>
         <div class="absolute bottom-28 left-32">
           <h2 class="text-white text-3xl font-bold league-spartan">
-            Three components make up 
-            the<br /> complete product:
+            Three components make up the<br />
+            complete product:
           </h2>
           <div class="flex flex-col pt-6">
             <p class="text-white text-xl">
@@ -136,22 +144,14 @@
           >
             Design
           </h1>
-          <div>
-            <p
-              class="text-xl pt-10 font-['League Spartan']"
-              data-aos="fade-right"
-              data-aos-duration="700"
-            >
+          <div data-aos="fade-right" data-aos-duration="700">
+            <p class="text-xl pt-10 font-['League Spartan']">
               The container pod is a two-chamber system. The cleansing solution
               is held in the outer chamber. The inner chamber contains a
               compressed cellulose cloth wipe. The two chambers are separated
               from each other until activated for use. 
             </p>
-            <p
-              class="text-xl pt-10 font-['League Spartan']"
-              data-aos="fade-right"
-              data-aos-duration="700"
-            >
+            <p class="text-xl pt-10 font-['League Spartan']">
               When pressure is applied to the middle of the top of the pod, by
               thumb or finger, the container opens the valve at the bottom and
               the cleansing solution from the outer chamber reaches the cloth
@@ -542,7 +542,11 @@
     <script>
       const designSection = document.getElementById("design-section");
       const designHeading = document.getElementById("design-heading");
-
+      const videoHeading = document.getElementById("video-heading");
+      const videoSection = document.getElementById("video-section");
+      videoHeading.addEventListener("mouseover", function(e) {
+        videoSection.classList.add("slide-left");
+      });
       designSection.addEventListener("mouseover", function () {
         designHeading.classList.add("text-[#3A50B3]");
       });
