@@ -52,10 +52,14 @@
     <title>Features | Wicked Wipes</title>
   </head>
   <body>
+    <!-- Video Banner Section -->
     <section
       class="flex flex-col items-center w-full h-full" id="video-heading"
     >
       <div class="flex flex-col w-full justify-between relative">
+        <div class="absolute top-[350px] left-[700px] z-[100] w-32 h-32">
+          <img src="/public/play.png" alt="">
+        </div>
         <div class="bg-[#3A50B3] absolute opacity-30 w-1/2 h-full"></div>
         <div
           class="flex flex-col absolute z-[100] top-56 left-32 leading-[50px]"
@@ -110,6 +114,7 @@
             </ul>
           </nav>
         </div>
+        
         <div class="absolute bottom-28 left-32">
           <h2 class="text-white text-3xl font-bold league-spartan">
             Three components make up the<br />
@@ -302,16 +307,16 @@
       >
     </section>
     <!-- Features Section -->
-    <section class="px-24 py-36">
+    <section class="px-24 py-36" id="features">
       <div class="flex w-full justify-center items-center">
         <div class="w-full">
           <div
-            class="text-4xl text-[#3a50b3] font-bold bg-[#B5EA72] rounded-full h-56 w-56 text-center flex justify-center items-center"
+            class=" bg-[#B5EA72] rounded-full h-56 w-56 flex justify-center items-center"
           >
-            <h2>Innovative</h2>
+            <h2 class="text-4xl text-[#3a50b3] font-bold text-center">Innovative</h2>
           </div>
         </div>
-        <div>
+        <div class="" id="features-details">
           <ul class="list-disc">
             <li class="text-xl">
               Sealed individual pods ensure safety and security with no risk of
@@ -544,12 +549,17 @@
       const designHeading = document.getElementById("design-heading");
       const videoHeading = document.getElementById("video-heading");
       const videoSection = document.getElementById("video-section");
+      const features = document.getElementById("features");
+      const featuresDetails = document.getElementById("features-details");
       videoHeading.addEventListener("mouseover", function(e) {
         videoSection.classList.add("slide-left");
       });
       designSection.addEventListener("mouseover", function () {
         designHeading.classList.add("text-[#3A50B3]");
       });
+      features.addEventListener("mouseover", function(){
+        featuresDetails.classList.add("slide-in-right");
+      })
     </script>
     <script>
       const Step2 = document.getElementById("step-2");
