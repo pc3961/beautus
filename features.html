@@ -54,16 +54,20 @@
   <body>
     <!-- Video Banner Section -->
     <section
-      class="flex flex-col items-center w-full h-full" id="video-heading"
+      class="flex flex-col items-center w-full h-full"
+      id="video-heading"
     >
       <div class="flex flex-col w-full justify-between relative">
         <div class="absolute top-[350px] left-[700px] z-[100] w-32 h-32">
-          <img src="/public/play.png" alt="">
+          <img src="/public/play.png" alt="" id="play-button" class="" />
         </div>
-        <div class="bg-[#3A50B3] absolute opacity-30 w-1/2 h-full"></div>
+        <div
+          class="bg-[#3A50B3] absolute opacity-30 w-1/2 h-full"
+          id="bg-overlay"
+        ></div>
         <div
           class="flex flex-col absolute z-[100] top-56 left-32 leading-[50px]"
-          id="video-section"
+          id="video-section1"
         >
           <h2 class="text-[48px] text-[#97CAEB] font-['Mitr'] font-medium">
             An elegant way to
@@ -73,10 +77,10 @@
           </h2>
         </div>
         <div
-          class="absolute rounded-full w-96 h-96 bg-[#37a3f1] top-56 left-24 blur-2xl opacity-50"
+          class="absolute rounded-full w-96 h-96 bg-[#37a3f1] top-56 left-24 blur-2xl opacity-50" id="round-1"
         ></div>
         <div
-          class="absolute rounded-full w-64 h-64 bg-[#37a3f1] bottom-20 left-[550px] blur-2xl opacity-50"
+          class="absolute rounded-full w-64 h-64 bg-[#37a3f1] bottom-20 left-[550px] blur-2xl opacity-50" id="round-2"
         ></div>
         <video
           class="w-full object-cover"
@@ -114,7 +118,7 @@
             </ul>
           </nav>
         </div>
-        
+
         <div class="absolute bottom-28 left-32">
           <h2 class="text-white text-3xl font-bold league-spartan">
             Three components make up the<br />
@@ -311,9 +315,11 @@
       <div class="flex w-full justify-center items-center">
         <div class="w-full">
           <div
-            class=" bg-[#B5EA72] rounded-full h-56 w-56 flex justify-center items-center"
+            class="bg-[#B5EA72] rounded-full h-56 w-56 flex justify-center items-center"
           >
-            <h2 class="text-4xl text-[#3a50b3] font-bold text-center">Innovative</h2>
+            <h2 class="text-4xl text-[#3a50b3] font-bold text-center">
+              Innovative
+            </h2>
           </div>
         </div>
         <div class="" id="features-details">
@@ -551,15 +557,15 @@
       const videoSection = document.getElementById("video-section");
       const features = document.getElementById("features");
       const featuresDetails = document.getElementById("features-details");
-      videoHeading.addEventListener("mouseover", function(e) {
+      videoHeading.addEventListener("mouseover", function (e) {
         videoSection.classList.add("slide-left");
       });
       designSection.addEventListener("mouseover", function () {
         designHeading.classList.add("text-[#3A50B3]");
       });
-      features.addEventListener("mouseover", function(){
+      features.addEventListener("mouseover", function () {
         featuresDetails.classList.add("slide-in-right");
-      })
+      });
     </script>
     <script>
       const Step2 = document.getElementById("step-2");
@@ -570,6 +576,18 @@
       });
       Step2.addEventListener("mouseout", function (e) {
         Logo.classList.remove("scale-150");
+      });
+      const playButton = document.getElementById("play-button");
+      const videoSection1 = document.getElementById("video-section1");
+      const bgOverlay = document.getElementById("bg-overlay");
+      const round1 = document.getElementById("round-1");
+      const round2 = document.getElementById("round-2");
+      playButton.addEventListener("click", function () {
+        videoSection1.classList.add("hidden");
+        bgOverlay.classList.add("hidden");
+        playButton.classList.add("hidden");
+        round1.classList.add("hidden");
+        round2.classList.add("hidden");
       });
     </script>
   </body>
