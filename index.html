@@ -15,6 +15,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <style>
+    .form {
+      width: 100%;
+      background: #fff;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-left: 15px;
+      border-bottom: solid #b2b2b2;
+    }
+    .hovered-design {
+      color: #3a50b3; /* Change to the color you want */
+    }
+  </style>
+  <title>Wicked Wipes</title>
   </head>
   <body>
     <section class="px-40 py-16 flex flex-col items-center  w-full" style="background: radial-gradient(circle, #37A3F1 32%, #3A50B3 100%);">
@@ -37,7 +51,7 @@
           <a href="testimonials.html">Who We are</a>
         </li>
         <li>
-          <a href="#">Contact</a>
+          <a href="#target-section">Contact</a>
         </li>
       </ul>
       </nav>
@@ -172,7 +186,7 @@
     </div>
   </section>
    <!-- Form Section -->
-   <section class="px-36 py-28 w-full">
+   <section class="px-36 py-28 w-full" id="target-section">
     <div class="flex w-full">
       <div class="flex flex-col w-3/5 bg-[#3A50B3] p-20 shadow-md rounded-md">
         <h1 class="text-white text-2xl font-['Urbanist'] font-bold">
@@ -184,14 +198,14 @@
         <div class="w-full px-8 pt-24 flex gap-x-6">
           <img src="/public/bxs_phone-call.svg" alt="" />
           <div class="flex flex-col w-full">
-            <a href="tel:+12898372548" class="text-white">+1 289 837 2548</a>
-            <a href="tel:+12898372547" class="text-white">+1 289 837 2547</a>
+            <a href="tel:+12898372547" class="text-white text-lg">+1 289 837 2547</a>
+            <a href="tel:+12898372548" class="text-white text-lg">+1 289 837 2548</a>
           </div>
         </div>
         <div class="w-full px-8 pt-24 flex gap-x-6">
           <img src="/public/carbon_location-filled.svg" alt="" />
           <div class="flex flex-col w-full">
-            <p class="text-white">
+            <p class="text-white text-lg text-nowrap">
               2030 Bristol Circle, Suite 210,<br />
               Oakville, ON - L6H 0H2
             </p>
