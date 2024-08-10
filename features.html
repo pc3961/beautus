@@ -58,113 +58,121 @@
       id="video-heading"
     >
       <div class="flex flex-col w-full justify-between relative">
-        <div class="absolute top-[350px] left-[700px] z-[100] w-32 h-32">
-          <img src="/public/play.png" alt="" id="play-button" class="" />
-        </div>
+        <!-- Play Button -->
         <div
-          class="bg-[#3A50B3] absolute opacity-30 w-1/2 h-full"
+          class="absolute top-[150px] md:top-[350px] left-1/2 transform -translate-x-1/2 md:left-[780px] z-[100] w-20 h-20 md:w-32 md:h-32"
+        >
+          <img src="/public/play.png" alt="Play Button" id="play-button" />
+        </div>
+        <!-- Background Overlay -->
+        <div
+          class="bg-[#3A50B3] absolute opacity-30 w-full md:w-1/2 h-full"
           id="bg-overlay"
         ></div>
+        <!-- Text Section -->
         <div
-          class="flex flex-col absolute z-[100] top-56 left-32 leading-[50px]"
+          class="flex flex-col absolute z-[100] top-20 left-8 md:top-56 md:left-32 leading-[30px] md:leading-[50px]"
           id="video-section1"
         >
-          <h2 class="text-[48px] text-[#97CAEB] font-['Mitr'] font-medium">
+          <h2
+            class="text-2xl md:text-[48px] text-[#97CAEB] font-['Mitr'] font-medium"
+          >
             An elegant way to
           </h2>
-          <h2 class="text-[68px] concert-one-regular font-medium text-white">
+          <h2
+            class="text-3xl md:text-[68px] concert-one-regular font-medium text-white"
+          >
             cleanse your hands
           </h2>
         </div>
+        <!-- Decorative Circles -->
         <div
-          class="absolute rounded-full w-96 h-96 bg-[#37a3f1] top-56 left-24 blur-2xl opacity-50"
+          class="absolute rounded-full w-48 h-48 md:w-96 md:h-96 bg-[#37a3f1] top-20 md:top-56 left-6 md:left-24 blur-2xl opacity-50"
           id="round-1"
         ></div>
         <div
-          class="absolute rounded-full w-64 h-64 bg-[#37a3f1] bottom-20 left-[550px] blur-2xl opacity-50"
+          class="absolute rounded-full w-32 h-32 md:w-64 md:h-64 bottom-10 md:bottom-20 left-1/2 transform -translate-x-1/2 md:left-[550px] blur-2xl opacity-50"
           id="round-2"
         ></div>
+        <!-- Video Background -->
         <video
           class="w-full object-cover"
           src="./public/bg-video.mp4"
           autoplay
           loop
           muted
-          type="video/mp4"
         ></video>
+        <!-- Logo and Navigation -->
         <div>
           <a href="index.html">
             <img
-            src="./public/blue-color.svg"
-            class="flex absolute top-0 left-24 z-[100] p-10"
-            alt=""
-          />
+              src="/public/blue-color.svg"
+              class="flex absolute top-0 left-8 md:left-24 z-[100] p-6 md:p-10"
+              alt="Logo"
+            />
           </a>
           <nav
-            class="flex justify-center items-center rounded-full bg-gray-300 absolute top-0 right-0 m-10"
+            class="flex justify-center items-center rounded-full bg-gray-300 absolute top-4 md:top-0 right-4 md:right-0 m-4 md:m-10"
           >
             <ul
               id="menu"
-              class="flex justify-center items-center text-center px-16 gap-x-8 text-white text-xl font-normal"
+              class="flex flex-col md:flex-row justify-center items-center text-center gap-y-4 md:gap-y-0 px-6 md:px-16 gap-x-4 md:gap-x-8 text-white text-lg md:text-xl font-normal"
             >
-              <li>
-                <a href="features.html">Features</a>
-              </li>
-              <li>
-                <a href="private-label.html">Private Label</a>
-              </li>
-              <li>
-                <a href="testimonials.html">Who We are</a>
-              </li>
-              <li>
-                <a href="#target-section">Contact</a>
-              </li>
+              <li><a href="features.html">Features</a></li>
+              <li><a href="private-label.html">Private Label</a></li>
+              <li><a href="testimonials.html">Who We are</a></li>
+              <li><a href="#target-section">Contact</a></li>
             </ul>
           </nav>
         </div>
-
-        <div class="absolute bottom-28 left-32">
-          <h2 class="text-white text-3xl font-bold league-spartan">
-            Three components make up the<br />
+        <!-- Text Section 2 -->
+        <div class="absolute bottom-12 md:bottom-28 left-6 md:left-32">
+          <h2 class="text-white text-xl md:text-3xl font-bold league-spartan">
+            Three components make up the<br class="hidden md:block" />
             complete product:
           </h2>
-          <div class="flex flex-col pt-6">
-            <p class="text-white text-xl">
-              1. Recyclable light weight container pod
+          <div class="flex flex-col pt-4 md:pt-6">
+            <p class="text-white text-sm md:text-xl">
+              1. Recyclable lightweight container pod
             </p>
-            <p class="text-white text-xl">
+            <p class="text-white text-sm md:text-xl">
               2. Gentle and hypoallergenic cleansing solution
             </p>
-            <p class="text-white text-xl">
+            <p class="text-white text-sm md:text-xl">
               3. Biodegradable compressed cellulose cloth wipe
             </p>
           </div>
         </div>
       </div>
     </section>
+
     <!-- Wicked Wipes Design Section -->
-    <section class="px-36 py-28 w-full" id="design-section">
-      <div class="flex w-full gap-x-6">
-        <div class="flex flex-col w-full">
+    <section class="px-6 py-12 md:px-36 md:py-28 w-full" id="design-section">
+      <div class="flex flex-col md:flex-row w-full gap-y-10 md:gap-x-6">
+        <div class="flex flex-col w-full md:gap-y-6 md:bg-[url('/public/white 1.png')] md:bg-cover">
           <h1
-            class="text-[78px] text-[#97CAEB] font-medium concert-one-regular"
+            class="text-4xl md:text-[78px] text-[#97CAEB] font-medium concert-one-regular"
           >
             Wicked Wipes
           </h1>
           <h1
-            class="text-[78px] text-[#97CAEB] font-medium concert-one-regular hover:text-[#3A50B3]"
+            class="text-4xl md:text-[78px] text-[#97CAEB] font-medium concert-one-regular hover:text-[#3A50B3]"
             id="design-heading"
           >
             Design
           </h1>
           <div data-aos="fade-right" data-aos-duration="700">
-            <p class="text-xl pt-10 font-['League Spartan']">
+            <p
+              class="text-base md:text-xl pt-6 md:pt-10 font-['League Spartan']"
+            >
               The container pod is a two-chamber system. The cleansing solution
               is held in the outer chamber. The inner chamber contains a
               compressed cellulose cloth wipe. The two chambers are separated
               from each other until activated for use. 
             </p>
-            <p class="text-xl pt-10 font-['League Spartan']">
+            <p
+              class="text-base md:text-xl pt-6 md:pt-10 font-['League Spartan']"
+            >
               When pressure is applied to the middle of the top of the pod, by
               thumb or finger, the container opens the valve at the bottom and
               the cleansing solution from the outer chamber reaches the cloth
@@ -174,33 +182,42 @@
           </div>
         </div>
         <div class="flex flex-col w-full justify-center">
-          <img src="/public/features1.png" alt="" />
+          <img
+            src="/public/features1.png"
+            alt="Wicked Wipes Design"
+            class="w-full h-auto"
+          />
         </div>
       </div>
     </section>
+
     <!-- How to use Wicked Wipes -->
-    <section class="px-36 py-32 bg-[#3A50B3]">
-      <div class="flex w-full">
-        <div class="flex flex-col w-full">
-          <h1 class="text-white text-[78px] concert-one-regular font-medium">
+    <section class="px-4 md:px-36 py-16 md:py-32 bg-[#3A50B3]">
+      <div class="flex flex-col md:flex-row w-full">
+        <div class="flex flex-col w-full md:gap-y-6">
+          <h1
+            class="text-white text-4xl md:text-[78px] concert-one-regular font-medium"
+          >
             How to Use
           </h1>
           <h1
-            class="text-[#97CAEB] text-[78px] concert-one-regular font-medium"
+            class="text-[#97CAEB] text-4xl md:text-[78px] concert-one-regular font-medium"
           >
             Wicked Wipes
           </h1>
         </div>
-        <div class="flex flex-col w-full">
-          <div class="w-2/4 mb-2">
-            <h2 class="text-white text-[46px] concert-one-regular font-medium">
+        <div class="flex flex-col w-full mt-8 md:mt-0">
+          <div class="w-full md:w-2/4 mb-2">
+            <h2
+              class="text-white text-2xl md:text-[46px] concert-one-regular font-medium"
+            >
               STEP 1
             </h2>
             <div
-              class="p-2 bg-[#C1DFF3] rounded-full my-3 w-full hover:bg-[#97CAEB]"
+              class="p-2 bg-[#C1DFF3] rounded-full my-3 w-full hover:bg-[#97CAEB] transition-colors duration-300"
             ></div>
           </div>
-          <p class="text-xl text-white">
+          <p class="text-base md:text-xl text-white">
             Place the Wicked Wipes pod on the table. The product is made up of
             two parts - the dry compressed cloth hand wipe and the gentle
             cleansing formulation. The hand wipe is kept dry to maintain
@@ -208,10 +225,10 @@
           </p>
         </div>
       </div>
-      <div class="w-full flex py-28">
+      <div class="w-full flex flex-col md:flex-row py-16 md:py-28">
         <!-- Step 2 -->
         <div
-          class="flex flex-col justify-center items-center w-full"
+          class="flex flex-col justify-center items-center w-full md:w-1/3"
           style="
             background: radial-gradient(
               circle at center,
@@ -220,8 +237,10 @@
             );
           "
         >
-          <div class="w-2/4 my-2 flex flex-col justify-center">
-            <h2 class="text-white text-[46px] concert-one-regular font-normal">
+          <div class="w-full md:w-2/4 my-2 flex flex-col justify-center">
+            <h2
+              class="text-white text-2xl md:text-[46px] concert-one-regular font-normal"
+            >
               STEP 2
             </h2>
             <div
@@ -230,27 +249,26 @@
             ></div>
           </div>
           <div
-            class="flex flex-col w-6/12 justify-center transition-scale duration-300"
+            class="flex flex-col w-9/12 md:w-6/12 justify-center transition-scale duration-300"
             id="logo"
           >
-            <img src="/public/step2.1.png" alt="" />
-            <img src="/public/step2.2.png" alt="" />
+            <img src="/public/step2.1.png" alt="" class="my-2" />
+            <img src="/public/step2.2.png" alt="" class="my-2" />
           </div>
         </div>
-        <div class="flex justify-center items-center">
-          <!-- Step 2 Information -->
+        <!-- <div class="flex justify-center items-center w-full md:w-1/3">
           <div
-            class="hidden border-2 border-white px-4 rounded-lg w-full justify-center items-center h-[200px]"
+            class="hidden md:flex border-2 border-white px-4 rounded-lg w-full justify-center items-center h-[200px]"
           >
-            <p class="text-xl text-white font-bold">
+            <p class="text-sm md:text-xl text-white font-bold text-center">
               Press down on the centre of the pod to activate the process. This
               breaks the seal and allows the cleansing solution to soak into the
-              dry cloth. Watch as it unfurl
+              dry cloth. Watch as it unfurls.
             </p>
           </div>
-        </div>
+        </div> -->
         <div
-          class="flex flex-col justify-center items-center w-full"
+          class="flex flex-col justify-center items-center w-full md:w-1/3 mt-8 md:mt-0"
           style="
             background: radial-gradient(
               circle at center,
@@ -259,8 +277,10 @@
             );
           "
         >
-          <div class="w-2/4 mb-2">
-            <h2 class="text-white text-[46px] concert-one-regular font-normal">
+          <div class="w-full md:w-2/4 mb-2">
+            <h2
+              class="text-white text-2xl md:text-[46px] concert-one-regular font-normal"
+            >
               STEP 3
             </h2>
             <div
@@ -269,12 +289,12 @@
             <img
               src="/public/product-2.png"
               alt=""
-              class="mt-96 flex justify-end"
+              class="mt-16 md:mt-96 flex justify-end"
             />
           </div>
         </div>
         <div
-          class="flex flex-col justify-center items-center w-full"
+          class="flex flex-col justify-center items-center w-full md:w-1/3 mt-8 md:mt-0"
           style="
             background: radial-gradient(
               circle at center,
@@ -283,115 +303,136 @@
             );
           "
         >
-          <div class="w-2/4 mb-2">
-            <h2 class="text-white text-[46px] concert-one-regular font-normal">
+          <div class="w-full md:w-2/4 mb-2">
+            <h2
+              class="text-white text-2xl md:text-[46px] concert-one-regular font-normal"
+            >
               STEP 4
             </h2>
             <div
               class="p-2 bg-[#C1DFF3] rounded-full my-3 w-full hover:bg-[#97CAEB]"
             ></div>
-            <img src="/public/product-3.png" alt="" class="mt-96" />
+            <img
+              src="/public/product-3.png"
+              alt=""
+              class="mt-16 md:mt-96 flex md:justify-end"
+            />
           </div>
         </div>
       </div>
     </section>
+
     <!-- Why use Wicked Wipes Section -->
     <section class="py-10 w-full">
+      <!-- Marquee Text Left -->
       <marquee
         behavior="scroll"
         scrollamount="20"
         loop="infinite"
         direction="left"
-        class="wicked-text text-[200px] w-full flex justify-center font-bold text-nowrap"
-        >Why use Wicked Wipes</marquee
+        class="wicked-text text-[48px] md:text-[200px] w-full flex justify-center font-bold text-nowrap"
       >
+        Why use Wicked Wipes
+      </marquee>
+
+      <!-- Marquee Text Right -->
       <marquee
         behavior="scroll"
         scrollamount="15"
         loop="infinite"
         direction="right"
-        class="wicked-text text-[200px] w-full flex justify-center font-bold text-nowrap"
-        >Why use Wicked Wipes</marquee
+        class="wicked-text text-[48px] md:text-[200px] w-full flex justify-center font-bold text-nowrap"
       >
+        Why use Wicked Wipes
+      </marquee>
     </section>
+
     <!-- Features Section -->
-    <section class="px-24 py-36" id="features">
+    <section class="px-6 py-12 md:px-24 md:py-36" id="features">
       <div class="opacity-0" id="features-details">
-        <div class="flex w-full justify-center items-center">
-          <div class="w-full">
+        <div
+          class="flex flex-col md:flex-row w-full justify-center items-center space-y-8 md:space-y-0 md:space-x-8"
+        >
+          <div class="w-full flex justify-center md:justify-start">
             <div
-              class="bg-[#B5EA72] rounded-full h-56 w-56 flex justify-center items-center slide-in-up"
+              class="bg-[#B5EA72] rounded-full h-40 w-40 md:h-56 md:w-56 flex justify-center items-center slide-in-up"
             >
-              <h2 class="text-4xl text-[#3a50b3] font-bold text-center">
+              <h2
+                class="text-2xl md:text-4xl text-[#3a50b3] font-bold text-center"
+              >
                 Innovative
               </h2>
             </div>
           </div>
           <div class="slide-in-right">
-            <ul class="list-disc">
-              <li class="text-xl">
+            <ul class="list-disc space-y-4">
+              <li class="text-lg md:text-xl">
                 Sealed individual pods ensure safety and security with no risk
                 of contamination from dirt and germs
               </li>
-              <li class="text-xl">
+              <li class="text-lg md:text-xl">
                 Unique no-leak design means the single-use cloths never dry out
                 and are always fresh and moist every single time
               </li>
-              <li class="text-xl">
+              <li class="text-lg md:text-xl">
                 Cloths are fully biodegradable, and the pods are recyclable
               </li>
             </ul>
           </div>
         </div>
 
-        <div class="flex w-full justify-between items-center pt-16">
-          <div class="w-full slide-in-left" >
-            <ul class="list-disc">
-              <li class="text-xl">
-                No alcohol, no chemicals, no colour additives
+        <div
+          class="flex flex-col md:flex-row w-full justify-between items-center pt-16 space-y-8 md:space-y-0 md:space-x-8"
+        >
+          <div class="w-full slide-in-left">
+            <ul class="list-disc space-y-4">
+              <li class="text-lg md:text-xl">
+                No alcohol, no chemicals, no color additives
               </li>
-              <li class="text-xl">
-                Complies with health and safety regulations 
+              <li class="text-lg md:text-xl">
+                Complies with health and safety regulations
               </li>
-              <li class="text-xl">
+              <li class="text-lg md:text-xl">
                 Natural and pure, dermatologically tested, hypoallergenic liquid
-                soap 
+                soap
               </li>
-              <li class="text-xl">
+              <li class="text-lg md:text-xl">
                 Gentle and moisturizing on hands and safe for all
               </li>
-              <li class="text-xl">
+              <li class="text-lg md:text-xl">
                 Hand-woven cellulose cloth hand wipes are soft to the touch yet
-                strong and sturdy for a complete clean-up 
+                strong and sturdy for a complete clean-up
               </li>
             </ul>
           </div>
-          <div class="w-full flex justify-end">
+          <div class="w-full flex justify-center md:justify-end">
             <div
-              class="text-4xl text-[#3a50b3] font-bold bg-[#97CAEB] rounded-full h-56 w-56 text-right flex text-nowrap justify-end items-center slide-in-up"
+              class="text-2xl md:text-4xl text-[#3a50b3] font-bold bg-[#97CAEB] rounded-full h-40 w-40 md:h-56 md:w-56 flex justify-center md:justify-end items-center slide-in-up text-center md:text-right"
             >
               <h2>Skin-safe <br />Cleaning Solution</h2>
             </div>
           </div>
         </div>
 
-        <div class="flex w-full justify-center items-center pt-16">
-          <div class="w-full">
+        <div
+          class="flex flex-col md:flex-row w-full justify-center items-center pt-16 space-y-8 md:space-y-0 md:space-x-8"
+        >
+          <div class="w-full flex justify-center md:justify-start">
             <div
-              class="text-4xl text-[#3a50b3] font-bold bg-[#B5EA72] rounded-full h-56 w-56 text-left flex justify-start items-center slide-in-up"
+              class="text-2xl md:text-4xl text-[#3a50b3] font-bold bg-[#B5EA72] rounded-full h-40 w-40 md:h-56 md:w-56 flex justify-center md:justify-start items-center slide-in-up text-center md:text-left"
             >
               <h2>Environmentally Friendly</h2>
             </div>
           </div>
           <div class="slide-in-right">
-            <ul class="list-disc">
-              <li class="text-xl">
+            <ul class="list-disc space-y-4">
+              <li class="text-lg md:text-xl">
                 Cloth hand wipes are botanic and biodegradable
               </li>
-              <li class="text-xl">
+              <li class="text-lg md:text-xl">
                 Pods are made from PP5 plastic and are 100% recyclable
               </li>
-              <li class="text-xl">
+              <li class="text-lg md:text-xl">
                 Saves Water. Wicked Wipes use only about 5 ml. of cleansing
                 fluid per pod.
               </li>
@@ -399,22 +440,46 @@
           </div>
         </div>
 
-        <div class="flex w-full justify-between items-center pt-16">
-          <div class="w-full flex flex-col">
-            <ul class="list-disc">
-              <li class="text-xl">Cool, Lemon, Green Tea, Unscented</li>
+        <div
+          class="flex flex-col md:flex-row w-full justify-between items-center pt-16 space-y-8 md:space-y-0 md:space-x-8"
+        >
+          <div class="w-full flex flex-col items-center md:items-start">
+            <ul class="list-disc space-y-4">
+              <li class="text-lg md:text-xl">
+                Cool, Lemon, Green Tea, Unscented
+              </li>
             </ul>
             <div class="flex gap-2">
-              <img src="./public/green 5.svg" alt="" />
-              <img src="./public/green 6.svg" alt="" />
-              <img src="./public/yellow 3.svg" alt="" />
-              <img src="./public/blue 2.svg" alt="" />
-              <img src="./public/white 3.svg" alt="" />
+              <img
+                src="./public/green 5.svg"
+                alt="Green 5"
+                class="h-10 w-10 md:h-14 md:w-14"
+              />
+              <img
+                src="./public/green 6.svg"
+                alt="Green 6"
+                class="h-10 w-10 md:h-14 md:w-14"
+              />
+              <img
+                src="./public/yellow 3.svg"
+                alt="Yellow 3"
+                class="h-10 w-10 md:h-14 md:w-14"
+              />
+              <img
+                src="./public/blue 2.svg"
+                alt="Blue 2"
+                class="h-10 w-10 md:h-14 md:w-14"
+              />
+              <img
+                src="./public/white 3.svg"
+                alt="White 3"
+                class="h-10 w-10 md:h-14 md:w-14"
+              />
             </div>
           </div>
-          <div class="w-full flex justify-end">
+          <div class="w-full flex justify-center md:justify-end">
             <div
-              class="text-4xl text-[#3a50b3] font-bold bg-[#B5EA72] rounded-full h-48 w-48 text-right flex text-nowrap justify-end items-center"
+              class="text-2xl md:text-4xl text-[#3a50b3] font-bold bg-[#B5EA72] rounded-full h-40 w-40 md:h-48 md:w-48 flex justify-center md:justify-end items-center text-center md:text-right"
             >
               <h2>Natural <br />Fragrances</h2>
             </div>
@@ -422,87 +487,146 @@
         </div>
       </div>
     </section>
-  <!-- Form Section -->
-  <section class="px-4 md:px-36 py-3 md:py-28 w-full" id="target-section">
-    <div class="flex flex-col md:flex-row w-full">
-      <div class="flex flex-col justify-around md:w-3/5 bg-[#3A50B3] p-3 md:p-20 shadow-md rounded-md">
-        <h1 class="text-white text-2xl font-['Urbanist'] font-bold">
-          Get in Touch with Us
-        </h1>
-        <h2 class="text-white text-xl font-['Urbanist'] font-bold">
-          to discuss your issues in Wicked Wipes
-        </h2>
-        <div class="w-full md:px-8 py-8 md:pt-24 flex gap-x-6">
-          <img src="/public/bxs_phone-call.svg" alt="" />
-          <div class="flex flex-col w-full">
-            <a href="tel:+12898372547" class="text-white text-lg">+1 289 837 2547</a>
-            <a href="tel:+12898372548" class="text-white text-lg">+1 289 837 2548</a>
-          </div>
-        </div>
-        <div class="w-full md:px-8 md:pt-24 flex gap-x-6">
-          <img src="/public/carbon_location-filled.svg" alt="" />
-          <div class="flex flex-col w-full">
-            <p class="text-white text-lg text-nowrap">
-              2030 Bristol Circle, Suite 210,<br />
-              Oakville, ON - L6H 0H2
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="flex flex-col w-full shadow-md rounded-md p-10">
-        <form action="" class="w-full flex flex-col gap-y-6">
-          <div class="flex justify-between w-full gap-x-6">
-            <input type="text" label="First Name" id="fname" placeholder="First Name" name="fname" class="form" />
-            <input type="text" label="Last Name" id="lname" placeholder="Last Name" name="fname" class="form" />
-          </div>
-          <div class="flex justify-between w-full gap-x-6">
-            <input type="email" label="Business Email" id="bemail" placeholder="Business Email" name="fname"
-              class="form" />
-            <input type="tel" label="Phone Number" id="pnum" placeholder="Phone Number" name="fname" class="form" />
-          </div>
 
-          <input type="text" label="Company Name" id="company" placeholder="Company Name" name="cname" class="form" />
-          <input type="tel" label="Message" id="message" placeholder="Message" name="msg" class="form" />
-        </form>
-        <div class="w-full flex justify-end">
-          <button
-            class="flex justify-center w-1/2 text-white text-base font-medium bg-[#3A50B3] hover:bg-blue-700 rounded-md mt-28 py-4">
-            Send Message
-          </button>
+    <!-- Form Section -->
+    <section class="px-4 md:px-36 py-3 md:py-28 w-full" id="target-section">
+      <div class="flex flex-col md:flex-row w-full">
+        <div
+          class="flex flex-col justify-around md:w-3/5 bg-[#3A50B3] p-3 md:p-20 shadow-md rounded-md"
+        >
+          <h1 class="text-white text-2xl font-['Urbanist'] font-bold">
+            Get in Touch with Us
+          </h1>
+          <h2 class="text-white text-xl font-['Urbanist'] font-bold">
+            to discuss your issues in Wicked Wipes
+          </h2>
+          <div class="w-full md:px-8 py-8 md:pt-24 flex gap-x-6">
+            <img src="/public/bxs_phone-call.svg" alt="" />
+            <div class="flex flex-col w-full">
+              <a href="tel:+12898372547" class="text-white text-lg"
+                >+1 289 837 2547</a
+              >
+              <a href="tel:+12898372548" class="text-white text-lg"
+                >+1 289 837 2548</a
+              >
+            </div>
+          </div>
+          <div class="w-full md:px-8 md:pt-24 flex gap-x-6">
+            <img src="/public/carbon_location-filled.svg" alt="" />
+            <div class="flex flex-col w-full">
+              <p class="text-white text-lg text-nowrap">
+                2030 Bristol Circle, Suite 210,<br />
+                Oakville, ON - L6H 0H2
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col w-full shadow-md rounded-md p-10">
+          <form action="" class="w-full flex flex-col gap-y-6">
+            <div class="flex justify-between w-full gap-x-6">
+              <input
+                type="text"
+                label="First Name"
+                id="fname"
+                placeholder="First Name"
+                name="fname"
+                class="form"
+              />
+              <input
+                type="text"
+                label="Last Name"
+                id="lname"
+                placeholder="Last Name"
+                name="fname"
+                class="form"
+              />
+            </div>
+            <div class="flex justify-between w-full gap-x-6">
+              <input
+                type="email"
+                label="Business Email"
+                id="bemail"
+                placeholder="Business Email"
+                name="fname"
+                class="form"
+              />
+              <input
+                type="tel"
+                label="Phone Number"
+                id="pnum"
+                placeholder="Phone Number"
+                name="fname"
+                class="form"
+              />
+            </div>
+
+            <input
+              type="text"
+              label="Company Name"
+              id="company"
+              placeholder="Company Name"
+              name="cname"
+              class="form"
+            />
+            <input
+              type="tel"
+              label="Message"
+              id="message"
+              placeholder="Message"
+              name="msg"
+              class="form"
+            />
+          </form>
+          <div class="w-full flex justify-end">
+            <button
+              class="flex justify-center w-1/2 text-white text-base font-medium bg-[#3A50B3] hover:bg-blue-700 rounded-md mt-28 py-4"
+            >
+              Send Message
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- Footer Section-->
-  <section>
-        <div class="bg-[#3A50B3] px-4 md:px-16 py-10 flex flex-col md:flex-row justify-between gap-4">
-          <div class="w-full flex gap-x-16 ">
-            <img
-              class="blue-color-icon"
-              loading="lazy"
-              alt=""
-              src="./public/blue-color.svg"
-            />
-            <nav class="w-full flex">
-                <ul class="flex flex-col gap-y-1">
-                    <li><a href="index.html" class="text-white">Wicked Wipes</a></li>
-                    <li><a href="features.html" class="text-white">Features</a></li>
-                    <li><a href="private-label.html" class="text-white">Private Label</a></li>
-                    <li><a href="testimonials.html" class="text-white">Who We are</a></li>
-                </ul>
-            </nav>
-          </div>
-            <div class="flex md:flex-col gap-2">
-              <h1 class="text-white font-['League Spartan'] font-bold text-base">Follow Us</h1>
-              <div class="flex gap-3 items-center">
-                <img src="./public/Fb.svg" class="size-7" alt="fb">
-                <img src="./public/Instagram.svg" class="size-7" alt="fb">
-                <img src="./public/Dribbble.svg" class="size-7" alt="fb">
-                <img src="./public/LinkedIn.svg" class="size-7" alt="fb">
-              </div>
-            </div>
+    </section>
+    <!-- Footer Section-->
+    <section>
+      <div
+        class="bg-[#3A50B3] px-4 md:px-16 py-10 flex flex-col md:flex-row justify-between gap-4"
+      >
+        <div class="w-full flex gap-x-16">
+          <img
+            class="blue-color-icon"
+            loading="lazy"
+            alt=""
+            src="./public/blue-color.svg"
+          />
+          <nav class="w-full flex">
+            <ul class="flex flex-col gap-y-1">
+              <li><a href="index.html" class="text-white">Wicked Wipes</a></li>
+              <li><a href="features.html" class="text-white">Features</a></li>
+              <li>
+                <a href="private-label.html" class="text-white"
+                  >Private Label</a
+                >
+              </li>
+              <li>
+                <a href="testimonials.html" class="text-white">Who We are</a>
+              </li>
+            </ul>
+          </nav>
         </div>
-      </section>
+        <div class="flex md:flex-col gap-2">
+          <h1 class="text-white font-['League Spartan'] font-bold text-base">
+            Follow Us
+          </h1>
+          <div class="flex gap-3 items-center">
+            <img src="./public/Fb.svg" class="size-7" alt="fb" />
+            <img src="./public/Instagram.svg" class="size-7" alt="fb" />
+            <img src="./public/Dribbble.svg" class="size-7" alt="fb" />
+            <img src="./public/LinkedIn.svg" class="size-7" alt="fb" />
+          </div>
+        </div>
+      </div>
+    </section>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();

@@ -39,11 +39,30 @@
 <body>
   <section class="md:px-40 md:py-16 px-4 py-3 flex flex-col items-center  w-full"
     style="background: radial-gradient(circle, #37A3F1 32%, #3A50B3 100%);">
-    <div class="flex w-full items-center gap-y-4 flex-col md:flex-row justify-between">
+    <div class="flex w-full items-center gap-y-4 flex-row justify-between">
       <a href="index.html">
         <img src="./public/blue-color.svg" alt="">
       </a>
-      <nav class="flex items-center justify-center bg-blue-300 rounded-full">
+      <button
+      id="hamburger"
+      class="md:hidden flex items-center justify-center p-2 rounded-full"
+    >
+      <svg
+        class="w-6 h-6 text-white"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16m-7 6h7"
+        ></path>
+      </svg>
+    </button>
+      <nav class="hidden md:flex items-center justify-center bg-blue-300 rounded-full">
         <ul id="menu"
           class="flex  justify-center items-center text-center px-10 gap-x-8 text-white text-xl font-normal ">
           <li>
@@ -60,6 +79,27 @@
           </li>
         </ul>
       </nav>
+          <!-- Mobile Menu Drawer -->
+      <div
+      id="menu-drawer"
+      class="fixed top-0 right-0 h-full w-2/3 bg-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+    >
+      <ul class="flex flex-col p-4 space-y-6 text-black text-xl font-normal">
+        <li>
+          <a href="features.html">Features</a>
+        </li>
+        <li>
+          <a href="private-label.html">Private Label</a>
+        </li>
+        <li>
+          <a href="testimonials.html">Who We are</a>
+        </li>
+        <li>
+          <a href="#target-section">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>  
     </div>
     <div class="flex">
       <div class="flex flex-col mt-96 items-start w-full">
@@ -79,27 +119,29 @@
   <section class="w-full flex flex-col" id="document-heading2">
     <div class="w-full flex flex-col md:flex-row md:px-24 md:py-16 px-4 py-6 gap-x-6 opacity-0" id="document-title">
       <div class="w-full">
-        <h1 class="text-4xl text-nowrap font-['Mitr'] font-medium gradient-text">Stylish single-use <br> hand wipes</h1>
+        <h1 class="text-4xl text-nowrap font-['Mitr'] font-medium gradient-text">
+          Stylish single-use <br> hand wipes
+        </h1>
       </div>
       <div class="flex flex-col w-full">
-        <p class="league-spartan text-xl">The compressed, high-quality cloth hand wipe inside an attractive and compact
-          pod, cleans and refreshes your hands. The unique no-leak design of the sealed, individual pods ensures the
-          single-use wipes are hygienic and safe</p>
         <p class="league-spartan text-xl">
-          So easy and fun to use. Just press firmly in the centre of the pod with your thumb. Feel the seal break and
-          watch as the cloth absorbs the pleasantly scented, natural soap contained within, and unfurls almost magically
-          for use!</p>
+          The compressed, high-quality cloth hand wipe inside an attractive and compact pod, cleans and refreshes your hands...
+        </p>
+        <p class="league-spartan text-xl">
+          So easy and fun to use...
+        </p>
       </div>
-
     </div>
     <div class="w-full h-[700px] my-10">
       <video src="/public/bg-ad.mp4" class="w-full h-full object-cover" type="video/mp4" autoplay muted loop></video>
     </div>
     <div class="flex w-full my-10">
-      <h1 class="px-10 py-10 text-[#acd5ef] font-['Mitr'] text-6xl text-center hover:text-[#3A50B3] font-medium">Let’s
-        make hygiene not only a priority but desirable too!</h1>
+      <h1 class="px-10 py-10 text-[#acd5ef] font-['Mitr'] text-6xl text-center hover:text-[#3A50B3] font-medium">
+        Let’s make hygiene not only a priority but desirable too!
+      </h1>
     </div>
   </section>
+  
 
   <!-- Categories Section -->
 
@@ -148,17 +190,18 @@
       class="flex flex-col justify-center items-center w-full gap-y-10 opacity-0 transition-opacity duration-150 group-hover:opacity-100"
       id="document-title2">
       <div class="flex w-full md:px-10 justify-center">
-        <h1 class="text-[36px] md:text-[78px] concert-one-regular gradient-text font-medium"> Wicked Wipes is a smart
-          <br> choice for your business
+        <h1 class="text-[36px] md:text-[78px] concert-one-regular gradient-text font-medium">
+          Wicked Wipes is a smart <br> choice for your business
         </h1>
       </div>
       <div class="flex w-full md:px-10 justify-center">
-        <p class="text-xl league-spartan font-medium">Elevate your customer experience at your fine dining
-          establishment. Hand hygiene is the primary means of reducing <br> the spread of viruses and bacteria. Your
-          customers will appreciate your commitment to their health and safety! </p>
+        <p class="text-xl league-spartan font-medium">
+          Elevate your customer experience at your fine dining establishment...
+        </p>
       </div>
     </div>
   </section>
+  
   <!-- Image Gallery Section -->
 
   <section class="py-0 md:py-24 relative">
@@ -302,26 +345,61 @@
     AOS.init();
   </script>
   <script>
-    const documentSection = document.getElementById("document-section");
-    const documentHeading = document.getElementById("document-heading");
-    const documentHeading1 = document.getElementById("document-heading1");
-    const documentHeading2 = document.getElementById("document-heading2");
-    const documentTitle = document.getElementById("document-title");
-    const documentTitle1 = document.getElementById("document-title1");
-    const documentTitle2 = document.getElementById("document-title2");
-    documentSection.addEventListener("mouseover", function (e) {
+const documentSection = document.getElementById("document-section");
+const documentHeading = document.getElementById("document-heading");
+const documentHeading1 = document.getElementById("document-heading1");
+const documentHeading2 = document.getElementById("document-heading2");
+const documentTitle = document.getElementById("document-title");
+const documentTitle1 = document.getElementById("document-title1");
+const documentTitle2 = document.getElementById("document-title2");
+
+function applyAnimations() {
+  if (window.innerWidth >= 768) { // Desktop view
+    documentSection.addEventListener("mouseover", function () {
       documentHeading1.classList.add("slide-in-up");
       documentHeading.classList.add("slide-in-left");
     });
-    documentHeading2.addEventListener("mouseover", function (e) {
+    documentHeading2.addEventListener("mouseover", function () {
       documentTitle.classList.remove("opacity-0");
       documentTitle.classList.add("opacity-100");
     });
-    documentTitle1.addEventListener("mouseover", function (e) {
+    documentTitle1.addEventListener("mouseover", function () {
       documentTitle2.classList.add("slide-in-up");
+      documentTitle2.classList.add("opacity-0");
+      documentTitle2.classList.add("opacity-100");
     });
+  } else {
+    // Remove or skip animations for mobile view
+    documentHeading1.classList.remove("slide-in-up");
+    documentHeading.classList.remove("slide-in-left");
+    documentTitle.classList.remove("opacity-0");
+    documentTitle.classList.remove("opacity-100");
+    documentTitle2.classList.remove("slide-in-up");
+    documentTitle2.classList.remove("opacity-0");
+    documentTitle2.classList.remove("opacity-100");
+  }
+}
+
+// Apply animations on page load and resize
+applyAnimations();
+window.addEventListener('resize', applyAnimations);
   </script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const menuDrawer = document.getElementById('menu-drawer');
+  
+    hamburger.addEventListener('click', () => {
+      menuDrawer.classList.toggle('translate-x-full');
+    });
+  
+    // Close the drawer when clicking outside (optional)
+    document.addEventListener('click', (e) => {
+      if (!menuDrawer.contains(e.target) && !hamburger.contains(e.target)) {
+        menuDrawer.classList.add('translate-x-full');
+      }
+    });
+  </script>
   <script>
     var swiper = new Swiper('.swiper-container', {
       slidesPerView: 1, // Default setting for larger screens
@@ -342,7 +420,6 @@
       },
     });
   </script>
-
 </body>
 
 </html>

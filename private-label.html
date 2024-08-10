@@ -57,39 +57,94 @@
     <title>Private Label</title>
   </head>
   <body>
-    <section class="flex flex-col items-center w-full overflow-hidden h-screen py-10 relative">
-      <div class="flex w-full items-center justify-between px-20 pt-10">
-        <a href="index.html"><img src="./public/logo.svg" alt="" /></a>
-        <nav class="flex items-center justify-center rounded-full">
+    <section class="flex flex-col items-center py-10 w-full">
+      <!-- Logo and Navigation -->
+      <div
+        class="flex w-full items-center justify-between px-5 pt-5 md:px-20 md:pt-10"
+      >
+        <a href="index.html">
+          <img src="./public/logo.svg" alt="Logo" class="w-24 md:w-auto" />
+        </a>
+        <nav class="hidden md:flex items-center justify-center rounded-full">
           <ul
             id="menu"
-            class="flex justify-center items-center text-center px-16 gap-x-8 text-[#3A50B3] text-2xl font-medium font-['Baloo']"
+            class="flex flex-col md:flex-row justify-center items-center text-center gap-y-4 md:gap-y-0 md:px-16 md:gap-x-8 text-[#3A50B3] text-lg md:text-2xl font-medium font-['Baloo']"
           >
-            <li>
-              <a href="features.html">Features</a>
-            </li>
-            <li>
-              <a href="private-label.html">Private Label</a>
-            </li>
-            <li>
-              <a href="testimonials.html">Who We are</a>
-            </li>
-            <li>
-              <a href="#target-section">Contact</a>
-            </li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="private-label.html">Private Label</a></li>
+            <li><a href="testimonials.html">Who We are</a></li>
+            <li><a href="#target-section">Contact</a></li>
           </ul>
         </nav>
+        <!-- Mobile Menu Button -->
+        <button id="drawer-button" class="md:hidden p-2 text-[#3A50B3]">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
       </div>
-      <div class="flex justify-end gap-7 items-center w-full px-36">
-        <img src="/public/blue-fb.svg" class="size-7" alt="fb" />
-        <img src="/public/blue-insta.svg" class="size-7" alt="fb" />
-        <img src="/public/blue-linkedin.svg" class="size-7" alt="fb" />
-      </div>
+
+      <!-- Social Media Icons -->
       <div
-        class="flex flex-col w-full h-full items-center justify-between relative"
+        class="flex justify-end md:justify-end gap-4 md:gap-7 items-center w-full px-10 md:px-36 mt-5 md:mt-0"
+      >
+        <img src="/public/blue-fb.svg" class="w-6 md:w-7" alt="Facebook" />
+        <img src="/public/blue-insta.svg" class="w-6 md:w-7" alt="Instagram" />
+        <img
+          src="/public/blue-linkedin.svg"
+          class="w-6 md:w-7"
+          alt="LinkedIn"
+        />
+      </div>
+
+      <!-- Mobile Drawer (hidden by default) -->
+      <div
+        id="drawer"
+        class="fixed top-0 right-0 w-3/4 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out md:hidden z-[100]"
+      >
+        <div class="flex justify-end p-4">
+          <button id="close-drawer" class="text-[#3A50B3]">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <ul class="flex flex-col p-4 space-y-6 text-black text-xl font-normal">
+          <li><a href="features.html" class="py-4">Features</a></li>
+          <li><a href="private-label.html" class="py-4">Private Label</a></li>
+          <li><a href="testimonials.html" class="py-4">Who We are</a></li>
+          <li><a href="#target-section" class="py-4">Contact</a></li>
+        </ul>
+      </div>
+    </section>
+    <section class="w-full">
+      <div
+        class="flex w-full h-[656px] items-center justify-center md:justify-between relative mt-0 md:mt-0"
       >
         <video
-          class="absolute top-0 left-0 w-full h-full object-cover"
+          class="w-full h-full object-cover"
           src="public/private-label.mp4"
           autoplay
           loop
@@ -98,25 +153,32 @@
         ></video>
       </div>
     </section>
-    <section class="w-full flex relative py-20">
+    <section class="flex relative py-20 w-full">
       <div
-      class="w-full flex absolute justify-between gap-x-10 px-24 py-10 items-end bottom-0"
-    >
-      <h1 class="text-5xl text-nowrap font-['Mitr'] font-medium">
-        Make an unforgettable impression <br />
-        with Wicked Wipes
-      </h1>
-      <p
-        class="text-2xl bg-white rounded-lg px-10 py-16 bottom-0 font-medium shadow-lg"
+        class="w-full flex flex-col md:flex-row absolute justidy-center md:justify-between gap-y-6 md:gap-x-10 px-6 md:px-24 py-10 items-end bottom-0"
       >
-        Wow your customers and build your brand’s recall value with our unique
-        hand wipes
-      </p>
-    </div>
+        <h1
+          class="text-lg md:text-5xl font-['Mitr'] font-medium md:whitespace-nowrap"
+        >
+          Make an unforgettable impression <br class="hidden md:block" />
+          with Wicked Wipes
+        </h1>
+        <p
+          class="text-lg md:text-2xl bg-white/80 rounded-[40px] px-6 py-8 md:px-10 md:py-16 font-medium"
+        >
+          Wow your customers and build your brand’s recall value with our unique
+          hand wipes
+        </p>
+      </div>
     </section>
+
     <!-- One of a Kind Section -->
-    <section class="px-28 py-20 w-full" id="document-one">
-      <div class="w-full flex justify-center py-10" id="one-kind">
+    <section class="px-4 py-8 md:px-28 md:py-8" id="document-one">
+      <div
+        class="w-full flex justify-center py-10"
+        data-aos="zoom-in"
+        data-aos-duration="1000"
+      >
         <h1 class="text-[48px] text-[#3A50B3] concert-one-regular font-medium">
           One of a Kind
         </h1>
@@ -126,11 +188,11 @@
         data-aos="zoom-in"
         data-aos-duration="1000"
       >
-        <h2 class="text-xl league-spartan">
+        <h2 class="text-md md:text-xl league-spartan">
           Wicked Wipes will give you an edge over your competition
         </h2>
       </div>
-      <div class="flex flex-col w-full justify-center px-16 py-20">
+      <div class="flex flex-col w-full justify-center px-16 py-16">
         <img
           src="/public/tissue.png"
           alt=""
@@ -144,63 +206,74 @@
       </div>
     </section>
     <!-- WOW Factor Section -->
-    <section class="px-28 py-20 w-full">
-      <div class="flex w-full px-16 justify-center">
-        <h2 class="text-[200px] wow-text text-nowrap">WOW FACTOR</h2>
+    <section class="px-6 md:px-28 py-10 md:py-8 w-full">
+      <div class="flex w-full justify-center pb-10 md:pb-24">
+        <h2 class="text-6xl md:text-[200px] wow-text whitespace-nowrap">
+          WOW FACTOR
+        </h2>
       </div>
 
       <div class="w-full" id="document-section">
         <div
-          class="flex flex-col w-full px-16 gap-y-10 duration-300 ease-in-out opacity-0"
+          class="flex flex-col w-full gap-y-10 duration-300 ease-in-out opacity-0"
           id="document-heading"
         >
-          <div class="flex w-full justify-between gap-x-24">
+          <div
+            class="flex flex-col md:flex-row w-full justify-evenly gap-y-10 md:gap-x-24 px-6 md:px-16"
+          >
             <div
-              class="text-xl bg-blue-300 rounded-full p-8 w-full slide-in-left"
+              class="text-base md:text-xl bg-blue-300 rounded-full p-6 md:p-8 w-full slide-in-left"
             >
               When your guests press the centre of the pod they will experience
               the fun and surprise effect of watching the cloth rise up and
               unfurl.
             </div>
             <div
-              class="flex w-full justify-end slide-in-right delay"
-              id="document-heading1"
+              class="flex w-full justify-center md:justify-center slide-in-right delay"
             >
               <img
                 src="/public/product-1.png"
                 alt=""
-                class="hidden slide-left"
+                class="hidden md:block slide-left"
               />
             </div>
           </div>
-          <div class="flex w-full justify-between gap-x-24">
-            <div class="flex w-full justify-start slide-in-left delay2">
+          <div
+            class="flex flex-col-reverse md:flex-row w-full justify-evenly gap-y-10 md:gap-x-24 px-6 md:px-16"
+          >
+            <div
+              class="flex w-full justify-center md:justify-center slide-in-left delay2"
+            >
               <img
                 src="/public/product-2.png"
                 alt=""
-                class="hidden slide-right"
+                class="hidden md:block slide-right"
               />
             </div>
             <div
-              class="text-xl bg-blue-300 rounded-full p-8 w-full slide-in-right"
+              class="text-base md:text-xl bg-blue-300 rounded-full p-6 md:p-8 w-full slide-in-right"
             >
               They will be pleased to know that the wipes are natural and
               eco-friendly, and a means of reducing the spread of viruses and
               bacteria.
             </div>
           </div>
-          <div class="flex w-full justify-between gap-x-24">
+          <div
+            class="flex flex-col md:flex-row w-full justify-evenly gap-y-10 md:gap-x-24 px-6 md:px-16"
+          >
             <div
-              class="text-xl bg-blue-300 rounded-full p-8 w-full slide-in-left"
+              class="text-base md:text-xl bg-blue-300 rounded-full p-6 md:p-8 w-full slide-in-left"
             >
               These plush and strong cloth hand wipes add charm and delight to
               the whole dining experience.
             </div>
-            <div class="flex w-full justify-end slide-in-right delay3">
+            <div
+              class="flex w-full justify-center md:justify-center slide-in-right delay3"
+            >
               <img
                 src="/public/product-3.png"
                 alt=""
-                class="hidden slide-left"
+                class="hidden md:block slide-left"
               />
             </div>
           </div>
@@ -208,9 +281,12 @@
       </div>
     </section>
     <!-- Gallery Section -->
-    <section class="px-28 py-20 w-full">
-      <div class="w-full px-40 flex justify-center" id="gallery">
-        <h2 class="text-xl text-[#3A50B3] league-spartan text-center" id="gallery-one">
+    <section class="px-4 md:px-28 py-10 md:py-20 w-full">
+      <div class="w-full px-4 md:px-40 flex justify-center" id="gallery">
+        <h2
+          class="text-base md:text-xl text-[#3A50B3] league-spartan text-center"
+          id="gallery-one"
+        >
           Perfect for all areas of the hospitality industry, including
           restaurants, hotels and golf clubs, events and casinos, the pod is
           stylish, surprising and unique and is a successful advertising tool.
@@ -218,111 +294,197 @@
           function and originality.
         </h2>
       </div>
-      <div class="flex w-full justify-center gap-x-10 py-20">
-        <div class="rounded-full h-[450px] w-96 overflow-hidden">
+      <div
+        class="flex flex-wrap md:flex-nowrap w-full justify-center gap-y-10 md:gap-y-0 gap-x-4 md:gap-x-10 py-10 md:py-20"
+      >
+        <div
+          class="rounded-full h-[250px] md:h-[450px] w-64 md:w-96 overflow-hidden"
+        >
           <img src="/public/gallery1.jpg" alt="" class="h-full object-cover" />
         </div>
-        <div class="rounded-full h-[450px] w-96 overflow-hidden">
+        <div
+          class="rounded-full h-[250px] md:h-[450px] w-64 md:w-96 overflow-hidden"
+        >
           <img src="/public/gallery2.jpg" alt="" class="h-full object-cover" />
         </div>
-        <div class="rounded-full h-[450px] w-96 overflow-hidden">
+        <div
+          class="rounded-full h-[250px] md:h-[450px] w-64 md:w-96 overflow-hidden"
+        >
           <img src="/public/gallery3.jpg" alt="" class="h-full object-cover" />
         </div>
         <div
-          class="rounded-[100px] h-[425px] w-6/12 bg-[#F3FC89] overflow-hidden"
+          class="rounded-[100px] h-[225px] md:h-[450px] w-full md:w-6/12 bg-[#F3FC89] overflow-hidden"
         ></div>
-        <div class="rounded-full h-[450px] w-96 overflow-hidden">
+        <div
+          class="rounded-full h-[250px] md:h-[450px] w-64 md:w-96 overflow-hidden"
+        >
           <img src="/public/gallery4.jpg" alt="" class="h-full object-cover" />
         </div>
       </div>
-      <div class="flex p-10 bg-[#F4F9FF] w-full rounded-full justify-center">
-        <h1 class="text-xl font-medium">
+      <div
+        class="flex p-6 md:p-10 bg-[#F4F9FF] w-full rounded-full justify-center"
+      >
+        <h1 class="text-base md:text-xl font-medium text-center">
           Promote and market your business by adding your brand to the pod
         </h1>
       </div>
     </section>
-   <!-- Form Section -->
-  <section class="px-4 md:px-36 py-3 md:py-28 w-full" id="target-section">
-    <div class="flex flex-col md:flex-row w-full">
-      <div class="flex flex-col justify-around md:w-3/5 bg-[#3A50B3] p-3 md:p-20 shadow-md rounded-md">
-        <h1 class="text-white text-2xl font-['Urbanist'] font-bold">
-          Get in Touch with Us
-        </h1>
-        <h2 class="text-white text-xl font-['Urbanist'] font-bold">
-          to discuss your issues in Wicked Wipes
-        </h2>
-        <div class="w-full md:px-8 py-8 md:pt-24 flex gap-x-6">
-          <img src="/public/bxs_phone-call.svg" alt="" />
-          <div class="flex flex-col w-full">
-            <a href="tel:+12898372547" class="text-white text-lg">+1 289 837 2547</a>
-            <a href="tel:+12898372548" class="text-white text-lg">+1 289 837 2548</a>
-          </div>
-        </div>
-        <div class="w-full md:px-8 md:pt-24 flex gap-x-6">
-          <img src="/public/carbon_location-filled.svg" alt="" />
-          <div class="flex flex-col w-full">
-            <p class="text-white text-lg text-nowrap">
-              2030 Bristol Circle, Suite 210,<br />
-              Oakville, ON - L6H 0H2
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="flex flex-col w-full shadow-md rounded-md p-10">
-        <form action="" class="w-full flex flex-col gap-y-6">
-          <div class="flex justify-between w-full gap-x-6">
-            <input type="text" label="First Name" id="fname" placeholder="First Name" name="fname" class="form" />
-            <input type="text" label="Last Name" id="lname" placeholder="Last Name" name="fname" class="form" />
-          </div>
-          <div class="flex justify-between w-full gap-x-6">
-            <input type="email" label="Business Email" id="bemail" placeholder="Business Email" name="fname"
-              class="form" />
-            <input type="tel" label="Phone Number" id="pnum" placeholder="Phone Number" name="fname" class="form" />
-          </div>
 
-          <input type="text" label="Company Name" id="company" placeholder="Company Name" name="cname" class="form" />
-          <input type="tel" label="Message" id="message" placeholder="Message" name="msg" class="form" />
-        </form>
-        <div class="w-full flex justify-end">
-          <button
-            class="flex justify-center w-1/2 text-white text-base font-medium bg-[#3A50B3] hover:bg-blue-700 rounded-md mt-28 py-4">
-            Send Message
-          </button>
+    <!-- Form Section -->
+    <section class="px-4 md:px-36 py-3 md:py-28 w-full" id="target-section">
+      <div class="flex flex-col md:flex-row w-full">
+        <div
+          class="flex flex-col justify-around md:w-3/5 bg-[#3A50B3] p-3 md:p-20 shadow-md rounded-md"
+        >
+          <h1 class="text-white text-2xl font-['Urbanist'] font-bold">
+            Get in Touch with Us
+          </h1>
+          <h2 class="text-white text-xl font-['Urbanist'] font-bold">
+            to discuss your issues in Wicked Wipes
+          </h2>
+          <div class="w-full md:px-8 py-8 md:pt-24 flex gap-x-6">
+            <img src="/public/bxs_phone-call.svg" alt="" />
+            <div class="flex flex-col w-full">
+              <a href="tel:+12898372547" class="text-white text-lg"
+                >+1 289 837 2547</a
+              >
+              <a href="tel:+12898372548" class="text-white text-lg"
+                >+1 289 837 2548</a
+              >
+            </div>
+          </div>
+          <div class="w-full md:px-8 md:pt-24 flex gap-x-6">
+            <img src="/public/carbon_location-filled.svg" alt="" />
+            <div class="flex flex-col w-full">
+              <p class="text-white text-lg text-nowrap">
+                2030 Bristol Circle, Suite 210,<br />
+                Oakville, ON - L6H 0H2
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col w-full shadow-md rounded-md p-10">
+          <form action="" class="w-full flex flex-col gap-y-6">
+            <div class="flex justify-between w-full gap-x-6">
+              <input
+                type="text"
+                label="First Name"
+                id="fname"
+                placeholder="First Name"
+                name="fname"
+                class="form"
+              />
+              <input
+                type="text"
+                label="Last Name"
+                id="lname"
+                placeholder="Last Name"
+                name="fname"
+                class="form"
+              />
+            </div>
+            <div class="flex justify-between w-full gap-x-6">
+              <input
+                type="email"
+                label="Business Email"
+                id="bemail"
+                placeholder="Business Email"
+                name="fname"
+                class="form"
+              />
+              <input
+                type="tel"
+                label="Phone Number"
+                id="pnum"
+                placeholder="Phone Number"
+                name="fname"
+                class="form"
+              />
+            </div>
+
+            <input
+              type="text"
+              label="Company Name"
+              id="company"
+              placeholder="Company Name"
+              name="cname"
+              class="form"
+            />
+            <input
+              type="tel"
+              label="Message"
+              id="message"
+              placeholder="Message"
+              name="msg"
+              class="form"
+            />
+          </form>
+          <div class="w-full flex justify-end">
+            <button
+              class="flex justify-center w-1/2 text-white text-base font-medium bg-[#3A50B3] hover:bg-blue-700 rounded-md mt-28 py-4"
+            >
+              Send Message
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- Footer Section-->
-  <section>
-        <div class="bg-[#3A50B3] px-4 md:px-16 py-10 flex flex-col md:flex-row justify-between gap-4">
-          <div class="w-full flex gap-x-16 ">
-            <img
-              class="blue-color-icon"
-              loading="lazy"
-              alt=""
-              src="./public/blue-color.svg"
-            />
-            <nav class="w-full flex">
-                <ul class="flex flex-col gap-y-1">
-                    <li><a href="index.html" class="text-white">Wicked Wipes</a></li>
-                    <li><a href="features.html" class="text-white">Features</a></li>
-                    <li><a href="private-label.html" class="text-white">Private Label</a></li>
-                    <li><a href="testimonials.html" class="text-white">Who We are</a></li>
-                </ul>
-            </nav>
-          </div>
-            <div class="flex md:flex-col gap-2">
-              <h1 class="text-white font-['League Spartan'] font-bold text-base">Follow Us</h1>
-              <div class="flex gap-3 items-center">
-                <img src="./public/Fb.svg" class="size-7" alt="fb">
-                <img src="./public/Instagram.svg" class="size-7" alt="fb">
-                <img src="./public/Dribbble.svg" class="size-7" alt="fb">
-                <img src="./public/LinkedIn.svg" class="size-7" alt="fb">
-              </div>
-            </div>
+    </section>
+    <!-- Footer Section-->
+    <section>
+      <div
+        class="bg-[#3A50B3] px-4 md:px-16 py-10 flex flex-col md:flex-row justify-between gap-4"
+      >
+        <div class="w-full flex gap-x-16">
+          <img
+            class="blue-color-icon"
+            loading="lazy"
+            alt=""
+            src="./public/blue-color.svg"
+          />
+          <nav class="w-full flex">
+            <ul class="flex flex-col gap-y-1">
+              <li><a href="index.html" class="text-white">Wicked Wipes</a></li>
+              <li><a href="features.html" class="text-white">Features</a></li>
+              <li>
+                <a href="private-label.html" class="text-white"
+                  >Private Label</a
+                >
+              </li>
+              <li>
+                <a href="testimonials.html" class="text-white">Who We are</a>
+              </li>
+            </ul>
+          </nav>
         </div>
-      </section>
+        <div class="flex md:flex-col gap-2">
+          <h1 class="text-white font-['League Spartan'] font-bold text-base">
+            Follow Us
+          </h1>
+          <div class="flex gap-3 items-center">
+            <img src="./public/Fb.svg" class="size-7" alt="fb" />
+            <img src="./public/Instagram.svg" class="size-7" alt="fb" />
+            <img src="./public/Dribbble.svg" class="size-7" alt="fb" />
+            <img src="./public/LinkedIn.svg" class="size-7" alt="fb" />
+          </div>
+        </div>
+      </div>
+    </section>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      document
+        .getElementById("drawer-button")
+        .addEventListener("click", function () {
+          document
+            .getElementById("drawer")
+            .classList.remove("translate-x-full");
+        });
+
+      document
+        .getElementById("close-drawer")
+        .addEventListener("click", function () {
+          document.getElementById("drawer").classList.add("translate-x-full");
+        });
+    </script>
     <script>
       AOS.init();
     </script>
@@ -331,10 +493,10 @@
       const documentOne = document.getElementById("document-one");
       const documentOneHeading = document.getElementById("one-kind");
       const documentHeading = document.getElementById("document-heading");
-      const documentGallery =document.getElementById("gallery");
+      const documentGallery = document.getElementById("gallery");
       const documentGalleryOne = document.getElementById("gallery-one");
 
-      documentGallery.addEventListener("mouseover", function(e){
+      documentGallery.addEventListener("mouseover", function (e) {
         documentGalleryOne.classList.add("slide-in-up");
       });
       documentOne.addEventListener("mouseover", function (e) {
