@@ -35,6 +35,10 @@
       href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <style>
       .form {
         width: 100%;
@@ -46,6 +50,21 @@
       }
       .hovered-design {
         color: #3a50b3; /* Change to the color you want */
+      }
+
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: left;
+        font-size: 18px;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        object-fit: cover;
       }
     </style>
 
@@ -379,111 +398,172 @@
             Wicked Wipes
           </h1>
         </div>
-        <div class="flex flex-col w-full mt-8">
-          <div class="w-full mb-2">
-            <h2
-              class="text-white text-[28px] md:text-[46px] concert-one-regular font-medium"
-            >
-              STEP 1
-            </h2>
-            <div
-              class="p-2 bg-[#C1DFF3] rounded-full my-3 w-2/5 hover:bg-[#97CAEB] transition-colors duration-300"
-            ></div>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <!-- Step 1 -->
+              <div class="flex flex-col w-full mt-8">
+                <div class="w-full mb-2">
+                  <h2
+                    class="text-white text-[28px] concert-one-regular font-medium"
+                  >
+                    STEP 1
+                  </h2>
+                  <div
+                    class="p-2 bg-[#C1DFF3] rounded-full my-3 w-2/5 hover:bg-[#97CAEB] transition-colors duration-300"
+                  ></div>
+                </div>
+                <p
+                  class="text-[18px] font-['Urbanist'] text-white font-black mt-6"
+                >
+                  Place the Wicked Wipes pod on the table. The product is made
+                  up of two parts - the dry compressed cloth hand wipe and the
+                  gentle cleansing formulation. The hand wipe is kept dry to
+                  maintain moisture and freshness.
+                </p>
+                <div class="flex w-full justify-center items-end">
+                  <img
+                    src="./public/white 3.svg"
+                    alt="White 3"
+                    class="h-56 w-56 mt-44"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <!-- Step 2 -->
+              <div class="w-full flex flex-col py-16">
+                <div class="flex flex-col justify-center items-center w-full">
+                  <div class="w-full my-2 flex flex-col justify-center">
+                    <h2
+                      class="text-white text-[28px] md:text-[46px] concert-one-regular font-medium"
+                    >
+                      STEP 2
+                    </h2>
+                    <div
+                      class="p-2 bg-[#C1DFF3] rounded-full my-3 w-2/5 hover:bg-[#97CAEB] transition-colors duration-300"
+                    ></div>
+                  </div>
+                  <p
+                    class="text-[18px] font-['Urbanist'] text-white font-black mt-6"
+                  >
+                    Press down on the centre of the pod to activate the process.
+                    This breaks the seal and allows the cleansing solution to
+                    soak into the dry cloth. Watch as it unfurl
+                  </p>
+                  <div
+                    class="flex flex-col w-9/12 h-[426px] justify-end items-center transition-scale duration-300 relative"
+                    style="
+                      background: radial-gradient(
+                        circle at center,
+                        #37a3f1 1%,
+                        #3a50b3 55%
+                      );
+                    "
+                    id="logo"
+                  >
+                    <img
+                      src="/public/step2.1.png"
+                      alt=""
+                      class="absolute mt-2 top-0"
+                    />
+                    <img
+                      src="./public/Arrow 2.png"
+                      alt=""
+                      class="absolute bottom-28"
+                    />
+                    <img src="/public/step2.2.png" alt="" class="absolute" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <!-- Step 3 -->
+              <div
+                class="flex flex-col justify-center items-center w-full mt-8 md:mt-0"
+              >
+                <div class="w-full my-2 flex flex-col justify-center">
+                  <h2
+                    class="text-white text-[28px] md:text-[46px] concert-one-regular font-normal"
+                  >
+                    STEP 3
+                  </h2>
+                  <div
+                    class="p-2 bg-[#C1DFF3] rounded-full my-3 w-2/5 hover:bg-[#97CAEB] transition-colors duration-300"
+                  ></div>
+                </div>
+                <p
+                  class="text-[18px] font-['Urbanist'] text-white font-black mt-6"
+                >
+                  Pause for just a few seconds to allow the cloth to completely
+                  absorb the cleansing solution. Now it’s ready to use. 
+                </p>
+                <div
+                  class="flex flex-col w-9/12 h-[426px] justify-end items-center transition-scale duration-300 relative"
+                  style="
+                    background: radial-gradient(
+                      circle at center,
+                      #37a3f1 1%,
+                      #3a50b3 55%
+                    );
+                  "
+                  id="logo"
+                >
+                  <img
+                    src="./public/Arrow 1.png"
+                    alt=""
+                    class="absolute bottom-36"
+                  />
+                  <img src="/public/product-2.png" alt="" class="absolute" />
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <!-- Step 4 -->
+              <div
+                class="flex flex-col justify-center items-center w-full md:w-1/3 mt-8 md:mt-0"
+              >
+                <div class="w-full my-2 flex flex-col justify-center">
+                  <h2
+                    class="text-white text-[28px] md:text-[46px] concert-one-regular font-normal"
+                  >
+                    STEP 4
+                  </h2>
+                  <div
+                    class="p-2 bg-[#C1DFF3] rounded-full my-3 w-2/5 hover:bg-[#97CAEB] transition-colors duration-300"
+                  ></div>
+                </div>
+                <p
+                  class="text-[18px] font-['Urbanist'] text-white font-black mt-6"
+                >
+                  Simply wipe your hands with the soft, yet sturdy, cloth to
+                  remove dirt and germs. Experience the immediate cleansing
+                  action and feel confident in reducing the spread of viruses
+                  and bacteria. Enjoy the plush feel of this unique hand wipe. 
+                </p>
+                <div
+                  class="flex w-9/12 h-[426px] justify-center items-center transition-scale duration-300 relative"
+                  style="
+                    background: radial-gradient(
+                      circle at center,
+                      #37a3f1 1%,
+                      #3a50b3 55%
+                    );
+                  "
+                  id="logo"
+                >
+                  <img
+                    src="./public/Arrow 3.png"
+                    alt=""
+                    class="absolute bottom-52 right-0"
+                  />
+                  <img src="/public/product-3.png" alt="" class="absolute" />
+                </div>
+              </div>
+            </div>
           </div>
-          <p class="text-[18px] font-['Urbanist'] text-white font-black mt-6">
-            Place the Wicked Wipes pod on the table. The product is made up of
-            two parts - the dry compressed cloth hand wipe and the gentle
-            cleansing formulation. The hand wipe is kept dry to maintain
-            moisture and freshness.
-          </p>
-          <div
-            class="flex w-full justify-center"
-          >
-            <img src="./public/white 3.svg" alt="White 3" class="h-96 w-96" />
-          </div>
-        </div>
-      </div>
-      <div class="w-full flex flex-col md:flex-row py-16 md:py-28">
-        <!-- Step 2 -->
-        <div
-          class="flex flex-col justify-center items-center w-full"
-          style="
-            background: radial-gradient(
-              circle at center,
-              #37a3f1 1%,
-              #3a50b3 55%
-            );
-          "
-        >
-          <div class="w-full md:w-2/4 my-2 flex flex-col justify-center">
-            <h2
-              class="text-white text-[28px] md:text-[46px] concert-one-regular font-medium"
-            >
-              STEP 2
-            </h2>
-            <div
-              class="p-2 bg-[#C1DFF3] rounded-full my-3 w-2/5 hover:bg-[#97CAEB] transition-colors duration-300"
-            ></div>
-          </div>
-          <div
-            class="flex flex-col w-9/12 md:w-6/12 justify-center transition-scale duration-300 relative"
-            id="logo"
-          >
-            <img src="/public/step2.1.png" alt="" class=" absolute mt-2" />
-            <img src="/public/step2.2.png" alt="" class="" />
-          </div>
-        </div>
-        <div
-          class="flex flex-col justify-center items-center w-full md:w-1/3 mt-8 md:mt-0"
-          style="
-            background: radial-gradient(
-              circle at center,
-              #37a3f1 1%,
-              #3a50b3 55%
-            );
-          "
-        >
-          <div class="w-full md:w-2/4 mb-2">
-            <h2
-              class="text-white text-[28px] md:text-[46px] concert-one-regular font-normal"
-            >
-              STEP 3
-            </h2>
-            <div
-              class="p-2 bg-[#C1DFF3] rounded-full my-3 w-full hover:bg-[#97CAEB]"
-            ></div>
-            <img
-              src="/public/product-2.png"
-              alt=""
-              class="mt-16 md:mt-96 flex justify-end"
-            />
-          </div>
-        </div>
-        <div
-          class="flex flex-col justify-center items-center w-full md:w-1/3 mt-8 md:mt-0"
-          style="
-            background: radial-gradient(
-              circle at center,
-              #37a3f1 1%,
-              #3a50b3 55%
-            );
-          "
-        >
-          <div class="w-full md:w-2/4 mb-2">
-            <h2
-              class="text-white text-2xl md:text-[46px] concert-one-regular font-normal"
-            >
-              STEP 4
-            </h2>
-            <div
-              class="p-2 bg-[#C1DFF3] rounded-full my-3 w-full hover:bg-[#97CAEB]"
-            ></div>
-            <img
-              src="/public/product-3.png"
-              alt=""
-              class="mt-16 md:mt-96 flex md:justify-end"
-            />
-          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
         </div>
       </div>
     </section>
@@ -868,6 +948,16 @@
         playButton.classList.add("hidden");
         round1.classList.add("hidden");
         round2.classList.add("hidden");
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
       });
     </script>
   </body>
