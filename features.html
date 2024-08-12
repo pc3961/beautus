@@ -60,18 +60,18 @@
       <div class="flex flex-col w-full justify-between relative">
         <!-- Play Button -->
         <div
-          class="absolute top-[150px] md:top-[350px] left-1/2 transform -translate-x-1/2 md:left-[780px] z-[100] w-20 h-20 md:w-32 md:h-32"
+          class="hidden md:flex absolute top-[150px] md:top-[350px] left-1/2 transform -translate-x-1/2 md:left-[780px] z-[100] w-20 h-20 md:w-32 md:h-32"
         >
           <img src="/public/play.png" alt="Play Button" id="play-button" />
         </div>
         <!-- Background Overlay -->
         <div
-          class="bg-[#3A50B3] absolute opacity-30 w-full md:w-1/2 h-full"
+          class="hidden md:flex bg-[#3A50B3] absolute opacity-30 w-full md:w-1/2 h-full md:h-full"
           id="bg-overlay"
         ></div>
         <!-- Text Section -->
         <div
-          class="flex flex-col absolute z-[100] top-20 left-8 md:top-56 md:left-32 leading-[30px] md:leading-[50px]"
+          class="hidden md:flex flex-col md:absolute z-[100] md:top-56 md:left-32 leading-[30px] md:leading-[50px]"
           id="video-section1"
         >
           <h2
@@ -87,32 +87,27 @@
         </div>
         <!-- Decorative Circles -->
         <div
-          class="absolute rounded-full w-48 h-48 md:w-96 md:h-96 bg-[#37a3f1] top-20 md:top-56 left-6 md:left-24 blur-2xl opacity-50"
+          class="hidden md:block absolute rounded-full w-48 h-48 md:w-96 md:h-96 bg-[#37a3f1] top-20 md:top-56 left-6 md:left-24 blur-2xl opacity-50"
           id="round-1"
         ></div>
         <div
-          class="absolute rounded-full w-32 h-32 md:w-64 md:h-64 bottom-10 md:bottom-20 left-1/2 transform -translate-x-1/2 md:left-[550px] blur-2xl opacity-50"
+          class="hidden md:block absolute rounded-full w-32 h-32 md:w-64 md:h-64 bottom-10 md:bottom-20 left-1/2 transform -translate-x-1/2 md:left-[550px] blur-2xl opacity-50"
           id="round-2"
         ></div>
-        <!-- Video Background -->
-        <video
-          class="w-full object-cover"
-          src="./public/bg-video.mp4"
-          autoplay
-          loop
-          muted
-        ></video>
+
         <!-- Logo and Navigation -->
-        <div>
+        <div
+          class="hidden md:flex w-full items-center gap-y-4 flex-row justify-between"
+        >
           <a href="index.html">
             <img
               src="/public/blue-color.svg"
-              class="flex absolute top-0 left-8 md:left-24 z-[100] p-6 md:p-10"
+              class="hidden md:block absolute top-0 left-8 md:left-24 z-[100] p-6 md:p-10"
               alt="Logo"
             />
           </a>
           <nav
-            class="flex justify-center items-center rounded-full bg-gray-300 absolute top-4 md:top-0 right-4 md:right-0 m-4 md:m-10"
+            class="hidden md:flex justify-center items-center rounded-full bg-gray-300 absolute top-4 md:top-0 right-4 md:right-0 m-4 md:m-10"
           >
             <ul
               id="menu"
@@ -125,8 +120,57 @@
             </ul>
           </nav>
         </div>
+        <!-- Mobile Version -->
+        <div class="flex md:hidden w-full p-6 justify-between">
+          <a href="index.html">
+            <img src="./public/logo.svg" alt="Logo" class="flex w-24" />
+          </a>
+          <button
+            id="hamburger"
+            class="flex items-center justify-center p-2 rounded-full"
+          >
+            <svg
+              class="w-6 h-6 text-blue-500"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+          <!-- Mobile Menu Drawer -->
+          <div
+            id="menu-drawer"
+            class="fixed top-0 right-0 h-full w-2/3 bg-white transform translate-x-full transition-transform duration-300 ease-in-out z-[100]"
+          >
+            <ul
+              class="flex flex-col p-4 space-y-6 text-black text-xl font-normal"
+            >
+              <li>
+                <a href="features.html">Features</a>
+              </li>
+              <li>
+                <a href="private-label.html">Private Label</a>
+              </li>
+              <li>
+                <a href="testimonials.html">Who We are</a>
+              </li>
+              <li>
+                <a href="#target-section">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
         <!-- Text Section 2 -->
-        <div class="absolute bottom-12 md:bottom-28 left-6 md:left-32">
+        <div
+          class="hidden md:block absolute bottom-12 md:bottom-28 left-6 md:left-32"
+        >
           <h2 class="text-white text-xl md:text-3xl font-bold league-spartan">
             Three components make up the<br class="hidden md:block" />
             complete product:
@@ -143,13 +187,23 @@
             </p>
           </div>
         </div>
+        <!-- Video Background -->
+        <video
+          class="hidden md:block md:w-full md:object-cover"
+          src="./public/bg-video.mp4"
+          autoplay
+          loop
+          muted
+        ></video>
       </div>
     </section>
 
     <!-- Wicked Wipes Design Section -->
     <section class="px-6 py-12 md:px-36 md:py-28 w-full" id="design-section">
       <div class="flex flex-col md:flex-row w-full gap-y-10 md:gap-x-6">
-        <div class="flex flex-col w-full md:gap-y-6 md:bg-[url('/public/white 1.png')] md:bg-cover">
+        <div
+          class="flex flex-col w-full md:gap-y-6 md:bg-[url('/public/white 1.png')] md:bg-cover"
+        >
           <h1
             class="text-4xl md:text-[78px] text-[#97CAEB] font-medium concert-one-regular"
           >
@@ -192,16 +246,16 @@
     </section>
 
     <!-- How to use Wicked Wipes -->
-    <section class="px-4 md:px-36 py-16 md:py-32 bg-[#3A50B3]">
+    <section class="hidden md:block px-4 md:px-36 py-16 md:py-32 bg-[#3A50B3]">
       <div class="flex flex-col md:flex-row w-full">
         <div class="flex flex-col w-full md:gap-y-6">
           <h1
-            class="text-white text-4xl md:text-[78px] concert-one-regular font-medium"
+            class="text-white text-[40px] md:text-[78px] concert-one-regular font-medium"
           >
             How to Use
           </h1>
           <h1
-            class="text-[#97CAEB] text-4xl md:text-[78px] concert-one-regular font-medium"
+            class="text-[#97CAEB] text-[40px] md:text-[78px] concert-one-regular font-medium"
           >
             Wicked Wipes
           </h1>
@@ -209,7 +263,7 @@
         <div class="flex flex-col w-full mt-8 md:mt-0">
           <div class="w-full md:w-2/4 mb-2">
             <h2
-              class="text-white text-2xl md:text-[46px] concert-one-regular font-medium"
+              class="text-white text-[28px] md:text-[46px] concert-one-regular font-medium"
             >
               STEP 1
             </h2>
@@ -239,7 +293,7 @@
         >
           <div class="w-full md:w-2/4 my-2 flex flex-col justify-center">
             <h2
-              class="text-white text-2xl md:text-[46px] concert-one-regular font-normal"
+              class="text-white text-[28px] md:text-[46px] concert-one-regular font-normal"
             >
               STEP 2
             </h2>
@@ -256,17 +310,6 @@
             <img src="/public/step2.2.png" alt="" class="my-2" />
           </div>
         </div>
-        <!-- <div class="flex justify-center items-center w-full md:w-1/3">
-          <div
-            class="hidden md:flex border-2 border-white px-4 rounded-lg w-full justify-center items-center h-[200px]"
-          >
-            <p class="text-sm md:text-xl text-white font-bold text-center">
-              Press down on the centre of the pod to activate the process. This
-              breaks the seal and allows the cleansing solution to soak into the
-              dry cloth. Watch as it unfurls.
-            </p>
-          </div>
-        </div> -->
         <div
           class="flex flex-col justify-center items-center w-full md:w-1/3 mt-8 md:mt-0"
           style="
@@ -279,7 +322,7 @@
         >
           <div class="w-full md:w-2/4 mb-2">
             <h2
-              class="text-white text-2xl md:text-[46px] concert-one-regular font-normal"
+              class="text-white text-[28px] md:text-[46px] concert-one-regular font-normal"
             >
               STEP 3
             </h2>
@@ -321,7 +364,129 @@
         </div>
       </div>
     </section>
-
+    <!-- How to use Wicked Wipes Mobile Version -->
+    <section class="md:hidden block px-10 py-16 md:py-32 bg-[#3A50B3]">
+      <div class="flex flex-col w-full">
+        <div class="flex flex-col w-full md:gap-y-6">
+          <h1
+            class="text-white text-[40px] md:text-[78px] concert-one-regular font-medium"
+          >
+            How to Use
+          </h1>
+          <h1
+            class="text-[#97CAEB] text-[40px] md:text-[78px] concert-one-regular font-medium"
+          >
+            Wicked Wipes
+          </h1>
+        </div>
+        <div class="flex flex-col w-full mt-8">
+          <div class="w-full mb-2">
+            <h2
+              class="text-white text-[28px] md:text-[46px] concert-one-regular font-medium"
+            >
+              STEP 1
+            </h2>
+            <div
+              class="p-2 bg-[#C1DFF3] rounded-full my-3 w-2/5 hover:bg-[#97CAEB] transition-colors duration-300"
+            ></div>
+          </div>
+          <p class="text-[18px] font-['Urbanist'] text-white font-black mt-6">
+            Place the Wicked Wipes pod on the table. The product is made up of
+            two parts - the dry compressed cloth hand wipe and the gentle
+            cleansing formulation. The hand wipe is kept dry to maintain
+            moisture and freshness.
+          </p>
+          <div
+            class="flex w-full justify-center"
+          >
+            <img src="./public/white 3.svg" alt="White 3" class="h-96 w-96" />
+          </div>
+        </div>
+      </div>
+      <div class="w-full flex flex-col md:flex-row py-16 md:py-28">
+        <!-- Step 2 -->
+        <div
+          class="flex flex-col justify-center items-center w-full"
+          style="
+            background: radial-gradient(
+              circle at center,
+              #37a3f1 1%,
+              #3a50b3 55%
+            );
+          "
+        >
+          <div class="w-full md:w-2/4 my-2 flex flex-col justify-center">
+            <h2
+              class="text-white text-[28px] md:text-[46px] concert-one-regular font-medium"
+            >
+              STEP 2
+            </h2>
+            <div
+              class="p-2 bg-[#C1DFF3] rounded-full my-3 w-2/5 hover:bg-[#97CAEB] transition-colors duration-300"
+            ></div>
+          </div>
+          <div
+            class="flex flex-col w-9/12 md:w-6/12 justify-center transition-scale duration-300 relative"
+            id="logo"
+          >
+            <img src="/public/step2.1.png" alt="" class=" absolute mt-2" />
+            <img src="/public/step2.2.png" alt="" class="" />
+          </div>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center w-full md:w-1/3 mt-8 md:mt-0"
+          style="
+            background: radial-gradient(
+              circle at center,
+              #37a3f1 1%,
+              #3a50b3 55%
+            );
+          "
+        >
+          <div class="w-full md:w-2/4 mb-2">
+            <h2
+              class="text-white text-[28px] md:text-[46px] concert-one-regular font-normal"
+            >
+              STEP 3
+            </h2>
+            <div
+              class="p-2 bg-[#C1DFF3] rounded-full my-3 w-full hover:bg-[#97CAEB]"
+            ></div>
+            <img
+              src="/public/product-2.png"
+              alt=""
+              class="mt-16 md:mt-96 flex justify-end"
+            />
+          </div>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center w-full md:w-1/3 mt-8 md:mt-0"
+          style="
+            background: radial-gradient(
+              circle at center,
+              #37a3f1 1%,
+              #3a50b3 55%
+            );
+          "
+        >
+          <div class="w-full md:w-2/4 mb-2">
+            <h2
+              class="text-white text-2xl md:text-[46px] concert-one-regular font-normal"
+            >
+              STEP 4
+            </h2>
+            <div
+              class="p-2 bg-[#C1DFF3] rounded-full my-3 w-full hover:bg-[#97CAEB]"
+            ></div>
+            <img
+              src="/public/product-3.png"
+              alt=""
+              class="mt-16 md:mt-96 flex md:justify-end"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Why use Wicked Wipes Section -->
     <section class="py-10 w-full">
       <!-- Marquee Text Left -->
@@ -330,7 +495,7 @@
         scrollamount="20"
         loop="infinite"
         direction="left"
-        class="wicked-text text-[48px] md:text-[200px] w-full flex justify-center font-bold text-nowrap"
+        class="wicked-text text-[80px] md:text-[200px] w-full flex justify-center font-bold text-nowrap"
       >
         Why use Wicked Wipes
       </marquee>
@@ -338,10 +503,10 @@
       <!-- Marquee Text Right -->
       <marquee
         behavior="scroll"
-        scrollamount="15"
+        scrollamount="20"
         loop="infinite"
         direction="right"
-        class="wicked-text text-[48px] md:text-[200px] w-full flex justify-center font-bold text-nowrap"
+        class="wicked-text text-[80px] md:text-[200px] w-full flex justify-center font-bold text-nowrap"
       >
         Why use Wicked Wipes
       </marquee>
@@ -353,28 +518,29 @@
         <div
           class="flex flex-col md:flex-row w-full justify-center items-center space-y-8 md:space-y-0 md:space-x-8"
         >
-          <div class="w-full flex justify-center md:justify-start">
+          <div class="w-full flex justify-between md:justify-start">
             <div
-              class="bg-[#B5EA72] rounded-full h-40 w-40 md:h-56 md:w-56 flex justify-center items-center slide-in-up"
+              class="text-[28px] md:text-4xl text-[#3a50b3] font-bold md:bg-[#B5EA72] rounded-full md:h-56 md:w-56 flex justify-end md:justify-start items-center slide-in-up text-left md:text-left"
             >
-              <h2
-                class="text-2xl md:text-4xl text-[#3a50b3] font-bold text-center"
-              >
-                Innovative
-              </h2>
+              <h2>Innovative</h2>
             </div>
+            <div
+              class="md:hidden block bg-[#B5EA72] h-20 w-20 rounded-full"
+            ></div>
           </div>
           <div class="slide-in-right">
-            <ul class="list-disc space-y-4">
-              <li class="text-lg md:text-xl">
+            <ul
+              class="md:list-disc space-y-4 font-['Urbanist'] text-[11px] md:text-xl"
+            >
+              <li class="">
                 Sealed individual pods ensure safety and security with no risk
                 of contamination from dirt and germs
               </li>
-              <li class="text-lg md:text-xl">
+              <li class="">
                 Unique no-leak design means the single-use cloths never dry out
                 and are always fresh and moist every single time
               </li>
-              <li class="text-lg md:text-xl">
+              <li class="">
                 Cloths are fully biodegradable, and the pods are recyclable
               </li>
             </ul>
@@ -382,32 +548,42 @@
         </div>
 
         <div
-          class="flex flex-col md:flex-row w-full justify-between items-center pt-16 space-y-8 md:space-y-0 md:space-x-8"
+          class="flex flex-col w-full justify-between items-center pt-16 space-y-8"
         >
+          <div class="md:hidden w-full flex justify-between">
+            <div
+              class="md:hidden block bg-[#97CAEB] h-20 w-20 rounded-full"
+            ></div>
+            <div
+              class="text-[28px] md:text-4xl text-[#3a50b3] font-bold h-40 w-40 flex justify-end slide-in-up text-right text-nowrap"
+            >
+              <h2 class="">Skin-safe <br />Cleaning Solution</h2>
+            </div>
+          </div>
           <div class="w-full slide-in-left">
-            <ul class="list-disc space-y-4">
-              <li class="text-lg md:text-xl">
-                No alcohol, no chemicals, no color additives
-              </li>
-              <li class="text-lg md:text-xl">
-                Complies with health and safety regulations
-              </li>
-              <li class="text-lg md:text-xl">
+            <ul
+              class="md:list-disc space-y-4 font-['Urbanist'] text-[11px] md:text-xl"
+            >
+              <li class="">No alcohol, no chemicals, no color additives</li>
+              <li class="">Complies with health and safety regulations</li>
+              <li class="">
                 Natural and pure, dermatologically tested, hypoallergenic liquid
                 soap
               </li>
-              <li class="text-lg md:text-xl">
+              <li class="">
                 Gentle and moisturizing on hands and safe for all
               </li>
-              <li class="text-lg md:text-xl">
+              <li class="">
                 Hand-woven cellulose cloth hand wipes are soft to the touch yet
                 strong and sturdy for a complete clean-up
               </li>
             </ul>
           </div>
-          <div class="w-full flex justify-center md:justify-end">
+          <div
+            class="md:block hidden w-full flex justify-center md:justify-end"
+          >
             <div
-              class="text-2xl md:text-4xl text-[#3a50b3] font-bold bg-[#97CAEB] rounded-full h-40 w-40 md:h-56 md:w-56 flex justify-center md:justify-end items-center slide-in-up text-center md:text-right"
+              class="text-[28px] md:text-4xl text-[#3a50b3] font-bold bg-[#97CAEB] rounded-full h-40 w-40 md:h-56 md:w-56 flex justify-center md:justify-end items-center slide-in-up text-center md:text-right"
             >
               <h2>Skin-safe <br />Cleaning Solution</h2>
             </div>
@@ -419,27 +595,39 @@
         >
           <div class="w-full flex justify-center md:justify-start">
             <div
-              class="text-2xl md:text-4xl text-[#3a50b3] font-bold bg-[#B5EA72] rounded-full h-40 w-40 md:h-56 md:w-56 flex justify-center md:justify-start items-center slide-in-up text-center md:text-left"
+              class="text-[28px] md:text-4xl text-[#3a50b3] font-bold md:bg-[#B5EA72] rounded-full md:h-56 md:w-56 flex justify-end md:justify-start items-center slide-in-up text-left md:text-left"
             >
               <h2>Environmentally Friendly</h2>
             </div>
+            <div
+              class="md:hidden block bg-[#B5EA72] h-20 w-20 rounded-full"
+            ></div>
           </div>
           <div class="slide-in-right">
-            <ul class="list-disc space-y-4">
-              <li class="text-lg md:text-xl">
-                Cloth hand wipes are botanic and biodegradable
-              </li>
-              <li class="text-lg md:text-xl">
+            <ul
+              class="md:list-disc space-y-4 font-['Urbanist'] text-[11px] md:text-xl"
+            >
+              <li class="">Cloth hand wipes are botanic and biodegradable</li>
+              <li class="">
                 Pods are made from PP5 plastic and are 100% recyclable
               </li>
-              <li class="text-lg md:text-xl">
+              <li class="">
                 Saves Water. Wicked Wipes use only about 5 ml. of cleansing
                 fluid per pod.
               </li>
             </ul>
           </div>
         </div>
-
+        <div class="pt-16 w-full flex justify-between md:justify-end">
+          <div
+            class="md:hidden block bg-[#97CAEB] h-20 w-20 rounded-full"
+          ></div>
+          <div
+            class="text-[28px] md:text-4xl text-[#3a50b3] font-bold h-40 w-40 flex justify-end slide-in-up text-right text-nowrap"
+          >
+            <h2 class="">Natural <br />Fragrances</h2>
+          </div>
+        </div>
         <div
           class="flex flex-col md:flex-row w-full justify-between items-center pt-16 space-y-8 md:space-y-0 md:space-x-8"
         >
@@ -453,33 +641,28 @@
               <img
                 src="./public/green 5.svg"
                 alt="Green 5"
-                class="h-10 w-10 md:h-14 md:w-14"
+                class="h-20 w-20 md:h-40 md:w-40"
               />
               <img
                 src="./public/green 6.svg"
                 alt="Green 6"
-                class="h-10 w-10 md:h-14 md:w-14"
+                class="h-20 w-20 md:h-40 md:w-40"
               />
               <img
                 src="./public/yellow 3.svg"
                 alt="Yellow 3"
-                class="h-10 w-10 md:h-14 md:w-14"
-              />
-              <img
-                src="./public/blue 2.svg"
-                alt="Blue 2"
-                class="h-10 w-10 md:h-14 md:w-14"
+                class="h-20 w-20 md:h-40 md:w-40"
               />
               <img
                 src="./public/white 3.svg"
                 alt="White 3"
-                class="h-10 w-10 md:h-14 md:w-14"
+                class="h-20 w-20 md:h-40 md:w-40"
               />
             </div>
           </div>
-          <div class="w-full flex justify-center md:justify-end">
+          <div class="w-full flex justify-between md:justify-end">
             <div
-              class="text-2xl md:text-4xl text-[#3a50b3] font-bold bg-[#B5EA72] rounded-full h-40 w-40 md:h-48 md:w-48 flex justify-center md:justify-end items-center text-center md:text-right"
+              class="hidden text-2xl md:text-4xl text-[#3a50b3] font-bold bg-[#B5EA72] rounded-full h-40 w-40 md:h-48 md:w-48 md:flex justify-center md:justify-end items-center text-center md:text-right"
             >
               <h2>Natural <br />Fragrances</h2>
             </div>
@@ -630,6 +813,21 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
+    </script>
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const menuDrawer = document.getElementById("menu-drawer");
+
+      hamburger.addEventListener("click", () => {
+        menuDrawer.classList.toggle("translate-x-full");
+      });
+
+      // Close the drawer when clicking outside (optional)
+      document.addEventListener("click", (e) => {
+        if (!menuDrawer.contains(e.target) && !hamburger.contains(e.target)) {
+          menuDrawer.classList.add("translate-x-full");
+        }
+      });
     </script>
     <script>
       const designSection = document.getElementById("design-section");

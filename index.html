@@ -37,81 +37,85 @@
 </head>
 
 <body>
-  <section class="md:px-40 md:py-16 px-4 py-3 flex flex-col items-center  w-full"
-    style="background: radial-gradient(circle, #37A3F1 32%, #3A50B3 100%);">
-    <div class="flex w-full items-center gap-y-4 flex-row justify-between">
-      <a href="index.html">
-        <img src="./public/blue-color.svg" alt="">
-      </a>
-      <button
-      id="hamburger"
-      class="md:hidden flex items-center justify-center p-2 rounded-full"
-    >
-      <svg
-        class="w-6 h-6 text-white"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 12h16m-7 6h7"
-        ></path>
-      </svg>
-    </button>
-      <nav class="hidden md:flex items-center justify-center bg-blue-300 rounded-full">
-        <ul id="menu"
-          class="flex  justify-center items-center text-center px-10 gap-x-8 text-white text-xl font-normal ">
-          <li>
-            <a href="features.html">Features</a>
-          </li>
-          <li>
-            <a href="private-label.html">Private Label</a>
-          </li>
-          <li>
-            <a href="testimonials.html">Who We are</a>
-          </li>
-          <li>
-            <a href="#target-section">Contact</a>
-          </li>
-        </ul>
-      </nav>
-          <!-- Mobile Menu Drawer -->
-      <div
-      id="menu-drawer"
-      class="fixed top-0 right-0 h-full w-2/3 bg-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden"
-    >
-      <ul class="flex flex-col p-4 space-y-6 text-black text-xl font-normal">
-        <li>
-          <a href="features.html">Features</a>
-        </li>
-        <li>
-          <a href="private-label.html">Private Label</a>
-        </li>
-        <li>
-          <a href="testimonials.html">Who We are</a>
-        </li>
-        <li>
-          <a href="#target-section">Contact</a>
-        </li>
-      </ul>
+  <section class="flex flex-col items-center w-full">
+    <div class="w-full relative">
+      <!-- Navbar -->
+        <div class="flex w-full items-center p-16 gap-y-4 flex-row justify-between absolute">
+          <a href="index.html">
+            <img src="./public/blue-color.svg" class="z-[100]" alt="">
+          </a>
+          <button
+          id="hamburger"
+          class="md:hidden flex items-center justify-center p-2 rounded-full"
+        >
+          <svg
+            class="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+          <nav class="hidden md:flex items-center justify-center bg-blue-300 rounded-full z-[100]">
+            <ul id="menu"
+              class="flex  justify-center items-center text-center px-10 gap-x-8 text-white text-xl font-normal ">
+              <li>
+                <a href="features.html">Features</a>
+              </li>
+              <li>
+                <a href="private-label.html">Private Label</a>
+              </li>
+              <li>
+                <a href="testimonials.html">Who We are</a>
+              </li>
+              <li>
+                <a href="#target-section">Contact</a>
+              </li>
+            </ul>
+          </nav>
+              <!-- Mobile Menu Drawer -->
+          <div
+          id="menu-drawer"
+          class="fixed top-0 right-0 h-full w-2/3 bg-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden z-[100]"
+        >
+          <ul class="flex flex-col p-4 space-y-6 text-black text-xl font-normal">
+            <li>
+              <a href="features.html">Features</a>
+            </li>
+            <li>
+              <a href="private-label.html">Private Label</a>
+            </li>
+            <li>
+              <a href="testimonials.html">Who We are</a>
+            </li>
+            <li>
+              <a href="#target-section">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>  
+        <!-- Video Section -->
+      <div class="flex w-full absolute bottom-10 px-16">
+          <div class="flex flex-col pt-96 h-full w-full">
+            <h1 class="text-white text-[40px] concert-one-regular font-normal w-full">Hygienic, Safe, Natural,
+              Environmentally
+              Friendly Wipes</h1>
+            <p class="text-white text-xl font-normal py-5">A creative solution to clean and freshen hands</p>
+          </div>
+          <div class="flex w-full bg-[url('/public/welcome.png')] bg-contain bg-right bg-no-repeat">
+          </div>
+        </div>
+        <video src="./public/landing.mp4" class="object-cover" width="100%" autoplay loop muted></video>
     </div>
-  </div>  
-    </div>
-    <div class="flex">
-      <div class="flex flex-col mt-96 items-start w-full">
-        <h1 class="text-white text-[40px] concert-one-regular font-normal w-full">Hygienic, Safe, Natural,
-          Environmentally
-          Friendly Wipes</h1>
-        <p class="text-white text-xl font-normal py-5">A creative solution to clean and freshen hands</p>
-      </div>
-      <div class="flex">
-        <img src="./public/welcome.png" alt="" class="h-[900px]">
-      </div>
-    </div>
+    
+
   </section>
 
   <!-- Video and Features Section -->
@@ -154,11 +158,8 @@
         <img class="size-20 md:size-48" src="./public/green 5.svg" alt="">
         <img class="size-20 md:size-48" src="./public/green 6.svg" alt="">
         <img class="size-20 md:size-48" src="./public/yellow 3.svg" alt="">
-        <!-- <img class="size-20 md:size-full" src="./public/blue 2.svg" alt=""> -->
         <img class="size-20 md:size-48" src="./public/white 3.svg" alt="">
       </div>
-      <!-- <div class="mx-24 bg-white p-3 w-36 rounded-full flex justify-center items-center">
-        </div> -->
     </div>
     <div class="flex justify-between">
       <div class="flex">
@@ -167,13 +168,6 @@
           COOL
         </h1>
       </div>
-      <!-- <div class="flex relative w-full items-end">
-        <img src="./public/elip.svg" class="absolute h-[500px] bottom-0 right-0 "  alt="">
-        <img src="./public/Ellipse 23.svg" class="absolute top-0 right-0" alt="">
-        <img src="./public/menta 2.svg" class="absolute bottom-64 right-10" alt="">
-        <img src="./public/menta 1.svg" class="absolute w-[503px] h-[432px] top-[-30px] right-90" alt="">
-        <img src="./public/green 3.svg"  class="absolute w-[503px] h-[432px] bottom-0 right-0" alt>
-       </div> -->
       <div class="flex relative w-full items-end">
         <img src="./public/elip.svg" class="absolute h-[250px] md:h-[500px] bottom-0 right-0 " alt="">
         <img src="./public/Ellipse 23.svg" class="hidden md:block absolute top-0 right-0" alt="">
