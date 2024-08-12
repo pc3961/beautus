@@ -405,12 +405,103 @@
     opacity: 1;
   }
 }
+
+@keyframes slideLeftCard25 {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeftCard50 {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(50%);
+    opacity: 1;
+  }
+}
+@keyframes slideLeftCard75 {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(75%);
+    opacity: 1;
+  }
+}
+
+@keyframes slidetostart2 {
+  0% {
+    transform: translateX(50%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slidetostart3 {
+  0% {
+    transform: translateX(75%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideAniVideoCard {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
 .slide-in-up {
   animation: slideInUp 1s ease-in-out forwards;
 }
 .slide-in-left {
   animation: slideInLeft 2s ease-in-out forwards;
 }
+
+.slide-left-cards25 {
+  animation: slideLeftCard25 0.5s ease-in-out forwards;
+}
+
+.slide-left-cards50 {
+  animation: slideLeftCard50 0.5s ease-in-out forwards;
+}
+
+.slide-left-cards75 {
+  animation: slideLeftCard75 0.5s ease-in-out forwards;
+}
+
+.slide-to-start2 {
+  animation: slidetostart2 0.5s ease-in-out forwards;
+}
+
+.slide-to-start3 {
+  animation: slidetostart3 0.5s ease-in-out forwards;
+}
+
+.document-ani-video-card {
+  animation: slideAniVideoCard 0.5s ease-in-out forwards;
+}
+
 .slide-in-right {
   animation: slideInRight 2s ease-in-out forwards;
 }
@@ -445,7 +536,7 @@
     opacity: 0;
   }
   to {
-    transform: translateX(0);
+    transform: translateX(20%);
     opacity: 1;
   }
 }

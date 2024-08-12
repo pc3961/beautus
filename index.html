@@ -40,51 +40,36 @@
   <section class="flex flex-col items-center w-full">
     <div class="w-full relative">
       <!-- Navbar -->
-        <div class="flex w-full items-center p-16 gap-y-4 flex-row justify-between absolute">
-          <a href="index.html">
-            <img src="./public/blue-color.svg" class="z-[100]" alt="">
-          </a>
-          <button
-          id="hamburger"
-          class="md:hidden flex items-center justify-center p-2 rounded-full"
-        >
-          <svg
-            class="w-6 h-6 text-white"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16m-7 6h7"
-            ></path>
+      <div class="flex w-full items-center p-16 gap-y-4 flex-row justify-between absolute">
+        <a href="index.html">
+          <img src="./public/blue-color.svg" class="z-[100]" alt="">
+        </a>
+        <button id="hamburger" class="md:hidden flex items-center justify-center p-2 rounded-full">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
           </svg>
         </button>
-          <nav class="hidden md:flex items-center justify-center bg-blue-300 rounded-full z-[100]">
-            <ul id="menu"
-              class="flex  justify-center items-center text-center px-10 gap-x-8 text-white text-xl font-normal ">
-              <li>
-                <a href="features.html">Features</a>
-              </li>
-              <li>
-                <a href="private-label.html">Private Label</a>
-              </li>
-              <li>
-                <a href="testimonials.html">Who We are</a>
-              </li>
-              <li>
-                <a href="#target-section">Contact</a>
-              </li>
-            </ul>
-          </nav>
-              <!-- Mobile Menu Drawer -->
-          <div
-          id="menu-drawer"
-          class="fixed top-0 right-0 h-full w-2/3 bg-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden z-[100]"
-        >
+        <nav class="hidden md:flex items-center justify-center bg-blue-300 rounded-full z-[100]">
+          <ul id="menu"
+            class="flex  justify-center items-center text-center px-10 gap-x-8 text-white text-xl font-normal ">
+            <li>
+              <a href="features.html">Features</a>
+            </li>
+            <li>
+              <a href="private-label.html">Private Label</a>
+            </li>
+            <li>
+              <a href="testimonials.html">Who We are</a>
+            </li>
+            <li>
+              <a href="#target-section">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <!-- Mobile Menu Drawer -->
+        <div id="menu-drawer"
+          class="fixed top-0 right-0 h-full w-2/3 bg-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden z-[100]">
           <ul class="flex flex-col p-4 space-y-6 text-black text-xl font-normal">
             <li>
               <a href="features.html">Features</a>
@@ -100,21 +85,21 @@
             </li>
           </ul>
         </div>
-      </div>  
-        <!-- Video Section -->
+      </div>
+      <!-- Video Section -->
       <div class="flex w-full absolute bottom-10 px-16">
-          <div class="flex flex-col pt-96 h-full w-full">
-            <h1 class="text-white text-[40px] concert-one-regular font-normal w-full">Hygienic, Safe, Natural,
-              Environmentally
-              Friendly Wipes</h1>
-            <p class="text-white text-xl font-normal py-5">A creative solution to clean and freshen hands</p>
-          </div>
-          <div class="flex w-full bg-[url('/public/welcome.png')] bg-contain bg-right bg-no-repeat">
-          </div>
+        <div class="flex flex-col pt-96 h-full w-full">
+          <h1 class="text-white text-[40px] concert-one-regular font-normal w-full">Hygienic, Safe, Natural,
+            Environmentally
+            Friendly Wipes</h1>
+          <p class="text-white text-xl font-normal py-5">A creative solution to clean and freshen hands</p>
         </div>
-        <video src="./public/landing.mp4" class="object-cover" width="100%" autoplay loop muted></video>
+        <div class="flex w-full bg-[url('/public/welcome.png')] bg-contain bg-right bg-no-repeat">
+        </div>
+      </div>
+      <video src="./public/landing.mp4" class="object-cover" width="100%" autoplay loop muted></video>
     </div>
-    
+
 
   </section>
 
@@ -129,13 +114,66 @@
       </div>
       <div class="flex flex-col w-full">
         <p class="league-spartan text-xl">
-          The compressed, high-quality cloth hand wipe inside an attractive and compact pod, cleans and refreshes your hands...
+          The compressed, high-quality cloth hand wipe inside an attractive and compact pod, cleans and refreshes your
+          hands...
         </p>
         <p class="league-spartan text-xl">
           So easy and fun to use...
         </p>
       </div>
     </div>
+
+    <div class="md:flex justify-around mx-4">
+      <div class="">
+        <div id="document-sliding-cards25"
+          class="flex gap-4 justify-center items-start p-6 shadow-xl rounded-3xl font-['Baloo'] md:w-[500px] my-8">
+          <img src="./public/water-drop.png" alt="">
+          <div>
+            <h2 class="text-bold text-2xl text-blue-600">Natural</h2>
+            <p class="league-spartan">Wicked Wipes use only about 5 ml. of cleansing fluid per pod. Washing hands
+              requires
+              on average
+              1.5 litres of water.</p>
+          </div>
+        </div>
+        <div id="document-sliding-cards50"
+          class="flex gap-4 justify-center items-start p-6 shadow-xl rounded-3xl font-['Baloo'] md:w-[500px] md:opacity-0 my-8">
+          <img src="./public/leaf.png" alt="">
+          <div>
+            <h2 class="text-bold text-2xl text-blue-600">Biodegradable</h2>
+            <p class="league-spartan">Well-made, soft, yet hardy cellulose hand wipes are designed to biodegrade
+              naturally</p>
+          </div>
+        </div>
+        <div id="document-sliding-cards75"
+          class="flex gap-4 justify-center items-start p-6 shadow-xl rounded-3xl font-['Baloo'] md:w-[500px] md:opacity-0 my-8">
+          <img src="./public/recycle.png" alt="">
+          <div>
+            <h2 class="text-bold text-2xl text-blue-600">Recyclable</h2>
+            <p class="league-spartan">The pod is made from high quality PP / 05 raw material which is 100% recyclable.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="document-ani-video-card" class=" md:opacity-0">
+        <div class="relative w-full max-w-xl overflow-hidden shadow-xl rounded-3xl z-100">
+          <video src="./public/animation-video.mp4" class="w-full transform transition-transform scale-125 "
+            type="video/mp4" autoplay muted loop></video>
+        </div>
+        <div class="flex flex-col justify-center items-center">
+          <button class="font-['Baloo'] px-10 text-white text-lg font-medium bg-[#3A50B3] rounded-full mt-6 py-2">
+            LEARN MORE
+          </button>
+          <p class="text-lg text-[#7DB1E7] font-bold">About Wicked Wipes</p>
+        </div>
+      </div>
+      <!-- <div>
+        <video src="./public/animation-video.mp4"
+          class="object-cover shadow-xl rounded-3xl m-[11rem] h-[500px] w-[500px]" type="video/mp4" autoplay muted
+          loop></video>
+      </div> -->
+    </div>
+
     <div class="w-full h-[700px] my-10">
       <video src="/public/bg-ad.mp4" class="w-full h-full object-cover" type="video/mp4" autoplay muted loop></video>
     </div>
@@ -145,7 +183,7 @@
       </h1>
     </div>
   </section>
-  
+
 
   <!-- Categories Section -->
 
@@ -195,7 +233,7 @@
       </div>
     </div>
   </section>
-  
+
   <!-- Image Gallery Section -->
 
   <section class="py-0 md:py-24 relative">
@@ -203,27 +241,27 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="image-container">
-            <img src="/public/showcase-1.jpg" class="h-full" alt="">
+            <img src="./public/showcase-1.jpg" class="h-full" alt="">
           </div>
         </div>
         <div class="swiper-slide">
           <div class="image-container">
-            <img src="/public/showcase-2.png" class="h-full" alt="">
+            <img src="./public/showcase-2.png" class="h-full" alt="">
           </div>
         </div>
         <div class="swiper-slide">
           <div class="image-container">
-            <img src="/public/showcase-3.png" class="h-full" alt="">
+            <img src="./public/showcase-3.png" class="h-full" alt="">
           </div>
         </div>
         <div class="swiper-slide">
           <div class="image-container">
-            <img src="/public/showcase-4.jpg" class="h-full" alt="">
+            <img src="./public/showcase-4.jpg" class="h-full" alt="">
           </div>
         </div>
         <div class="swiper-slide">
           <div class="image-container">
-            <img src="/public/showcase-5.jpg" class="h-full" alt="">
+            <img src="./public/showcase-5.jpg" class="h-full" alt="">
           </div>
         </div>
       </div>
@@ -335,58 +373,93 @@
       </div>
     </div>
   </section>
-  <script>
+  <!-- <script>
     AOS.init();
-  </script>
+  </script> -->
   <script>
-const documentSection = document.getElementById("document-section");
-const documentHeading = document.getElementById("document-heading");
-const documentHeading1 = document.getElementById("document-heading1");
-const documentHeading2 = document.getElementById("document-heading2");
-const documentTitle = document.getElementById("document-title");
-const documentTitle1 = document.getElementById("document-title1");
-const documentTitle2 = document.getElementById("document-title2");
+    const documentSection = document.getElementById("document-section");
+    const documentHeading = document.getElementById("document-heading");
+    const documentHeading1 = document.getElementById("document-heading1");
+    const documentHeading2 = document.getElementById("document-heading2");
+    const documentTitle = document.getElementById("document-title");
+    const documentTitle1 = document.getElementById("document-title1");
+    const documentTitle2 = document.getElementById("document-title2");
+    const documentSlidingCards25 = document.getElementById("document-sliding-cards25");
+    const documentSlidingCards50 = document.getElementById("document-sliding-cards50");
+    const documentSlidingCards75 = document.getElementById("document-sliding-cards75");
+    const documentAniVideoCard = document.getElementById("document-ani-video-card");
 
-function applyAnimations() {
-  if (window.innerWidth >= 768) { // Desktop view
-    documentSection.addEventListener("mouseover", function () {
-      documentHeading1.classList.add("slide-in-up");
-      documentHeading.classList.add("slide-in-left");
-    });
-    documentHeading2.addEventListener("mouseover", function () {
-      documentTitle.classList.remove("opacity-0");
-      documentTitle.classList.add("opacity-100");
-    });
-    documentTitle1.addEventListener("mouseover", function () {
-      documentTitle2.classList.add("slide-in-up");
-      documentTitle2.classList.add("opacity-0");
-      documentTitle2.classList.add("opacity-100");
-    });
-  } else {
-    // Remove or skip animations for mobile view
-    documentHeading1.classList.remove("slide-in-up");
-    documentHeading.classList.remove("slide-in-left");
-    documentTitle.classList.remove("opacity-0");
-    documentTitle.classList.remove("opacity-100");
-    documentTitle2.classList.remove("slide-in-up");
-    documentTitle2.classList.remove("opacity-0");
-    documentTitle2.classList.remove("opacity-100");
-  }
-}
+    function applyAnimations() {
+      if (window.innerWidth >= 768) { // Desktop view
+        documentSection.addEventListener("mouseover", function () {
+          documentHeading1.classList.add("slide-in-up");
+          documentHeading.classList.add("slide-in-left");
+        });
+        documentHeading2.addEventListener("mouseover", function () {
+          documentTitle.classList.remove("opacity-0");
+          documentTitle.classList.add("opacity-100");
+        });
+        documentTitle1.addEventListener("mouseover", function () {
+          documentTitle2.classList.add("slide-in-up");
+          documentTitle2.classList.add("opacity-0");
+          documentTitle2.classList.add("opacity-100");
+        });
+        // documentSlidingCards.classList.add("slide-in-left");
 
-// Apply animations on page load and resize
-applyAnimations();
-window.addEventListener('resize', applyAnimations);
+        // IntersectionObserver to animate documentSlidingCards on scroll
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              documentSlidingCards25.classList.add("slide-left-cards25");
+              // documentSlidingCards50.classList.add("slide-left-cards50");
+            }
+          });
+        });
+
+        observer.observe(documentSlidingCards25);
+
+        documentSlidingCards25.addEventListener('animationend', function () {
+          documentSlidingCards50.classList.add('slide-left-cards50');
+        });
+        documentSlidingCards50.addEventListener('animationend', function () {
+          documentSlidingCards75.classList.add('slide-left-cards75');
+        });
+
+
+        documentSlidingCards75.addEventListener('animationend', function () {
+          documentSlidingCards50.classList.add('slide-to-start2');
+          documentSlidingCards75.classList.add('slide-to-start3');
+          documentAniVideoCard.classList.add('document-ani-video-card');
+        });
+        // documentSlidingCards75.addEventListener('animationend', function () {
+        // });
+
+        // observer.observe(documentSlidingCards50);
+      } else {
+        // Remove or skip animations for mobile view
+        documentHeading1.classList.remove("slide-in-up");
+        documentHeading.classList.remove("slide-in-left");
+        documentTitle.classList.remove("opacity-0");
+        documentTitle.classList.remove("opacity-100");
+        documentTitle2.classList.remove("slide-in-up");
+        documentTitle2.classList.remove("opacity-0");
+        documentTitle2.classList.remove("opacity-100");
+      }
+    }
+
+    // Apply animations on page load and resize
+    applyAnimations();
+    window.addEventListener('resize', applyAnimations);
   </script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
     const hamburger = document.getElementById('hamburger');
     const menuDrawer = document.getElementById('menu-drawer');
-  
+
     hamburger.addEventListener('click', () => {
       menuDrawer.classList.toggle('translate-x-full');
     });
-  
+
     // Close the drawer when clicking outside (optional)
     document.addEventListener('click', (e) => {
       if (!menuDrawer.contains(e.target) && !hamburger.contains(e.target)) {
