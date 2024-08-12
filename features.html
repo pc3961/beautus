@@ -66,6 +66,9 @@
       .swiper-slide img {
         object-fit: cover;
       }
+      #features-details {
+        transition: opacity 1s ease-in-out;
+      }
     </style>
 
     <title>Features | Wicked Wipes</title>
@@ -605,7 +608,7 @@
               <h2>Innovative</h2>
             </div>
             <div
-              class="md:hidden block bg-[#B5EA72] h-20 w-20 rounded-full"
+              class="md:hidden block bg-[#B5EA72] h-20 w-20 rounded-full slide-in-up"
             ></div>
           </div>
           <div class="slide-in-right">
@@ -628,19 +631,19 @@
         </div>
 
         <div
-          class="flex flex-col w-full justify-between items-center pt-16 space-y-8"
+          class="md:flex w-full justify-between items-center pt-16 space-y-8"
         >
           <div class="md:hidden w-full flex justify-between">
             <div
-              class="md:hidden block bg-[#97CAEB] h-20 w-20 rounded-full"
+              class="bg-[#97CAEB] h-20 w-20 rounded-full"
             ></div>
             <div
-              class="text-[28px] md:text-4xl text-[#3a50b3] font-bold h-40 w-40 flex justify-end slide-in-up text-right text-nowrap"
+              class="text-[28px] text-[#3a50b3] font-bold h-40 w-40 flex justify-end slide-in-up text-right text-nowrap"
             >
               <h2 class="">Skin-safe <br />Cleaning Solution</h2>
             </div>
           </div>
-          <div class="w-full slide-in-left">
+          <div class="flex w-full slide-in-left">
             <ul
               class="md:list-disc space-y-4 font-['Urbanist'] text-[11px] md:text-xl"
             >
@@ -660,10 +663,10 @@
             </ul>
           </div>
           <div
-            class="md:block hidden w-full flex justify-center md:justify-end"
+            class="hidden md:flex justify-end"
           >
             <div
-              class="text-[28px] md:text-4xl text-[#3a50b3] font-bold bg-[#97CAEB] rounded-full h-40 w-40 md:h-56 md:w-56 flex justify-center md:justify-end items-center slide-in-up text-center md:text-right"
+              class="text-[28px] md:text-4xl text-[#3a50b3] font-bold bg-[#97CAEB] rounded-full h-40 w-40 md:h-56 md:w-56 flex justify-end items-center slide-in-up text-right"
             >
               <h2>Skin-safe <br />Cleaning Solution</h2>
             </div>
@@ -698,9 +701,9 @@
             </ul>
           </div>
         </div>
-        <div class="pt-16 w-full flex justify-between md:justify-end">
+        <div class="md:hidden block pt-16 w-full flex justify-between md:justify-end">
           <div
-            class="md:hidden block bg-[#97CAEB] h-20 w-20 rounded-full"
+            class="bg-[#97CAEB] h-20 w-20 rounded-full"
           ></div>
           <div
             class="text-[28px] md:text-4xl text-[#3a50b3] font-bold h-40 w-40 flex justify-end slide-in-up text-right text-nowrap"
@@ -915,17 +918,33 @@
       const videoHeading = document.getElementById("video-heading");
       const videoSection = document.getElementById("video-section");
       const features = document.getElementById("features");
-      const featuresDetails = document.getElementById("features-details");
+      // const featuresDetails = document.getElementById("features-details");
       videoHeading.addEventListener("mouseover", function (e) {
         videoSection.classList.add("slide-left");
       });
       designSection.addEventListener("mouseover", function () {
         designHeading.classList.add("text-[#3A50B3]");
       });
-      features.addEventListener("mouseover", function () {
-        featuresDetails.classList.remove("opacity-0");
-        featuresDetails.classList.add("opacity-100");
+
+      const featuresDetails = document.getElementById("features-details");
+
+      // Function to handle intersection
+      function handleIntersection(entries) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            featuresDetails.classList.remove("opacity-0");
+            featuresDetails.classList.add("opacity-100");
+          }
+        });
+      }
+
+      // Create an Intersection Observer
+      const observer = new IntersectionObserver(handleIntersection, {
+        threshold: 0.1, // Trigger when 10% of the section is visible
       });
+
+      // Observe the section
+      observer.observe(featuresDetails);
     </script>
     <script>
       const Step2 = document.getElementById("step-2");
@@ -959,6 +978,10 @@
           prevEl: ".swiper-button-prev",
         },
       });
+      // features.addEventListener("mouseover", function () {
+      //   featuresDetails.classList.remove("opacity-0");
+      //   featuresDetails.classList.add("opacity-100");
+      // });
     </script>
   </body>
 </html>
