@@ -96,14 +96,10 @@
           class="flex flex-col absolute z-[100] top-56 left-32 leading-[50px]"
           id="video-section1"
         >
-          <h2
-            class="text-[48px] text-[#97CAEB] font-['Mitr'] font-medium"
-          >
+          <h2 class="text-[48px] text-[#97CAEB] font-['Mitr'] font-medium">
             An elegant way to
           </h2>
-          <h2
-            class="text-[68px] concert-one-regular font-medium text-white"
-          >
+          <h2 class="text-[68px] concert-one-regular font-medium text-white">
             cleanse your hands
           </h2>
         </div>
@@ -313,23 +309,32 @@
             );
           "
         >
-          <div class="w-full md:w-2/4 my-2 flex flex-col justify-center">
+          <div class="w-2/4 mb-8 flex flex-col justify-center relative">
             <h2
               class="text-white text-[28px] md:text-[46px] concert-one-regular font-normal"
             >
               STEP 2
             </h2>
             <div
-              class="p-2 bg-[#C1DFF3] rounded-full my-3 w-full hover:bg-[#97CAEB] transition-scale duration-300"
+              class="h-5 bg-[#C1DFF3] rounded-full my-3 w-full hover:bg-[#97CAEB]"
               id="step-2"
             ></div>
           </div>
           <div
-            class="flex flex-col w-9/12 md:w-6/12 justify-center transition-scale duration-300"
+            class="flex flex-col w-6/12 justify-center items-center transition-scale duration-300 relative"
             id="logo"
           >
-            <img src="/public/step2.1.png" alt="" class="my-2" />
-            <img src="/public/step2.2.png" alt="" class="my-2" />
+            <img src="./public/Arrow 2.png" alt="" class="absolute size-24" id="arrow"/>
+            <img
+              src="/public/step2.1.png"
+              alt=""
+              class="bg-transparent size-42"
+            />
+            <img
+              src="/public/step2.2.png"
+              alt=""
+              class="bg-transparent size-32"
+            />
           </div>
         </div>
         <div
@@ -634,9 +639,7 @@
           class="md:flex w-full justify-between items-center pt-16 space-y-8"
         >
           <div class="md:hidden w-full flex justify-between">
-            <div
-              class="bg-[#97CAEB] h-20 w-20 rounded-full"
-            ></div>
+            <div class="bg-[#97CAEB] h-20 w-20 rounded-full"></div>
             <div
               class="text-[28px] text-[#3a50b3] font-bold h-40 w-40 flex justify-end slide-in-up text-right text-nowrap"
             >
@@ -662,9 +665,7 @@
               </li>
             </ul>
           </div>
-          <div
-            class="hidden md:w-full md:flex justify-end"
-          >
+          <div class="hidden md:w-full md:flex justify-end">
             <div
               class="text-[28px] md:text-4xl text-[#3a50b3] font-bold bg-[#97CAEB] rounded-full h-40 w-40 md:h-56 md:w-56 flex justify-end items-center slide-in-up text-right"
             >
@@ -701,10 +702,10 @@
             </ul>
           </div>
         </div>
-        <div class="md:hidden block pt-16 w-full flex justify-between md:justify-end">
-          <div
-            class="bg-[#97CAEB] h-20 w-20 rounded-full"
-          ></div>
+        <div
+          class="md:hidden block pt-16 w-full flex justify-between md:justify-end"
+        >
+          <div class="bg-[#97CAEB] h-20 w-20 rounded-full"></div>
           <div
             class="text-[28px] md:text-4xl text-[#3a50b3] font-bold h-40 w-40 flex justify-end slide-in-up text-right text-nowrap"
           >
@@ -948,12 +949,16 @@
     <script>
       const Step2 = document.getElementById("step-2");
       const Logo = document.getElementById("logo");
+      const Arrow = document.getElementById("arrow");
 
       Step2.addEventListener("mouseover", function () {
-        Logo.classList.add("scale-150");
+        Logo.classList.add("scale-125");
+        Arrow.classList.add("slide-in-down");
       });
       Step2.addEventListener("mouseout", function (e) {
-        Logo.classList.remove("scale-150");
+        Logo.classList.remove("scale-125");
+        Arrow.classList.add("slide-in-down");
+
       });
       const playButton = document.getElementById("play-button");
       const videoSection1 = document.getElementById("video-section1");

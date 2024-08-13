@@ -97,7 +97,7 @@
         <div class="hidden w-full bg-[url('/public/welcome.png')] bg-contain bg-right bg-no-repeat" id="welcomeDiv">
         </div>
       </div>
-      <video id="videoPlayer" src="./public/landing.mp4" class="object-cover h-[900px] md:h-full " width="100%" autoplay loop muted></video>
+      <video id="videoPlayer" src="./public/landing.mp4" class="object-cover h-[900px] md:h-full " width="100%" loop muted></video>
     </div>
   </section>
 
@@ -371,24 +371,22 @@
       </div>
     </div>
   </section>
+  <!-- Welcome Banner Video Logic -->
   <script>
   document.addEventListener('DOMContentLoaded', function () {
     const gradient = document.getElementById('gradient');
     const welcomeDiv = document.getElementById('welcomeDiv');
     const videoPlayer = document.getElementById('videoPlayer');
-
-    // Initially show the gradient and the welcome div
+    videoPlayer.classList.add('opacity-0');
     gradient.classList.add('bg-radial-gradient');
     welcomeDiv.classList.remove('hidden');
       setTimeout(() => {
-        gradient.classList.remove('bg-radial-gradient');
         welcomeDiv.classList.add('hidden');
-
-        // Add a delay before playing the video
+        videoPlayer.classList.add('opacity-100');
         setTimeout(() => {
             videoPlayer.play();
             console.log("working");
-        }, 2000);  
+        });  
     },2000); 
 });
   </script>

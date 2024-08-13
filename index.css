@@ -405,6 +405,16 @@
     opacity: 1;
   }
 }
+@keyframes slideInDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 @keyframes slideLeftCard25 {
   0% {
@@ -473,6 +483,9 @@
 
 .slide-in-up {
   animation: slideInUp 1s ease-in-out forwards;
+}
+.slide-in-down {
+  animation: slideInDown 1s ease-in-out forwards;
 }
 .slide-in-left {
   animation: slideInLeft 2s ease-in-out forwards;
