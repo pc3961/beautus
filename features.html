@@ -76,24 +76,24 @@
   <body>
     <!-- Video Banner Section -->
     <section
-      class="hidden md:flex flex-col items-center w-full h-full"
+      class="flex flex-col items-center w-full h-full"
       id="video-heading"
     >
-      <div class="flex flex-col w-full justify-between relative">
+      <div class="flex flex-col w-full h-[900px] md:h-full justify-between relative">
         <!-- Play Button -->
         <div
-          class="flex absolute top-[350px] left-1/2 transform -translate-x-1/2 left-[780px] z-[100] w-20 h-20 w-32 h-32"
+          class="hidden md:flex absolute top-[350px] left-1/2 transform -translate-x-1/2 left-[780px] z-[100] w-20 h-20 w-32 h-32"
         >
           <img src="/public/play.png" alt="Play Button" id="play-button" />
         </div>
         <!-- Background Overlay -->
         <div
-          class="flex bg-[#3A50B3] absolute opacity-30 w-1/2 h-full"
+          class="hidden md:flex bg-[#3A50B3] absolute opacity-30 w-1/2 h-full"
           id="bg-overlay"
         ></div>
         <!-- Text Section -->
         <div
-          class="flex flex-col absolute z-[100] top-56 left-32 leading-[50px]"
+          class="hidden md:flex flex-col absolute z-[100] top-56 left-32 leading-[50px]"
           id="video-section1"
         >
           <h2 class="text-[48px] text-[#97CAEB] font-['Mitr'] font-medium">
@@ -105,11 +105,11 @@
         </div>
         <!-- Decorative Circles -->
         <div
-          class="block absolute rounded-full w-96 h-96 bg-[#37a3f1] top-56 left-24 blur-2xl opacity-50"
+          class="hidden md:block absolute rounded-full w-96 h-96 bg-[#37a3f1] top-56 left-24 blur-2xl opacity-50"
           id="round-1"
         ></div>
         <div
-          class="block absolute rounded-full w-64 h-64 bottom-10 bottom-20 left-1/2 transform -translate-x-1/2 left-[550px] blur-2xl opacity-50"
+          class="hidden md:block absolute rounded-full w-64 h-64 bottom-10 bottom-20 left-1/2 transform -translate-x-1/2 left-[550px] blur-2xl opacity-50"
           id="round-2"
         ></div>
 
@@ -207,8 +207,9 @@
         </div>
         <!-- Video Background -->
         <video
-          class="hidden md:block md:w-full md:object-cover"
+          class="object-cover h-[800px] md:h-full"
           src="./public/bg-video.mp4"
+          width="100%"
           autoplay
           loop
           muted
