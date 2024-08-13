@@ -76,44 +76,40 @@
   <body>
     <!-- Video Banner Section -->
     <section
-      class="flex flex-col items-center w-full h-full"
+      class="hidden md:flex flex-col items-center w-full h-full"
       id="video-heading"
     >
       <div class="flex flex-col w-full justify-between relative">
         <!-- Play Button -->
         <div
-          class="hidden md:flex absolute top-[150px] md:top-[350px] left-1/2 transform -translate-x-1/2 md:left-[780px] z-[100] w-20 h-20 md:w-32 md:h-32"
+          class="flex absolute top-[350px] left-1/2 transform -translate-x-1/2 left-[780px] z-[100] w-20 h-20 w-32 h-32"
         >
           <img src="/public/play.png" alt="Play Button" id="play-button" />
         </div>
         <!-- Background Overlay -->
         <div
-          class="hidden md:flex bg-[#3A50B3] absolute opacity-30 w-full md:w-1/2 h-full md:h-full"
+          class="flex bg-[#3A50B3] absolute opacity-30 w-1/2 h-full"
           id="bg-overlay"
         ></div>
         <!-- Text Section -->
         <div
-          class="hidden md:flex flex-col md:absolute z-[100] md:top-56 md:left-32 leading-[30px] md:leading-[50px]"
+          class="flex flex-col absolute z-[100] top-56 left-32 leading-[50px]"
           id="video-section1"
         >
-          <h2
-            class="text-2xl md:text-[48px] text-[#97CAEB] font-['Mitr'] font-medium"
-          >
+          <h2 class="text-[48px] text-[#97CAEB] font-['Mitr'] font-medium">
             An elegant way to
           </h2>
-          <h2
-            class="text-3xl md:text-[68px] concert-one-regular font-medium text-white"
-          >
+          <h2 class="text-[68px] concert-one-regular font-medium text-white">
             cleanse your hands
           </h2>
         </div>
         <!-- Decorative Circles -->
         <div
-          class="hidden md:block absolute rounded-full w-48 h-48 md:w-96 md:h-96 bg-[#37a3f1] top-20 md:top-56 left-6 md:left-24 blur-2xl opacity-50"
+          class="block absolute rounded-full w-96 h-96 bg-[#37a3f1] top-56 left-24 blur-2xl opacity-50"
           id="round-1"
         ></div>
         <div
-          class="hidden md:block absolute rounded-full w-32 h-32 md:w-64 md:h-64 bottom-10 md:bottom-20 left-1/2 transform -translate-x-1/2 md:left-[550px] blur-2xl opacity-50"
+          class="block absolute rounded-full w-64 h-64 bottom-10 bottom-20 left-1/2 transform -translate-x-1/2 left-[550px] blur-2xl opacity-50"
           id="round-2"
         ></div>
 
@@ -129,7 +125,7 @@
             />
           </a>
           <nav
-            class="hidden md:flex justify-center items-center rounded-full bg-gray-300 absolute top-4 md:top-0 right-4 md:right-0 m-4 md:m-10"
+            class="hidden md:flex justify-center items-center rounded-full bg-gray-300 absolute top-4 md:top-0 right-4 md:right-0 m-4 md:m-10 z-[100]"
           >
             <ul
               id="menu"
@@ -313,23 +309,32 @@
             );
           "
         >
-          <div class="w-full md:w-2/4 my-2 flex flex-col justify-center">
+          <div class="w-2/4 mb-8 flex flex-col justify-center relative">
             <h2
               class="text-white text-[28px] md:text-[46px] concert-one-regular font-normal"
             >
               STEP 2
             </h2>
             <div
-              class="p-2 bg-[#C1DFF3] rounded-full my-3 w-full hover:bg-[#97CAEB] transition-scale duration-300"
+              class="h-5 bg-[#C1DFF3] rounded-full my-3 w-full hover:bg-[#97CAEB]"
               id="step-2"
             ></div>
           </div>
           <div
-            class="flex flex-col w-9/12 md:w-6/12 justify-center transition-scale duration-300"
+            class="flex flex-col w-6/12 justify-center items-center transition-scale duration-300 relative"
             id="logo"
           >
-            <img src="/public/step2.1.png" alt="" class="my-2" />
-            <img src="/public/step2.2.png" alt="" class="my-2" />
+            <img src="./public/Arrow 2.png" alt="" class="absolute size-24" id="arrow"/>
+            <img
+              src="/public/step2.1.png"
+              alt=""
+              class="bg-transparent size-42"
+            />
+            <img
+              src="/public/step2.2.png"
+              alt=""
+              class="bg-transparent size-32"
+            />
           </div>
         </div>
         <div
@@ -634,16 +639,14 @@
           class="md:flex w-full justify-between items-center pt-16 space-y-8"
         >
           <div class="md:hidden w-full flex justify-between">
-            <div
-              class="bg-[#97CAEB] h-20 w-20 rounded-full"
-            ></div>
+            <div class="bg-[#97CAEB] h-20 w-20 rounded-full"></div>
             <div
               class="text-[28px] text-[#3a50b3] font-bold h-40 w-40 flex justify-end slide-in-up text-right text-nowrap"
             >
               <h2 class="">Skin-safe <br />Cleaning Solution</h2>
             </div>
           </div>
-          <div class="flex w-full slide-in-left">
+          <div class="md:flex md:w-full slide-in-left">
             <ul
               class="md:list-disc space-y-4 font-['Urbanist'] text-[11px] md:text-xl"
             >
@@ -662,9 +665,7 @@
               </li>
             </ul>
           </div>
-          <div
-            class="hidden md:flex justify-end"
-          >
+          <div class="hidden md:w-full md:flex justify-end">
             <div
               class="text-[28px] md:text-4xl text-[#3a50b3] font-bold bg-[#97CAEB] rounded-full h-40 w-40 md:h-56 md:w-56 flex justify-end items-center slide-in-up text-right"
             >
@@ -701,10 +702,10 @@
             </ul>
           </div>
         </div>
-        <div class="md:hidden block pt-16 w-full flex justify-between md:justify-end">
-          <div
-            class="bg-[#97CAEB] h-20 w-20 rounded-full"
-          ></div>
+        <div
+          class="md:hidden block pt-16 w-full flex justify-between md:justify-end"
+        >
+          <div class="bg-[#97CAEB] h-20 w-20 rounded-full"></div>
           <div
             class="text-[28px] md:text-4xl text-[#3a50b3] font-bold h-40 w-40 flex justify-end slide-in-up text-right text-nowrap"
           >
@@ -918,7 +919,6 @@
       const videoHeading = document.getElementById("video-heading");
       const videoSection = document.getElementById("video-section");
       const features = document.getElementById("features");
-      // const featuresDetails = document.getElementById("features-details");
       videoHeading.addEventListener("mouseover", function (e) {
         videoSection.classList.add("slide-left");
       });
@@ -949,12 +949,16 @@
     <script>
       const Step2 = document.getElementById("step-2");
       const Logo = document.getElementById("logo");
+      const Arrow = document.getElementById("arrow");
 
       Step2.addEventListener("mouseover", function () {
-        Logo.classList.add("scale-150");
+        Logo.classList.add("scale-125");
+        Arrow.classList.add("slide-in-down");
       });
       Step2.addEventListener("mouseout", function (e) {
-        Logo.classList.remove("scale-150");
+        Logo.classList.remove("scale-125");
+        Arrow.classList.add("slide-in-down");
+
       });
       const playButton = document.getElementById("play-button");
       const videoSection1 = document.getElementById("video-section1");
@@ -978,10 +982,6 @@
           prevEl: ".swiper-button-prev",
         },
       });
-      // features.addEventListener("mouseover", function () {
-      //   featuresDetails.classList.remove("opacity-0");
-      //   featuresDetails.classList.add("opacity-100");
-      // });
     </script>
   </body>
 </html>
