@@ -40,11 +40,11 @@
   <section class="flex flex-col items-center w-full">
     <div class="w-full relative">
       <!-- Navbar -->
-      <div class="flex w-full items-center p-16 gap-y-4 flex-row justify-between absolute">
+      <div class="flex w-full items-center p-10 md:p-16 gap-y-4 flex-row justify-between absolute">
         <a href="index.html">
-          <img src="./public/blue-color.svg" class="z-[100]" alt="">
+          <img src="./public/blue-color.svg" class="z-[100] md:z-[100]" alt="">
         </a>
-        <button id="hamburger" class="md:hidden flex items-center justify-center p-2 rounded-full">
+        <button id="hamburger" class="md:hidden z-[100] flex items-center justify-center p-2 rounded-full">
           <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
@@ -89,18 +89,16 @@
       <!-- Video Section -->
       <div class="flex w-full absolute bottom-10 px-16">
         <div class="flex flex-col pt-96 h-full w-full">
-          <h1 class="text-white text-[40px] concert-one-regular font-normal w-full">Hygienic, Safe, Natural,
+          <h1 class="text-white text-[30px] md:text-[40px] concert-one-regular font-normal w-full">Hygienic, Safe, Natural,
             Environmentally
             Friendly Wipes</h1>
           <p class="text-white text-xl font-normal py-5">A creative solution to clean and freshen hands</p>
         </div>
-        <div class="flex w-full bg-[url('/public/welcome.png')] bg-contain bg-right bg-no-repeat">
+        <div class="hidden w-full bg-[url('/public/welcome.png')] bg-contain bg-right bg-no-repeat">
         </div>
       </div>
-      <video src="./public/landing.mp4" class="object-cover" width="100%" autoplay loop muted></video>
+      <video src="./public/landing.mp4" class="object-cover h-[900px] md:h-full " width="100%" autoplay loop muted></video>
     </div>
-
-
   </section>
 
   <!-- Video and Features Section -->

@@ -76,44 +76,44 @@
   <body>
     <!-- Video Banner Section -->
     <section
-      class="flex flex-col items-center w-full h-full"
+      class="hidden md:flex flex-col items-center w-full h-full"
       id="video-heading"
     >
       <div class="flex flex-col w-full justify-between relative">
         <!-- Play Button -->
         <div
-          class="hidden md:flex absolute top-[150px] md:top-[350px] left-1/2 transform -translate-x-1/2 md:left-[780px] z-[100] w-20 h-20 md:w-32 md:h-32"
+          class="flex absolute top-[350px] left-1/2 transform -translate-x-1/2 left-[780px] z-[100] w-20 h-20 w-32 h-32"
         >
           <img src="/public/play.png" alt="Play Button" id="play-button" />
         </div>
         <!-- Background Overlay -->
         <div
-          class="hidden md:flex bg-[#3A50B3] absolute opacity-30 w-full md:w-1/2 h-full md:h-full"
+          class="flex bg-[#3A50B3] absolute opacity-30 w-1/2 h-full"
           id="bg-overlay"
         ></div>
         <!-- Text Section -->
         <div
-          class="hidden md:flex flex-col md:absolute z-[100] md:top-56 md:left-32 leading-[30px] md:leading-[50px]"
+          class="flex flex-col absolute z-[100] top-56 left-32 leading-[50px]"
           id="video-section1"
         >
           <h2
-            class="text-2xl md:text-[48px] text-[#97CAEB] font-['Mitr'] font-medium"
+            class="text-[48px] text-[#97CAEB] font-['Mitr'] font-medium"
           >
             An elegant way to
           </h2>
           <h2
-            class="text-3xl md:text-[68px] concert-one-regular font-medium text-white"
+            class="text-[68px] concert-one-regular font-medium text-white"
           >
             cleanse your hands
           </h2>
         </div>
         <!-- Decorative Circles -->
         <div
-          class="hidden md:block absolute rounded-full w-48 h-48 md:w-96 md:h-96 bg-[#37a3f1] top-20 md:top-56 left-6 md:left-24 blur-2xl opacity-50"
+          class="block absolute rounded-full w-96 h-96 bg-[#37a3f1] top-56 left-24 blur-2xl opacity-50"
           id="round-1"
         ></div>
         <div
-          class="hidden md:block absolute rounded-full w-32 h-32 md:w-64 md:h-64 bottom-10 md:bottom-20 left-1/2 transform -translate-x-1/2 md:left-[550px] blur-2xl opacity-50"
+          class="block absolute rounded-full w-64 h-64 bottom-10 bottom-20 left-1/2 transform -translate-x-1/2 left-[550px] blur-2xl opacity-50"
           id="round-2"
         ></div>
 
@@ -918,7 +918,6 @@
       const videoHeading = document.getElementById("video-heading");
       const videoSection = document.getElementById("video-section");
       const features = document.getElementById("features");
-      // const featuresDetails = document.getElementById("features-details");
       videoHeading.addEventListener("mouseover", function (e) {
         videoSection.classList.add("slide-left");
       });
@@ -978,10 +977,6 @@
           prevEl: ".swiper-button-prev",
         },
       });
-      // features.addEventListener("mouseover", function () {
-      //   featuresDetails.classList.remove("opacity-0");
-      //   featuresDetails.classList.add("opacity-100");
-      // });
     </script>
   </body>
 </html>
