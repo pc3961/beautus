@@ -245,7 +245,16 @@
         <img id="image-1" src="./public/menta 2.svg" class="absolute md:size-[400px] top-0 right-10" alt="">
         <img id="image-2" src="./public/menta 1.svg" class="absolute md:size-[400px] bottom-[-30px] right-[450px]"
         alt="">
-        <img src="./public/pods.png" class="absolute md:size-[800px] -right-[350px] -bottom-[460px] duration-500 "  alt="" id="myDiv">
+        <img src="./public/pods.png" class="absolute md:size-[800px] -right-[350px] -bottom-[460px] duration-500 z-50"  alt="" id="myDiv">
+        <div class="bg-yellow-500 rounded-full h-[300px] w-[300px] z-40 absolute -right-[120px] -bottom-[120px]"></div>
+        <!-- <div class="w-500 h-500 flex flex-wrap z-50">
+        <img id="image-2" class="size-36" src="./public/yellow 3.png" class="" alt="">
+        <img id="image-2" class="size-36" src="./public/white 2.png" class="" alt="">
+        <img id="image-2" class="size-36" src="./public/green 3.png" class="" alt="">
+        <img id="image-2" class="size-36" src="./public/green 4.png" class="" alt="">
+
+
+        </div> -->
       </div>
     </div>
   </section>
@@ -606,7 +615,8 @@ let currentIndex = 0;
 let currentIndex1 = 0;
 
 function changeImage() {
-  
+  imageElement.classList.remove('slide-in-down1');
+  imageElement1.classList.remove('slide-in-up1');
   setTimeout(() => {
     currentIndex = (currentIndex + 1) % imageArray.length;
     imageElement.src = imageArray[currentIndex];
