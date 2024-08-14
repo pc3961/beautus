@@ -79,7 +79,9 @@
       class="flex flex-col items-center w-full h-full"
       id="video-heading"
     >
-      <div class="flex flex-col w-full h-[900px] md:h-full justify-between relative">
+      <div
+        class="flex flex-col w-full h-[900px] md:h-full justify-between relative"
+      >
         <!-- Play Button -->
         <div
           class="hidden md:flex absolute top-[350px] left-1/2 transform -translate-x-1/2 left-[780px] z-[100] w-20 h-20 w-32 h-32"
@@ -298,8 +300,91 @@
           </p>
         </div>
       </div>
-      <div class="w-full flex flex-col md:flex-row py-16 md:py-28">
-        <!-- Step 2 -->
+      <div class="w-full flex justify-around py-16">
+        <div class="flex flex-col w-56">
+          <h2
+            class="text-white text-[28px] md:text-[46px] concert-one-regular font-normal"
+          >
+            STEP 2
+          </h2>
+          <div
+            class="h-5 bg-[#C1DFF3] rounded-full mb-6 mt-2 w-full hover:bg-[#97CAEB]"
+            id="step-2"
+          ></div>
+        </div>
+        <div class="flex flex-col w-56">
+          <h2
+            class="text-white text-[28px] md:text-[46px] concert-one-regular font-normal"
+          >
+            STEP 3
+          </h2>
+          <div
+            class="h-5 bg-[#C1DFF3] rounded-full mb-6 mt-2 w-full hover:bg-[#97CAEB]"
+          ></div>
+        </div>
+        <div class="flex flex-col w-56">
+          <h2
+            class="text-white text-[28px] md:text-[46px] concert-one-regular font-normal"
+          >
+            STEP 4
+          </h2>
+          <div
+            class="h-5 bg-[#C1DFF3] rounded-full mb-6 mt-2 w-full hover:bg-[#97CAEB]"
+          ></div>
+        </div>
+      </div>
+      <div class="w-full flex justify-around">
+        <div class="flex items-center justify-center gap-x-6">
+          <!-- Step 2 -->
+          <div
+            class="flex flex-col items-center transition-scale duration-300 w-56"
+            id="logo"
+          >
+            <img
+              src="./public/Arrow 2.png"
+              alt=""
+              class="absolute opacity-0 size-16 z-[100]"
+              id="arrow"
+            />
+            <img
+              src="/public/step2.1.png"
+              alt=""
+              class="bg-transparent size-42 z-[100]"
+            />
+            <img
+              src="/public/step2.2.png"
+              alt=""
+              class="bg-transparent size-32 z-[100]"
+            />
+            <div
+              class="bg-[#37a3f1] absolute blur-3xl rounded-full size-96"
+            ></div>
+          </div>
+        </div>
+        <div class="flex items-center justify-center w-56" id="items-3">
+          <img
+            src="/public/product-2.png"
+            alt=""
+            class="mt-16 md:mt-96 flex justify-end size-32"
+          />
+        </div>
+        <div class="flex items-center justify-center w-56" id="items-4">
+          <img
+            src="/public/product-2.png"
+            alt=""
+            class="mt-16 md:mt-96 flex justify-end size-32"
+          />
+        </div>
+        <div class="flex items-center w-1/2 hidden" id="detail-2">
+          <p class="border-2 border-white text-white text-xl p-6 rounded-xl">
+            Press down on the centre of the pod to activate the process. This
+            breaks the seal and allows the cleansing solution to soak into the
+            dry cloth. Watch as it unfurl
+          </p>
+        </div>
+      </div>
+      <!-- <div class="w-full flex flex-col md:flex-row py-28">
+
         <div
           class="flex flex-col justify-center items-center w-full md:w-1/3"
           style="
@@ -317,7 +402,7 @@
               STEP 2
             </h2>
             <div
-              class="h-5 bg-[#C1DFF3] rounded-full my-3 w-full hover:bg-[#97CAEB]"
+              class="h-5 bg-[#C1DFF3] rounded-full mb-6 mt-2 w-full hover:bg-[#97CAEB]"
               id="step-2"
             ></div>
           </div>
@@ -325,7 +410,12 @@
             class="flex flex-col w-6/12 justify-center items-center transition-scale duration-300 relative"
             id="logo"
           >
-            <img src="./public/Arrow 2.png" alt="" class="absolute size-24" id="arrow"/>
+            <img
+              src="./public/Arrow 2.png"
+              alt=""
+              class="absolute opacity-0 size-16"
+              id="arrow"
+            />
             <img
               src="/public/step2.1.png"
               alt=""
@@ -360,10 +450,11 @@
             <img
               src="/public/product-2.png"
               alt=""
-              class="mt-16 md:mt-96 flex justify-end"
+              class="mt-16 md:mt-96 flex justify-end "
             />
           </div>
         </div>
+
         <div
           class="flex flex-col justify-center items-center w-full md:w-1/3 mt-8 md:mt-0"
           style="
@@ -390,7 +481,7 @@
             />
           </div>
         </div>
-      </div>
+      </div> -->
     </section>
     <!-- How to use Wicked Wipes Mobile Version -->
     <section class="md:hidden block px-10 py-16 md:py-32 bg-[#3A50B3]">
@@ -949,17 +1040,38 @@
     </script>
     <script>
       const Step2 = document.getElementById("step-2");
+      const Item3 = document.getElementById("items-3");
+      const Item4 = document.getElementById("items-4");
+      const Detail2 = document.getElementById("detail-2");
       const Logo = document.getElementById("logo");
       const Arrow = document.getElementById("arrow");
 
       Step2.addEventListener("mouseover", function () {
         Logo.classList.add("scale-125");
-        Arrow.classList.add("slide-in-down");
+        Arrow.classList.remove("slide-out-up"); // Remove slide-out-up class if present
+        Arrow.classList.add("slide-in-down"); // Add slide-in-down class to trigger the animation
+        Item3.classList.add("hidden");
+        Item4.classList.add("hidden");
+        Detail2.classList.remove("hidden");
+        Arrow.classList.remove("opacity-0"); // Make sure arrow is visible
       });
-      Step2.addEventListener("mouseout", function (e) {
-        Logo.classList.remove("scale-125");
-        Arrow.classList.add("slide-in-down");
 
+      Step2.addEventListener("mouseout", function () {
+        Logo.classList.remove("scale-125");
+        Arrow.classList.remove("slide-in-down"); // Remove slide-in-down class
+        Arrow.classList.add("slide-out-up"); // Add slide-out-up class to trigger reverse animation
+        Detail2.classList.add("hidden");
+        Item3.classList.remove("hidden");
+        Item4.classList.remove("hidden");
+      });
+
+      // Reset the animation classes after each animation ends
+      Arrow.addEventListener("animationend", function (event) {
+        if (event.animationName === "slideInDown") {
+        } else if (event.animationName === "slideOutUp") {
+          Arrow.classList.add("opacity-0"); // Hide arrow after slide-out-up animation
+          Arrow.classList.remove("slide-out-up");
+        }
       });
       const playButton = document.getElementById("play-button");
       const videoSection1 = document.getElementById("video-section1");

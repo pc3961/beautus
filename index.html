@@ -32,6 +32,26 @@
       color: #3a50b3;
       /* Change to the color you want */
     }
+  .underline-effect {
+    position: relative;
+  }
+  .underline-effect::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 0;
+    height: 4px;
+    background-color: #fff;
+    transition: width 0.3s ease;
+  }
+  .underline-active::after {
+    width: 100%;
+  }
+  .underline-active{
+    background-color:#FFF;
+  }
   </style>
   <title>Wicked Wipes</title>
 </head>
@@ -94,7 +114,7 @@
             Friendly Wipes</h1>
           <p class="text-white text-xl font-normal py-5">A creative solution to clean and freshen hands</p>
         </div>
-        <div class="hidden w-full bg-[url('/public/welcome.png')] bg-contain bg-right bg-no-repeat" id="welcomeDiv">
+        <div class="hidden w-screen bg-[url('/public/pods1.png')] bg-contain bg-right bg-no-repeat" id="welcomeDiv">
         </div>
       </div>
       <video id="videoPlayer" src="./public/landing.mp4" class="object-cover h-[900px] md:h-full " width="100%" loop muted></video>
@@ -185,32 +205,47 @@
 
   <!-- Categories Section -->
 
-  <section class=" flex flex-col justify-between md:pt-[100px] bg-[#c1eaf3] h-[600px] md:h-[903px]">
-    <h1 class="px-4 md:px-24 text-[#3a50b3] text-[46px] font-['Mitr']">
+  <section class=" flex flex-col md:pt-[100px] bg-[#c1eaf3] h-[600px] md:h-screen relative overflow-hidden" id="colorSection">
+    <h1 class="px-4 md:px-24 text-[#3a50b3] text-[46px] font-['Mitr'] font-medium">
       Refreshing natural Fragnances
     </h1>
     <div class="flex flex-col">
       <div class="flex md:gap-x-2 md:px-24">
-        <img class="size-20 md:size-48" src="./public/green 5.svg" alt="">
-        <img class="size-20 md:size-48" src="./public/green 6.svg" alt="">
-        <img class="size-20 md:size-48" src="./public/yellow 3.svg" alt="">
-        <img class="size-20 md:size-48" src="./public/white 3.svg" alt="">
+        <div>
+          <img id="image1" class="size-20 md:size-36 " src="./public/green 5.svg" alt="">
+          <div class="h-5 w-full img-pods md:underline-effect rounded-full duration-500"></div>
+        </div>
+        <div>
+          <img id="image2" class="size-20 md:size-36" src="./public/green 6.svg" alt="">
+          <div class="h-5 w-full img-pods md:underline-effect rounded-full duration-500"></div>
+
+        </div>
+        <div>
+          <img id="image3" class="size-20 md:size-36" src="./public/white 3.svg" alt="">
+          <div class="h-5 w-full img-pods md:underline-effect rounded-full duration-500"></div>
+
+        </div>
+        <div>
+          <img id="image4" class="size-20 md:size-36" src="./public/yellow 3.svg" alt="">
+          <div class="h-5 w-full img-pods md:underline-effect rounded-full duration-500"></div>
+
+        </div>
+      </div>
       </div>
     </div>
     <div class="flex justify-between">
-      <div class="flex">
-        <h1
-          class="px-4 px-3md:px-32 md:py-20 text-[60px] md:text-[180px] text-[#3a50b3] concert-one-regular font-normal">
-          COOL
+      <div class="flex w-full">
+        <h1 id="text-container"
+          class="absolute bottom-10 left-28 md:text-[120px] text-[#3a50b3] concert-one-regular font-normal fade-text duration-500">
+          Cool
         </h1>
       </div>
-      <div class="flex relative w-full items-end">
+      <div class="flex w-full items-end" id="image-container">
         <img src="./public/elip.svg" class="absolute h-[250px] md:h-[500px] bottom-0 right-0 " alt="">
-        <img src="./public/Ellipse 23.svg" class="hidden md:block absolute top-0 right-0" alt="">
-        <img src="./public/menta 2.svg" class="absolute h-[200px] md:h-[400px] bottom-64 right-10" alt="">
-        <img src="./public/menta 1.svg" class="absolute h-[232px] md:h-[432px] md:top-[-30px] right-28 md:right-96"
-          alt="">
-        <img src="./public/green 3.svg" class="absolute h-[200px] md:h-[432px] bottom-0 right-0" alt>
+        <img id="image-1" src="./public/menta 2.svg" class="absolute md:size-[400px] top-0 right-10" alt="">
+        <img id="image-2" src="./public/menta 1.svg" class="absolute md:size-[400px] bottom-[-30px] right-[450px]"
+        alt="">
+        <img src="./public/pods.png" class="absolute md:size-[800px] -right-[350px] -bottom-[460px] duration-500 "  alt="" id="myDiv">
       </div>
     </div>
   </section>
@@ -234,7 +269,7 @@
 
   <!-- Image Gallery Section -->
 
-  <section class="py-0 md:py-10 relative">
+  <section class="py-0 md:pt-10 relative">
     <div class="swiper-container z-50 overflow-hidden">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
@@ -266,7 +301,7 @@
     </div>
     <div class="bg-white relative bottom-20 h-36 w-full z-[100] rounded-[50%]"></div>
   </section>
-  <section class="px-4 md:px-40 pb-12 md:py-10">
+  <section class="px-4 md:px-40 pb-12">
     <div class="w-full group" id="document-section">
       <div
         class="md:gap-x-40 flex justify-between items-center opacity-0 transition-opacity duration-150 group-hover:opacity-100"
@@ -425,7 +460,6 @@
           entries.forEach(entry => {
             if (entry.isIntersecting) {
               documentSlidingCards25.classList.add("slide-left-cards25");
-              // documentSlidingCards50.classList.add("slide-left-cards50");
             }
           });
         });
@@ -481,6 +515,114 @@
       }
     });
   </script>
+ <script>
+  let angle = 0;
+
+  setInterval(() => {
+      angle += 90;
+      document.getElementById('myDiv').style.transform = `rotate(${angle}deg)`;
+  }, 3000);
+</script>
+<script>
+  let currentImageIndex = 0;
+  const images = document.getElementsByClassName('img-pods');
+
+  setInterval(() => {
+    // Reset underline for all images
+    for (let i = 0; i < images.length; i++) {
+      images[i].classList.remove('underline-active');
+    }
+
+    // Add underline to the current image
+    images[currentImageIndex].classList.add('underline-active');
+
+    // Move to the next image
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+  }, 3000);
+
+  const texts = [
+    { text: "Cool", color: "text-[#3a50b3]" },
+    { text: "Green", color: "text-[#147045]" },
+    { text: "Unscented", color: "text-[#687DD2]" },
+    { text: "Lemon", color: "text-[#FCD901]" }];
+  let currentTextIndex = 0;
+  const textContainer = document.getElementById('text-container');
+
+  function changeText() {
+    // Fade out the current text
+    textContainer.classList.remove('fadeIn1');
+    textContainer.classList.add('fadeOut1');
+
+    setTimeout(() => {
+      // Change the text
+      textContainer.innerHTML = texts[currentTextIndex].text;
+      textContainer.className = `absolute bottom-10 left-28 md:text-[120px] concert-one-regular font-normal fade-text duration-500 ${texts[currentTextIndex].color}`;
+      currentTextIndex = (currentTextIndex + 1) % texts.length;
+
+      // Fade in the new text
+      textContainer.classList.remove('fadeOut1');
+      textContainer.classList.add('fadeIn1');
+    },300); // Wait for the fade-out animation to finish
+  }
+
+  // Start the cycle
+  setInterval(changeText, 3000);
+
+  // Initially, fade in the first text
+  textContainer.classList.add('fadeIn1');
+
+  // Background Color Change
+
+  const colors = ['#c1eaf3', '#D1F3C1', '#C1DFF3', '#FEFA9F']; // List of colors
+    let currentColorIndex = 0;
+
+    function changeBackgroundColor() {
+      const section = document.getElementById('colorSection');
+      section.style.backgroundColor = colors[currentColorIndex];
+      currentColorIndex = (currentColorIndex + 1) % colors.length; // Cycle through colors
+    }
+
+    setInterval(changeBackgroundColor, 3000);
+  // Leaf Animation
+
+  const imageContainer = document.getElementById('image-container');
+  const imageElement = document.getElementById('image-1');
+  const imageElement1 = document.getElementById('image-2');
+
+  const imageArray = [
+  './public/lemon.png',
+  './public/menta 2.svg',
+  './public/leaf1.png',
+  './public/water1.png'
+];
+  const imageArray1 = [
+  './public/lemon1.png',
+  './public/menta 1.svg',
+  './public/leaf2.png',
+  './public/water2.png'
+];
+
+let currentIndex = 0;
+let currentIndex1 = 0;
+
+function changeImage() {
+  
+  setTimeout(() => {
+    currentIndex = (currentIndex + 1) % imageArray.length;
+    imageElement.src = imageArray[currentIndex];
+    imageElement.classList.add('slide-in-down1'); // Add the animation class
+  }); 
+  setTimeout(() => {
+    currentIndex1 = (currentIndex1 + 1) % imageArray1.length;
+    imageElement1.src = imageArray1[currentIndex1];
+    imageElement1.classList.add('slide-in-up1'); // Add the animation class
+  }); 
+}
+
+setInterval(changeImage, 3000);
+
+
+</script>
   <script>
     var swiper = new Swiper('.swiper-container', {
       slidesPerView: 1, // Default setting for larger screens
