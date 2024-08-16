@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-</html>
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="initial-scale=1, width=device-width" />
@@ -107,14 +104,14 @@
         </div>
       </div>
       <!-- Video Section -->
-      <div class="flex w-full absolute bottom-10 px-16">
+      <div class="flex w-full absolute bottom-10 px-4 md:px-16">
         <div class="flex flex-col pt-96 h-full w-full">
           <h1 class="text-white text-[30px] md:text-[40px] concert-one-regular font-normal w-full">Hygienic, Safe, Natural,
             Environmentally
             Friendly Wipes</h1>
           <p class="text-white text-xl font-normal py-5">A creative solution to clean and freshen hands</p>
         </div>
-        <div class="hidden w-screen bg-[url('/public/pods1.png')] bg-contain bg-right bg-no-repeat" id="welcomeDiv">
+        <div class="hidden w-screen h- bg-[url('/public/pods1.png')] bg-contain md:bg-contain bg-right bg-no-repeat" id="welcomeDiv">
         </div>
       </div>
       <video id="videoPlayer" src="./public/landing.mp4" class="object-cover h-[900px] md:h-full " width="100%" loop muted></video>
@@ -236,7 +233,7 @@
         </h1>
       </div>
       <div class="flex w-full items-end" id="image-container">
-        <img src="./public/elip.svg" class="absolute h-[250px] md:h-[500px] bottom-0 right-0 " alt="">
+        <img src="./public/elip.svg" class="absolute h-[250px] md:h-[500px] bottom-0 right-0 " alt="" id="image-3">
         <img id="image-1" src="./public/menta 2.svg" class="absolute md:size-[400px] top-0 right-10" alt="">
         <img id="image-2" src="./public/menta 1.svg" class="absolute md:size-[400px] bottom-[-30px] right-[450px]"
         alt="">
@@ -297,14 +294,16 @@
     </div>
     <div class="bg-white relative bottom-20 h-36 w-full z-[100] rounded-[50%]"></div>
   </section>
+
+  <!-- Make it your Brand Section -->
   <section class="px-4 md:px-40 pb-12">
     <div class="w-full group" id="document-section">
       <div
-        class="md:gap-x-40 flex justify-between items-center opacity-0 transition-opacity duration-150 group-hover:opacity-100"
+        class="md:gap-x-40 flex md:flex-row flex-col justify-between items-center opacity-0 transition-opacity duration-150 group-hover:opacity-100"
         id="document-heading1">
-        <div class="flex flex-col md:gap-4">
-          <h1 class="text-[72px] text-gradient font-normal">Make It <br> Yours </h1>
-          <p class="hidden md:block text-[20px] font-['League Spartan'] font-normal text-[#3A50B3] word-wrap">Wicked
+        <div class="flex flex-col md:gap-4 gap-4">
+          <h1 class="text-4xl md:text-[72px] text-gradient md:leading-none font-normal">Make It Yours </h1>
+          <p class="text-[20px] font-['League Spartan'] font-normal text-[#3A50B3] word-wrap">Wicked
             Wipes is an original advertising opportunity for businesses and a successful marketing tool that will
             surprise and delight your customers. Easily add your brand to customize the pod</p>
         </div>
@@ -314,12 +313,8 @@
       </div>
     </div>
     <div
-      class="w-full md:flex justify-start ease-in-out opacity-0 transition-opacity duration-150 group-hover:opacity-100"
+      class="w-full md:flex flex md:justify-start justify-center ease-in-out opacity-0 md:opacity-0 transition-opacity duration-150 group-hover:opacity-100"
       id="document-heading">
-      <p class="block md:hidden text-[20px] font-['League Spartan'] font-normal text-[#3A50B3] word-wrap">Wicked Wipes
-        is an original advertising opportunity for businesses and a successful marketing tool that will surprise and
-        delight your customers. Easily add your brand to customize the pod</p>
-
       <button
         class="flex justify-center font-['Baloo'] px-10 text-white text-lg font-medium bg-[#3A50B3] rounded-full mt-6 py-2">
         ADD YOUR BRAND
@@ -595,6 +590,7 @@
   const imageContainer = document.getElementById('image-container');
   const imageElement = document.getElementById('image-1');
   const imageElement1 = document.getElementById('image-2');
+  const imageElement2 = document.getElementById('image-3');
 
   const imageArray = [
   './public/lemon.png',
@@ -608,9 +604,16 @@
   './public/leaf2.png',
   './public/water2.png'
 ];
+  const imageArray2 = [
+  './public/yellow-ellip.png',
+  './public/elip.svg',
+  './public/green-ellip.png',
+  './public/ice-ellip.png'
+];
 
 let currentIndex = 0;
 let currentIndex1 = 0;
+let currentIndex2 = 0;
 
 function changeImage() {
   imageElement.classList.remove('slide-in-down1');
@@ -624,6 +627,10 @@ function changeImage() {
     currentIndex1 = (currentIndex1 + 1) % imageArray1.length;
     imageElement1.src = imageArray1[currentIndex1];
     imageElement1.classList.add('slide-in-up1'); // Add the animation class
+  }); 
+  setTimeout(() => {
+    currentIndex2 = (currentIndex2 + 1) % imageArray2.length;
+    imageElement2.src = imageArray2[currentIndex2];
   }); 
 }
 

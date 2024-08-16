@@ -513,7 +513,30 @@
     opacity: 0;
   }
 }
+@keyframes arrowUp {
+  from {
+    transform: translateY(150%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(50%);
+    opacity: 1;
+  }
+}
+@keyframes step3 {
+  from {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-30px, -70px);
+    opacity: 1;
+  }
+}
 
+.step3 {
+  animation: step3 1s ease-in-out forwards;
+}
 .slide-in-up {
   animation: slideInUp 1s ease-in-out forwards;
 }
@@ -528,6 +551,9 @@
 }
 .slide-out-up {
   animation: slideOutUp 0.5s ease-in-out forwards;
+}
+.arrow-up {
+  animation: arrowUp 0.5s ease-in-out forwards;
 }
 .slide-in-left {
   animation: slideInLeft 2s ease-in-out forwards;

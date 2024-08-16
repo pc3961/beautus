@@ -320,6 +320,7 @@
           </h2>
           <div
             class="h-5 bg-[#C1DFF3] rounded-full mb-6 mt-2 w-full hover:bg-[#97CAEB]"
+            id="step-3"
           ></div>
         </div>
         <div class="flex flex-col w-56">
@@ -334,7 +335,7 @@
         </div>
       </div>
       <div class="w-full flex justify-around">
-        <div class="flex items-center justify-center gap-x-6">
+        <div class="flex items-center justify-center gap-x-6" id="items-2">
           <!-- Step 2 -->
           <div
             class="flex flex-col items-center transition-scale duration-300 w-56"
@@ -361,18 +362,29 @@
             ></div>
           </div>
         </div>
+         <!-- Step 3 -->
         <div class="flex items-center justify-center w-56" id="items-3">
+          <img
+            src="./public/Arrow 1.png"
+            alt=""
+            class="absolute z-[100] opacity-0 size-16"
+            id="arrow-1"
+          />
           <img
             src="/public/product-2.png"
             alt=""
-            class="mt-16 md:mt-96 flex justify-end size-32"
+            class="mt-16 md:mt-72 flex justify-end size-32 z-[100]"
           />
+          <div
+            class="bg-[#37a3f1] absolute blur-3xl rounded-full size-96"
+          ></div>
         </div>
+        <!-- Step 4 -->
         <div class="flex items-center justify-center w-56" id="items-4">
           <img
             src="/public/product-2.png"
             alt=""
-            class="mt-16 md:mt-96 flex justify-end size-32"
+            class="mt-16 md:mt-72 flex justify-end size-32"
           />
         </div>
         <div class="flex items-center w-1/2 hidden" id="detail-2">
@@ -380,6 +392,12 @@
             Press down on the centre of the pod to activate the process. This
             breaks the seal and allows the cleansing solution to soak into the
             dry cloth. Watch as it unfurl
+          </p>
+        </div>
+        <div class="flex items-center w-1/2 hidden" id="detail-3">
+          <p class="border-2 border-white text-white text-xl p-6 rounded-xl">
+            Pause for just a few seconds to allow the cloth to completely absorb
+            the cleansing solution. Now it’s ready to use. 
           </p>
         </div>
       </div>
@@ -1040,11 +1058,15 @@
     </script>
     <script>
       const Step2 = document.getElementById("step-2");
+      const Step3 = document.getElementById("step-3");
+      const Item2 = document.getElementById("items-2");
       const Item3 = document.getElementById("items-3");
       const Item4 = document.getElementById("items-4");
+      const Detail3 = document.getElementById("detail-3");
       const Detail2 = document.getElementById("detail-2");
       const Logo = document.getElementById("logo");
       const Arrow = document.getElementById("arrow");
+      const Arrow1 = document.getElementById("arrow-1");
 
       Step2.addEventListener("mouseover", function () {
         Logo.classList.add("scale-125");
@@ -1065,6 +1087,30 @@
         Item4.classList.remove("hidden");
       });
 
+      Step3.addEventListener("mouseover", function () {
+        Item4.classList.add("hidden");
+        Item2.classList.add("hidden");
+        Item3.classList.add("step3");
+        Item3.classList.add("scale-150");
+        Arrow1.classList.remove("opacity-0");
+        Arrow1.classList.add("opacity-100");
+        Arrow1.classList.add("arrow-up");
+        Detail2.classList.add("hidden");
+        Detail3.classList.remove("hidden");
+      });
+
+      Step3.addEventListener("mouseout", function () {
+        Detail2.classList.add("hidden");
+        Detail3.classList.add("hidden");
+        Item4.classList.remove("hidden");
+        Item2.classList.remove("hidden");
+        Item3.classList.remove("step3");
+        Item3.classList.remove("scale-150");
+        Arrow1.classList.remove("arrow-up");
+        Arrow1.classList.remove("opacity-100");
+        Arrow1.classList.add("opacity-0");
+      });
+
       // Reset the animation classes after each animation ends
       Arrow.addEventListener("animationend", function (event) {
         if (event.animationName === "slideInDown") {
@@ -1079,11 +1125,11 @@
       const round1 = document.getElementById("round-1");
       const round2 = document.getElementById("round-2");
       playButton.addEventListener("click", function () {
-        videoSection1.classList.add("hidden");
-        bgOverlay.classList.add("hidden");
-        playButton.classList.add("hidden");
-        round1.classList.add("hidden");
-        round2.classList.add("hidden");
+        videoSection1.classList.add("opacity-0");
+        bgOverlay.classList.add("invisible");
+        playButton.classList.add("opacity-0");
+        round1.classList.add("invisible");
+        round2.classList.add("invisible");
       });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
