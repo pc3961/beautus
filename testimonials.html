@@ -51,74 +51,78 @@
     <section
       class="p-4 md:px-40 md:py-10 flex flex-col items-end w-full bg-[url('/public/banner.png')] bg-no-repeat bg-cover h-full"
     >
-    <div
-    class="flex w-full items-center gap-y-4 flex px-4 md:flex-row justify-between"
-  >
-    <a href="index.html">
-      <img src="./public/blue-color.svg" alt="" />
-    </a>
-    <button
-      id="hamburger"
-      class="md:hidden flex items-center justify-center p-2 rounded-full"
-    >
-      <svg
-        class="w-6 h-6 text-white"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="flex w-full items-center gap-y-4 flex px-4 md:flex-row justify-between"
       >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 12h16m-7 6h7"
-        ></path>
-      </svg>
-    </button>
-  
-    <!-- Navigation Tabs -->
-    <nav class="hidden md:flex items-center justify-center bg-blue-300 rounded-full">
-      <ul
-        id="menu"
-        class="flex justify-center items-center text-center px-10 gap-x-8 text-white text-xl font-normal"
-      >
-        <li>
-          <a href="features.html">Features</a>
-        </li>
-        <li>
-          <a href="private-label.html">Private Label</a>
-        </li>
-        <li>
-          <a href="testimonials.html">Who We are</a>
-        </li>
-        <li>
-          <a href="#target-section">Contact</a>
-        </li>
-      </ul>
-    </nav>
-  
-    <!-- Mobile Menu Drawer -->
-    <div
-      id="menu-drawer"
-      class="fixed top-0 right-0 h-full w-2/3 bg-blue-300 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden"
-    >
-      <ul class="flex flex-col p-4 space-y-6 text-black text-xl font-normal">
-        <li>
-          <a href="features.html">Features</a>
-        </li>
-        <li>
-          <a href="private-label.html">Private Label</a>
-        </li>
-        <li>
-          <a href="testimonials.html">Who We are</a>
-        </li>
-        <li>
-          <a href="#target-section">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </div>  
+        <a href="index.html">
+          <img src="./public/blue-color.svg" alt="" />
+        </a>
+        <button
+          id="hamburger"
+          class="md:hidden flex items-center justify-center p-2 rounded-full"
+        >
+          <svg
+            class="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+
+        <!-- Navigation Tabs -->
+        <nav
+          class="hidden md:flex items-center justify-center bg-blue-300 rounded-full"
+        >
+          <ul
+            id="menu"
+            class="flex justify-center items-center text-center px-10 gap-x-8 text-white text-xl font-normal"
+          >
+            <li>
+              <a href="features.html">Features</a>
+            </li>
+            <li>
+              <a href="private-label.html">Private Label</a>
+            </li>
+            <li>
+              <a href="testimonials.html">Who We are</a>
+            </li>
+            <li>
+              <a href="#target-section">Contact</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Mobile Menu Drawer -->
+        <div
+          id="menu-drawer"
+          class="fixed top-0 right-0 h-full w-2/3 bg-blue-300 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+        >
+          <ul
+            class="flex flex-col p-4 space-y-6 text-black text-xl font-normal"
+          >
+            <li>
+              <a href="features.html">Features</a>
+            </li>
+            <li>
+              <a href="private-label.html">Private Label</a>
+            </li>
+            <li>
+              <a href="testimonials.html">Who We are</a>
+            </li>
+            <li>
+              <a href="#target-section">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
       <div class="flex justify-end gap-7 items-center w-full">
         <img src="./public/facebook.svg" class="size-7" alt="fb" />
         <img src="./public/Insta.svg" class="size-7" alt="fb" />
@@ -169,7 +173,7 @@
         </p>
       </div>
 
-<!-- Testimonials section -->
+      <!-- Testimonials section -->
       <div class="flex justify-center">
         <div
           class="flex justify-center group md:gap-y-10"
@@ -214,8 +218,8 @@
           Who We are
         </h1>
         <p
-          class="text-xl md:px-0 px-4 league-spartan text-center duration-300 ease-in-out opacity-0"
-          id="document-heading"
+          class="text-xl md:px-0 px-4 league-spartan text-center ease-in-out opacity-0 transition-opacity duration-500"
+          id="info"
         >
           We are Shailesh and John, business owners in our own right who have
           successfully worked together on a number of projects over the past 20
@@ -366,32 +370,43 @@
     </section>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      const hamburger = document.getElementById('hamburger');
-      const menuDrawer = document.getElementById('menu-drawer');
-    
-      hamburger.addEventListener('click', () => {
-        menuDrawer.classList.toggle('translate-x-full');
+      const hamburger = document.getElementById("hamburger");
+      const menuDrawer = document.getElementById("menu-drawer");
+
+      hamburger.addEventListener("click", () => {
+        menuDrawer.classList.toggle("translate-x-full");
       });
-    
+
       // Close the drawer when clicking outside (optional)
-      document.addEventListener('click', (e) => {
+      document.addEventListener("click", (e) => {
         if (!menuDrawer.contains(e.target) && !hamburger.contains(e.target)) {
-          menuDrawer.classList.add('translate-x-full');
+          menuDrawer.classList.add("translate-x-full");
         }
       });
-    </script>    
+    </script>
     <script>
       AOS.init();
     </script>
     <script>
-      const documentSection = document.getElementById("document-section");
-      const documentHeading = document.getElementById("document-heading");
-      documentSection.addEventListener("mouseover", function (e) {
-        documentHeading.classList.add("opacity-100");
-      });
-      documentSection.addEventListener("mouseout", function (e) {
-        documentHeading.classList.remove("opacity-100");
-      });
+      const details = document.getElementById("info");
+
+// Function to handle intersection
+function handleIntersection(entries) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      details.classList.remove("opacity-0");
+      details.classList.add("opacity-100");
+    }
+  });
+}
+
+// Create an Intersection Observer
+const observer = new IntersectionObserver(handleIntersection, {
+  threshold: 0.1, // Trigger when 10% of the section is visible
+});
+
+// Observe the section
+observer.observe(details);
     </script>
   </body>
 </html>

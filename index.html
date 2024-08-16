@@ -185,11 +185,6 @@
           <p class="text-lg text-[#7DB1E7] font-bold">About Wicked Wipes</p>
         </div>
       </div>
-      <!-- <div>
-        <video src="./public/animation-video.mp4"
-          class="object-cover shadow-xl rounded-3xl m-[11rem] h-[500px] w-[500px]" type="video/mp4" autoplay muted
-          loop></video>
-      </div> -->
     </div>
 
     <div class="w-full h-[700px] my-10">
@@ -246,15 +241,7 @@
         <img id="image-2" src="./public/menta 1.svg" class="absolute md:size-[400px] bottom-[-30px] right-[450px]"
         alt="">
         <img src="./public/pods.png" class="absolute md:size-[800px] -right-[350px] -bottom-[460px] duration-500 z-50"  alt="" id="myDiv">
-        <div class="bg-yellow-500 rounded-full h-[300px] w-[300px] z-40 absolute -right-[120px] -bottom-[120px]"></div>
-        <!-- <div class="w-500 h-500 flex flex-wrap z-50">
-        <img id="image-2" class="size-36" src="./public/yellow 3.png" class="" alt="">
-        <img id="image-2" class="size-36" src="./public/white 2.png" class="" alt="">
-        <img id="image-2" class="size-36" src="./public/green 3.png" class="" alt="">
-        <img id="image-2" class="size-36" src="./public/green 4.png" class="" alt="">
-
-
-        </div> -->
+        <div class="bg-yellow-500 rounded-full h-[300px] w-[300px] z-40 absolute -right-[120px] -bottom-[120px]" id="elip1"></div>
       </div>
     </div>
   </section>
@@ -592,6 +579,17 @@
     }
 
     setInterval(changeBackgroundColor, 3000);
+  
+  // Color change near the pods
+  const elips = ['#c1eaf3', '#D1F3C1', '#C1DFF3', '#FEFA9F'];
+    let currentElipIndex = 0;
+
+    function changeColorNearPods() {
+      const pods = document.getElementById('elip1');
+      pods.style.backgroundColor = elips[currentElipIndex];
+      currentElipIndex = (currentElipIndex + 1) % elips.length; // Cycle through colors
+    }
+    setInterval(changeColorNearPods, 3000);
   // Leaf Animation
 
   const imageContainer = document.getElementById('image-container');
