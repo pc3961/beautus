@@ -105,13 +105,19 @@
       </div>
       <!-- Video Section -->
       <div class="flex w-full absolute bottom-10 px-4 md:px-16">
-        <div class="flex flex-col pt-96 h-full w-full">
-          <h1 class="text-white text-[30px] md:text-[40px] concert-one-regular font-normal w-full">Hygienic, Safe, Natural,
+        <div class="flex flex-col pt-96 h-full w-full text-white"id="topic">
+          <h1 class=" text-[30px] md:text-[40px] concert-one-regular font-normal w-full" id="topic">Hygienic, Safe, Natural,
             Environmentally
             Friendly Wipes</h1>
-          <p class="text-white text-xl font-normal py-5">A creative solution to clean and freshen hands</p>
+          <p class="text-xl font-normal py-5">A creative solution to clean and freshen hands</p>
         </div>
-        <div class="hidden w-screen h- bg-[url('/public/pods1.png')] bg-contain md:bg-contain bg-right bg-no-repeat" id="welcomeDiv">
+        <div class="hidden w-screen bg-[url('/public/pods1.png')] bg-contain md:bg-contain bg-right bg-no-repeat" id="welcomeDiv">
+        </div>
+        <div class="hidden w-screen flex z-[100]" id="grid">
+          <img src="./public/green 5.svg" alt="" class="size-32 absolute bottom-36 right-48">
+          <img src="./public/green 6.svg" alt="" class="size-32 absolute bottom-16 right-10">
+          <img src="./public/white 3.svg" alt="" class="size-32 absolute bottom-36 right-10">
+          <img src="./public/yellow 3.svg" alt="" class="size-32 absolute bottom-16 right-44">
         </div>
       </div>
       <video id="videoPlayer" src="./public/landing.mp4" class="object-cover h-[900px] md:h-full " width="100%" loop muted></video>
@@ -197,48 +203,48 @@
 
   <!-- Categories Section -->
 
-  <section class=" flex flex-col md:pt-[100px] bg-[#c1eaf3] h-[600px] md:h-screen relative overflow-hidden" id="colorSection">
-    <h1 class="px-4 md:px-24 text-[#3a50b3] text-[46px] font-['Mitr'] font-medium">
+  <section class=" flex flex-col md:pt-[100px] bg-[#c1eaf3] h-[900px] md:h-screen relative overflow-hidden" id="colorSection">
+    <h1 class="px-4 md:px-24 text-[#3a50b3] text-[28px] md:text-[46px] font-['Mitr'] font-normal">
       Refreshing natural Fragnances
     </h1>
     <div class="flex flex-col">
-      <div class="flex md:gap-x-2 md:px-24">
+      <div class="flex flex-wrap md:flex-nowrap md:gap-x-2 md:px-24">
         <div>
-          <img id="image1" class="size-20 md:size-36 " src="./public/green 5.svg" alt="">
-          <div class="h-5 w-full img-pods md:underline-effect rounded-full duration-500"></div>
+          <img id="image1" class="w-auto h-[96px] md:size-36 " src="./public/green 5.svg" alt="">
+          <div class="h-4 w-auto img-pods md:underline-effect rounded-full duration-500"></div>
         </div>
         <div>
-          <img id="image2" class="size-20 md:size-36" src="./public/green 6.svg" alt="">
-          <div class="h-5 w-full img-pods md:underline-effect rounded-full duration-500"></div>
+          <img id="image2" class="w-auto h-[96px] md:size-36" src="./public/green 6.svg" alt="">
+          <div class="h-4 w-auto img-pods md:underline-effect rounded-full duration-500"></div>
 
         </div>
         <div>
-          <img id="image3" class="size-20 md:size-36" src="./public/white 3.svg" alt="">
-          <div class="h-5 w-full img-pods md:underline-effect rounded-full duration-500"></div>
+          <img id="image3" class="w-auto h-[96px] md:size-36" src="./public/white 3.svg" alt="">
+          <div class="h-4 w-auto img-pods md:underline-effect rounded-full duration-500"></div>
 
         </div>
         <div>
-          <img id="image4" class="size-20 md:size-36" src="./public/yellow 3.svg" alt="">
-          <div class="h-5 w-full img-pods md:underline-effect rounded-full duration-500"></div>
+          <img id="image4" class="w-auto h-[96px] md:size-36" src="./public/yellow 3.svg" alt="">
+          <div class="h-4 w-auto img-pods md:underline-effect rounded-full duration-500"></div>
 
         </div>
       </div>
       </div>
     </div>
-    <div class="flex justify-between">
+    <div class="flex md:flex-row flex-col justify-between">
       <div class="flex w-full">
         <h1 id="text-container"
-          class="absolute bottom-10 left-28 md:text-[120px] text-[#3a50b3] concert-one-regular font-normal fade-text duration-500">
+          class="absolute top-[430px] left-10 md:bottom-10 md:left-28 text-[60px] md:text-[120px] text-[#3a50b3] concert-one-regular font-normal fade-text duration-500">
           Cool
         </h1>
       </div>
       <div class="flex w-full items-end" id="image-container">
-        <img src="./public/elip.svg" class="absolute h-[250px] md:h-[500px] bottom-0 right-0 " alt="" id="image-3">
-        <img id="image-1" src="./public/menta 2.svg" class="absolute md:size-[400px] top-0 right-10" alt="">
-        <img id="image-2" src="./public/menta 1.svg" class="absolute md:size-[400px] bottom-[-30px] right-[450px]"
+        <img src="./public/elip.svg" class="absolute h-[370px] md:h-[500px] bottom-0 right-0 " alt="" id="image-3">
+        <img id="image-1" src="./public/menta 2.svg" class="absolute size-[200px] md:size-[400px] bottom-56 right-[-10px] md:top-0 md:right-10" alt="">
+        <img id="image-2" src="./public/menta 1.svg" class="absolute size-[200px] md:size-[400px] bottom-[-20px] z-[100] right-56 md:bottom-[-30px] md:right-[450px]"
         alt="">
-        <img src="./public/pods.png" class="absolute md:size-[800px] -right-[350px] -bottom-[460px] duration-500 z-50"  alt="" id="myDiv">
-        <div class="bg-yellow-500 rounded-full h-[300px] w-[300px] z-40 absolute -right-[120px] -bottom-[120px]" id="elip1"></div>
+        <img src="./public/pods.png" class="absolute size-[400px] md:size-[800px] right-[-180px] md:-right-[350px] bottom-[-230px] md:-bottom-[460px] duration-500 z-50"  alt="" id="myDiv">
+        <div class="bg-yellow-500 rounded-full size-[350px] md:size-[300px] z-40 absolute -right-[120px] -bottom-[120px]" id="elip1"></div>
       </div>
     </div>
   </section>
@@ -299,7 +305,7 @@
   <section class="px-4 md:px-40 pb-12">
     <div class="w-full group" id="document-section">
       <div
-        class="md:gap-x-40 flex md:flex-row flex-col justify-between items-center opacity-0 transition-opacity duration-150 group-hover:opacity-100"
+        class="md:gap-x-40 flex md:flex-row flex-col justify-between items-center opacity-0 transition-opacity duration-500"
         id="document-heading1">
         <div class="flex flex-col md:gap-4 gap-4">
           <h1 class="text-4xl md:text-[72px] text-gradient md:leading-none font-normal">Make It Yours </h1>
@@ -313,7 +319,7 @@
       </div>
     </div>
     <div
-      class="w-full md:flex flex md:justify-start justify-center ease-in-out opacity-0 md:opacity-0 transition-opacity duration-150 group-hover:opacity-100"
+      class="w-full md:flex flex md:justify-start justify-center ease-in-out opacity-0 md:opacity-0 transition-opacity duration-150"
       id="document-heading">
       <button
         class="flex justify-center font-['Baloo'] px-10 text-white text-lg font-medium bg-[#3A50B3] rounded-full mt-6 py-2">
@@ -401,19 +407,29 @@
   <script>
   document.addEventListener('DOMContentLoaded', function () {
     const gradient = document.getElementById('gradient');
+    const grid = document.getElementById('grid');
+    const topic = document.getElementById('topic');
     const welcomeDiv = document.getElementById('welcomeDiv');
     const videoPlayer = document.getElementById('videoPlayer');
     videoPlayer.classList.add('opacity-0');
     gradient.classList.add('bg-radial-gradient');
     welcomeDiv.classList.remove('hidden');
       setTimeout(() => {
-        welcomeDiv.classList.add('hidden');
-        videoPlayer.classList.add('opacity-100');
+        welcomeDiv.classList.add('pods');
+       setTimeout(() => {
+        grid.classList.remove('hidden');
+        gradient.classList.remove('bg-radial-gradient');
+        gradient.classList.add('bg-white');
+        topic.classList.remove('text-white');
+        topic.classList.add('text-[#97CAEB]');
+        grid.classList.add('slide-out-right');
+
         setTimeout(() => {
+          videoPlayer.classList.add('opacity-100');
             videoPlayer.play();
-            console.log("working");
-        });  
-    },2000); 
+        },1000);  
+       },1000)
+    },3000); 
 });
   </script>
   <script>
@@ -547,7 +563,7 @@
     setTimeout(() => {
       // Change the text
       textContainer.innerHTML = texts[currentTextIndex].text;
-      textContainer.className = `absolute bottom-10 left-28 md:text-[120px] concert-one-regular font-normal fade-text duration-500 ${texts[currentTextIndex].color}`;
+      textContainer.className = `absolute top-[430px] left-10 md:bottom-10 md:left-28 md:text-[120px] text-[60px] concert-one-regular font-normal fade-text duration-500 ${texts[currentTextIndex].color}`;
       currentTextIndex = (currentTextIndex + 1) % texts.length;
 
       // Fade in the new text
