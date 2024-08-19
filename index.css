@@ -535,11 +535,11 @@
 }
 @keyframes pods {
   0% {
-    transform: translateY(0);
+    transform: translate(0,0);
     opacity: 1;
   }
   100% {
-    transform: translateY(100%);
+    transform: translate(0,100%);
     opacity: 0;
     display: hidden;
   }
@@ -558,6 +558,7 @@
 
 .slide-out-right{
   animation: slideOutRight 1s ease-in-out forwards;
+  animation-delay: 300ms !important;
 }
 
 .pods {
