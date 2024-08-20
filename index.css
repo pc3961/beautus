@@ -513,6 +513,67 @@
     opacity: 0;
   }
 }
+@keyframes pod1 {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes pod2 {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes pod3 {
+  from {
+    transform: translate(-50%,-20%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+@keyframes pod4 {
+  from {
+    transform: translate(50%,-20%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+@keyframes pod5 {
+  from {
+    transform: translate(-50%,20%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+@keyframes pod6 {
+  from {
+    transform: translate(50%,20%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
 @keyframes arrowUp {
   from {
     transform: translateY(150%);
@@ -556,9 +617,27 @@
   }
 }
 
+.slide-green {
+  animation: pod1 500ms ease-in-out forwards;
+}
+.slide-blue {
+  animation: pod2 500ms ease-in-out forwards;
+}
+.slide1{
+  animation: pod3 500ms ease-in-out forwards;
+}
+.slide2{
+  animation: pod4 500ms ease-in-out forwards;
+}
+.slide3{
+  animation: pod5 500ms ease-in-out forwards;
+}
+.slide4{
+  animation: pod6 500ms ease-in-out forwards;
+}
 .slide-out-right{
   animation: slideOutRight 1s ease-in-out forwards;
-  animation-delay: 300ms !important;
+  animation-delay: 500ms !important;
 }
 
 .pods {

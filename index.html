@@ -114,11 +114,11 @@
         <div class="hidden w-screen flex z-[100] relative" id="welcomeDiv">
           <img src="./public/pods1.png" class="absolute top-1 right-32 size-96 object-contain" alt="">
         </div>
-        <div class="hidden w-screen flex z-[100]" id="grid">
-          <img src="./public/green 5.svg" alt="" class="md:size-32 size-64 absolute  top-10 right-36 md:bottom-36 md:right-48">
-          <img src="./public/green 6.svg" alt="" class="md:size-32 size-64 absolute top-0 right-10 md:bottom-16 md:right-10">
-          <img src="./public/white 3.svg" alt="" class="md:size-32 size-64 absolute top-20 right-10 md:bottom-36 md:right-10">
-          <img src="./public/yellow 3.svg" alt="" class="md:size-32 size-64 absolute top-28 right-48 md:bottom-16 md:right-44">
+        <div class="hidden w-screen flex z-[100] relative" id="grid">
+          <img src="./public/green 5.svg" alt="" class="md:size-32 size-96 absolute top-10 right-36 md:bottom-36 md:right-48 object-contain">
+          <img src="./public/green 6.svg" alt="" class="md:size-32 size-96 absolute top-0 right-10 md:bottom-16 md:right-10 object-contain">
+          <img src="./public/white 3.svg" alt="" class="md:size-32 size-96 absolute top-20 right-10 md:bottom-36 md:right-10 object-contain">
+          <img src="./public/yellow 3.svg" alt="" class="md:size-32 size-96 absolute top-28 right-48 md:bottom-16 md:right-44 object-contain">
         </div>
       </div>
       <video id="videoPlayer" src="./public/landing.mp4" class="object-cover h-[900px] md:h-full " width="100%" loop muted></video>
@@ -414,6 +414,8 @@
     videoPlayer.classList.add('opacity-0');
     gradient.classList.add('bg-radial-gradient');
     welcomeDiv.classList.remove('hidden');
+    const isDesktop = window.matchMedia('(min-width: 768px)').matches;
+    const isMobile = window.matchMedia('(max-width: 767px)').matches;
       setTimeout(() => {
         welcomeDiv.classList.add('pods');
        setTimeout(() => {
@@ -422,8 +424,61 @@
         gradient.classList.add('bg-white');
         topic.classList.remove('text-white');
         topic.classList.add('text-[#97CAEB]');
-        grid.classList.add('slide-out-right');
+        if (isDesktop) {
+            const slideBlueElement = [
+              './public/green 5.svg'
+            ]
+            const slideGreenElement = [
+                './public/green 6.svg',
+            ];
+            const slideWhiteElement = [
+                './public/white 3.svg',
+            ];
+            const slideYellowElement = [
+                './public/yellow 3.svg',
+            ];
+                grid.querySelectorAll('img').forEach(element => {
+                   const imgSrc1 = element.getAttribute('src');
 
+                   if(slideBlueElement.includes(imgSrc1)){
+                    element.classList.add('slide1');
+                   }
+                   if(slideGreenElement.includes(imgSrc1)){
+                    element.classList.add('slide2');
+                   }
+                   if(slideWhiteElement.includes(imgSrc1)){
+                    element.classList.add('slide4');
+                   }
+                   if(slideYellowElement.includes(imgSrc1)){
+                    element.classList.add('slide3');
+                   }
+                });
+                setTimeout(() => {
+                    grid.classList.add('slide-out-right');
+                }, 200);
+            }
+        if (isMobile) {
+                const slideBlueElements = [
+                    './public/green 5.svg',
+                    './public/yellow 3.svg',
+                ];
+                const slideGreenElements = [
+                    './public/green 6.svg',
+                    './public/white 3.svg',
+                ];
+
+                grid.querySelectorAll('img').forEach(element => {
+                    const imgSrc = element.getAttribute('src');
+
+                    if (slideBlueElements.includes(imgSrc)) {
+                        element.classList.add('slide-blue');
+                    }
+
+                    if (slideGreenElements.includes(imgSrc)) {
+                        element.classList.add('slide-green');
+                    }
+                });
+            }
         setTimeout(() => {
           videoPlayer.classList.add('opacity-100');
             videoPlayer.play();
