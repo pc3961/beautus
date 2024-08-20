@@ -637,7 +637,7 @@
 }
 .slide-out-right{
   animation: slideOutRight 1s ease-in-out forwards;
-  animation-delay: 500ms !important;
+  animation-delay: 1s !important;
 }
 
 .pods {
