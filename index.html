@@ -114,17 +114,17 @@
           <img src="./public/white 3.svg" alt="" class="size-auto absolute top-40 right-10">
           <img src="./public/yellow 3.svg" alt="" class="size-auto absolute top-48 right-56">
         </div>
-        <div class="flex flex-col pt-48 h-full w-full text-white z-[200]"id="topic">
-          <h1 class=" text-[30px] concert-one-regular font-normal w-full" id="topic">Hygienic, Safe, Natural,
+        <div class="flex flex-col w-full text-white z-[200]"id="topic">
+          <h1 class="text-[30px] concert-one-regular font-normal w-full" id="topic">Hygienic, Safe, Natural,
             Environmentally
             Friendly Wipes</h1>
           <p class="text-xl font-normal py-5">A creative solution to clean and freshen hands</p>
         </div>
       </div>
             <!-- Video Section desktop View -->
-      <div class="hidden md:flex w-full h-full px-10 absolute">
+      <div class="hidden md:flex w-full h-full px-10 absolute overflow-hidden">
         <div class="flex flex-col w-full text-white absolute bottom-0" id="topic1">
-          <h1 class=" text-[30px] concert-one-regular font-normal w-full" id="topic1">Hygienic, Safe, Natural,
+          <h1 class="text-[48px] concert-one-regular font-normal w-full" id="topic1">Hygienic, Safe, Natural,<br>
             Environmentally
             Friendly Wipes</h1>
           <p class="text-xl font-normal py-5">A creative solution to clean and freshen hands</p>
@@ -145,7 +145,7 @@
 
   <!-- Video and Features Section -->
 
-  <section class="w-full flex flex-col">
+  <section class="w-full flex flex-col overflow-hidden">
     <div class="w-full flex flex-col md:flex-row md:px-24 md:py-16 px-4 py-6 gap-x-6 opacity-0" id="document-title">
       <div class="w-full">
         <h1 class="text-4xl text-nowrap font-['Mitr'] font-medium gradient-text">
@@ -245,7 +245,6 @@
         <div>
           <img id="image4" class="w-auto h-[96px] md:size-36" src="./public/yellow 3.svg" alt="">
           <div class="h-4 w-auto img-pods md:underline-effect rounded-full duration-500"></div>
-
         </div>
       </div>
       </div>
@@ -257,13 +256,13 @@
           Cool
         </h1>
       </div>
-      <div class="flex w-full items-end" id="image-container">
+      <div class="flex w-full items-end md:overflow-hidden" id="image-container">
         <img src="./public/elip.svg" class="absolute h-[370px] md:h-[500px] bottom-0 right-0 " alt="" id="image-3">
         <img id="image-1" src="./public/menta 2.svg" class="absolute size-[200px] md:size-[400px] bottom-56 right-[-10px] md:top-0 md:right-10" alt="">
         <img id="image-2" src="./public/menta 1.svg" class="absolute size-[200px] md:size-[400px] bottom-[-20px] z-[100] right-56 md:bottom-[-30px] md:right-[450px]"
         alt="">
         <img src="./public/pods.png" class="absolute size-[400px] md:size-[800px] right-[-180px] md:-right-[350px] bottom-[-230px] md:-bottom-[460px] duration-500 z-50"  alt="" id="myDiv">
-        <div class="bg-yellow-500 rounded-full size-[350px] md:size-[300px] z-40 absolute -right-[120px] -bottom-[120px]" id="elip1"></div>
+        <div class="bg-yellow-500 rounded-full size-[350px] md:size-[300px] z-40 absolute -right-[120px] -bottom-[120px] md:overflow-hidden" id="elip1"></div>
       </div>
     </div>
   </section>
@@ -347,12 +346,12 @@
   </section>
   <!-- Form Section -->
   <section class="px-4 md:px-36 py-3 md:py-28 w-full" id="target-section">
-    <div class="flex flex-col md:flex-row w-full">
+    <div class="flex flex-col md:flex-row w-full overflow-hidden md:overflow-hidden">
       <div class="flex flex-col justify-around md:w-3/5 bg-[#3A50B3] p-3 md:p-20 shadow-md rounded-md">
         <h1 class="text-white text-[28px] urbanist-regular font-bold">
           Get in Touch with Us
         </h1>
-        <h2 class="text-white text-[28px] urbanist-regular font-bold text-nowrap">
+        <h2 class="text-white text-[28px] urbanist-regular font-bold">
           to discuss your issues in Wicked Wipes
         </h2>
         <div class="w-full md:px-8 py-8 md:pt-24 flex gap-x-6">
@@ -390,7 +389,7 @@
         <div class="w-full flex justify-end">
           <button
             class="flex justify-center w-1/2 text-white text-base font-medium bg-[#3A50B3] hover:bg-blue-700 rounded-md mt-28 py-4">
-            Send Message
+            Let's Connect
           </button>
         </div>
       </div>
@@ -450,6 +449,8 @@
         topic1.classList.remove('text-white');
         topic1.classList.add('text-[#97CAEB]');
         topic.classList.add('text-[#97CAEB]');
+        topic.classList.add('bg-white/30');
+        topic.classList.add('rounded-r-lg');
         if (isDesktop) {
             const slideBlueElement = [
               './public/green 5.svg'
@@ -509,11 +510,11 @@
                     if (slideGreenElements.includes(imgSrc)) {
                         element.classList.add('slide-green');
                     }
-                });
-                grid.addEventListener('animationend', () => {
+                    grid.addEventListener('animationend', () => {
                     setTimeout(() => {
                         grid.classList.add('hidden');
                     }, 500); // 200ms delay before hiding
+                });
                 });
             }
         setTimeout(() => {
