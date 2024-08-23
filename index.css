@@ -419,6 +419,26 @@
     opacity: 1;
   }
 }
+@keyframes arrowRight {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(120%);
+    opacity: 1;
+  }
+}
+@keyframes arrowRightBack {
+  0% {
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
 
 @keyframes slideInUp1 {
   0% {
@@ -598,6 +618,26 @@
     opacity: 1;
   }
 }
+@keyframes step4 {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+}
+@keyframes step4Back {
+  from {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 @keyframes pods {
   0% {
     transform: translate(0,0);
@@ -650,11 +690,23 @@
 .step3 {
   animation: step3 1s ease-in-out forwards;
 }
+.step4 {
+  animation: step4 1s ease-in-out forwards;
+}
+.step4-back {
+  animation: step4Back 1s ease-in-out forwards;
+}
 .slide-in-up {
   animation: slideInUp 1s ease-in-out forwards;
 }
 .slide-in-down {
   animation: slideInDown 0.5s ease-in-out forwards;
+}
+.arrow-right {
+  animation: arrowRight 1.5s ease-in-out forwards;
+}
+.arrow-right-reverse {
+  animation: arrowRightBack 1s ease-in-out forwards;
 }
 .slide-in-up1 {
   animation: slideInUp1 1s ease-in-out forwards;

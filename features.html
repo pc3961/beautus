@@ -331,10 +331,11 @@
           </h2>
           <div
             class="h-5 bg-[#C1DFF3] rounded-full mb-6 mt-2 w-full hover:bg-[#97CAEB]"
+            id="step-4"
           ></div>
         </div>
       </div>
-      <div class="w-full flex justify-around">
+      <div class="w-full flex justify-around" id="reverse">
         <div class="flex items-center justify-center gap-x-6" id="items-2">
           <!-- Step 2 -->
           <div
@@ -380,11 +381,26 @@
           ></div>
         </div>
         <!-- Step 4 -->
+        <div class="flex items-center w-1/2 hidden" id="detail-4">
+          <p class="border-2 border-white text-white text-xl p-6 rounded-xl">
+            Simply wipe your hands with the soft, yet sturdy, cloth to remove
+            dirt and germs. Experience the immediate cleansing action and feel
+            confident in reducing the spread of viruses and bacteria. Enjoy the
+            plush feel of this unique hand wipe. 
+          </p>
+        </div>
         <div class="flex items-center justify-center w-56" id="items-4">
+          <img
+            src="./public/Arrow 3.png"
+            alt=""
+            class="absolute z-[100] opacity-0 size-16"
+            id="arrow-2"
+          />
           <img
             src="/public/product-2.png"
             alt=""
             class="mt-16 md:mt-72 flex justify-end size-32 z-[100]"
+            id="img-4"
           />
           <div
             class="bg-[#37a3f1] absolute blur-3xl rounded-full size-96"
@@ -772,20 +788,34 @@
     <!-- Form Section -->
     <section class="px-4 md:px-36 py-3 md:py-28 w-full" id="target-section">
       <div class="flex flex-col md:flex-row w-full overflow-hidden">
-        <div class="flex flex-col md:w-3/5 bg-[#3A50B3] p-3 md:p-16 shadow-md rounded-md relative overflow-hidden">
-          <div class="rounded-full w-24 h-24 md:w-28 md:h-28 bg-white absolute top-16 right-2  md:top-40 md:right-14 z-[100]"></div>
-          <div class="rounded-full w-64 h-64 bg-[#77B5FF] absolute top-20 right-[-150px] md:top-40 md:right-[-100px] z-50 overflow-hidden"></div>
-          <h1 class="text-white text-[14px] md:text-[28px] urbanist-regular font-bold">
+        <div
+          class="flex flex-col md:w-3/5 bg-[#3A50B3] p-3 md:p-16 shadow-md rounded-md relative overflow-hidden"
+        >
+          <div
+            class="rounded-full w-24 h-24 md:w-28 md:h-28 bg-white absolute top-16 right-2 md:top-40 md:right-14 z-[100]"
+          ></div>
+          <div
+            class="rounded-full w-64 h-64 bg-[#77B5FF] absolute top-20 right-[-150px] md:top-40 md:right-[-100px] z-50 overflow-hidden"
+          ></div>
+          <h1
+            class="text-white text-[14px] md:text-[28px] urbanist-regular font-bold"
+          >
             Get in Touch with Us!
           </h1>
-          <h2 class="text-white [text-8px] md:text-[16px] urbanist-regular font-bold">
+          <h2
+            class="text-white [text-8px] md:text-[16px] urbanist-regular font-bold"
+          >
             to discuss your issues in Wicked Wipes
           </h2>
           <div class="w-full py-8 md:pt-16 flex gap-x-6">
             <img src="/public/bxs_phone-call.svg" alt="" />
             <div class="flex flex-col w-full">
-              <a href="tel:+12898372547" class="text-white text-xs md:text-lg">+1 289 837 2547</a>
-              <a href="tel:+12898372548" class="text-white text-xs md:text-lg">+1 289 837 2548</a>
+              <a href="tel:+12898372547" class="text-white text-xs md:text-lg"
+                >+1 289 837 2547</a
+              >
+              <a href="tel:+12898372548" class="text-white text-xs md:text-lg"
+                >+1 289 837 2548</a
+              >
             </div>
           </div>
           <div class="w-full md:pt-10 flex gap-x-6">
@@ -959,14 +989,18 @@
     <script>
       const Step2 = document.getElementById("step-2");
       const Step3 = document.getElementById("step-3");
+      const Step4 = document.getElementById("step-4");
       const Item2 = document.getElementById("items-2");
       const Item3 = document.getElementById("items-3");
       const Item4 = document.getElementById("items-4");
-      const Detail3 = document.getElementById("detail-3");
+      const Image4 = document.getElementById("img-4");
       const Detail2 = document.getElementById("detail-2");
+      const Detail3 = document.getElementById("detail-3");
+      const Detail4 = document.getElementById("detail-4");
       const Logo = document.getElementById("logo");
       const Arrow = document.getElementById("arrow");
       const Arrow1 = document.getElementById("arrow-1");
+      const Arrow2 = document.getElementById("arrow-2");
 
       Step2.addEventListener("mouseover", function () {
         Logo.classList.add("scale-125");
@@ -1011,12 +1045,44 @@
         Arrow1.classList.add("opacity-0");
       });
 
+      Step4.addEventListener("mouseover", function () {
+        Item2.classList.add("hidden");
+        Item3.classList.add("hidden");
+        Image4.classList.add("scale-150");
+        Image4.classList.remove("step4-back");
+        Image4.classList.add("step4");
+        Detail2.classList.add("hidden");
+        Detail3.classList.add("hidden");
+        Detail4.classList.remove("hidden");
+        Arrow2.classList.remove("opacity-0");
+        Arrow2.classList.add("arrow-right");
+      });
+      Step4.addEventListener("mouseout", function () {
+        Detail4.classList.add("hidden");
+        Arrow2.classList.remove("arrow-right");
+        Arrow2.classList.add("arrow-right-reverse")
+        Image4.classList.add("step4-back");
+        Image4.classList.remove("step4");
+        Image4.classList.remove("scale-150");
+        Item2.classList.remove("hidden");
+        Item3.classList.remove("hidden");
+        Detail2.classList.add("hidden");
+        Detail3.classList.add("hidden");
+      });
+
       // Reset the animation classes after each animation ends
       Arrow.addEventListener("animationend", function (event) {
         if (event.animationName === "slideInDown") {
         } else if (event.animationName === "slideOutUp") {
           Arrow.classList.add("opacity-0"); // Hide arrow after slide-out-up animation
           Arrow.classList.remove("slide-out-up");
+        }
+      });
+      Arrow2.addEventListener("animationend", function (event) {
+        if (event.animationName === "arrowRight") {
+        } else if (event.animationName === "arrowRightBack") {
+          Arrow2.classList.add("opacity-0"); // Hide arrow after slide-out-up animation
+          Arrow2.classList.remove("arrow-right-reverse");
         }
       });
       const playButton = document.getElementById("play-button");
