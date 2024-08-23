@@ -347,24 +347,26 @@
   <!-- Form Section -->
   <section class="px-4 md:px-36 py-3 md:py-28 w-full" id="target-section">
     <div class="flex flex-col md:flex-row w-full overflow-hidden md:overflow-hidden">
-      <div class="flex flex-col justify-around md:w-3/5 bg-[#3A50B3] p-3 md:p-20 shadow-md rounded-md">
-        <h1 class="text-white text-[28px] urbanist-regular font-bold">
-          Get in Touch with Us
+      <div class="flex flex-col md:w-3/5 bg-[#3A50B3] p-3 md:p-16 shadow-md rounded-md relative overflow-hidden">
+        <div class="rounded-full w-24 h-24 md:w-28 md:h-28 bg-white absolute top-16 right-2  md:top-40 md:right-14 z-[100]"></div>
+        <div class="rounded-full w-64 h-64 bg-[#77B5FF] absolute top-20 right-[-150px] md:top-40 md:right-[-100px] z-50 overflow-hidden"></div>
+        <h1 class="text-white text-[14px] md:text-[28px] urbanist-regular font-bold">
+          Get in Touch with Us!
         </h1>
-        <h2 class="text-white text-[28px] urbanist-regular font-bold">
+        <h2 class="text-white [text-8px] md:text-[16px] urbanist-regular font-bold">
           to discuss your issues in Wicked Wipes
         </h2>
-        <div class="w-full md:px-8 py-8 md:pt-24 flex gap-x-6">
+        <div class="w-full py-8 md:pt-16 flex gap-x-6">
           <img src="/public/bxs_phone-call.svg" alt="" />
           <div class="flex flex-col w-full">
-            <a href="tel:+12898372547" class="text-white text-lg">+1 289 837 2547</a>
-            <a href="tel:+12898372548" class="text-white text-lg">+1 289 837 2548</a>
+            <a href="tel:+12898372547" class="text-white text-xs md:text-lg">+1 289 837 2547</a>
+            <a href="tel:+12898372548" class="text-white text-xs md:text-lg">+1 289 837 2548</a>
           </div>
         </div>
-        <div class="w-full md:px-8 md:pt-24 flex gap-x-6">
+        <div class="w-full md:pt-10 flex gap-x-6">
           <img src="/public/carbon_location-filled.svg" alt="" />
           <div class="flex flex-col w-full">
-            <p class="text-white text-lg text-nowrap">
+            <p class="text-white text-xs md:text-[16px] md:text-nowrap">
               2030 Bristol Circle, Suite 210,<br />
               Oakville, ON - L6H 0H2
             </p>
@@ -382,7 +384,6 @@
               class="form" />
             <input type="tel" label="Phone Number" id="pnum" placeholder="Phone Number" name="fname" class="form" />
           </div>
-
           <input type="text" label="Company Name" id="company" placeholder="Company Name" name="cname" class="form" />
           <input type="tel" label="Message" id="message" placeholder="Message" name="msg" class="form" />
         </form>
