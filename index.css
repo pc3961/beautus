@@ -376,8 +376,6 @@
 }
 .urbanist-regular {
   font-family: "Urbanist", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
 }
 @keyframes slideInLeft {
   0% {
