@@ -225,28 +225,27 @@
 
   <!-- Categories Section -->
 
-  <section class=" flex flex-col md:pt-[100px] bg-[#c1eaf3] h-[900px] md:h-screen relative overflow-hidden" id="colorSection">
-    <h1 class="px-4 md:px-10 text-[#3a50b3] text-[28px] md:text-[46px] font-['Mitr'] font-normal">
+  <section class=" flex flex-col md:pt-[100px] bg-[#c1eaf3] h-[903px] md:h-[903px] relative overflow-hidden" id="colorSection">
+    <h1 class="px-4 md:px-40 text-[#3a50b3] text-[28px] md:text-[46px] font-['Mitr'] font-normal">
       Refreshing natural fragnances
     </h1>
     <div class="flex flex-col">
-      <div class="flex flex-wrap md:flex-nowrap md:gap-x-2 md:px-10">
+      <div class="flex flex-wrap md:flex-nowrap md:gap-x-2 md:px-40">
         <div>
-          <img id="image1" class="w-auto h-[96px] md:size-36 " src="./public/green 5.svg" alt="">
+          <img id="image1" class="w-auto h-[96px] md:size-40 " src="./public/green 5.svg" alt="">
+          <div class="h-4 w-auto img-pods md:underline-effect rounded-full duration-500 underline-active"></div>
+        </div>
+        <div>
+          <img id="image4" class="w-auto h-[96px] md:size-40" src="./public/yellow 3.svg" alt="">
           <div class="h-4 w-auto img-pods md:underline-effect rounded-full duration-500"></div>
         </div>
         <div>
-          <img id="image2" class="w-auto h-[96px] md:size-36" src="./public/green 6.svg" alt="">
+          <img id="image2" class="w-auto h-[96px] md:size-40" src="./public/green 6.svg" alt="">
           <div class="h-4 w-auto img-pods md:underline-effect rounded-full duration-500"></div>
 
         </div>
         <div>
-          <img id="image3" class="w-auto h-[96px] md:size-36" src="./public/white 3.svg" alt="">
-          <div class="h-4 w-auto img-pods md:underline-effect rounded-full duration-500"></div>
-
-        </div>
-        <div>
-          <img id="image4" class="w-auto h-[96px] md:size-36" src="./public/yellow 3.svg" alt="">
+          <img id="image3" class="w-auto h-[96px] md:size-40" src="./public/white 3.svg" alt="">
           <div class="h-4 w-auto img-pods md:underline-effect rounded-full duration-500"></div>
         </div>
       </div>
@@ -255,7 +254,7 @@
     <div class="flex md:flex-row flex-col justify-between">
       <div class="flex w-full">
         <h1 id="text-container"
-          class="absolute top-[430px] left-10 md:bottom-10 md:left-28 text-[60px] md:text-[120px] text-[#3a50b3] concert-one-regular font-normal fade-text duration-500">
+          class="absolute top-[430px] left-10 md:top-80 md:left-36 text-[60px] md:text-[180px] text-[#3a50b3] concert-one-regular font-normal fade-text duration-500">
           Cool
         </h1>
       </div>
@@ -265,7 +264,7 @@
         <img id="image-2" src="./public/menta 1.svg" class="absolute size-[200px] md:size-[400px] bottom-[-20px] z-[100] right-56 md:bottom-[-30px] md:right-[450px]"
         alt="">
         <img src="./public/pods.png" class="absolute size-[400px] md:size-[800px] right-[-180px] md:-right-[350px] bottom-[-230px] md:-bottom-[460px] duration-500 z-50"  alt="" id="myDiv">
-        <div class="bg-yellow-500 rounded-full size-[350px] md:size-[300px] z-40 absolute -right-[120px] -bottom-[120px] md:overflow-hidden" id="elip1"></div>
+        <div class="bg-[#c1eaf3] rounded-full size-[350px] md:size-[300px] z-40 absolute -right-[120px] -bottom-[120px] md:overflow-hidden" id="elip1"></div>
       </div>
     </div>
   </section>
@@ -599,7 +598,7 @@
   let angle = 0;
 
   setInterval(() => {
-      angle += 90;
+      angle -= 90;
       document.getElementById('myDiv').style.transform = `rotate(${angle}deg)`;
   }, 3000);
 </script>
@@ -626,9 +625,8 @@
           }); 
         })
         brand.observe(documentHeading1, documentHeading);
-  let currentImageIndex = 0;
+  let currentImageIndex = 1;
   const images = document.getElementsByClassName('img-pods');
-
   setInterval(() => {
     // Reset underline for all images
     for (let i = 0; i < images.length; i++) {
@@ -643,10 +641,11 @@
   }, 3000);
 
   const texts = [
-    { text: "Cool", color: "text-[#3a50b3]" },
+    { text: "Lemon", color: "text-[#FCD901]" },
     { text: "Green Tea", color: "text-[#147045]" },
     { text: "Unscented", color: "text-[#687DD2]" },
-    { text: "Lemon", color: "text-[#FCD901]" }];
+    { text: "Cool", color: "text-[#3a50b3]" },
+  ];
   let currentTextIndex = 0;
   const textContainer = document.getElementById('text-container');
 
@@ -658,7 +657,7 @@
     setTimeout(() => {
       // Change the text
       textContainer.innerHTML = texts[currentTextIndex].text;
-      textContainer.className = `absolute top-[430px] left-10 md:bottom-10 md:left-28 md:text-[120px] text-[60px] concert-one-regular font-normal fade-text duration-500 ${texts[currentTextIndex].color}`;
+      textContainer.className = `absolute top-[430px] left-10 md:top-80 md:left-36 md:text-[180px] text-[60px] concert-one-regular font-normal fade-text duration-500 ${texts[currentTextIndex].color}`;
       currentTextIndex = (currentTextIndex + 1) % texts.length;
 
       // Fade in the new text
@@ -675,7 +674,7 @@
 
   // Background Color Change
 
-  const colors = ['#c1eaf3', '#D1F3C1', '#C1DFF3', '#FEFA9F']; // List of colors
+  const colors = ['#FEFA9F', '#D1F3C1', '#C1DFF3', '#c1eaf3' ]; // List of colors
     let currentColorIndex = 0;
 
     function changeBackgroundColor() {
@@ -687,7 +686,7 @@
     setInterval(changeBackgroundColor, 3000);
   
   // Color change near the pods
-  const elips = ['#c1eaf3', '#D1F3C1', '#C1DFF3', '#FEFA9F'];
+  const elips = ['#FEFA9F', '#D1F3C1', '#C1DFF3', '#c1eaf3'];
     let currentElipIndex = 0;
 
     function changeColorNearPods() {
@@ -704,20 +703,20 @@
   const imageElement2 = document.getElementById('image-3');
 
   const imageArray = [
-  './public/lemon.png',
   './public/menta 2.svg',
+  './public/lemon.png',
   './public/leaf1.png',
   './public/water1.png'
 ];
   const imageArray1 = [
-  './public/lemon1.png',
   './public/menta 1.svg',
+  './public/lemon1.png',
   './public/leaf2.png',
   './public/water2.png'
 ];
   const imageArray2 = [
-  './public/yellow-ellip.png',
   './public/elip.svg',
+  './public/yellow-ellip.png',
   './public/green-ellip.png',
   './public/ice-ellip.png'
 ];
