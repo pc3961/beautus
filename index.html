@@ -327,7 +327,7 @@
         </div>
       </div>
     </div>
-    <div class="bg-white relative bottom-32 md:h-32 h-28 w-full z-[100] rounded-tl-[50%] rounded-tr-[50%]"></div>
+    <div class="bg-white relative bottom-32 md:h-32 h-32 w-full z-[100] rounded-tl-[50%] rounded-tr-[50%]"></div>
   </section>
 
   <!-- Make it your Brand Section -->
@@ -397,7 +397,7 @@
           </div>
           <div class="flex justify-between w-full gap-x-6">
             <input type="email" id="bemail" placeholder="Business Email" name="bemail" class="form" required />
-            <input type="tel" id="pnum" placeholder="Phone Number" name="pnum" class="form" required pattern="^[0-9]{10}$" />
+            <input type="tel" id="pnum" placeholder="Phone Number" name="pnum" class="form" required pattern="^[0-9]{10}$" maxlength="10"  />
           </div>
           <input type="text" id="company" placeholder="Company Name" name="cname" class="form" required minlength="2" />
           <textarea id="message" placeholder="Message" name="msg" class="form" required minlength="10"></textarea>
@@ -537,7 +537,7 @@
             videoPlayer.play();
         },1000);  
        },1000)
-    },3000); 
+    },1000); 
 });
   </script>
 <script>
