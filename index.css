@@ -377,6 +377,76 @@
 .urbanist-regular {
   font-family: "Urbanist", sans-serif;
 }
+@keyframes fadeOutAnimation
+{
+   0%
+   { 
+   scale: 1;
+   opacity: 1;
+   }
+
+   100% 
+   {
+   scale: 3;
+   opacity: 0;
+   }
+}
+@keyframes fadeOutSlide
+{
+   0%
+   { 
+   transform: translateX(0);
+   opacity: 1;
+   }
+
+   100% 
+   {
+   transform: translateX(700%);
+   opacity: 0;
+   }
+}
+@keyframes fadeOutSlide1
+{
+   0%
+   { 
+   transform: translateX(0);
+   opacity: 1;
+   }
+
+   100% 
+   {
+   transform: translateX(900%);
+   opacity: 0;
+   }
+}
+@keyframes fadeOutSlide2
+{
+   0%
+   { 
+   transform: translateX(0);
+   opacity: 1;
+   }
+
+   100% 
+   {
+   transform: translateX(1000%);
+   opacity: 0;
+   }
+}
+@keyframes fadeOutSlide3
+{
+   0%
+   { 
+   transform: translateX(0);
+   opacity: 1;
+   }
+
+   100% 
+   {
+   transform: translateX(1200%);
+   opacity: 0;
+   }
+}
 @keyframes slideInLeft {
   0% {
     transform: translateX(-100%);
@@ -658,6 +728,25 @@
   }
 }
 
+.fade-out-circles {
+  animation: fadeOutAnimation 2s ease-in-out forwards;
+}
+.fade-circles-1{
+  animation: fadeOutSlide 1s ease-in-out forwards;
+  animation-delay: 300ms;
+}
+.fade-circles-2{
+  animation: fadeOutSlide1 1s ease-in-out forwards;
+  animation-delay: 250ms;
+}
+.fade-circles-3{
+  animation: fadeOutSlide2 1s ease-in-out forwards;
+  animation-delay: 200ms;
+}
+.fade-circles-4{
+  animation: fadeOutSlide3 1s ease-in-out forwards;
+  animation-delay: 150ms;
+}
 .slide-green {
   animation: pod1 500ms ease-in-out forwards;
 }

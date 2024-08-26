@@ -56,7 +56,17 @@
 
 <body>
   <section class="flex flex-col items-center w-full">
-    <div class="w-full relative" id="gradient">
+    <div class="md:hidden">
+      <div class="absolute bg-[#C1DFF3]/50 top-[30%] left-[20%] w-64 h-64 rounded-full fade-out-circles"></div>
+    </div>
+<div class="md:block hidden">
+  <div class="absolute bg-[#C1DFF3]/50 top-[30%] left-[40%] w-64 h-64 rounded-full fade-out-circles"></div>
+  <div class="absolute bg-[#C1DFF3]/50 top-[45%] left-[30%] w-10 h-10 rounded-full fade-circles-1"></div>
+  <div class="absolute bg-[#C1DFF3]/50 top-[45%] left-[20%] w-10 h-10 rounded-full fade-circles-2"></div>
+  <div class="absolute bg-[#C1DFF3]/50 top-[45%] left-[10%] w-10 h-10 rounded-full fade-circles-3"></div>
+  <div class="absolute bg-[#C1DFF3]/50 top-[45%] left-10 w-10 h-10 rounded-full fade-circles-4"></div>
+</div>
+    <div class="w-full" id="gradient">
       <!-- Navbar -->
       <div class="flex w-full items-center p-10 md:p-16 gap-y-4 flex-row justify-between absolute">
         <a href="index.html">
@@ -104,7 +114,6 @@
           </ul>
         </div>
       </div>
-      <!-- <div class="absolute bg-white top-96 left-96 w-48 h-48 rounded-full"></div> -->
       <!-- Video Section Mobile View -->
       <div class="md:hidden flex flex-col w-full h-full absolute bottom-10 px-4">
         <div class="hidden w-full flex h-full z-[100] object-contain py-36 overflow-hidden" id="welcomeDiv">
@@ -167,8 +176,8 @@
       </div>
     </div>
 
-    <div class="md:flex justify-around mx-4 md:px-40 md:mx-0 overflow-hidden md:overflow-hidden">
-      <div class="overflow-hidden relative w-full">
+    <div class="md:flex md:justify-evenly justify-around mx-4 md:px-40 md:mx-0 overflow-hidden md:overflow-hidden">
+      <div class="relative w-full">
         <div id="document-sliding-cards25"
           class="flex gap-4 justify-center items-start p-6 shadow-xl rounded-3xl font-['Baloo'] md:w-[500px] my-8">
           <img src="./public/water-drop.png" alt="">
@@ -199,16 +208,16 @@
           </div>
         </div>
       </div>
-      <div id="document-ani-video-card" class="h-full md:opacity-0 flex flex-col justify-center items-center">
+      <div id="document-ani-video-card" class="w-full h-full md:opacity-0 flex flex-col justify-center items-center">
         <div class="relative w-full h-full overflow-hidden shadow-2xl rounded-3xl z-100">
           <video src="./public/animation-video.mp4" class="transform transition-transform scale-125 w-full h-full" playsinline width="100%" height="100%"
             type="video/mp4" autoplay muted loop></video>
         </div>
         <div class="flex flex-col justify-center items-center">
-          <button class="font-['Baloo'] px-10 text-white text-lg font-medium bg-[#3A50B3] rounded-full mt-6 py-2">
+          <button class="font-['Baloo'] px-10 text-white text-lg font-medium bg-[#3A50B3] rounded-full mt-6 py-4">
             LEARN MORE
           </button>
-          <p class="text-lg text-[#7DB1E7] font-bold">About Wicked Wipes</p>
+          <p class="text-lg md:text-[28px] league-spartan text-[#7DB1E7] font-bold mt-2">About Wicked Wipes</p>
         </div>
       </div>
     </div>
@@ -609,6 +618,16 @@
           documentSlidingCards75.classList.add('slide-to-start3');
           documentAniVideoCard.classList.add('document-ani-video-card');
         });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const fadeOutCircle = document.querySelector(".fade-out-circles");
+  const parentDiv = fadeOutCircle.parentElement;
+
+  fadeOutCircle.addEventListener("animationend", () => {
+    parentDiv.classList.add("hidden");
+  });
+});
   </script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
