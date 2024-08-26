@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Privacy Policy</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div
+      class="flex w-full items-center p-10 md:p-16 gap-y-4 flex-row justify-between absolute"
+    >
+      <a href="index.html">
+        <img src="./public/blue-color.svg" class="z-[100] md:z-[100]" alt="" />
+      </a>
+      <button
+        id="hamburger"
+        class="md:hidden z-[100] flex items-center justify-center p-2 rounded-full"
+      >
+        <svg
+          class="w-6 h-6 text-white"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"
+          ></path>
+        </svg>
+      </button>
+      <nav
+        class="hidden md:flex items-center justify-center bg-blue-300 rounded-full z-[100]"
+      >
+        <ul
+          id="menu"
+          class="flex justify-center items-center text-center px-10 gap-x-8 text-white text-xl font-normal"
+        >
+          <li>
+            <a href="features.html">Features</a>
+          </li>
+          <li>
+            <a href="private-label.html">Private Label</a>
+          </li>
+          <li>
+            <a href="testimonials.html">Who We are</a>
+          </li>
+          <li>
+            <a href="#target-section">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- Mobile Menu Drawer -->
+      <div
+        id="menu-drawer"
+        class="fixed top-0 right-0 h-full w-2/3 bg-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden z-[100]"
+      >
+        <ul class="flex flex-col p-4 space-y-6 text-black text-xl font-normal">
+          <li>
+            <a href="features.html">Features</a>
+          </li>
+          <li>
+            <a href="private-label.html">Private Label</a>
+          </li>
+          <li>
+            <a href="testimonials.html">Who We are</a>
+          </li>
+          <li>
+            <a href="#target-section">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Privacy Policy Content -->
+    <section class="px-32 py-20">
+        <div class="w-full">
+
+        </div>
+    </section>
+  <!-- Footer Section-->
+  <section>
+    <div class="bg-[#3A50B3] px-4 md:px-16 py-10 flex flex-col md:flex-row justify-between gap-4">
+      <div class="w-full flex gap-x-16 ">
+        <img class="blue-color-icon" loading="lazy" alt="" src="./public/blue-color.svg" />
+        <nav class="w-full flex">
+          <ul class="flex flex-col gap-y-1">
+            <li><a href="index.html" class="text-white">Wicked Wipes</a></li>
+            <li><a href="features.html" class="text-white">Features</a></li>
+            <li><a href="private-label.html" class="text-white">Private Label</a></li>
+            <li><a href="testimonials.html" class="text-white">Who We are</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="flex md:flex-col gap-2">
+        <h1 class="text-white league-spartan font-bold text-base">Follow us</h1>
+        <div class="flex gap-3 items-center">
+          <img src="./public/Fb.svg" class="size-7" alt="fb">
+          <img src="./public/Instagram.svg" class="size-7" alt="fb">
+          <img src="./public/Dribbble.svg" class="size-7" alt="fb">
+          <img src="./public/LinkedIn.svg" class="size-7" alt="fb">
+        </div>
+      </div>
+    </div>
+  </section>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const menuDrawer = document.getElementById('menu-drawer');
+    
+        hamburger.addEventListener('click', () => {
+          menuDrawer.classList.toggle('translate-x-full');
+        });
+    
+        // Close the drawer when clicking outside (optional)
+        document.addEventListener('click', (e) => {
+          if (!menuDrawer.contains(e.target) && !hamburger.contains(e.target)) {
+            menuDrawer.classList.add('translate-x-full');
+          }
+        });
+      </script>
+  </body>
+</html>
