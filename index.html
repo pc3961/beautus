@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="initial-scale=1, width=device-width" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <link rel="stylesheet" href="./global.css" />
   <link rel="stylesheet" href="./index.css" />
   <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
@@ -405,8 +406,11 @@
             <input type="text" id="company" placeholder="Company Name" name="cname" class="form" required minlength="2" />
             <textarea id="message" placeholder="Message" name="msg" class="form" required minlength="10"></textarea>
         </form>
+        <div class="flex justify-end w-full mt-10">
+          <div class="g-recaptcha" data-sitekey="6LfIzRUqAAAAAPzljJhdvWZBkWtPov-9i0ouXn_q"></div>
+        </div>
         <div class="w-full flex justify-end">
-            <button type="submit" form="contactForm" class="flex justify-center w-1/2 text-white text-base font-medium bg-[#3A50B3] hover:bg-blue-700 rounded-md mt-28 py-4">
+            <button type="submit" form="contactForm" class="flex justify-center w-1/2 text-white text-base font-medium bg-[#3A50B3] hover:bg-blue-700 rounded-md mt-16 py-4">
                 Let's Connect
             </button>
         </div>

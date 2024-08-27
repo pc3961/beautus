@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="./index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -895,6 +896,12 @@
               minlength="10"
             ></textarea>
           </form>
+          <div class="flex justify-end w-full mt-10">
+            <div
+              class="g-recaptcha"
+              data-sitekey="6LfIzRUqAAAAAPzljJhdvWZBkWtPov-9i0ouXn_q"
+            ></div>
+          </div>
           <div class="w-full flex justify-end">
             <button
               type="submit"

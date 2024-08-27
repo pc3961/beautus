@@ -12,8 +12,8 @@ try {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com'; // Set your SMTP server
     $mail->SMTPAuth = true;
-    $mail->Username = 'cgs@cgstechlab.com'; // SMTP username
-    $mail->Password = 'pwupgeqllrsfgxpz'; // SMTP password
+    $mail->Username = 'shaillesh@wickedwipes.ca'; // SMTP username
+    $mail->Password = 'ShAi()762+Dv'; // SMTP password
     $mail->SMTPSecure = 'tls';
     $mail->Port = 587;
 
