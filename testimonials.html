@@ -29,7 +29,7 @@
       href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
       rel="stylesheet"
     />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <style>
       .form {
@@ -234,10 +234,18 @@
     <!-- Form Section -->
     <section class="px-4 md:px-36 py-3 md:py-16 w-full" id="target-section">
       <div class="flex flex-col md:flex-row w-full">
-        <div class="flex flex-col md:w-3/5 bg-[#3A50B3] p-3 md:p-16 shadow-md rounded-md relative overflow-hidden">
-          <div class="rounded-full w-24 h-24 md:w-28 md:h-28 bg-white absolute top-16 right-2  md:top-40 md:right-14 z-[100]"></div>
-          <div class="rounded-full w-64 h-64 bg-[#77B5FF] absolute top-20 right-[-150px] md:top-40 md:right-[-100px] z-50 overflow-hidden"></div>
-          <h1 class="text-white text-[14px] md:text-[28px] urbanist-regular font-bold">
+        <div
+          class="flex flex-col md:w-3/5 bg-[#3A50B3] p-3 md:p-16 shadow-md rounded-md relative overflow-hidden"
+        >
+          <div
+            class="rounded-full w-24 h-24 md:w-28 md:h-28 bg-white absolute top-16 right-2 md:top-40 md:right-14 z-[100]"
+          ></div>
+          <div
+            class="rounded-full w-64 h-64 bg-[#77B5FF] absolute top-20 right-[-150px] md:top-40 md:right-[-100px] z-50 overflow-hidden"
+          ></div>
+          <h1
+            class="text-white text-[14px] md:text-[28px] urbanist-regular font-bold"
+          >
             Get in Touch with Us!
           </h1>
           <h2 class="text-white [text-8px] md:text-[16px] urbanist-regular">
@@ -246,8 +254,12 @@
           <div class="w-full py-8 md:pt-16 flex gap-x-6">
             <img src="/public/bxs_phone-call.svg" alt="" />
             <div class="flex flex-col w-full">
-              <a href="tel:+12898372547" class="text-white text-xs md:text-lg">+1 289 837 2547</a>
-              <a href="tel:+12898372548" class="text-white text-xs md:text-lg">+1 289 837 2548</a>
+              <a href="tel:+12898372547" class="text-white text-xs md:text-lg"
+                >+1 289 837 2547</a
+              >
+              <a href="tel:+12898372548" class="text-white text-xs md:text-lg"
+                >+1 289 837 2548</a
+              >
             </div>
           </div>
           <div class="w-full md:pt-10 flex gap-x-6">
@@ -255,35 +267,107 @@
             <div class="flex flex-col w-full">
               <p class="text-white text-xs md:text-[16px] md:text-nowrap">
                 <a
-                href="https://www.google.com/maps/dir//2030%20Bristol%20Circle,%20Suite%20210,%20Oakville,%20ON%20-%20L6H%200H2"
-                >2030 Bristol Circle, Suite 210,<br />
-                Oakville, ON - L6H 0H2</a
-              >
+                  href="https://www.google.com/maps/dir//2030%20Bristol%20Circle,%20Suite%20210,%20Oakville,%20ON%20-%20L6H%200H2"
+                  >2030 Bristol Circle, Suite 210,<br />
+                  Oakville, ON - L6H 0H2</a
+                >
               </p>
             </div>
           </div>
         </div>
         <div class="flex flex-col w-full shadow-md rounded-md p-10">
-          <form action="" class="w-full flex flex-col gap-y-6" id="contactForm" action="./inc/mailer.php" method="post" novalidate>
+          <form
+            action=""
+            class="w-full flex flex-col gap-y-6"
+            id="contactForm"
+            action="./inc/mailer.php"
+            method="post"
+            novalidate
+          >
             <div class="flex justify-between w-full gap-x-6">
-              <input type="text" id="fname" placeholder="First Name" name="fname" class="form" required minlength="2" />
-              <input type="text" id="lname" placeholder="Last Name" name="lname" class="form" required minlength="2" />
+              <input
+                type="text"
+                id="fname"
+                placeholder="First Name"
+                name="fname"
+                class="form"
+                required
+                minlength="2"
+              />
+              <input
+                type="text"
+                id="lname"
+                placeholder="Last Name"
+                name="lname"
+                class="form"
+                required
+                minlength="2"
+              />
             </div>
             <div class="flex justify-between w-full gap-x-6">
-              <input type="email" id="bemail" placeholder="Business Email" name="bemail" class="form" required />
-              <input type="tel" id="pnum" placeholder="Phone Number" name="pnum" class="form" required pattern="^[0-9]{10}$" />
+              <input
+                type="email"
+                id="bemail"
+                placeholder="Business Email"
+                name="bemail"
+                class="form"
+                required
+              />
+              <input
+                type="tel"
+                id="pnum"
+                placeholder="Phone Number"
+                name="pnum"
+                class="form"
+                required
+                pattern="^[0-9]{10}$"
+              />
             </div>
-            <input type="text" id="company" placeholder="Company Name" name="cname" class="form" required minlength="2" />
-            <textarea id="message" placeholder="Message" name="msg" class="form" required minlength="10"></textarea>
+            <input
+              type="text"
+              id="company"
+              placeholder="Company Name"
+              name="cname"
+              class="form"
+              required
+              minlength="2"
+            />
+            <textarea
+              id="message"
+              placeholder="Message"
+              name="msg"
+              class="form"
+              required
+              minlength="10"
+            ></textarea>
           </form>
           <div class="w-full flex justify-end">
-            <button class="flex justify-center w-1/2 text-white text-base font-medium bg-[#3A50B3] hover:bg-blue-700 rounded-md mt-28 py-4" onclick="validateForm()">
+            <button
+              class="flex justify-center w-1/2 text-white text-base font-medium bg-[#3A50B3] hover:bg-blue-700 rounded-md mt-28 py-4"
+              onclick="validateForm()"
+            >
               Let's Connect
             </button>
           </div>
         </div>
       </div>
     </section>
+    <!-- Cookies Code -->
+    <div
+      id="cookie-banner"
+      class="flex fixed z-[300] bottom-0 left-0 right-0 bg-gray-800 text-white p-5 justify-between items-center flex-col md:flex-row md:space-x-4"
+    >
+      <p class="text-lg text-center md:text-left">
+        We use cookies to enhance your experience. By continuing to visit this
+        site, you agree to our use of cookies.
+      </p>
+      <button
+        id="accept-cookies"
+        class="bg-blue-500 text-white py-2 px-4 mt-3 md:mt-0 rounded-full"
+      >
+        Accept Cookies
+      </button>
+    </div>
     <!-- Footer Section-->
     <section>
       <div
@@ -342,38 +426,40 @@
     </script>
     <script>
       function validateForm() {
-        const form = document.getElementById('contactForm');
+        const form = document.getElementById("contactForm");
         if (!form.checkValidity()) {
           form.reportValidity();
         } else {
-          alert('Form submitted successfully!');
+          alert("Form submitted successfully!");
         }
       }
     </script>
     <script>
       $(document).ready(function () {
-          $('#contactForm').on('submit', function (e) {
-              e.preventDefault(); //Prevents default submit
-              var form = $(this);
-              var post_url = form.attr('action');
-              var post_data = form.serialize(); //Serialized the form data
-              $.ajax({
-                  type: 'POST',
-                  url: './inc/mailer.php', // Your form script
-                  data: post_data,
-                  success: function (msg) {
-                      $('#contactForm')[0].reset(); // to reset form data
-                      //alert('Success');
-                  },
-                  error: function(){
-                      alert("Error sending e-mail");
-                  }
-              }).done(function (msg) {
-                  setTimeout(function () {
-                      alert("Form submitted successfully! We'll get back to you soon. Thank you.");
-                  }, 2000);
-              });
+        $("#contactForm").on("submit", function (e) {
+          e.preventDefault(); //Prevents default submit
+          var form = $(this);
+          var post_url = form.attr("action");
+          var post_data = form.serialize(); //Serialized the form data
+          $.ajax({
+            type: "POST",
+            url: "./inc/mailer.php", // Your form script
+            data: post_data,
+            success: function (msg) {
+              $("#contactForm")[0].reset(); // to reset form data
+              //alert('Success');
+            },
+            error: function () {
+              alert("Error sending e-mail");
+            },
+          }).done(function (msg) {
+            setTimeout(function () {
+              alert(
+                "Form submitted successfully! We'll get back to you soon. Thank you."
+              );
+            }, 2000);
           });
+        });
       });
     </script>
     <script>
@@ -399,6 +485,33 @@
 
       // Observe the section
       observer.observe(details);
+
+      // Cookies Logic
+      document
+        .getElementById("accept-cookies")
+        .addEventListener("click", function () {
+          // Set a cookie indicating that the user has accepted cookies
+          document.cookie =
+            "cookiesAccepted=true; path=/; max-age=" + 60 * 60 * 24 * 365; // Cookie valid for 1 year
+
+          // Hide the cookie banner
+          document.getElementById("cookie-banner").style.display = "none";
+
+          // Show a dialog box confirming the acceptance
+          alert("Thank you! You have accepted cookies.");
+        });
+      function checkCookiesAccepted() {
+        if (
+          document.cookie
+            .split("; ")
+            .find((row) => row.startsWith("cookiesAccepted"))
+        ) {
+          // Cookie is set, hide the banner
+          document.getElementById("cookie-banner").style.display = "none";
+        }
+      }
+
+      window.onload = checkCookiesAccepted;
     </script>
   </body>
 </html>
