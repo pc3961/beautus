@@ -2,11 +2,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require '../vendor/autoload.php'; // Adjust the path if using Composer
-// If not using Composer, manually include these files
-require '/inc/mail/Exception.php';
-require '/inc/mail/PHPMailer.php';
-require '/inc/mail/SMTP.php';
+require './mail/Exception.php';
+require './mail/PHPMailer.php';
+require './mail/SMTP.php';
 $mail = new PHPMailer(true);
 
 try {

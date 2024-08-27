@@ -832,12 +832,10 @@
         </div>
         <div class="flex flex-col w-full shadow-md rounded-md p-10">
           <form
-            action=""
             class="w-full flex flex-col gap-y-6"
             id="contactForm"
             action="./inc/mailer.php"
             method="post"
-            novalidate
           >
             <div class="flex justify-between w-full gap-x-6">
               <input
@@ -876,6 +874,7 @@
                 class="form"
                 required
                 pattern="^[0-9]{10}$"
+                maxlength="10"
               />
             </div>
             <input
@@ -898,8 +897,9 @@
           </form>
           <div class="w-full flex justify-end">
             <button
+              type="submit"
+              form="contactForm"
               class="flex justify-center w-1/2 text-white text-base font-medium bg-[#3A50B3] hover:bg-blue-700 rounded-md mt-28 py-4"
-              onclick="validateForm()"
             >
               Let's Connect
             </button>
@@ -909,20 +909,20 @@
     </section>
     <!-- Cookies Code -->
     <div
-    id="cookie-banner"
-    class="flex fixed z-[300] bottom-0 left-0 right-0 bg-gray-800 text-white p-5 justify-between items-center flex-col md:flex-row md:space-x-4"
-  >
-    <p class="text-lg text-center md:text-left">
-      We use cookies to enhance your experience. By continuing to visit this
-      site, you agree to our use of cookies.
-    </p>
-    <button
-      id="accept-cookies"
-      class="bg-blue-500 text-white py-2 px-4 mt-3 md:mt-0 rounded-full"
+      id="cookie-banner"
+      class="flex fixed z-[300] bottom-0 left-0 right-0 bg-gray-800 text-white p-5 justify-between items-center flex-col md:flex-row md:space-x-4"
     >
-      Accept Cookies
-    </button>
-  </div>
+      <p class="text-lg text-center md:text-left">
+        We use cookies to enhance your experience. By continuing to visit this
+        site, you agree to our use of cookies.
+      </p>
+      <button
+        id="accept-cookies"
+        class="bg-blue-500 text-white py-2 px-4 mt-3 md:mt-0 rounded-full"
+      >
+        Accept Cookies
+      </button>
+    </div>
     <!-- Footer Section-->
     <section>
       <div
