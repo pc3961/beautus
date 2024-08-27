@@ -226,7 +226,10 @@
       <video src="/public/bg-ad.mp4" class="w-full h-full object-cover" type="video/mov" autoplay muted loop playsinline></video>
     </div>
     <div class="flex w-full my-10 justify-center">
-      <h1 class="px-10 py-10 text-[#acd5ef] font-['Mitr'] text-6xl text-center hover:text-[#3A50B3] font-medium">
+      <h1
+        id="hygiene-heading"
+        class="px-10 py-10 text-[#acd5ef] font-['Mitr'] text-6xl text-center hover:text-[#3A50B3] font-medium"
+      >
         Let’s make hygiene fun and desirable!
       </h1>
     </div>
@@ -654,6 +657,24 @@ window.onload = checkCookiesAccepted;
           documentSlidingCards75.classList.add('slide-to-start3');
           documentAniVideoCard.classList.add('document-ani-video-card');
         });
+        // Lets make hygiene fun  and desirable logic
+        document.addEventListener('DOMContentLoaded', function () {
+        const targetElement = document.getElementById('hygiene-heading');
+
+        const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Change the text color permanently
+                targetElement.classList.remove('text-[#acd5ef]');
+                targetElement.classList.add('text-[#3A50B3]');
+                // Stop observing since we want to apply the change only once
+                observer.unobserve(targetElement);
+            }
+        });
+    });
+
+    observer.observe(targetElement);
+});
   </script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
