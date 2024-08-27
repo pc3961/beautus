@@ -1,44 +1,37 @@
 <?php
-//Import PHPMailer classes into the global namespace
-//These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-//Load Composer's autoloader
-require 'mail/src/Exception.php';
-require 'mail/src/PHPMailer.php';
-require 'mail/src/SMTP.php';
-
-//Create an instance; passing `true` enables exceptions
+require '../vendor/autoload.php'; // Adjust the path if using Composer
+// If not using Composer, manually include these files
+require '/inc/mail/Exception.php';
+require '/inc/mail/PHPMailer.php';
+require '/inc/mail/SMTP.php';
 $mail = new PHPMailer(true);
 
+try {
+    // Server settings
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com'; // Set your SMTP server
+    $mail->SMTPAuth = true;
+    $mail->Username = 'cgs@cgstechlab.com'; // SMTP username
+    $mail->Password = 'pwupgeqllrsfgxpz'; // SMTP password
+    $mail->SMTPSecure = 'tls';
+    $mail->Port = 587;
 
-//Server settings        
-$mail->isSMTP();                                            //Send using SMTP
-$mail->Host = 'smtp.gmail.com';                     //Set the SMTP server to send through
-$mail->SMTPAuth = true;                                   //Enable SMTP authentication
-$mail->Username = 'cgs@cgstechlab.com';                     //SMTP username
-$mail->Password = 'pwupgeqllrsfgxpz';                               //SMTP password
-$mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
-$mail->Port = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    // Recipients
+    $mail->setFrom('pranav@cgstechlab.com', 'Pranav CGS');
+    $mail->addAddress('cpranavss65@gmail.com', 'Pranav Chavan');
 
-//Recipients
-$mail->setFrom('pranav@cgstechlab.com', 'Mailer');
-$mail->addAddress('cgs@cgstechlab.com', 'Joe User');     //Add a recipient
+    // Content
+    $mail->isHTML(true);
+    $mail->Subject = 'New Contact Form Submission';
+    $mail->Body = '<b>First Name:</b> ' . $_POST['fname'] . '<br><b>Last Name:</b> ' . $_POST['lname'] . '<br><b>Email:</b> ' . $_POST['bemail'] . '<br><b>Phone Number:</b> ' . $_POST['pnum'] . '<br><b>Company Name:</b> ' . $_POST['cname'] . '<br><b>Message:</b><br>' . nl2br($_POST['msg']);
+    $mail->AltBody = 'First Name: ' . $_POST['fname'] . "\nLast Name: " . $_POST['lname'] . "\nEmail: " . $_POST['bemail'] . "\nPhone Number: " . $_POST['pnum'] . "\nCompany Name: " . $_POST['cname'] . "\nMessage:\n" . $_POST['msg'];
 
-//Content
-$mail->Body = !empty($_POST['fname']) ? ' First Name: ' . $_POST['fname'] . '<br>' : '';
-$mail->Body = !empty($_POST['lname']) ? ' Last Name: ' . $_POST['lname'] . '<br>' : '';
-$mail->Body .= !empty($_POST['cname']) ? 'Company: ' . $_POST['cname'] . '<br>' : '';
-$mail->Body .= !empty($_POST['bemail']) ? 'Email: ' . $_POST['bemail'] . '<br>' : '';
-$mail->Body .= !empty($_POST['pnum']) ? 'Phone: ' . $_POST['pnum'] . '<br>' : '';
-$mail->Body .= 'message:<br>';
-$mail->Body .= $_POST['msg'];
-
-if (!$mail->Send()) {
-    echo "Error sending: " . $mail->ErrorInfo;
-    ;
-} else {
-    echo 'Message Sent Successfully';
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
+?>
