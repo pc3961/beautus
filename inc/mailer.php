@@ -51,7 +51,7 @@ try {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $recaptcha_secret = '6LeK3DAqAAAAABPUmnvuJCf7ZUQwRq27KDavibFx'; // Replace with your actual secret key
+    $recaptcha_secret = '6LeK3DAqAAAAAG8yuTlWzVS_g-P1QFy1w4PC-pHd'; // Replace with your actual secret key
     $recaptcha_response = $_POST['g-recaptcha-response'];
 
     // Make a POST request to the reCAPTCHA API
