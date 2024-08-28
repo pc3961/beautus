@@ -10,12 +10,12 @@ $mail = new PHPMailer(true);
 try {
     // Server settings
     $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com'; // Set your SMTP server
+    $mail->Host = 'smtp.zoho.com'; // Set your SMTP server
     $mail->SMTPAuth = true;
-    $mail->Username = 'cgs@cgstechlab.com'; // SMTP username
-    $mail->Password = 'pwupgeqllrsfgxpz'; // SMTP password
-    $mail->SMTPSecure = 'tls';
-    $mail->Port = 587;
+    $mail->Username = 'shailesh@wickedwipes.ca'; // SMTP username
+    $mail->Password = 'ShAi()762+Dv'; // SMTP password
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port = 465;
 
     // Recipients
     $mail->setFrom('pranav@cgstechlab.com', 'Shailesh Merai');
