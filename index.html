@@ -404,7 +404,7 @@
                 <input type="tel" id="pnum" placeholder="Phone Number" name="pnum" class="form" required pattern="^[0-9]{10}$" maxlength="10"  />
             </div>
             <input type="text" id="company" placeholder="Company Name" name="cname" class="form" required minlength="2" />
-            <textarea id="message" placeholder="Message" name="msg" class="form" required minlength="10"></textarea>
+            <textarea id="message" placeholder="Message" name="msg" class="form" required minlength="10"  oninput="removeLinks(this)"></textarea>
             <div class="g-recaptcha" data-sitekey="6LeK3DAqAAAAABPUmnvuJCf7ZUQwRq27KDavibFx"></div>
         </form>
         <div class="w-full flex justify-end">
@@ -584,7 +584,11 @@ function checkCookiesAccepted() {
 window.onload = checkCookiesAccepted;
 </script>
 <script>
-
+  // Remove Links Function
+ function removeLinks(textarea) {
+        // Remove any links by replacing them with an empty string
+        textarea.value = textarea.value.replace(/https?:\/\/[^\s]+/g, '');
+    }
 </script>
   <script>
     const documentSection = document.getElementById("document-section");

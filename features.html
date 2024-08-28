@@ -894,6 +894,7 @@
               class="form"
               required
               minlength="10"
+              oninput="removeLinks(this)"
             ></textarea>
             <div class="flex justify-end w-full mt-10">
               <div
@@ -1006,6 +1007,12 @@
       }
 
       window.onload = checkCookiesAccepted;
+
+      // Remove Links Function
+      function removeLinks(textarea) {
+        // Remove any links by replacing them with an empty string
+        textarea.value = textarea.value.replace(/https?:\/\/[^\s]+/g, "");
+      }
     </script>
     <script>
       $(document).ready(function () {

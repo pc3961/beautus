@@ -18,8 +18,8 @@ try {
     $mail->Port = 587;
 
     // Recipients
-    $mail->setFrom('pranav@cgstechlab.com', 'Pranav CGS');
-    $mail->addAddress('cpranavss65@gmail.com', 'Pranav Chavan');
+    $mail->setFrom('shaillesh@wickedwipes.ca', 'Shailesh Merai');
+    $mail->addAddress('shaillesh@wickedwipes.ca', 'Shailesh Merai');
 
     // Content
     $mail->isHTML(true);

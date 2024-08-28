@@ -441,6 +441,7 @@
               class="form"
               required
               minlength="10"
+              oninput="removeLinks(this)"
             ></textarea>
           </form>
           <div class="flex justify-end w-full mt-10">
@@ -541,6 +542,11 @@
         } else {
           alert("Form submitted successfully!");
         }
+      }
+      // Remove Links Function
+      function removeLinks(textarea) {
+        // Remove any links by replacing them with an empty string
+        textarea.value = textarea.value.replace(/https?:\/\/[^\s]+/g, "");
       }
     </script>
     <script>
