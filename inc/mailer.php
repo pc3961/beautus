@@ -12,8 +12,8 @@ try {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com'; // Set your SMTP server
     $mail->SMTPAuth = true;
-    $mail->Username = ''; // SMTP username
-    $mail->Password = ''; // SMTP password
+    $mail->Username = 'test@omesacreative.ca'; // SMTP username
+    $mail->Password = 'ojgavpiqkxixbqpz'; // SMTP password
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;
 
@@ -47,7 +47,7 @@ try {
     // echo 'Thank you message has been sent';
 
 } catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    echo 0;
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (intval($response_keys["success"]) !== 1) {
         echo 'Please complete the CAPTCHA.';
     } else {
-        echo 'CAPTCHA completed successfully.';
+        echo 1;
         // Continue with form processing
     }
 }
