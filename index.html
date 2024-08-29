@@ -215,8 +215,8 @@
             type="video/mp4" autoplay muted loop></video>
         </div>
         <div class="flex flex-col justify-center items-center">
-          <button class="font-['Baloo'] px-10 text-white text-lg font-medium bg-[#3A50B3] rounded-full mt-6 py-2">
-            LEARN MORE
+          <button class="font-['Baloo'] px-10 text-white text-lg font-medium bg-[#3A50B3] rounded-full mt-6 py-2" onclick="window.location.href='features.html';">
+            Learn more
           </button>
           <p class="text-lg md:text-[28px] league-spartan text-[#7DB1E7] font-bold mt-2">About Wicked Wipes</p>
         </div>
@@ -286,14 +286,15 @@
   <section class="px-4 md:px-10 py-3 md:py-16 opacity-0 transition-opacity duration-300" id="document-title1">
     <div
       class="flex flex-col justify-center items-center w-full gap-y-10">
-      <div class="flex w-full md:px-10 justify-center">
-        <h1 class="text-[36px] md:text-[78px] concert-one-regular gradient-text font-medium">
+      <div class="flex w-full md:px-10 px-4 justify-center">
+        <h1 class="text-[28px] md:text-[78px] concert-one-regular gradient-text font-medium">
           Wicked Wipes is a smart <br> choice for your business
         </h1>
       </div>
-      <div class="flex w-full md:px-10 justify-center">
-        <p class="text-xl league-spartan font-medium">
-          Elevate your customer experience at your dining establishment...
+      <div class="flex w-full md:px-28 px-4 justify-center">
+        <p class="md:text-2xl text-xl league-spartan font-normal text-center">
+          Elevate your customer experience at your dining establishment
+          Hand hygiene is the primary means of reducing the spread of viruses and bacteria. Your customers will appreciate your commitment to their health and safety!
         </p>
       </div>
     </div>
@@ -344,7 +345,7 @@
           <h1 class="text-4xl md:text-[72px] text-gradient md:leading-none font-normal">Make It Yours </h1>
           <p class="text-[20px] font-['League Spartan'] font-normal text-[#3A50B3] word-wrap">Wicked
             Wipes is an original advertising opportunity for businesses and a successful marketing tool that will
-            surprise and delight your customers. Add your brand to customize the pod</p>
+            surprise and delight your customers. Add your brand to customize the pod.</p>
         </div>
         <div class="">
           <img class="h-[337px] w-[938px] relative overflow-hidden" src="./public/whitelogo.svg" alt="logo">
@@ -355,8 +356,8 @@
       class="w-full md:flex flex md:justify-start justify-center ease-in-out opacity-0 md:opacity-0 transition-opacity duration-150"
       id="document-heading">
       <button
-        class="flex justify-center font-['Baloo'] px-10 text-white text-lg font-medium bg-[#3A50B3] rounded-full mt-6 py-2">
-        ADD YOUR BRAND
+        class="flex justify-center font-['Baloo'] px-10 text-white text-lg font-medium bg-[#3A50B3] rounded-full mt-6 py-2" onclick="window.location.href='private-label.html';">
+        Add your brand
       </button>
     </div>
   </section>
@@ -368,7 +369,7 @@
         <div class="rounded-full w-24 h-24 md:w-28 md:h-28 bg-white absolute top-16 right-2  md:top-40 md:right-14 z-[100]"></div>
         <div class="rounded-full w-64 h-64 bg-[#77B5FF] absolute top-20 right-[-150px] md:top-40 md:right-[-100px] z-50 overflow-hidden"></div>
         <h1 class="text-white text-[14px] md:text-[28px] urbanist-regular font-bold">
-          Get in Touch with Us!
+          Get in touch with us!
         </h1>
         <h2 class="text-white [text-8px] md:text-[16px] urbanist-regular">
           to discuss your interest in Wicked Wipes
@@ -383,7 +384,7 @@
         <div class="w-full md:pt-10 flex gap-x-6">
           <img src="/public/carbon_location-filled.svg" alt="" />
           <div class="flex flex-col w-full">
-            <p class="text-white text-xs md:text-[16px] md:text-nowrap">
+            <p class="text-white text-xs md:text-[16px] md:text-nowrap leading-relaxed">
               <a
                   href="https://www.google.com/maps/dir//2030%20Bristol%20Circle,%20Suite%20210,%20Oakville,%20ON%20-%20L6H%200H2"
                   >2030 Bristol Circle, Suite 210,<br />
@@ -409,9 +410,12 @@
         </form>
         <div class="w-full flex justify-end">
             <button type="submit" form="contactForm" class="flex justify-center w-1/2 text-white text-base font-medium bg-[#3A50B3] hover:bg-blue-700 rounded-md mt-16 py-4">
-                Let's Connect
+                Let's connect
             </button>
         </div>
+        <a href="privacy-policy.html">
+          <p class="text-right text-lg p-4">Privacy Policy</p>
+        </a>
     </div>    
     </div>
   </section>
@@ -439,7 +443,6 @@
         <img class="blue-color-icon" loading="lazy" alt="" src="./public/blue-color.svg" />
         <nav class="w-full flex">
           <ul class="flex flex-col gap-y-1">
-            <li><a href="index.html" class="text-white">Wicked Wipes</a></li>
             <li><a href="features.html" class="text-white">Features</a></li>
             <li><a href="private-label.html" class="text-white">Private Label</a></li>
             <li><a href="testimonials.html" class="text-white">Who We are</a></li>
@@ -452,7 +455,7 @@
           <img src="./public/Fb.svg" class="size-7" alt="fb">
           <img src="./public/Instagram.svg" class="size-7" alt="fb">
           <img src="./public/Dribbble.svg" class="size-7" alt="fb">
-          <img src="./public/LinkedIn.svg" class="size-7" alt="fb">
+          <img src="./public/LinkedIn.svg" class="size-7" alt="fb" id="linkedInImage">
         </div>
       </div>
     </div>
@@ -561,6 +564,14 @@
        },1000)
     },1000); 
 });
+  </script>
+  <!-- Social Media Links -->
+  <script>
+      document
+          .getElementById("linkedInImage")
+          .addEventListener("click", function () {
+            window.location.href = "https://www.linkedin.com/company/wicked-wipes/";
+          });
   </script>
 <script>
   // Cookies Logic 

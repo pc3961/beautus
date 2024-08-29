@@ -4,124 +4,270 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="./index.css" />
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Baloo:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=League Spartan:wght@400&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Privacy Policy</title>
   </head>
   <body>
-    <!-- Navbar -->
-    <div
-      class="flex w-full items-center p-10 md:p-16 gap-y-4 flex-row justify-between absolute"
-    >
-      <a href="index.html">
-        <img src="./public/blue-color.svg" class="z-[100] md:z-[100]" alt="" />
-      </a>
-      <button
-        id="hamburger"
-        class="md:hidden z-[100] flex items-center justify-center p-2 rounded-full"
-      >
-        <svg
-          class="w-6 h-6 text-white"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16m-7 6h7"
-          ></path>
-        </svg>
-      </button>
-      <nav
-        class="hidden md:flex items-center justify-center bg-blue-300 rounded-full z-[100]"
-      >
-        <ul
-          id="menu"
-          class="flex justify-center items-center text-center px-10 gap-x-8 text-white text-xl font-normal"
-        >
-          <li>
-            <a href="features.html">Features</a>
-          </li>
-          <li>
-            <a href="private-label.html">Private Label</a>
-          </li>
-          <li>
-            <a href="testimonials.html">Who We are</a>
-          </li>
-          <li>
-            <a href="#target-section">Contact</a>
-          </li>
-        </ul>
-      </nav>
-      <!-- Mobile Menu Drawer -->
+    <section class="flex flex-col items-center py-10 w-full">
+      <!-- Logo and Navigation -->
       <div
-        id="menu-drawer"
-        class="fixed top-0 right-0 h-full w-2/3 bg-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden z-[100]"
+        class="flex w-full items-center justify-between px-5 pt-5 md:px-20 md:pt-10"
       >
-        <ul class="flex flex-col p-4 space-y-6 text-black text-xl font-normal">
-          <li>
-            <a href="features.html">Features</a>
-          </li>
-          <li>
-            <a href="private-label.html">Private Label</a>
-          </li>
-          <li>
-            <a href="testimonials.html">Who We are</a>
-          </li>
-          <li>
-            <a href="#target-section">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <!-- Privacy Policy Content -->
-    <section class="px-32 py-20">
-        <div class="w-full">
-
-        </div>
-    </section>
-  <!-- Footer Section-->
-  <section>
-    <div class="bg-[#3A50B3] px-4 md:px-16 py-10 flex flex-col md:flex-row justify-between gap-4">
-      <div class="w-full flex gap-x-16 ">
-        <img class="blue-color-icon" loading="lazy" alt="" src="./public/blue-color.svg" />
-        <nav class="w-full flex">
-          <ul class="flex flex-col gap-y-1">
-            <li><a href="index.html" class="text-white">Wicked Wipes</a></li>
-            <li><a href="features.html" class="text-white">Features</a></li>
-            <li><a href="private-label.html" class="text-white">Private Label</a></li>
-            <li><a href="testimonials.html" class="text-white">Who We are</a></li>
+        <a href="index.html">
+          <img src="./public/logo.svg" alt="Logo" class="w-24 md:w-auto" />
+        </a>
+        <nav class="hidden md:flex items-center justify-center rounded-full">
+          <ul
+            id="menu"
+            class="flex flex-col md:flex-row justify-center items-center text-center gap-y-4 md:gap-y-0 md:px-16 md:gap-x-8 text-[#3A50B3] text-lg md:text-xl font-normal font-['Baloo']"
+          >
+            <li><a href="features.html">Features</a></li>
+            <li><a href="private-label.html">Private Label</a></li>
+            <li><a href="testimonials.html">Who We are</a></li>
+            <li><a href="#target-section">Contact</a></li>
           </ul>
         </nav>
+        <!-- Mobile Menu Button -->
+        <button id="drawer-button" class="md:hidden p-2 text-[#3A50B3]">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
       </div>
-      <div class="flex md:flex-col gap-2">
-        <h1 class="text-white league-spartan font-bold text-base">Follow us</h1>
-        <div class="flex gap-3 items-center">
-          <img src="./public/Fb.svg" class="size-7" alt="fb">
-          <img src="./public/Instagram.svg" class="size-7" alt="fb">
-          <img src="./public/Dribbble.svg" class="size-7" alt="fb">
-          <img src="./public/LinkedIn.svg" class="size-7" alt="fb">
+
+      <!-- Social Media Icons -->
+      <div
+        class="flex justify-end md:justify-end gap-4 md:gap-7 items-center w-full px-10 md:px-36 mt-5 md:mt-0"
+      >
+        <img src="/public/blue-fb.svg" class="w-6 md:w-7" alt="Facebook" />
+        <img src="/public/blue-insta.svg" class="w-6 md:w-7" alt="Instagram" />
+        <img
+          src="/public/blue-linkedin.svg"
+          class="w-6 md:w-7"
+          alt="LinkedIn"
+        />
+      </div>
+
+      <!-- Mobile Drawer (hidden by default) -->
+      <div
+        id="drawer"
+        class="fixed top-0 right-0 w-3/4 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out md:hidden z-[100]"
+      >
+        <div class="flex justify-end p-4">
+          <button id="close-drawer" class="text-[#3A50B3]">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <ul class="flex flex-col p-4 space-y-6 text-black text-xl font-normal">
+          <li><a href="features.html" class="py-4">Features</a></li>
+          <li><a href="private-label.html" class="py-4">Private Label</a></li>
+          <li><a href="testimonials.html" class="py-4">Who We are</a></li>
+          <li><a href="#target-section" class="py-4">Contact</a></li>
+        </ul>
+      </div>
+    </section>
+    <!-- Privacy Policy Content -->
+    <section class="w-full flex md:p-32 p-4">
+      <div class="w-full flex flex-col justify-center p-4 md:px-20">
+        <h1 class="text-left text-2xl md:text-4xl league-spartan">
+          Privacy Policy
+        </h1>
+        <p class="text-lg md:text-xl py-6">
+          Thank you for visiting our web site. This privacy policy provides
+          information on how we use personal information collected on our site.
+          Please read this privacy policy before using the site or submitting
+          any personal information. By using the site, you are accepting the
+          practices described in this privacy policy. These practices may be
+          changed, but any changes will be posted and changes will only apply to
+          activities and information on a going forward, not retroactive basis.
+          You are encouraged to review the privacy policy whenever you visit the
+          site to make sure that you understand how any personal information you
+          provide will be used.
+        </p>
+        <h2 class="text-left text-2xl md:text-4xl league-spartan">
+          Collection of Information
+        </h2>
+        <p class="text-lg md:text-xl py-6">
+          We collect personally identifiable information, like name, email
+          address, company etc., when voluntarily submitted by our visitors. The
+          information you provide us is used to fulfill your specific request.
+          This information will also be used to send you product/service
+          information, blogs, e-papers and promotional offers. Every marketing
+          email from Save On Brokerage contains instructions on how to opt out
+          of receiving further marketing emails from the Company.
+        </p>
+        <h2 class="text-left text-2xl md:text-4xl league-spartan">
+          Cookie/Tracking Technology
+        </h2>
+        <p class="text-lg md:text-xl py-6">
+          The site may use cookie and tracking technology depending on the
+          features offered. Cookie and tracking technology gather information
+          such as IP address, referrer, browser type, operating system etc. We
+          do this in order to understand how visitors use the site and customize
+          the site to deliver a better experience for visitors. Personal
+          information cannot be collected via cookies and other tracking
+          technology, however, if you previously provided personally
+          identifiable information, cookies may be tied to such information.
+        </p>
+        <h2 class="text-left text-2xl md:text-4xl league-spartan">
+          Distribution of Information
+        </h2>
+        <p class="text-lg md:text-xl py-6">
+          We may share information with governmental agencies or other companies
+          assisting us in fraud prevention or investigation. We may do so when:
+          (1) permitted or required by law; or, (2) trying to protect against or
+          prevent actual or potential fraud or unauthorized transactions; or,
+          (3) investigating fraud which has already taken place. The information
+          is not provided to these companies for marketing purposes.
+        </p>
+        <h2 class="text-left text-2xl md:text-4xl league-spartan">
+          Commitment to Data Security
+        </h2>
+        <p class="text-lg md:text-xl py-6">
+          Your personally identifiable information is kept secure. Only
+          authorized employees, have access to this information. All emails and
+          newsletters from this site allow you to opt out of further mailings.
+        </p>
+        <h2 class="text-left text-2xl md:text-4xl league-spartan">
+          Privacy Contact Information
+        </h2>
+        <p class="text-lg md:text-xl py-6">
+          If you have any questions, concerns, or comments about our privacy
+          policy you may contact us using the form on our website. We reserve
+          the right to make changes to this policy. Any changes to this policy
+          will be posted.
+        </p>
+      </div>
+    </section>
+    <!-- Footer Section-->
+    <section>
+      <div
+        class="bg-[#3A50B3] px-4 md:px-16 py-10 flex flex-col md:flex-row justify-between gap-4"
+      >
+        <div class="w-full flex gap-x-16">
+          <img
+            class="blue-color-icon"
+            loading="lazy"
+            alt=""
+            src="./public/blue-color.svg"
+          />
+          <nav class="w-full flex">
+            <ul class="flex flex-col gap-y-1">
+              <li><a href="features.html" class="text-white">Features</a></li>
+              <li>
+                <a href="private-label.html" class="text-white"
+                  >Private Label</a
+                >
+              </li>
+              <li>
+                <a href="testimonials.html" class="text-white">Who We are</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="flex md:flex-col gap-2">
+          <h1 class="text-white font-['League Spartan'] font-bold text-base">
+            Follow Us
+          </h1>
+          <div class="flex gap-3 items-center">
+            <img src="./public/Fb.svg" class="size-7" alt="fb" />
+            <img src="./public/Instagram.svg" class="size-7" alt="fb" />
+            <img src="./public/Dribbble.svg" class="size-7" alt="fb" />
+            <img
+              src="./public/LinkedIn.svg"
+              class="size-7"
+              alt="fb"
+              id="linkedInImage"
+            />
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
     <script>
-        const hamburger = document.getElementById('hamburger');
-        const menuDrawer = document.getElementById('menu-drawer');
-    
-        hamburger.addEventListener('click', () => {
-          menuDrawer.classList.toggle('translate-x-full');
+      // Social Media Links
+      document
+        .getElementById("linkedInImage")
+        .addEventListener("click", function () {
+          window.location.href =
+            "https://www.linkedin.com/company/wicked-wipes/";
         });
-    
-        // Close the drawer when clicking outside (optional)
-        document.addEventListener('click', (e) => {
-          if (!menuDrawer.contains(e.target) && !hamburger.contains(e.target)) {
-            menuDrawer.classList.add('translate-x-full');
-          }
-        });
-      </script>
+    </script>
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const menuDrawer = document.getElementById("menu-drawer");
+
+      hamburger.addEventListener("click", () => {
+        menuDrawer.classList.toggle("translate-x-full");
+      });
+
+      // Close the drawer when clicking outside (optional)
+      document.addEventListener("click", (e) => {
+        if (!menuDrawer.contains(e.target) && !hamburger.contains(e.target)) {
+          menuDrawer.classList.add("translate-x-full");
+        }
+      });
+    </script>
   </body>
 </html>
