@@ -12,8 +12,8 @@ try {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com'; // Set your SMTP server
     $mail->SMTPAuth = true;
-    $mail->Username = 'test@omesacreative.ca'; // SMTP username
-    $mail->Password = 'ojgavpiqkxixbqpz'; // SMTP password
+    $mail->Username = ''; // SMTP username
+    $mail->Password = ''; // SMTP password
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;
 
@@ -51,7 +51,7 @@ try {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $recaptcha_secret = '6LeK3DAqAAAAAG8yuTlWzVS_g-P1QFy1w4PC-pHd'; // Replace with your actual secret key
+    $recaptcha_secret = ''; // Replace with your actual secret key
     $recaptcha_response = $_POST['g-recaptcha-response'];
 
     // Make a POST request to the reCAPTCHA API
