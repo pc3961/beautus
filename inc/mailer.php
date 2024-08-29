@@ -10,16 +10,16 @@ $mail = new PHPMailer(true);
 try {
     // Server settings
     $mail->isSMTP();
-    $mail->Host = 'smtp.zoho.com'; // Set your SMTP server
+    $mail->Host = 'smtp.gmail.com'; // Set your SMTP server
     $mail->SMTPAuth = true;
-    $mail->Username = 'shailesh@wickedwipes.ca'; // SMTP username
-    $mail->Password = 'ShAi()762+Dv'; // SMTP password
+    $mail->Username = 'test@omesacreative.ca'; // SMTP username
+    $mail->Password = 'ojgavpiqkxixbqpz'; // SMTP password
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;
 
     // Recipients
-    $mail->setFrom('pranav@cgstechlab.com', 'Shailesh Merai');
-    $mail->addAddress('cpranavss65@gmail.com', 'Shailesh Merai');
+    $mail->setFrom('test@omesacreative.ca', 'Test Omesacreative');
+    $mail->addAddress('shailesh@wickedwipes.ca', 'Shailesh Merai');
 
     // Content
     $mail->isHTML(true);
@@ -30,21 +30,21 @@ try {
     $mail->send();
     echo 'Message has been sent';
 
-    //Thank you Email
-    $mail->clearAddresses(); // Clear all addresses for the next email
-    $mail->addAddress($_POST['bemail']); // Send thank you email to the user's email
-    $mail->Subject = 'Thank you for showing interest!';
-    $mail->Body = 'Dear ' . $_POST['fname'] . ' ' . $_POST['lname'] . ',<br><br>' .
-                  'Thank you for showing interest in our services. We have received your message and will get back to you shortly.<br><br>' .
-                  'Best regards,<br>' .
-                  'Wick Wipes'; // Customize with your company name
-    $mail->AltBody = 'Dear ' . $_POST['fname'] . ' ' . $_POST['lname'] . ",\n\n" .
-                     "Thank you for showing interest in our services. We have received your message and will get back to you shortly.\n\n" .
-                     "Best regards,\n" .
-                     "Wicked Wipes"; // Customize with your company name
+    // //Thank you Email
+    // $mail->clearAddresses(); // Clear all addresses for the next email
+    // $mail->addAddress($_POST['bemail']); // Send thank you email to the user's email
+    // $mail->Subject = 'Thank you for showing interest!';
+    // $mail->Body = 'Dear ' . $_POST['fname'] . ' ' . $_POST['lname'] . ',<br><br>' .
+    //     'Thank you for showing interest in our services. We have received your message and will get back to you shortly.<br><br>' .
+    //     'Best regards,<br>' .
+    //     'Wick Wipes'; // Customize with your company name
+    // $mail->AltBody = 'Dear ' . $_POST['fname'] . ' ' . $_POST['lname'] . ",\n\n" .
+    //     "Thank you for showing interest in our services. We have received your message and will get back to you shortly.\n\n" .
+    //     "Best regards,\n" .
+    //     "Wicked Wipes"; // Customize with your company name
 
-    $mail->send();
-    echo 'Thank you message has been sent';
+    // $mail->send();
+    // echo 'Thank you message has been sent';
 
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
