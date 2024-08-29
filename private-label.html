@@ -104,11 +104,13 @@
       >
         <img src="/public/blue-fb.svg" class="w-6 md:w-7" alt="Facebook" />
         <img src="/public/blue-insta.svg" class="w-6 md:w-7" alt="Instagram" />
-        <img
-          src="/public/blue-linkedin.svg"
-          class="w-6 md:w-7"
-          alt="LinkedIn"
-        />
+        <a href="https://www.linkedin.com/company/wicked-wipes/">
+          <img
+            src="/public/blue-linkedin.svg"
+            class="w-6 md:w-7"
+            alt="LinkedIn"
+          />
+        </a>
       </div>
 
       <!-- Mobile Drawer (hidden by default) -->
@@ -170,8 +172,8 @@
         <p
           class="text-lg md:text-2xl bg-white/80 rounded-[40px] px-6 py-8 md:px-10 md:py-16 font-medium"
         >
-          Wow your customers and build your brand value with our unique
-          hand wipes
+          Wow your customers and build your brand value with our unique hand
+          wipes
         </p>
       </div>
     </section>
@@ -368,7 +370,9 @@
           <div class="w-full md:pt-10 flex gap-x-6">
             <img src="/public/carbon_location-filled.svg" alt="" />
             <div class="flex flex-col w-full">
-              <p class="text-white text-xs md:text-[16px] md:text-nowrap leading-relaxed">
+              <p
+                class="text-white text-xs md:text-[16px] md:text-nowrap leading-relaxed"
+              >
                 <a
                   href="https://www.google.com/maps/dir//2030%20Bristol%20Circle,%20Suite%20210,%20Oakville,%20ON%20-%20L6H%200H2"
                   >2030 Bristol Circle, Suite 210,<br />
@@ -515,7 +519,12 @@
             <img src="./public/Fb.svg" class="size-7" alt="fb" />
             <img src="./public/Instagram.svg" class="size-7" alt="fb" />
             <img src="./public/Dribbble.svg" class="size-7" alt="fb" />
-            <img src="./public/LinkedIn.svg" class="size-7" alt="fb" id="linkedInImage"/>
+            <img
+              src="./public/LinkedIn.svg"
+              class="size-7"
+              alt="fb"
+              id="linkedInImage"
+            />
           </div>
         </div>
       </div>
@@ -551,14 +560,15 @@
         textarea.value = textarea.value.replace(/https?:\/\/[^\s]+/g, "");
       }
     </script>
-        <script>
-          // Social Media Links
-          document
-            .getElementById("linkedInImage")
-            .addEventListener("click", function () {
-              window.location.href = "https://www.linkedin.com/company/wicked-wipes/";
-            });
-        </script>
+    <script>
+      // Social Media Links
+      document
+        .getElementById("linkedInImage")
+        .addEventListener("click", function () {
+          window.location.href =
+            "https://www.linkedin.com/company/wicked-wipes/";
+        });
+    </script>
     <script>
       $(document).ready(function () {
         $("#contactForm").on("submit", function (e) {
