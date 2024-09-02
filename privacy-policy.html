@@ -43,6 +43,16 @@
       rel="stylesheet"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      window.$zoho = window.$zoho || {};
+      $zoho.salesiq = $zoho.salesiq || { ready: function () {} };
+    </script>
+    <script
+      id="zsiqscript"
+      src="https://salesiq.zohopublic.ca/widget?wc=77a5e6d96d632b0a91f8bb237dc0d72919fd2a83d90e88ea6108ccba9b3d4e3c"
+      defer
+    ></script>
+    <script src="https://cdn-ca.pagesense.io/js/zoho3419/8a93ff5516d1450b837c6ffdc0daffcb.js"></script>
     <title>Privacy Policy</title>
   </head>
   <body>
@@ -90,10 +100,11 @@
       >
         <img src="/public/blue-fb.svg" class="w-6 md:w-7" alt="Facebook" />
         <img src="/public/blue-insta.svg" class="w-6 md:w-7" alt="Instagram" />
-        <a href="https://www.linkedin.com/company/wicked-wipes/"><img
-          src="/public/blue-linkedin.svg"
-          class="w-6 md:w-7"
-          alt="LinkedIn"
+        <a href="https://www.linkedin.com/company/wicked-wipes/"
+          ><img
+            src="/public/blue-linkedin.svg"
+            class="w-6 md:w-7"
+            alt="LinkedIn"
         /></a>
       </div>
 
@@ -155,8 +166,8 @@
           information you provide us is used to fulfill your specific request.
           This information will also be used to send you product/service
           information, blogs, e-papers and promotional offers. Every marketing
-          email from Wicked Wipes contains instructions on how to opt out
-          of receiving further marketing emails from the Company.
+          email from Wicked Wipes contains instructions on how to opt out of
+          receiving further marketing emails from the Company.
         </p>
         <h2 class="text-left text-2xl md:text-4xl league-spartan">
           Cookie/Tracking Technology
@@ -232,9 +243,8 @@
             Follow Us
           </h1>
           <div class="flex gap-3 items-center">
-            <img src="./public/Fb.svg" class="size-7" alt="fb" />
-            <img src="./public/Instagram.svg" class="size-7" alt="fb" />
-            <img src="./public/Dribbble.svg" class="size-7" alt="fb" />
+            <img src="./public/Fb.svg" class="size-7" alt="fb" id="fbImage" />
+            <img src="./public/Instagram.svg" class="size-7" id="instaImage" alt="fb" />
             <img
               src="./public/LinkedIn.svg"
               class="size-7"
@@ -251,8 +261,18 @@
         .getElementById("linkedInImage")
         .addEventListener("click", function () {
           window.location.href =
-            "https://www.linkedin.com/company/wicked-wipes/";
+            ("https://www.linkedin.com/company/wicked-wipes/", "_blank");
         });
+      document
+        .getElementById("instaImage")
+        .addEventListener("click", function () {
+          window.location.href =
+            ("https://www.instagram.com/wickedhandwipes/", "_blank");
+        });
+      document.getElementById("fbImage").addEventListener("click", function () {
+        window.location.href =
+          ("https://www.facebook.com/profile.php?id=61565429330359", "_blank");
+      });
     </script>
     <script>
       const hamburger = document.getElementById("hamburger");
