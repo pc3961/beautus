@@ -104,7 +104,7 @@
               <a href="private-label.html">Private Label</a>
             </li>
             <li>
-              <a href="testimonials.html">Who We are</a>
+              <a href="who-we-are.html">Who We are</a>
             </li>
             <li>
               <a href="#target-section">Contact</a>
@@ -127,7 +127,7 @@
               <a href="private-label.html">Private Label</a>
             </li>
             <li>
-              <a href="testimonials.html">Who We are</a>
+              <a href="who-we-are.html">Who We are</a>
             </li>
             <li>
               <a href="#target-section">Contact</a>
@@ -136,9 +136,16 @@
         </div>
       </div>
       <div class="flex justify-end gap-7 items-center w-full">
-        <img src="./public/facebook.svg" class="size-7" alt="fb" />
-        <img src="./public/Insta.svg" class="size-7" alt="fb" />
-        <a href="https://www.linkedin.com/company/wicked-wipes/">
+        <a href="https://www.facebook.com/profile.php?id=61565429330359" target="_blank">
+          <img src="./public/facebook.svg" class="size-7" alt="fb"
+        /></a>
+        <a href="https://www.instagram.com/wickedhandwipes/" target="_blank">
+          <img src="./public/Insta.svg" class="size-7" alt="fb"
+        /></a>
+        <a
+          href="https://www.linkedin.com/company/wicked-wipes/"
+          target="_blank"
+        >
           <img
             src="./public/linkedin-social.svg"
             class="size-7"
@@ -182,7 +189,7 @@
           Our Mission
         </h1>
         <p
-          class="text-xl league-spartan"
+          class="text-xl urbanist-regular"
           data-aos="fade-left"
           data-aos-duration="700"
         >
@@ -206,7 +213,7 @@
               class="rounded-full h-full object-cover duration-300 ease-in-out translate-y-16 group-hover:translate-y-0"
             />
             <h1
-              class="text-xl font-bold text-center text-[#3A50B3] league-spartan pt-4"
+              class="text-xl font-bold text-center text-[#3A50B3] urbanist-regular pt-4"
             >
               Shailesh Merai
             </h1>
@@ -220,7 +227,7 @@
               class="rounded-full h-full object-cover duration-300 ease-in-out translate-y-16 group-hover:translate-y-0"
             />
             <h1
-              class="text-xl font-bold text-center text-[#3A50B3] league-spartan pt-4"
+              class="text-xl font-bold text-center text-[#3A50B3] urbanist-regular pt-4"
             >
               John Sasso
             </h1>
@@ -236,7 +243,7 @@
           Who We are
         </h1>
         <p
-          class="text-xl md:px-0 px-4 league-spartan text-center ease-in-out opacity-0 transition-opacity duration-500"
+          class="text-xl md:px-0 px-4 urbanist-regular text-center ease-in-out opacity-0 transition-opacity duration-500"
           id="info"
         >
           We are Shailesh and John, business owners in our own right who have
@@ -417,18 +424,23 @@
                 >
               </li>
               <li>
-                <a href="testimonials.html" class="text-white">Who We are</a>
+                <a href="who-we-are.html" class="text-white">Who We are</a>
               </li>
             </ul>
           </nav>
         </div>
         <div class="flex md:flex-col gap-4 md:gap-2 py-4 md:py-0">
-          <h1 class="text-white league-spartan font-bold text-base">
+          <h1 class="text-white urbanist-regular font-bold text-base">
             Follow us
           </h1>
           <div class="flex gap-3 items-center">
-            <img src="./public/Fb.svg" class="size-7" alt="fb"  id="fbImage"/>
-            <img src="./public/Instagram.svg" class="size-7" alt="fb" id="instaImage" />
+            <img src="./public/Fb.svg" class="size-7" alt="fb" id="fbImage" />
+            <img
+              src="./public/Instagram.svg"
+              class="size-7"
+              alt="fb"
+              id="instaImage"
+            />
 
             <img
               src="./public/LinkedIn.svg"
@@ -446,18 +458,21 @@
       document
         .getElementById("linkedInImage")
         .addEventListener("click", function () {
-          window.location.href =
-          ("https://www.linkedin.com/company/wicked-wipes/","_blank");
+          window.open(
+            "https://www.linkedin.com/company/wicked-wipes/",
+            "_blank"
+          );
         });
-        document
+      document
         .getElementById("instaImage")
         .addEventListener("click", function () {
-          window.location.href =
-            ("https://www.instagram.com/wickedhandwipes/", "_blank");
+          window.open("https://www.instagram.com/wickedhandwipes/", "_blank");
         });
       document.getElementById("fbImage").addEventListener("click", function () {
-        window.location.href =
-          ("https://www.facebook.com/profile.php?id=61565429330359", "_blank");
+        window.open(
+          "https://www.facebook.com/profile.php?id=61565429330359",
+          "_blank"
+        );
       });
     </script>
     <script>

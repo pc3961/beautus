@@ -142,7 +142,7 @@
     <!-- Privacy Policy Content -->
     <section class="w-full flex md:p-32 p-4">
       <div class="w-full flex flex-col justify-center p-4 md:px-20">
-        <h1 class="text-left text-2xl md:text-4xl league-spartan">
+        <h1 class="text-left text-2xl md:text-4xl urbanist-regular">
           Privacy Policy
         </h1>
         <p class="text-lg md:text-xl py-6">
@@ -157,7 +157,7 @@
           site to make sure that you understand how any personal information you
           provide will be used.
         </p>
-        <h2 class="text-left text-2xl md:text-4xl league-spartan">
+        <h2 class="text-left text-2xl md:text-4xl urbanist-regular">
           Collection of Information
         </h2>
         <p class="text-lg md:text-xl py-6">
@@ -169,7 +169,7 @@
           email from Wicked Wipes contains instructions on how to opt out of
           receiving further marketing emails from the Company.
         </p>
-        <h2 class="text-left text-2xl md:text-4xl league-spartan">
+        <h2 class="text-left text-2xl md:text-4xl urbanist-regular">
           Cookie/Tracking Technology
         </h2>
         <p class="text-lg md:text-xl py-6">
@@ -182,7 +182,7 @@
           technology, however, if you previously provided personally
           identifiable information, cookies may be tied to such information.
         </p>
-        <h2 class="text-left text-2xl md:text-4xl league-spartan">
+        <h2 class="text-left text-2xl md:text-4xl urbanist-regular">
           Distribution of Information
         </h2>
         <p class="text-lg md:text-xl py-6">
@@ -193,7 +193,7 @@
           (3) investigating fraud which has already taken place. The information
           is not provided to these companies for marketing purposes.
         </p>
-        <h2 class="text-left text-2xl md:text-4xl league-spartan">
+        <h2 class="text-left text-2xl md:text-4xl urbanist-regular">
           Commitment to Data Security
         </h2>
         <p class="text-lg md:text-xl py-6">
@@ -201,7 +201,7 @@
           authorized employees, have access to this information. All emails and
           newsletters from this site allow you to opt out of further mailings.
         </p>
-        <h2 class="text-left text-2xl md:text-4xl league-spartan">
+        <h2 class="text-left text-2xl md:text-4xl urbanist-regular">
           Privacy Contact Information
         </h2>
         <p class="text-lg md:text-xl py-6">
@@ -244,7 +244,12 @@
           </h1>
           <div class="flex gap-3 items-center">
             <img src="./public/Fb.svg" class="size-7" alt="fb" id="fbImage" />
-            <img src="./public/Instagram.svg" class="size-7" id="instaImage" alt="fb" />
+            <img
+              src="./public/Instagram.svg"
+              class="size-7"
+              id="instaImage"
+              alt="fb"
+            />
             <img
               src="./public/LinkedIn.svg"
               class="size-7"
@@ -260,18 +265,21 @@
       document
         .getElementById("linkedInImage")
         .addEventListener("click", function () {
-          window.location.href =
-            ("https://www.linkedin.com/company/wicked-wipes/", "_blank");
+          window.open(
+            "https://www.linkedin.com/company/wicked-wipes/",
+            "_blank"
+          );
         });
       document
         .getElementById("instaImage")
         .addEventListener("click", function () {
-          window.location.href =
-            ("https://www.instagram.com/wickedhandwipes/", "_blank");
+          window.open("https://www.instagram.com/wickedhandwipes/", "_blank");
         });
       document.getElementById("fbImage").addEventListener("click", function () {
-        window.location.href =
-          ("https://www.facebook.com/profile.php?id=61565429330359", "_blank");
+        window.open(
+          "https://www.facebook.com/profile.php?id=61565429330359",
+          "_blank"
+        );
       });
     </script>
     <script>

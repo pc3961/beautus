@@ -84,7 +84,7 @@
           >
             <li><a href="features.html">Features</a></li>
             <li><a href="private-label.html">Private Label</a></li>
-            <li><a href="testimonials.html">Who We are</a></li>
+            <li><a href="who-we-are.html">Who We are</a></li>
             <li><a href="#target-section">Contact</a></li>
           </ul>
         </nav>
@@ -148,7 +148,7 @@
         <ul class="flex flex-col p-4 space-y-6 text-black text-xl font-normal">
           <li><a href="features.html" class="py-4">Features</a></li>
           <li><a href="private-label.html" class="py-4">Private Label</a></li>
-          <li><a href="testimonials.html" class="py-4">Who We are</a></li>
+          <li><a href="who-we-are.html" class="py-4">Who We are</a></li>
           <li><a href="#target-section" class="py-4">Contact</a></li>
         </ul>
       </div>
@@ -203,7 +203,7 @@
         data-aos="zoom-in"
         data-aos-duration="1000"
       >
-        <h2 class="text-md md:text-xl league-spartan text-center">
+        <h2 class="text-md md:text-xl urbanist-regular text-center">
           Wicked Wipes will give you an edge over your competition
         </h2>
       </div>
@@ -299,7 +299,7 @@
     <section class="px-4 md:px-28 py-10 md:py-20 w-full">
       <div class="w-full px-4 md:px-40 flex justify-center" id="gallery">
         <h2
-          class="text-base md:text-xl text-[#3A50B3] league-spartan text-center"
+          class="text-base md:text-xl text-[#3A50B3] urbanist-regular text-center"
           id="gallery-one"
         >
           Perfect for all areas of the hospitality industry, including
@@ -515,7 +515,7 @@
                 >
               </li>
               <li>
-                <a href="testimonials.html" class="text-white">Who We are</a>
+                <a href="who-we-are.html" class="text-white">Who We are</a>
               </li>
             </ul>
           </nav>
@@ -526,7 +526,12 @@
           </h1>
           <div class="flex gap-3 items-center">
             <img src="./public/Fb.svg" class="size-7" alt="fb" id="fbImage" />
-            <img src="./public/Instagram.svg" class="size-7" id="instaImage" alt="fb" />
+            <img
+              src="./public/Instagram.svg"
+              class="size-7"
+              id="instaImage"
+              alt="fb"
+            />
             <img
               src="./public/LinkedIn.svg"
               class="size-7"
@@ -573,18 +578,21 @@
       document
         .getElementById("linkedInImage")
         .addEventListener("click", function () {
-          window.location.href =
-            ("https://www.linkedin.com/company/wicked-wipes/", "_blank");
+          window.open(
+            "https://www.linkedin.com/company/wicked-wipes/",
+            "_blank"
+          );
         });
       document
         .getElementById("instaImage")
         .addEventListener("click", function () {
-          window.location.href =
-            ("https://www.instagram.com/wickedhandwipes/", "_blank");
+          window.open("https://www.instagram.com/wickedhandwipes/", "_blank");
         });
       document.getElementById("fbImage").addEventListener("click", function () {
-        window.location.href =
-          ("https://www.facebook.com/profile.php?id=61565429330359", "_blank");
+        window.open(
+          "https://www.facebook.com/profile.php?id=61565429330359",
+          "_blank"
+        );
       });
     </script>
     <script>
