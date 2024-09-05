@@ -130,7 +130,7 @@
           <img src="./public/yellow 3.svg" alt="" class="size-auto absolute top-48 right-56">
         </div>
         <div class="flex flex-col w-full text-white z-[200]"id="topic">
-          <h1 class="text-[30px] concert-one-regular font-normal w-full" id="topic">Hygienic, Safe, Natural,
+          <h1 class="text-[30px] urbanist-regular font-normal w-full" id="topic">Hygienic, Safe, Natural,
             Environmentally
             Friendly Wipes</h1>
           <p class="text-xl font-normal py-5">A creative solution to clean and freshen hands</p>
@@ -139,7 +139,7 @@
             <!-- Video Section desktop View -->
       <div class="hidden md:flex w-full h-full px-40 absolute overflow-hidden">
         <div class="flex flex-col w-full text-white absolute bottom-0" id="topic1">
-          <h1 class="text-[48px] concert-one-regular font-normal w-full" id="topic1">Hygienic, Safe, Natural,<br>
+          <h1 class="text-[48px] urbanist-regular font-normal w-full" id="topic1">Hygienic, Safe, Natural,<br>
             Environmentally
             Friendly Wipes</h1>
           <p class="text-xl font-normal py-5">A creative solution to clean and freshen hands</p>
@@ -165,7 +165,7 @@
   <section class="w-full flex flex-col overflow-hidden">
     <div class="w-full flex flex-col md:flex-row md:px-40 md:py-16 px-4 py-6 gap-x-6 opacity-0" id="document-title">
       <div class="w-full">
-        <h1 class="text-4xl text-nowrap font-['Mitr'] font-medium gradient-text">
+        <h1 class="text-4xl text-nowrap urbanist-regular font-medium gradient-text">
           Stylish single-use <br> hand wipes
         </h1>
       </div>
@@ -232,7 +232,7 @@
     <div class="flex w-full my-10 justify-center">
       <h1
         id="hygiene-heading"
-        class="px-10 py-10 text-[#acd5ef] font-['Mitr'] text-6xl text-center hover:text-[#3A50B3] font-medium"
+        class="px-10 py-10 text-[#acd5ef] urbanist-regular text-6xl text-center hover:text-[#3A50B3] font-medium"
       >
         Let’s make hygiene fun and desirable!
       </h1>
@@ -243,7 +243,7 @@
   <!-- Categories Section -->
 
   <section class=" flex flex-col md:pt-[100px] bg-[#c1eaf3] h-[903px] md:h-[903px] relative overflow-hidden" id="colorSection">
-    <h1 class="px-4 md:px-40 text-[#3a50b3] text-[28px] md:text-[46px] font-['Mitr'] font-normal">
+    <h1 class="px-4 md:px-40 text-[#3a50b3] text-[28px] md:text-[46px] urbanist-regular font-normal">
       Refreshing natural fragrances
     </h1>
     <div class="flex flex-col">
@@ -271,7 +271,7 @@
     <div class="flex md:flex-row flex-col justify-between">
       <div class="flex w-full">
         <h1 id="text-container"
-          class="absolute top-[430px] left-10 md:top-80 md:left-36 text-[60px] md:text-[180px] text-[#3a50b3] concert-one-regular font-normal fade-text duration-500">
+          class="absolute top-[430px] left-10 md:top-80 md:left-36 text-[60px] md:text-[180px] text-[#3a50b3] urbanist-regular font-normal fade-text duration-500">
           Cool
         </h1>
       </div>
@@ -290,7 +290,7 @@
     <div
       class="flex flex-col justify-center items-center w-full gap-y-10">
       <div class="flex w-full md:px-10 px-4 justify-center">
-        <h1 class="text-[28px] md:text-[78px] concert-one-regular gradient-text font-medium">
+        <h1 class="text-[28px] md:text-[78px] urbanist-regular gradient-text font-medium">
           Wicked Wipes is a smart <br> choice for your business
         </h1>
       </div>
@@ -346,7 +346,7 @@
         id="document-heading1">
         <div class="flex flex-col md:gap-4 gap-4">
           <h1 class="text-4xl md:text-[72px] text-gradient md:leading-none font-normal">Make it yours </h1>
-          <p class="text-[20px] font-['League Spartan'] font-normal text-[#3A50B3] word-wrap">Wicked
+          <p class="text-[20px] urbanist-regular font-normal text-[#3A50B3] word-wrap">Wicked
             Wipes is an original advertising opportunity for businesses and a successful marketing tool that will
             surprise and delight your customers. Add your brand to customize the pod.</p>
         </div>
@@ -371,9 +371,9 @@
        shadow-md rounded-md relative overflow-hidden">
         <div class="rounded-full w-24 h-24 md:w-28 md:h-28 bg-white absolute top-16 right-2  md:top-40 md:right-14 z-[100]"></div>
         <div class="rounded-full w-64 h-64 bg-[#77B5FF] absolute top-20 right-[-150px] md:top-40 md:right-[-100px] z-50 overflow-hidden"></div>
-        <h1 class="text-white text-[14px] md:text-[28px] urbanist-regular font-bold">
+        <h2 class="text-white text-[14px] md:text-[28px] urbanist-regular font-bold">
           Get in touch with us!
-        </h1>
+        </h2>
         <h2 class="text-white [text-8px] md:text-[16px] urbanist-regular">
           to discuss your interest in Wicked Wipes
         </h2>
@@ -419,6 +419,7 @@
         <a href="privacy-policy.html">
           <p class="text-right text-sm p-4">Privacy Policy</p>
         </a>
+        <div id="form-message" style="margin-top: 20px;"></div>
     </div>    
     </div>
   </section>
@@ -685,6 +686,37 @@ window.onload = checkCookiesAccepted;
   });
 });
   </script>
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent form from submitting normally
+
+    // Collect form data
+    const formData = new FormData(this);
+
+    // Send form data using fetch
+    fetch('./inc/mailer.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.text())  // Get the response as plain text
+    .then(data => {
+      try {
+        const jsonData = JSON.parse(data); // Parse the text as JSON
+        const messageContainer = document.getElementById('form-message');
+        if (jsonData.status === 'success') {
+          messageContainer.innerHTML = jsonData.message;  // Display the success message
+          messageContainer.style.color = 'green';         // Set text color to green
+        } else {
+          messageContainer.innerHTML = jsonData.message;  // Display the error message
+          messageContainer.style.color = 'red';           // Set text color to red for errors
+        }
+      } catch (error) {
+        console.error('Error parsing JSON:', error);
+      }
+    })
+    .catch(error => console.error('Error:', error)); // Log any errors
+  });
+</script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
     const hamburger = document.getElementById('hamburger');
@@ -764,7 +796,7 @@ window.onload = checkCookiesAccepted;
     setTimeout(() => {
       // Change the text
       textContainer.innerHTML = texts[currentTextIndex].text;
-      textContainer.className = `absolute top-[430px] left-10 md:top-80 md:left-36 md:text-[180px] text-[60px] concert-one-regular font-normal fade-text duration-500 ${texts[currentTextIndex].color}`;
+      textContainer.className = `absolute top-[430px] left-10 md:top-80 md:left-36 md:text-[180px] text-[60px] urbanist-regular font-normal fade-text duration-500 ${texts[currentTextIndex].color}`;
       currentTextIndex = (currentTextIndex + 1) % texts.length;
 
       // Fade in the new text
