@@ -237,20 +237,20 @@
         <div
           class="flex flex-col w-full md:gap-y-6 md:bg-[url('/public/white 1.png')] md:bg-cover"
         >
-          <h1
-            class="text-4xl md:text-[78px] text-[#97CAEB] font-medium urbanist-regular"
+          <h2
+            class="text-4xl md:text-[78px] text-[#97CAEB] font-bold urbanist-regular"
           >
             Wicked Wipes
-          </h1>
-          <h1
-            class="text-4xl md:text-[78px] text-[#97CAEB] font-medium urbanist-regular hover:text-[#3A50B3]"
+          </h2>
+          <h2
+            class="text-4xl md:text-[78px] text-[#97CAEB] font-bold urbanist-regular hover:text-[#3A50B3]"
             id="design-heading"
           >
             Design
-          </h1>
+          </h2>
           <div data-aos="fade-right" data-aos-duration="700">
             <p
-              class="text-[20px] md:text-xl pt-6 md:pt-10 urbanist-regular font-normal"
+              class="text-[20px] md:text-xl pt-6 md:pt-10 urbanist-regular"
             >
               The container pod is a two-chamber system. The cleansing solution
               is held in the outer chamber. The inner chamber contains a
@@ -258,7 +258,7 @@
               from each other until activated for use. 
             </p>
             <p
-              class="text-[20px] md:text-xl pt-6 md:pt-10 urbanist-regular font-normal"
+              class="text-[20px] md:text-xl pt-6 md:pt-10 urbanist-regular"
             >
               When pressure is applied to the middle of the top of the pod, by
               thumb or finger, the container opens the valve at the bottom and
@@ -283,12 +283,12 @@
       <div class="flex flex-col md:flex-row w-full">
         <div class="flex flex-col w-full md:gap-y-6">
           <h1
-            class="text-white text-[40px] md:text-[78px] urbanist-regular font-medium"
+            class="text-white text-[40px] md:text-[78px] urbanist-regular font-bold"
           >
             How to use
           </h1>
           <h1
-            class="text-[#97CAEB] text-[40px] md:text-[78px] urbanist-regular font-medium"
+            class="text-[#97CAEB] text-[40px] md:text-[78px] urbanist-regular font-bold"
           >
             Wicked Wipes
           </h1>
@@ -470,7 +470,7 @@
                   ></div>
                 </div>
                 <p
-                  class="text-[18px] font-['Urbanist'] text-white font-black mt-6"
+                  class="text-[18px] urbanist-regular text-white font-black mt-6"
                 >
                   Place the Wicked Wipes pod on the table. The product is made
                   up of two parts - the dry compressed cloth hand wipe and the
@@ -501,7 +501,7 @@
                     ></div>
                   </div>
                   <p
-                    class="text-[18px] font-['Urbanist'] text-white font-black mt-6"
+                    class="text-[18px] urbanist-regular text-white font-black mt-6"
                   >
                     Press down on the centre of the pod to activate the process.
                     This breaks the seal and allows the cleansing solution to
@@ -549,7 +549,7 @@
                   ></div>
                 </div>
                 <p
-                  class="text-[18px] font-['Urbanist'] text-white font-black mt-6"
+                  class="text-[18px] urbanist-regular text-white font-black mt-6"
                 >
                   Pause for just a few seconds to allow the cloth to completely
                   absorb the cleansing solution. Now it’s ready to use. 
@@ -590,7 +590,7 @@
                   ></div>
                 </div>
                 <p
-                  class="text-[18px] font-['Urbanist'] text-white font-black mt-6"
+                  class="text-[18px] urbanist-regular text-white font-black mt-6"
                 >
                   Simply wipe your hands with the soft, yet sturdy, cloth to
                   remove dirt and germs. Experience the immediate cleansing
@@ -656,7 +656,7 @@
         >
           <div class="w-full flex justify-between md:justify-start">
             <div
-              class="text-[28px] md:text-[40px] text-[#3a50b3] font-bold md:bg-[#B5EA72] rounded-full md:h-56 md:w-56 flex justify-end md:justify-start items-center slide-in-up text-left md:text-left"
+              class="text-[28px] md:text-[40px] text-[#3a50b3] font-bold urbanist-regular md:bg-[#B5EA72] rounded-full md:h-56 md:w-56 flex justify-end md:justify-start items-center slide-in-up text-left md:text-left"
             >
               <h2>Innovative</h2>
             </div>
@@ -666,7 +666,7 @@
           </div>
           <div class="slide-in-right">
             <ul
-              class="md:list-disc space-y-4 font-['Urbanist'] text-[11px] md:text-xl"
+              class="md:list-disc space-y-4 urbanist-regular text-[11px] md:text-xl"
             >
               <li class="">
                 Sealed individual pods ensure safety and security with no risk
@@ -696,7 +696,7 @@
           </div>
           <div class="md:flex md:w-full slide-in-left">
             <ul
-              class="md:list-disc space-y-4 font-['Urbanist'] text-[11px] md:text-xl"
+              class="md:list-disc space-y-4 urbanist-regular text-[11px] md:text-xl"
             >
               <li class="">No alcohol, no chemicals, no color additives</li>
               <li class="">Complies with health and safety regulations</li>
@@ -740,7 +740,7 @@
           </div>
           <div class="slide-in-right">
             <ul
-              class="md:list-disc space-y-4 font-['Urbanist'] text-[11px] md:text-xl"
+              class="md:list-disc space-y-4 urbanist-regular text-[11px] md:text-xl"
             >
               <li class="">Cloth hand wipes are botanic and biodegradable</li>
               <li class="">
@@ -1045,6 +1045,10 @@
       function removeLinks(textarea) {
         // Remove any links by replacing them with an empty string
         textarea.value = textarea.value.replace(/https?:\/\/[^\s]+/g, "");
+        const domainRegex = /(?:https?:\/\/|www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(\/[^\s]*)?/g;
+    
+    // Remove any links or domain names by replacing them with an empty string
+    textarea.value = textarea.value.replace(domainRegex, '');
       }
     </script>
     <script>

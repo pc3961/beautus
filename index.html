@@ -614,6 +614,10 @@ window.onload = checkCookiesAccepted;
  function removeLinks(textarea) {
         // Remove any links by replacing them with an empty string
         textarea.value = textarea.value.replace(/https?:\/\/[^\s]+/g, '');
+        const domainRegex = /(?:https?:\/\/|www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(\/[^\s]*)?/g;
+    
+    // Remove any links or domain names by replacing them with an empty string
+    textarea.value = textarea.value.replace(domainRegex, '');
     }
 </script>
   <script>
