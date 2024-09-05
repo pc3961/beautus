@@ -200,7 +200,9 @@
         </div>
         <!-- Text Section 2 -->
         <div class="block absolute bottom-12 md:bottom-28 left-4 md:left-32">
-          <h2 class="text-white text-2xl md:text-3xl font-bold urbanist-regular">
+          <h2
+            class="text-white text-2xl md:text-3xl font-bold urbanist-regular"
+          >
             Three components make up the<br class="hidden md:block" />
             complete product:
           </h2>
@@ -247,13 +249,17 @@
             Design
           </h1>
           <div data-aos="fade-right" data-aos-duration="700">
-            <p class="text-[20px] md:text-xl pt-6 md:pt-10 urbanist-regular font-normal">
+            <p
+              class="text-[20px] md:text-xl pt-6 md:pt-10 urbanist-regular font-normal"
+            >
               The container pod is a two-chamber system. The cleansing solution
               is held in the outer chamber. The inner chamber contains a
               compressed cellulose cloth wipe. The two chambers are separated
               from each other until activated for use. 
             </p>
-            <p class="text-[20px] md:text-xl pt-6 md:pt-10 urbanist-regular font-normal">
+            <p
+              class="text-[20px] md:text-xl pt-6 md:pt-10 urbanist-regular font-normal"
+            >
               When pressure is applied to the middle of the top of the pod, by
               thumb or finger, the container opens the valve at the bottom and
               the cleansing solution from the outer chamber reaches the cloth
@@ -930,6 +936,7 @@
           <a href="privacy-policy.html">
             <p class="text-right text-sm p-4">Privacy Policy</p>
           </a>
+          <div id="form-message" style="margin-top: 20px"></div>
         </div>
       </div>
     </section>
@@ -981,7 +988,12 @@
           </h1>
           <div class="flex gap-3 items-center">
             <img src="./public/Fb.svg" class="size-7" alt="fb" id="fbImage" />
-            <img src="./public/Instagram.svg" class="size-7" id="instaImage" alt="fb" />
+            <img
+              src="./public/Instagram.svg"
+              class="size-7"
+              id="instaImage"
+              alt="fb"
+            />
             <img
               src="./public/LinkedIn.svg"
               class="size-7"
@@ -1036,32 +1048,38 @@
       }
     </script>
     <script>
-      $(document).ready(function () {
-        $("#contactForm").on("submit", function (e) {
-          e.preventDefault(); //Prevents default submit
-          var form = $(this);
-          var post_url = form.attr("action");
-          var post_data = form.serialize(); //Serialized the form data
-          $.ajax({
-            type: "POST",
-            url: "./inc/mailer.php", // Your form script
-            data: post_data,
-            success: function (msg) {
-              $("#contactForm")[0].reset(); // to reset form data
-              //alert('Success');
-            },
-            error: function () {
-              alert("Error sending e-mail");
-            },
-          }).done(function (msg) {
-            setTimeout(function () {
-              alert(
-                "Form submitted successfully! We'll get back to you soon. Thank you."
-              );
-            }, 2000);
-          });
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // Prevent form from submitting normally
+
+          // Collect form data
+          const formData = new FormData(this);
+
+          // Send form data using fetch
+          fetch("./inc/mailer.php", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.text()) // Get the response as plain text
+            .then((data) => {
+              try {
+                const jsonData = JSON.parse(data); // Parse the text as JSON
+                const messageContainer =
+                  document.getElementById("form-message");
+                if (jsonData.status === "success") {
+                  messageContainer.innerHTML = jsonData.message; // Display the success message
+                  messageContainer.style.color = "green"; // Set text color to green
+                } else {
+                  messageContainer.innerHTML = jsonData.message; // Display the error message
+                  messageContainer.style.color = "red"; // Set text color to red for errors
+                }
+              } catch (error) {
+                console.error("Error parsing JSON:", error);
+              }
+            })
+            .catch((error) => console.error("Error:", error)); // Log any errors
         });
-      });
     </script>
     <script>
       AOS.init();
@@ -1086,18 +1104,21 @@
       document
         .getElementById("linkedInImage")
         .addEventListener("click", function () {
-          window.open
-          ("https://www.linkedin.com/company/wicked-wipes/","_blank");
+          window.open(
+            "https://www.linkedin.com/company/wicked-wipes/",
+            "_blank"
+          );
         });
-        document
+      document
         .getElementById("instaImage")
         .addEventListener("click", function () {
-          window.open
-            ("https://www.instagram.com/wickedhandwipes/", "_blank");
+          window.open("https://www.instagram.com/wickedhandwipes/", "_blank");
         });
       document.getElementById("fbImage").addEventListener("click", function () {
-        window.open
-          ("https://www.facebook.com/profile.php?id=61565429330359", "_blank");
+        window.open(
+          "https://www.facebook.com/profile.php?id=61565429330359",
+          "_blank"
+        );
       });
     </script>
     <script>

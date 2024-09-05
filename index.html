@@ -409,6 +409,9 @@
             </div>
             <input type="text" id="company" placeholder="Company Name" name="cname" class="form" required minlength="2" />
             <textarea id="message" placeholder="Message" name="msg" class="form" required minlength="10"  oninput="removeLinks(this)"></textarea>
+            <div id="otp-section" style="display: none;">
+              <input type="text" id="otp" placeholder="Enter OTP" name="otp">
+          </div>      
             <div class="g-recaptcha" data-sitekey="6LeK3DAqAAAAABPUmnvuJCf7ZUQwRq27KDavibFx"></div>
         </form>
         <div class="w-full flex justify-end">
@@ -423,6 +426,7 @@
     </div>    
     </div>
   </section>
+
     <!-- Cookies Code -->
     <div
     id="cookie-banner"
@@ -615,6 +619,32 @@ window.onload = checkCookiesAccepted;
         textarea.value = textarea.value.replace(/https?:\/\/[^\s]+/g, '');
     }
 </script>
+<script>
+  // OTP Authentication Logic
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+  
+      const formData = new FormData(this);
+  
+      fetch('mailer.php', {
+          method: 'POST',
+          body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+          if (data.status === 'otp_sent') {
+              // Show OTP input field and hide other form fields
+              document.getElementById('otp-section').style.display = 'block';
+              alert(data.message);
+          } else if (data.status === 'success') {
+              alert(data.message);
+          } else {
+              alert(data.message);
+          }
+      })
+      .catch(error => console.error('Error:', error));
+  });
+  </script>
   <script>
     const documentSection = document.getElementById("document-section");
     const documentHeading2 = document.getElementById("document-heading2");

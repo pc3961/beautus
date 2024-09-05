@@ -475,6 +475,7 @@
           <a href="privacy-policy.html">
             <p class="text-right text-sm p-4">Privacy Policy</p>
           </a>
+          <div id="form-message" style="margin-top: 20px"></div>
         </div>
       </div>
     </section>
@@ -596,32 +597,38 @@
       });
     </script>
     <script>
-      $(document).ready(function () {
-        $("#contactForm").on("submit", function (e) {
-          e.preventDefault(); //Prevents default submit
-          var form = $(this);
-          var post_url = form.attr("action");
-          var post_data = form.serialize(); //Serialized the form data
-          $.ajax({
-            type: "POST",
-            url: "./inc/mailer.php", // Your form script
-            data: post_data,
-            success: function (msg) {
-              $("#contactForm")[0].reset(); // to reset form data
-              //alert('Success');
-            },
-            error: function () {
-              alert("Error sending e-mail");
-            },
-          }).done(function (msg) {
-            setTimeout(function () {
-              alert(
-                "Form submitted successfully! We'll get back to you soon. Thank you."
-              );
-            }, 2000);
-          });
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // Prevent form from submitting normally
+
+          // Collect form data
+          const formData = new FormData(this);
+
+          // Send form data using fetch
+          fetch("./inc/mailer.php", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.text()) // Get the response as plain text
+            .then((data) => {
+              try {
+                const jsonData = JSON.parse(data); // Parse the text as JSON
+                const messageContainer =
+                  document.getElementById("form-message");
+                if (jsonData.status === "success") {
+                  messageContainer.innerHTML = jsonData.message; // Display the success message
+                  messageContainer.style.color = "green"; // Set text color to green
+                } else {
+                  messageContainer.innerHTML = jsonData.message; // Display the error message
+                  messageContainer.style.color = "red"; // Set text color to red for errors
+                }
+              } catch (error) {
+                console.error("Error parsing JSON:", error);
+              }
+            })
+            .catch((error) => console.error("Error:", error)); // Log any errors
         });
-      });
     </script>
     <script>
       AOS.init();
