@@ -897,7 +897,12 @@ setInterval(changeImage, 3000);
 </script>
   <script>
     var swiper = new Swiper('.swiper-container', {
+      loop: true,
       slidesPerView: 1, // Default setting for larger screens
+      autoplay: {
+      delay: 3000, // 3 seconds delay between slides
+      disableOnInteraction: false, // Autoplay won't stop after user interaction
+    },
       spaceBetween: 30,
       pagination: {
         el: '.swiper-pagination',
