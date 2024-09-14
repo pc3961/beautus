@@ -695,6 +695,13 @@ window.onload = checkCookiesAccepted;
 });
   </script>
 <script>
+   document.getElementById('message').addEventListener('input', function() {
+    if (this.value.length < 10) {
+      this.setCustomValidity("Please provide a more detailed description of your inquiry.");
+    } else {
+      this.setCustomValidity("");
+    }
+  });
   document.getElementById("contactForm").addEventListener("submit", function (e) {
     e.preventDefault(); // Prevent form from submitting normally
 

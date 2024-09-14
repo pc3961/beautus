@@ -1157,6 +1157,13 @@
 
       // Observe the section
       observer.observe(featuresDetails);
+      document.getElementById('message').addEventListener('input', function() {
+    if (this.value.length < 10) {
+      this.setCustomValidity("Please provide a more detailed description of your inquiry.");
+    } else {
+      this.setCustomValidity("");
+    }
+  });
     </script>
     <script>
       const Step2 = document.getElementById("step-2");
