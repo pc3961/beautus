@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Recipients
         $mail->setFrom('test@omesacreative.ca', 'Test Omesacreative');
-        $mail->addAddress('pranav@cgstechlab.com', 'Pranav Chavan');  // Add recipient
+        $mail->addAddress('smerai@omesacreative.ca', 'Shailesh Merai');  // Add recipient
 
         // Content
         $mail->isHTML(true);
@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // If mail is sent successfully, return success response
         $response['status'] = 'success';
-        $response['message'] = 'We are excited to hear from you! We will connect to discuss more about your interest.';
+        $response['message'] = 'tHANK YOU We are excited to hear from you! We will connect to discuss more about your interest.';
 
     } catch (Exception $e) {
         // If there was an error sending the email
