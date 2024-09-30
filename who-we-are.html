@@ -25,6 +25,18 @@
       property="og:url"
       content="https://www.wickedwipes.ca/who-we-are.html "
     />
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-PNF89GR5");
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="stylesheet" href="./global.css" />
@@ -63,6 +75,19 @@
       defer
     ></script>
     <script src="https://cdn-ca.pagesense.io/js/zoho3419/8a93ff5516d1450b837c6ffdc0daffcb.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-E50PFDVXYE"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-E50PFDVXYE");
+    </script>
     <style>
       .form {
         width: 100%;
@@ -82,6 +107,18 @@
   </head>
 
   <body>
+    <!-- Google Tag Manager (noscript) -->
+
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-PNF89GR5"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+
+    <!-- End Google Tag Manager (noscript) -->
     <!-- Header Section -->
     <section
       class="p-4 md:px-40 md:py-10 flex flex-col items-end w-full bg-[url('/public/banner.png')] bg-no-repeat bg-cover h-full"
