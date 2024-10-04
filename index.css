@@ -962,6 +962,15 @@ h2{
   height: 303px;
   object-fit: cover;
 }
+.image-contain-1 {
+  width: 100%;
+  height: 260px;
+}
+.image-contain-1 img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
 .gradient-text {
   background-image: linear-gradient(to bottom, #97caeb, #3a50b3);
   background-clip: text;

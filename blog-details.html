@@ -209,7 +209,7 @@
       </div>
     </section>
     <section class="flex w-full h-full">
-      <img src="./public/blog-details.png" class="w-full md:h-[462px] h-[235px]" alt="" />
+      <img src="./public/blog-details.png" class="w-full md:h-[462px] object-cover h-[235px]" alt="" />
     </section>
     <section class="flex w-full py-16">
       <div class="flex md:flex-row flex-col gap-x-16 md:px-40 px-4">
@@ -224,7 +224,7 @@
             </p>
           </div>
           <div class="flex pt-5 w-full">
-            <img src="./public/detail-1.png" class="md:h-[400px] h-[319px]" alt="" />
+            <img src="./public/detail-1.png" class="md:h-[400px] object-cover h-[319px]" alt="" />
           </div>
         </div>
         <div class="flex flex-col pt-12 md:pt-0 font-semibold gap-y-6 md:text-xl text-[12px]">
@@ -265,18 +265,18 @@
       <div class="swiper-contain z-50 overflow-hidden">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <div class="image-contain">
-              <img src="./public/blog-slider.png" class="h-[303px]" alt="" />
+            <div class="image-contain-1 md:image-contain">
+              <img src="./public/blog-slider.png" class="" alt="" />
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="image-contain">
-              <img src="./public/blog-slider-1.png" class="h-[303px]" alt="" />
+            <div class="image-contain-1 md:image-contain">
+              <img src="./public/blog-slider-1.png" class="" alt="" />
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="image-contain">
-              <img src="./public/blog-slider-2.png" class="h-[303px]" alt="" />
+            <div class="image-contain-1 md:image-contain">
+              <img src="./public/blog-slider-2.png" class="" alt="" />
             </div>
           </div>
         </div>
@@ -350,12 +350,12 @@
     <script>
       var swiper = new Swiper(".swiper-contain", {
         loop: true,
-        slidesPerView: 1, // Default setting for larger screens
+        slidesPerView: 1.25, // Default setting for larger screens
         autoplay: {
           delay: 3000, // 3 seconds delay between slides
           disableOnInteraction: false, // Autoplay won't stop after user interaction
         },
-        spaceBetween: 30,
+        spaceBetween: 20,
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
