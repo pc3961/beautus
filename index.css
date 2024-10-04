@@ -931,6 +931,10 @@ h2{
   width: 100%;
   height: 592px;
 }
+.swiper-contain {
+  width: 100%;
+  height: 303px;
+}
 .swiper-slide {
   display: flex;
   justify-content: center;
@@ -947,6 +951,15 @@ h2{
 .image-container img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+}
+.image-contain {
+  width: 100%;
+  height: 303px;
+}
+.image-contain img {
+  width: 100%;
+  height: 303px;
   object-fit: cover;
 }
 .gradient-text {
