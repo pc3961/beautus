@@ -1,4 +1,6 @@
 <?php
+session_start();  // Start the session
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -10,6 +12,24 @@ header('Content-Type: application/json');  // Set response to JSON format
 $response = ['status' => 'error', 'message' => 'An error occurred.'];  // Default response
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $otp = $_POST['otp'];
+
+    // Debugging: Check if OTP is set in the session
+    if (!isset($_SESSION['otp'])) {
+        $response['message'] = 'Session OTP not set.';
+        echo json_encode($response);
+        exit;
+    }
+
+    // Debugging: Check the OTP value
+    if ($otp != $_SESSION['otp']) {
+        $response['message'] = 'OTP does not match.';
+        echo json_encode($response);
+        exit;
+    }
+
+    unset($_SESSION['otp']);  // OTP matched, remove it from session
+
     // reCAPTCHA secret key
     $recaptcha_secret = '6LeK3DAqAAAAAG8yuTlWzVS_g-P1QFy1w4PC-pHd';  // Replace with your actual secret key
     $recaptcha_response = $_POST['g-recaptcha-response'];
@@ -19,9 +39,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $recaptcha_verify_response = file_get_contents($recaptcha_verify_url);
     $response_keys = json_decode($recaptcha_verify_response, true);
 
+    // Debugging: Print reCAPTCHA verification response
+    if (!$response_keys) {
+        $response['message'] = 'Failed to decode reCAPTCHA response.';
+        echo json_encode($response);
+        exit;
+    }
+
     if (intval($response_keys["success"]) !== 1) {
         // reCAPTCHA failed
-        $response['message'] = 'Please complete the CAPTCHA.';
+        $response['message'] = 'Please complete the CAPTCHA correctly.';
         echo json_encode($response);
         exit;
     }
@@ -59,8 +86,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // If there was an error sending the email
         $response['message'] = 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo;
     }
-
-    // Return the JSON response
     echo json_encode($response);
 }
 ?>
