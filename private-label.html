@@ -42,7 +42,10 @@
         f.parentNode.insertBefore(j, f);
       })(window, document, "script", "dataLayer", "GTM-PNF89GR5");
     </script>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-E50PFDVXYE"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-E50PFDVXYE"
+    ></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="stylesheet" href="./global.css" />
@@ -500,7 +503,7 @@
                 minlength="2"
               />
             </div>
-            <div class="flex justify-between w-full gap-x-6">
+            <div class="flex justify-between w-full gap-x-6 relative">
               <input
                 type="email"
                 id="bemail"
@@ -509,6 +512,12 @@
                 class="form"
                 required
               />
+              <button
+                type="submit"
+                class="flex justify-center absolute md:w-20 w-14 p-2 text-white text-xs md:text-base urbanist-regular font-semibold bg-[#3A50B3] hover:bg-blue-700 rounded-md right-[200px] top-2 lg:right-[350px]"
+              >
+                Verify
+              </button>
               <input
                 type="tel"
                 id="pnum"
@@ -692,6 +701,49 @@
         );
       });
     </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          const verifyButton = document.querySelector('#contactForm button[type="submit"]');
+          const emailInput = document.querySelector('#bemail');
+          const otp = document.getElementById('otp');
+  
+          // Disable form submission for the verify button
+          verifyButton.addEventListener('click', function (e) {
+              e.preventDefault();
+              
+              const email = emailInput.value;
+              if (email) {
+                  sendOtp(email);
+              } else {
+                  alert("Please enter a valid email address to verify.");
+              }
+          });
+  
+          // Function to send OTP to the email
+          function sendOtp(email) {
+              fetch('./inc/send_otp.php', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({ email: email }),
+              })
+              .then(response => response.json())
+              .then(data => {
+                  if (data.success) {
+                     otp.value = data.otp;
+                     otp.classList.remove('hidden');
+                      alert('OTP has been sent to your email.');
+                  } else {
+                      alert('Failed to send OTP. Please try again.');
+                  }
+              })
+              .catch(error => {
+                  console.error('Error:', error);
+              });
+          }
+      });
+  </script>
     <script>
       document
         .getElementById("contactForm")
