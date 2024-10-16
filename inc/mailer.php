@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // If mail is sent successfully, return success response
         $response['status'] = 'success';
-        $response['message'] = 'THANK YOU We are excited to hear from you! We will connect to discuss more about your interest.';
+        $response['message'] = 'Thank You! We are excited to hear from you! We will connect to discuss more about your interest.';
 
     } catch (Exception $e) {
         // If there was an error sending the email
