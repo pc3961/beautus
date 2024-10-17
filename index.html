@@ -579,7 +579,11 @@
         submitButton.addEventListener('click', function (e) {
             if (!isEmailVerified) {
                 e.preventDefault(); // Prevent form submission
+                const messageContainer1 = document.getElementById('otp-message');
                 alert("Please verify your email before submitting.");
+                messageContainer1.classList.remove('hidden');
+                messageContainer1.textContent = 'Please verify your email before submitting.';
+                messageContainer1.style.color ='red';
             }
         });
     });
