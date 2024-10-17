@@ -457,16 +457,17 @@
             <div class="flex justify-between w-full gap-x-6 relative">
                 <input type="email" id="bemail" placeholder="Business Email" name="bemail" class="form" required />
                 <button type="submit" class="flex justify-center absolute md:w-20  w-14 p-2 text-white text-xs md:text-base urbanist-regular font-semibold bg-[#3A50B3] hover:bg-blue-700 rounded-md 
-                right-[200px] top-2 lg:right-[350px]">Verify</button> 
+                right-[200px] top-2 lg:right-[350px]" id="verifyButton">Verify</button> 
                 <input type="tel" id="pnum" placeholder="Phone Number" name="pnum" class="form" required pattern="^[0-9]{10}$" maxlength="10"  />
             </div>
+            <div class="flex justify-between w-full gap-x-6 hidden" id="otp-message" style="margin-top: 10px;"></div>
             <input type="number" id="otp" placeholder="Enter OTP" name="otp" class="form hidden" minlength="6" maxlength="6" required />
             <input type="text" id="company" placeholder="Company Name" name="cname" class="form" required minlength="2" />
             <textarea id="message" placeholder="Message" name="msg" class="form" required minlength="10"  oninput="removeLinks(this)"></textarea>
             <div class="g-recaptcha" data-sitekey="6LeK3DAqAAAAABPUmnvuJCf7ZUQwRq27KDavibFx"></div>
         </form>
         <div class="w-full flex justify-end">
-            <button type="submit" form="contactForm" class="flex justify-center w-1/2 text-white text-base urbanist-regular font-semibold bg-[#3A50B3] hover:bg-blue-700 rounded-md mt-16 py-4">
+            <button type="submit" form="contactForm" id="submitButton" class="flex justify-center w-1/2 text-white text-base urbanist-regular font-semibold bg-[#3A50B3] hover:bg-blue-700 rounded-md mt-16 py-4">
                 Let's connect
             </button>
         </div>
@@ -521,14 +522,15 @@
   </section>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const verifyButton = document.querySelector('#contactForm button[type="submit"]');
+        const verifyButton = document.querySelector('#verifyButton');
+        const submitButton = document.querySelector('#submitButton');
         const emailInput = document.querySelector('#bemail');
         const otp = document.getElementById('otp');
+        let isEmailVerified = false; // Track if email is verified
 
         // Disable form submission for the verify button
         verifyButton.addEventListener('click', function (e) {
             e.preventDefault();
-            
             const email = emailInput.value;
             if (email) {
                 sendOtp(email);
@@ -549,9 +551,21 @@
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                   otp.value = data.otp;
-                   otp.classList.remove('hidden');
-                    alert('OTP has been sent to your email.');
+                    otp.value = data.otp;
+                    otp.classList.remove('hidden');
+                    isEmailVerified = true; // Mark email as verified
+                    if(isEmailVerified){
+                      const messageContainer1 = document.getElementById('otp-message');
+                      messageContainer1.classList.remove('hidden');
+                      messageContainer1.textContent = 'Please enter the OTP sent to your email address';
+                      messageContainer1.style.color = 'green';
+                    }
+                    else{
+                      const messageContainer1 = document.getElementById('otp-message');
+                      messageContainer1.classList.remove('hidden');
+                      messageContainer1.textContent = 'Failed to send OTP. Please try again.';
+                      messageContainer1.style.color ='red';
+                    }
                 } else {
                     alert('Failed to send OTP. Please try again.');
                 }
@@ -560,6 +574,14 @@
                 console.error('Error:', error);
             });
         }
+
+        // Check if email is verified before submitting the form
+        submitButton.addEventListener('click', function (e) {
+            if (!isEmailVerified) {
+                e.preventDefault(); // Prevent form submission
+                alert("Please verify your email before submitting.");
+            }
+        });
     });
 </script>
   <!-- Welcome Banner Video Logic -->
@@ -796,6 +818,7 @@ window.onload = checkCookiesAccepted;
       this.setCustomValidity("");
     }
   });
+
   document.getElementById("contactForm").addEventListener("submit", function (e) {
     e.preventDefault(); // Prevent form from submitting normally
 
