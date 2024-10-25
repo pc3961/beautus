@@ -67,11 +67,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Recipients
         $mail->setFrom('test@omesacreative.ca', 'Test Omesacreative');
-        $mail->addAddress('smerai@omesacreative.ca', 'Shailesh Merai');  // Add recipient
+        $mail->addAddress('shailesh@wickedwipes.ca', 'Shailesh Merai');  // Add recipient
+        $mail->addAddress('john@wickedwipes.ca', 'John');  // Add recipient
 
         // Content
         $mail->isHTML(true);
-        $mail->Subject = 'New Contact Form Submission';
+        $mail->Subject = 'Wicked Wipes lead submission';
         $mail->Body = '<b>First Name:</b> ' . $_POST['fname'] . '<br><b>Last Name:</b> ' . $_POST['lname'] . '<br><b>Email:</b> ' . $_POST['bemail'] . '<br><b>Phone Number:</b> ' . $_POST['pnum'] . '<br><b>Company Name:</b> ' . $_POST['cname'] . '<br><b>Message:</b><br>' . nl2br($_POST['msg']);
         $mail->AltBody = 'First Name: ' . $_POST['fname'] . "\nLast Name: " . $_POST['lname'] . "\nEmail: " . $_POST['bemail'] . "\nPhone Number: " . $_POST['pnum'] . "\nCompany Name: " . $_POST['cname'] . "\nMessage:\n" . $_POST['msg'];
 
