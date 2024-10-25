@@ -462,12 +462,15 @@
         </div>
         
         <div class="flex justify-between w-full gap-x-6 relative">
+            <div class="flex w-full justify-between items-center">
             <div class="flex flex-col w-full">
                 <input type="email" id="bemail" placeholder="Business Email" name="bemail" class="form" required />
                 <div class="error-message" id="bemail-error"></div>
             </div>
-            <button type="submit" class="flex justify-center absolute md:w-20  w-14 p-2 text-white text-xs md:text-base urbanist-regular font-semibold bg-[#3A50B3] hover:bg-blue-700 rounded-md 
+            <button type="submit" class="flex justify-center  md:w-20  w-14 p-2 text-white text-xs md:text-base urbanist-regular font-semibold bg-[#3A50B3] hover:bg-blue-700 rounded-md 
             right-[200px] top-2 lg:right-[350px]" id="verifyButton">Verify</button>
+          </div>
+          
             <div class="flex flex-col w-full">
                 <input type="tel" id="pnum" placeholder="Phone Number" name="pnum" class="form" required pattern="^[0-9]{10}$" maxlength="10" />
                 <div class="error-message" id="pnum-error"></div>
@@ -543,16 +546,15 @@
     </div>
   </section>
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const verifyButton = document.querySelector('#verifyButton');
-        const submitButton = document.querySelector('#submitButton');
-        const emailInput = document.querySelector('#bemail');
-        const otp = document.getElementById('otp');
-        const form = document.getElementById('contactForm');
-        const messageContainer = document.getElementById('form-message');
-        let isEmailVerified = false; // Track if email is verified
+document.addEventListener('DOMContentLoaded', function () {
+    const verifyButton = document.querySelector('#verifyButton');
+    const submitButton = document.querySelector('#submitButton');
+    const emailInput = document.querySelector('#bemail');
+    const otp = document.getElementById('otp');
+    const messageContainer = document.getElementById('form-message');
+    let isEmailVerified = false; // Track if email is verified
 
-        function validateForm() {
+    function validateForm() {
         const fields = [
             { id: 'fname', minLength: 2, name: 'First Name' },
             { id: 'lname', minLength: 2, name: 'Last Name' },
@@ -563,11 +565,9 @@
         ];
         
         const errors = [];
-
         fields.forEach(field => {
             const input = document.getElementById(field.id);
             const value = input.value.trim();
-
             if (!value) {
                 showError(field.id, `${field.name} is required.`);
                 errors.push(field.id);
@@ -592,73 +592,94 @@
 
     function clearErrors() {
         const errorMessages = document.querySelectorAll('.error-message');
-        errorMessages.forEach(function (errorMessage) {
+        errorMessages.forEach(errorMessage => {
             errorMessage.textContent = '';
         });
     }
-        // Disable form submission for the verify button
-        verifyButton.addEventListener('click', function (e) {
-            e.preventDefault();
-            const email = emailInput.value;
-            if (email) {
-                sendOtp(email);
-            } else {
-              const messageContainer1 = document.getElementById('otp-message');
-                      messageContainer1.classList.remove('hidden');
-                      messageContainer1.textContent = 'Please enter a valid email address';
-                      messageContainer1.style.color ='red';
-            }
-        });
 
-        // Function to send OTP to the email
-        function sendOtp(email) {
-            fetch('./inc/send_otp.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email: email }),
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    otp.value = data.otp;
-                    otp.classList.remove('hidden');
-                    isEmailVerified = true; // Mark email as verified
-                    if(isEmailVerified){
-                      const messageContainer1 = document.getElementById('otp-message');
-                      messageContainer1.classList.remove('hidden');
-                      messageContainer1.textContent = 'Please enter the OTP sent to your email address';
-                      messageContainer1.style.color = 'green';
-                    }
-                    else{
-                      const messageContainer1 = document.getElementById('otp-message');
-                      messageContainer1.classList.remove('hidden');
-                      messageContainer1.textContent = 'Failed to send OTP. Please try again.';
-                      messageContainer1.style.color ='red';
-                    }
-                } else {
-                    alert('Failed to send OTP. Please try again.');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        }
-
-        // Check if email is verified before submitting the form
-        submitButton.addEventListener('click', function (e) {
-        e.preventDefault(); // Prevent form submission to validate fields
-        clearErrors();
-        // Validate required fields
-        const errors = validateForm();
-        if (!isEmailVerified) {
-            showError('bemail','Please verify your email before submitting.');
+    // OTP Verification
+    verifyButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        const email = emailInput.value;
+        if (email) {
+            sendOtp(email);
         } else {
-            form.submit(); // If all fields are valid and email is verified, submit the form
+            const messageContainer1 = document.getElementById('otp-message');
+            messageContainer1.classList.remove('hidden');
+            messageContainer1.textContent = 'Please enter a valid email address';
+            messageContainer1.style.color = 'red';
         }
     });
+
+    function sendOtp(email) {
+        fetch('./inc/send_otp.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            const messageContainer1 = document.getElementById('otp-message');
+            if (data.success) {
+                otp.classList.remove('hidden');
+                isEmailVerified = true;
+                messageContainer1.textContent = 'Please enter the OTP sent to your email address';
+                messageContainer1.style.color = 'green';
+            } else {
+                isEmailVerified = false;
+                messageContainer1.textContent = 'Failed to send OTP. Please try again.';
+                messageContainer1.style.color = 'red';
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    // Form Submission
+    submitButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        clearErrors();
+        const errors = validateForm();
+        
+        if (errors.length === 0 && isEmailVerified) {
+            submitForm();
+        } else if (!isEmailVerified) {
+            showError('bemail', 'Please verify your email before submitting.');
+        }
     });
+
+    function submitForm() {
+        const form = document.getElementById("contactForm");
+        const formData = new FormData(form);
+
+        fetch('./inc/mailer.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            const messageContainer = document.getElementById('form-message');
+            try {
+                const jsonData = JSON.parse(data);
+                if (jsonData.status === 'success') {
+                    messageContainer.innerHTML = jsonData.message;
+                    messageContainer.style.color = 'green';
+                    form.reset();
+                    isEmailVerified = false; // Reset verification status
+                } else {
+                    messageContainer.innerHTML = jsonData.message;
+                    messageContainer.style.color = 'red';
+                }
+                messageContainer.classList.remove('hidden');
+            } catch (error) {
+                console.error('Error parsing JSON:', error);
+                messageContainer.innerHTML = 'An unexpected error occurred. Please try again.';
+                messageContainer.style.color = 'red';
+                messageContainer.classList.remove('hidden');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+});
 </script>
   <!-- Welcome Banner Video Logic -->
   <script>
@@ -895,33 +916,7 @@ window.onload = checkCookiesAccepted;
     }
   });
 
-  document.getElementById("contactForm").addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevent form from submitting normally
-    // Collect form data
-    const formData = new FormData(this);
-    // Send form data using fetch
-    fetch('./inc/mailer.php', {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => response.text())  // Get the response as plain text
-    .then(data => {
-      try {
-        const jsonData = JSON.parse(data); // Parse the text as JSON
-        const messageContainer = document.getElementById('form-message');
-        if (jsonData.status === 'success') {
-          messageContainer.innerHTML = jsonData.message;  // Display the success message
-          messageContainer.style.color = 'green';         // Set text color to green
-        } else {
-          messageContainer.innerHTML = jsonData.message;  // Display the error message
-          messageContainer.style.color = 'red';           // Set text color to red for errors
-        }
-      } catch (error) {
-        console.error('Error parsing JSON:', error);
-      }
-    })
-    .catch(error => console.error('Error:', error)); // Log any errors
-  });
+
 </script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>

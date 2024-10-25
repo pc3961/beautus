@@ -32,7 +32,7 @@ if (isset($data['email'])) {
         $mail->Port = 465;
 
         // Recipients
-        $mail->setFrom('marketing@wickedwipes.ca', 'Test Omesacreative');
+        $mail->setFrom('marketing@wickedwipes.ca', 'Marketing');
         $mail->addAddress($email); // Add a recipient
 
         // Content
