@@ -327,9 +327,12 @@
         </p>
       </div>
     </section>
+
     <!-- Form Section -->
-    <section class="px-4 md:px-36 py-3 md:py-16 w-full" id="target-section">
-      <div class="flex flex-col md:flex-row w-full">
+    <section class="px-4 md:px-40 py-3 md:py-28 w-full" id="target-section">
+      <div
+        class="flex flex-col md:flex-row w-full overflow-hidden md:overflow-hidden"
+      >
         <div
           class="flex flex-col md:w-3/5 bg-[#3A50B3] p-3 md:p-16 shadow-md rounded-md relative overflow-hidden"
         >
@@ -375,7 +378,7 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-col w-full shadow-md rounded-md p-10">
+        <div class="flex flex-col w-full shadow-md rounded-md md:p-10 p-2">
           <form
             class="w-full flex flex-col gap-y-6"
             id="contactForm"
@@ -383,67 +386,127 @@
             method="post"
           >
             <div class="flex justify-between w-full gap-x-6">
-              <input
-                type="text"
-                id="fname"
-                placeholder="First Name"
-                name="fname"
-                class="form"
-                required
-                minlength="2"
-              />
-              <input
-                type="text"
-                id="lname"
-                placeholder="Last Name"
-                name="lname"
-                class="form"
-                required
-                minlength="2"
-              />
+              <div class="flex flex-col w-full">
+                <input
+                  type="text"
+                  id="fname"
+                  placeholder="First Name"
+                  name="fname"
+                  class="form"
+                  required
+                  minlength="2"
+                />
+                <div class="error-message" id="fname-error"></div>
+              </div>
+              <div class="flex flex-col w-full">
+                <input
+                  type="text"
+                  id="lname"
+                  placeholder="Last Name"
+                  name="lname"
+                  class="form"
+                  required
+                  minlength="2"
+                />
+                <div class="error-message" id="lname-error"></div>
+              </div>
             </div>
+
             <div class="flex justify-between w-full gap-x-6 relative">
-              <input type="email" id="bemail" placeholder="Business Email" name="bemail" class="form" required />
-              <button type="submit" class="flex justify-center absolute md:w-20  w-14 p-2 text-white text-xs md:text-base urbanist-regular font-semibold bg-[#3A50B3] hover:bg-blue-700 rounded-md 
-              right-[200px] top-2 lg:right-[350px]">Verify</button> 
-              <input type="tel" id="pnum" placeholder="Phone Number" name="pnum" class="form" required pattern="^[0-9]{10}$" maxlength="10"  />
-          </div>
-            <input
-              type="text"
-              id="company"
-              placeholder="Company Name"
-              name="cname"
-              class="form"
-              required
-              minlength="2"
-            />
-            <textarea
-              id="message"
-              placeholder="Message"
-              name="msg"
-              class="form"
-              required
-              minlength="10"
-              oninput="removeLinks(this)"
-            ></textarea>
-            <div class="flex justify-end w-full mt-10">
-              <div
-                class="g-recaptcha"
-                data-sitekey="6LeK3DAqAAAAABPUmnvuJCf7ZUQwRq27KDavibFx"
-              ></div>
+              <div class="flex w-full justify-between items-center">
+                <div class="flex flex-col w-full">
+                  <input
+                    type="email"
+                    id="bemail"
+                    placeholder="Business Email"
+                    name="bemail"
+                    class="form"
+                    required
+                  />
+                  <div class="error-message" id="bemail-error"></div>
+                </div>
+                <button
+                  type="submit"
+                  class="flex justify-center md:w-20 w-14 p-2 text-white text-xs md:text-base urbanist-regular font-semibold bg-[#3A50B3] hover:bg-blue-700 rounded-md right-[200px] top-2 lg:right-[350px]"
+                  id="verifyButton"
+                >
+                  Verify
+                </button>
+              </div>
+
+              <div class="flex flex-col w-full">
+                <input
+                  type="tel"
+                  id="pnum"
+                  placeholder="Phone Number"
+                  name="pnum"
+                  class="form"
+                  required
+                  pattern="^[0-9]{10}$"
+                  maxlength="10"
+                />
+                <div class="error-message" id="pnum-error"></div>
+              </div>
             </div>
+            <div class="flex flex-col w-full">
+              <div
+                class="flex justify-between w-full gap-x-6 hidden"
+                id="otp-message"
+                style="margin-top: 10px"
+              ></div>
+              <input
+                type="number"
+                id="otp"
+                placeholder="Enter OTP"
+                name="otp"
+                class="form hidden"
+                minlength="6"
+                maxlength="6"
+                required
+              />
+            </div>
+            <div class="flex flex-col w-full">
+              <input
+                type="text"
+                id="company"
+                placeholder="Company Name"
+                name="cname"
+                class="form"
+                required
+                minlength="2"
+              />
+              <div class="error-message" id="company-error"></div>
+            </div>
+
+            <div class="flex flex-col w-full">
+              <textarea
+                id="message"
+                placeholder="Message"
+                name="msg"
+                class="form"
+                required
+                minlength="10"
+                oninput="removeLinks(this)"
+              ></textarea>
+              <div class="error-message" id="message-error"></div>
+            </div>
+            <div
+              class="g-recaptcha"
+              data-sitekey="6LeK3DAqAAAAABPUmnvuJCf7ZUQwRq27KDavibFx"
+            ></div>
           </form>
           <div class="w-full flex justify-end">
             <button
               type="submit"
               form="contactForm"
-              class="flex justify-center w-1/2 text-white text-base urbanist-regular font-semibold bg-[#3A50B3] hover:bg-blue-700 rounded-md mt-28 py-4"
+              id="submitButton"
+              class="flex justify-center w-1/2 text-white text-base urbanist-regular font-semibold bg-[#3A50B3] hover:bg-blue-700 rounded-md mt-16 py-4"
             >
               Let's connect
             </button>
           </div>
           <a href="privacy-policy.html">
-            <p class="text-right text-md p-4 league-spartan">Privacy Policy</p>
+            <p class="text-right text-md league-spartan p-4">Privacy Policy</p>
           </a>
           <div id="form-message" style="margin-top: 20px"></div>
         </div>
@@ -583,82 +646,141 @@
         }
       }
     </script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-          const verifyButton = document.querySelector('#contactForm button[type="submit"]');
-          const emailInput = document.querySelector('#bemail');
-          const otp = document.getElementById('otp');
-  
-          // Disable form submission for the verify button
-          verifyButton.addEventListener('click', function (e) {
-              e.preventDefault();
-              
-              const email = emailInput.value;
-              if (email) {
-                  sendOtp(email);
-              } else {
-                  alert("Please enter a valid email address to verify.");
-              }
-          });
-  
-          // Function to send OTP to the email
-          function sendOtp(email) {
-              fetch('./inc/send_otp.php', {
-                  method: 'POST',
-                  headers: {
-                      'Content-Type': 'application/json',
-                  },
-                  body: JSON.stringify({ email: email }),
-              })
-              .then(response => response.json())
-              .then(data => {
-                  if (data.success) {
-                     otp.value = data.otp;
-                     otp.classList.remove('hidden');
-                      alert('OTP has been sent to your email.');
-                  } else {
-                      alert('Failed to send OTP. Please try again.');
-                  }
-              })
-              .catch(error => {
-                  console.error('Error:', error);
-              });
-          }
-      });
-  </script>
-    <script>
-      document
-        .getElementById("contactForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault(); // Prevent form from submitting normally
-
-          // Collect form data
-          const formData = new FormData(this);
-
-          // Send form data using fetch
-          fetch("./inc/mailer.php", {
-            method: "POST",
-            body: formData,
-          })
-            .then((response) => response.text()) // Get the response as plain text
-            .then((data) => {
-              try {
-                const jsonData = JSON.parse(data); // Parse the text as JSON
-                const messageContainer =
-                  document.getElementById("form-message");
-                if (jsonData.status === "success") {
-                  messageContainer.innerHTML = jsonData.message; // Display the success message
-                  messageContainer.style.color = "green"; // Set text color to green
-                } else {
-                  messageContainer.innerHTML = jsonData.message; // Display the error message
-                  messageContainer.style.color = "red"; // Set text color to red for errors
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const verifyButton = document.querySelector('#verifyButton');
+        const submitButton = document.querySelector('#submitButton');
+        const emailInput = document.querySelector('#bemail');
+        const otp = document.getElementById('otp');
+        const messageContainer = document.getElementById('form-message');
+        let isEmailVerified = false; // Track if email is verified
+    
+        function validateForm() {
+            const fields = [
+                { id: 'fname', minLength: 2, name: 'First Name' },
+                { id: 'lname', minLength: 2, name: 'Last Name' },
+                { id: 'bemail', type: 'email', name: 'Business Email' },
+                { id: 'pnum', pattern: /^[0-9]{10}$/, name: 'Phone Number' },
+                { id: 'company', minLength: 2, name: 'Company Name' },
+                { id: 'message', minLength: 10, name: 'Message' }
+            ];
+            
+            const errors = [];
+            fields.forEach(field => {
+                const input = document.getElementById(field.id);
+                const value = input.value.trim();
+                if (!value) {
+                    showError(field.id, `${field.name} is required.`);
+                    errors.push(field.id);
+                } else if (field.minLength && value.length < field.minLength) {
+                    showError(field.id, `${field.name} must be at least ${field.minLength} characters.`);
+                    errors.push(field.id);
+                } else if (field.pattern && !field.pattern.test(value)) {
+                    showError(field.id, `${field.name} is invalid.`);
+                    errors.push(field.id);
                 }
-              } catch (error) {
-                console.error("Error parsing JSON:", error);
-              }
-            })
-            .catch((error) => console.error("Error:", error)); // Log any errors
+            });
+    
+            return errors;
+        }
+        function showError(fieldId, message) {
+            const errorContainer = document.getElementById(`${fieldId}-error`);
+            if (errorContainer) {
+                errorContainer.textContent = message;
+                errorContainer.style.color = 'red';
+            }
+        }
+    
+        function clearErrors() {
+            const errorMessages = document.querySelectorAll('.error-message');
+            errorMessages.forEach(errorMessage => {
+                errorMessage.textContent = '';
+            });
+        }
+    
+        // OTP Verification
+        verifyButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            const email = emailInput.value;
+            if (email) {
+                sendOtp(email);
+            } else {
+                const messageContainer1 = document.getElementById('otp-message');
+                messageContainer1.classList.remove('hidden');
+                messageContainer1.textContent = 'Please enter a valid email address';
+                messageContainer1.style.color = 'red';
+            }
         });
+    
+        function sendOtp(email) {
+            fetch('./inc/send_otp.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                const messageContainer1 = document.getElementById('otp-message');
+                if (data.success) {
+                    otp.classList.remove('hidden');
+                    isEmailVerified = true;
+                    messageContainer1.textContent = 'Please enter the OTP sent to your email address';
+                    messageContainer1.style.color = 'green';
+                } else {
+                    isEmailVerified = false;
+                    messageContainer1.textContent = 'Failed to send OTP. Please try again.';
+                    messageContainer1.style.color = 'red';
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    
+        // Form Submission
+        submitButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            clearErrors();
+            const errors = validateForm();
+            
+            if (errors.length === 0 && isEmailVerified) {
+                submitForm();
+            } else if (!isEmailVerified) {
+                showError('bemail', 'Please verify your email before submitting.');
+            }
+        });
+    
+        function submitForm() {
+            const form = document.getElementById("contactForm");
+            const formData = new FormData(form);
+    
+            fetch('./inc/mailer.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                const messageContainer = document.getElementById('form-message');
+                try {
+                    const jsonData = JSON.parse(data);
+                    if (jsonData.status === 'success') {
+                        messageContainer.innerHTML = jsonData.message;
+                        messageContainer.style.color = 'green';
+                        form.reset();
+                        isEmailVerified = false; // Reset verification status
+                    } else {
+                        messageContainer.innerHTML = jsonData.message;
+                        messageContainer.style.color = 'red';
+                    }
+                    messageContainer.classList.remove('hidden');
+                } catch (error) {
+                    console.error('Error parsing JSON:', error);
+                    messageContainer.innerHTML = 'An unexpected error occurred. Please try again.';
+                    messageContainer.style.color = 'red';
+                    messageContainer.classList.remove('hidden');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    });
     </script>
     <script>
       AOS.init();
