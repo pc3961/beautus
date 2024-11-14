@@ -24,7 +24,7 @@
     
     })(window,document,'script','dataLayer','GTM-PNF89GR5');</script>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E50PFDVXYE"></script>
+
   <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -200,7 +200,7 @@
           <img src="./public/yellow 3.svg" alt="" class="size-auto absolute bottom-10 right-56">
         </div>
       </div>
-      <video id="videoPlayer" class="object-cover w-full md:h-full h-[900px]" loop muted playsinline>
+      <video id="videoPlayer" class="object-cover w-full md:h-full h-[900px] lazy-video" loop muted playsinline>
         <source src="./public/landing.mp4" type="video/mp4" />
       </video>
     </div>
@@ -358,7 +358,7 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="image-container">
-            <img src="./public/showcase-1.jpg" class="h-full" alt="">
+            <img src="./public/showcase-1.jpg" class="h-full" alt="" loading="lazy">
           </div>
         </div>
         <div class="swiper-slide">
@@ -782,6 +782,19 @@ document.addEventListener('DOMContentLoaded', function () {
        },1000)
     },1000); 
 });
+// Lazy load video
+document.addEventListener("DOMContentLoaded", function () {
+    const videoPlayer = document.getElementById("videoPlayer");
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                videoPlayer.play();
+                observer.unobserve(videoPlayer);
+            }
+        });
+    });
+    observer.observe(videoPlayer);
+});
   </script>
   <!-- Social Media Links -->
   <script>
@@ -1105,5 +1118,6 @@ setInterval(changeImage, 3000);
       },
     });
   </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E50PFDVXYE"></script>
 </body>
 </html>
