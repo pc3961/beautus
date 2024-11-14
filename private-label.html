@@ -48,7 +48,6 @@
     ></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <link rel="stylesheet" href="./.css" />
     <link rel="stylesheet" href="./index.css" />
     <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -428,94 +427,190 @@
       </div>
     </section>
 
- <!-- Form Section -->
- <section class="px-4 md:px-40 py-3 md:py-28 w-full" id="target-section">
-  <div class="flex flex-col md:flex-row w-full overflow-hidden md:overflow-hidden">
-    <div class="flex flex-col md:w-3/5 bg-[#3A50B3] p-3 md:p-16
-     shadow-md rounded-md relative overflow-hidden">
-      <div class="rounded-full w-24 h-24 md:w-28 md:h-28 bg-white absolute top-16 right-2  md:top-40 md:right-14 z-[100]"></div>
-      <div class="rounded-full w-64 h-64 bg-[#77B5FF] absolute top-20 right-[-150px] md:top-40 md:right-[-100px] z-50 overflow-hidden"></div>
-      <h2 class="text-white text-[14px] md:text-[28px] urbanist-regular font-semibold">
-        Get in touch with us!
-      </h2>
-      <h2 class="text-white [text-8px] md:text-[16px] urbanist-regular font-medium">
-        to discuss your interest in Wicked Wipes
-      </h2>
-      <div class="w-full py-8 md:pt-16 flex gap-x-6">
-        <img src="/public/bxs_phone-call.svg" alt="" />
-        <div class="flex flex-col w-full">
-          <a href="tel:+12898372547" class="text-white text-xs md:text-lg">+1 289 837 2547</a>
-          <a href="tel:+12898372548" class="text-white text-xs md:text-lg">+1 289 837 2548</a>
-        </div>
-      </div>
-      <div class="w-full md:pt-10 flex gap-x-6">
-        <img src="/public/carbon_location-filled.svg" alt="" />
-        <div class="flex flex-col w-full">
-          <p class="text-white text-xs md:text-[16px] md:text-nowrap leading-relaxed league-spartan">
-            <a
-                href="https://www.google.com/maps/dir//2030%20Bristol%20Circle,%20Suite%20210,%20Oakville,%20ON%20-%20L6H%200H2"
-                >2030 Bristol Circle, Suite 210,<br />
-                Oakville, ON - L6H 0H2</a
+    <!-- Form Section -->
+    <section class="px-4 md:px-40 py-3 md:py-28 w-full" id="target-section">
+      <div
+        class="flex flex-col md:flex-row w-full overflow-hidden md:overflow-hidden"
+      >
+        <div
+          class="flex flex-col md:w-3/5 bg-[#3A50B3] p-3 md:p-16 shadow-md rounded-md relative overflow-hidden"
+        >
+          <div
+            class="rounded-full w-24 h-24 md:w-28 md:h-28 bg-white absolute top-16 right-2 md:top-40 md:right-14 z-[100]"
+          ></div>
+          <div
+            class="rounded-full w-64 h-64 bg-[#77B5FF] absolute top-20 right-[-150px] md:top-40 md:right-[-100px] z-50 overflow-hidden"
+          ></div>
+          <h2
+            class="text-white text-[14px] md:text-[28px] urbanist-regular font-semibold"
+          >
+            Get in touch with us!
+          </h2>
+          <h2
+            class="text-white [text-8px] md:text-[16px] urbanist-regular font-medium"
+          >
+            to discuss your interest in Wicked Wipes
+          </h2>
+          <div class="w-full py-8 md:pt-16 flex gap-x-6">
+            <img src="/public/bxs_phone-call.svg" alt="" />
+            <div class="flex flex-col w-full">
+              <a href="tel:+12898372547" class="text-white text-xs md:text-lg"
+                >+1 289 837 2547</a
               >
-          </p>
+              <a href="tel:+12898372548" class="text-white text-xs md:text-lg"
+                >+1 289 837 2548</a
+              >
+            </div>
+          </div>
+          <div class="w-full md:pt-10 flex gap-x-6">
+            <img src="/public/carbon_location-filled.svg" alt="" />
+            <div class="flex flex-col w-full">
+              <p
+                class="text-white text-xs md:text-[16px] md:text-nowrap leading-relaxed league-spartan"
+              >
+                <a
+                  href="https://www.google.com/maps/dir//2030%20Bristol%20Circle,%20Suite%20210,%20Oakville,%20ON%20-%20L6H%200H2"
+                  >2030 Bristol Circle, Suite 210,<br />
+                  Oakville, ON - L6H 0H2</a
+                >
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="flex flex-col w-full shadow-md rounded-md md:p-10 p-2">
-      <form class="w-full flex flex-col gap-y-6" id="contactForm" action="./inc/mailer.php" method="post">
-        <div class="flex justify-between w-full gap-x-6">
-          <div class="flex flex-col w-full">
-              <input type="text" id="fname" placeholder="First Name" name="fname" class="form" required minlength="2" />
-              <div class="error-message" id="fname-error"></div>
-          </div>
-          <div class="flex flex-col w-full">
-              <input type="text" id="lname" placeholder="Last Name" name="lname" class="form" required minlength="2" />
-              <div class="error-message" id="lname-error"></div>
-          </div>
-      </div>
-      
-      <div class="flex justify-between w-full gap-x-6 relative">
-          <div class="flex w-full justify-between items-center">
-          <div class="flex flex-col w-full">
-              <input type="email" id="bemail" placeholder="Business Email" name="bemail" class="form" required />
-              <div class="error-message" id="bemail-error"></div>
-          </div>
-          <button type="submit" class="flex justify-center  md:w-20  w-14 p-2 text-white text-xs md:text-base urbanist-regular font-semibold bg-[#3A50B3] hover:bg-blue-700 rounded-md 
-          right-[200px] top-2 lg:right-[350px]" id="verifyButton">Verify</button>
-        </div>
-        
-          <div class="flex flex-col w-full">
-              <input type="tel" id="pnum" placeholder="Phone Number" name="pnum" class="form" required pattern="^[0-9]{10}$" maxlength="10" />
-              <div class="error-message" id="pnum-error"></div>
-          </div>
-      </div>
-      <div class="flex flex-col w-full">
-        <div class="flex justify-between w-full gap-x-6 hidden" id="otp-message" style="margin-top: 10px;"></div>
-        <input type="number" id="otp" placeholder="Enter OTP" name="otp" class="form hidden" minlength="6" maxlength="6" required />
-      </div>
-      <div class="flex flex-col w-full">
-          <input type="text" id="company" placeholder="Company Name" name="cname" class="form" required minlength="2" />
-          <div class="error-message" id="company-error"></div>
-      </div>
-      
-      <div class="flex flex-col w-full">
-          <textarea id="message" placeholder="Message" name="msg" class="form" required minlength="10" oninput="removeLinks(this)"></textarea>
-          <div class="error-message" id="message-error"></div>
-      </div>
-          <div class="g-recaptcha" data-sitekey="6LeK3DAqAAAAABPUmnvuJCf7ZUQwRq27KDavibFx"></div>
-      </form>
-      <div class="w-full flex justify-end">
-          <button type="submit" form="contactForm" id="submitButton" class="flex justify-center w-1/2 text-white text-base urbanist-regular font-semibold bg-[#3A50B3] hover:bg-blue-700 rounded-md mt-16 py-4">
+        <div class="flex flex-col w-full shadow-md rounded-md md:p-10 p-2">
+          <form
+            class="w-full flex flex-col gap-y-6"
+            id="contactForm"
+            action="./inc/mailer.php"
+            method="post"
+          >
+            <div class="flex justify-between w-full gap-x-6">
+              <div class="flex flex-col w-full">
+                <input
+                  type="text"
+                  id="fname"
+                  placeholder="First Name"
+                  name="fname"
+                  class="form"
+                  required
+                  minlength="2"
+                />
+                <div class="error-message" id="fname-error"></div>
+              </div>
+              <div class="flex flex-col w-full">
+                <input
+                  type="text"
+                  id="lname"
+                  placeholder="Last Name"
+                  name="lname"
+                  class="form"
+                  required
+                  minlength="2"
+                />
+                <div class="error-message" id="lname-error"></div>
+              </div>
+            </div>
+
+            <div class="flex justify-between w-full gap-x-6 relative">
+              <div class="flex w-full justify-between items-center">
+                <div class="flex flex-col w-full">
+                  <input
+                    type="email"
+                    id="bemail"
+                    placeholder="Business Email"
+                    name="bemail"
+                    class="form"
+                    required
+                  />
+                  <div class="error-message" id="bemail-error"></div>
+                </div>
+                <button
+                  type="submit"
+                  class="flex justify-center md:w-20 w-14 p-2 text-white text-xs md:text-base urbanist-regular font-semibold bg-[#3A50B3] hover:bg-blue-700 rounded-md right-[200px] top-2 lg:right-[350px]"
+                  id="verifyButton"
+                >
+                  Verify
+                </button>
+              </div>
+
+              <div class="flex flex-col w-full">
+                <input
+                  type="tel"
+                  id="pnum"
+                  placeholder="Phone Number"
+                  name="pnum"
+                  class="form"
+                  required
+                  pattern="^[0-9]{10}$"
+                  maxlength="10"
+                />
+                <div class="error-message" id="pnum-error"></div>
+              </div>
+            </div>
+            <div class="flex flex-col w-full">
+              <div
+                class="flex justify-between w-full gap-x-6 hidden"
+                id="otp-message"
+                style="margin-top: 10px"
+              ></div>
+              <input
+                type="number"
+                id="otp"
+                placeholder="Enter OTP"
+                name="otp"
+                class="form hidden"
+                minlength="6"
+                maxlength="6"
+                required
+              />
+            </div>
+            <div class="flex flex-col w-full">
+              <input
+                type="text"
+                id="company"
+                placeholder="Company Name"
+                name="cname"
+                class="form"
+                required
+                minlength="2"
+              />
+              <div class="error-message" id="company-error"></div>
+            </div>
+
+            <div class="flex flex-col w-full">
+              <textarea
+                id="message"
+                placeholder="Message"
+                name="msg"
+                class="form"
+                required
+                minlength="10"
+                oninput="removeLinks(this)"
+              ></textarea>
+              <div class="error-message" id="message-error"></div>
+            </div>
+            <div
+              class="g-recaptcha"
+              data-sitekey="6LeK3DAqAAAAABPUmnvuJCf7ZUQwRq27KDavibFx"
+            ></div>
+          </form>
+          <div class="w-full flex justify-end">
+            <button
+              type="submit"
+              form="contactForm"
+              id="submitButton"
+              class="flex justify-center w-1/2 text-white text-base urbanist-regular font-semibold bg-[#3A50B3] hover:bg-blue-700 rounded-md mt-16 py-4"
+            >
               Let's connect
-          </button>
+            </button>
+          </div>
+          <a href="privacy-policy.html">
+            <p class="text-right text-md league-spartan p-4">Privacy Policy</p>
+          </a>
+          <div id="form-message" style="margin-top: 20px"></div>
+        </div>
       </div>
-      <a href="privacy-policy.html">
-        <p class="text-right text-md league-spartan p-4">Privacy Policy</p>
-      </a>
-      <div id="form-message" style="margin-top: 20px;"></div>
-  </div>    
-  </div>
-</section>
+    </section>
     <!-- Footer Section-->
     <section>
       <div
@@ -631,141 +726,148 @@
         );
       });
     </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const verifyButton = document.querySelector('#verifyButton');
-        const submitButton = document.querySelector('#submitButton');
-        const emailInput = document.querySelector('#bemail');
-        const otp = document.getElementById('otp');
-        const messageContainer = document.getElementById('form-message');
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const verifyButton = document.querySelector("#verifyButton");
+        const submitButton = document.querySelector("#submitButton");
+        const emailInput = document.querySelector("#bemail");
+        const otp = document.getElementById("otp");
+        const messageContainer = document.getElementById("form-message");
         let isEmailVerified = false; // Track if email is verified
-    
+
         function validateForm() {
-            const fields = [
-                { id: 'fname', minLength: 2, name: 'First Name' },
-                { id: 'lname', minLength: 2, name: 'Last Name' },
-                { id: 'bemail', type: 'email', name: 'Business Email' },
-                { id: 'pnum', pattern: /^[0-9]{10}$/, name: 'Phone Number' },
-                { id: 'company', minLength: 2, name: 'Company Name' },
-                { id: 'message', minLength: 10, name: 'Message' }
-            ];
-            
-            const errors = [];
-            fields.forEach(field => {
-                const input = document.getElementById(field.id);
-                const value = input.value.trim();
-                if (!value) {
-                    showError(field.id, `${field.name} is required.`);
-                    errors.push(field.id);
-                } else if (field.minLength && value.length < field.minLength) {
-                    showError(field.id, `${field.name} must be at least ${field.minLength} characters.`);
-                    errors.push(field.id);
-                } else if (field.pattern && !field.pattern.test(value)) {
-                    showError(field.id, `${field.name} is invalid.`);
-                    errors.push(field.id);
-                }
-            });
-    
-            return errors;
+          const fields = [
+            { id: "fname", minLength: 2, name: "First Name" },
+            { id: "lname", minLength: 2, name: "Last Name" },
+            { id: "bemail", type: "email", name: "Business Email" },
+            { id: "pnum", pattern: /^[0-9]{10}$/, name: "Phone Number" },
+            { id: "company", minLength: 2, name: "Company Name" },
+            { id: "message", minLength: 10, name: "Message" },
+          ];
+
+          const errors = [];
+          fields.forEach((field) => {
+            const input = document.getElementById(field.id);
+            const value = input.value.trim();
+            if (!value) {
+              showError(field.id, `${field.name} is required.`);
+              errors.push(field.id);
+            } else if (field.minLength && value.length < field.minLength) {
+              showError(
+                field.id,
+                `${field.name} must be at least ${field.minLength} characters.`
+              );
+              errors.push(field.id);
+            } else if (field.pattern && !field.pattern.test(value)) {
+              showError(field.id, `${field.name} is invalid.`);
+              errors.push(field.id);
+            }
+          });
+
+          return errors;
         }
         function showError(fieldId, message) {
-            const errorContainer = document.getElementById(`${fieldId}-error`);
-            if (errorContainer) {
-                errorContainer.textContent = message;
-                errorContainer.style.color = 'red';
-            }
+          const errorContainer = document.getElementById(`${fieldId}-error`);
+          if (errorContainer) {
+            errorContainer.textContent = message;
+            errorContainer.style.color = "red";
+          }
         }
-    
+
         function clearErrors() {
-            const errorMessages = document.querySelectorAll('.error-message');
-            errorMessages.forEach(errorMessage => {
-                errorMessage.textContent = '';
-            });
+          const errorMessages = document.querySelectorAll(".error-message");
+          errorMessages.forEach((errorMessage) => {
+            errorMessage.textContent = "";
+          });
         }
-    
+
         // OTP Verification
-        verifyButton.addEventListener('click', function (e) {
-            e.preventDefault();
-            const email = emailInput.value;
-            if (email) {
-                sendOtp(email);
-            } else {
-                const messageContainer1 = document.getElementById('otp-message');
-                messageContainer1.classList.remove('hidden');
-                messageContainer1.textContent = 'Please enter a valid email address';
-                messageContainer1.style.color = 'red';
-            }
+        verifyButton.addEventListener("click", function (e) {
+          e.preventDefault();
+          const email = emailInput.value;
+          if (email) {
+            sendOtp(email);
+          } else {
+            const messageContainer1 = document.getElementById("otp-message");
+            messageContainer1.classList.remove("hidden");
+            messageContainer1.textContent =
+              "Please enter a valid email address";
+            messageContainer1.style.color = "red";
+          }
         });
-    
+
         function sendOtp(email) {
-            fetch('./inc/send_otp.php', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email: email }),
+          fetch("./inc/send_otp.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email: email }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              const messageContainer1 = document.getElementById("otp-message");
+              if (data.success) {
+                otp.classList.remove("hidden");
+                isEmailVerified = true;
+                messageContainer1.textContent =
+                  "Please enter the OTP sent to your email address";
+                messageContainer1.style.color = "green";
+              } else {
+                isEmailVerified = false;
+                messageContainer1.textContent =
+                  "Failed to send OTP. Please try again.";
+                messageContainer1.style.color = "red";
+              }
             })
-            .then(response => response.json())
-            .then(data => {
-                const messageContainer1 = document.getElementById('otp-message');
-                if (data.success) {
-                    otp.classList.remove('hidden');
-                    isEmailVerified = true;
-                    messageContainer1.textContent = 'Please enter the OTP sent to your email address';
-                    messageContainer1.style.color = 'green';
-                } else {
-                    isEmailVerified = false;
-                    messageContainer1.textContent = 'Failed to send OTP. Please try again.';
-                    messageContainer1.style.color = 'red';
-                }
-            })
-            .catch(error => console.error('Error:', error));
+            .catch((error) => console.error("Error:", error));
         }
-    
+
         // Form Submission
-        submitButton.addEventListener('click', function (e) {
-            e.preventDefault();
-            clearErrors();
-            const errors = validateForm();
-            
-            if (errors.length === 0 && isEmailVerified) {
-                submitForm();
-            } else if (!isEmailVerified) {
-                showError('bemail', 'Please verify your email before submitting.');
-            }
+        submitButton.addEventListener("click", function (e) {
+          e.preventDefault();
+          clearErrors();
+          const errors = validateForm();
+
+          if (errors.length === 0 && isEmailVerified) {
+            submitForm();
+          } else if (!isEmailVerified) {
+            showError("bemail", "Please verify your email before submitting.");
+          }
         });
-    
+
         function submitForm() {
-            const form = document.getElementById("contactForm");
-            const formData = new FormData(form);
-    
-            fetch('./inc/mailer.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.text())
-            .then(data => {
-                const messageContainer = document.getElementById('form-message');
-                try {
-                    const jsonData = JSON.parse(data);
-                    if (jsonData.status === 'success') {
-                        messageContainer.innerHTML = jsonData.message;
-                        messageContainer.style.color = 'green';
-                        form.reset();
-                        isEmailVerified = false; // Reset verification status
-                    } else {
-                        messageContainer.innerHTML = jsonData.message;
-                        messageContainer.style.color = 'red';
-                    }
-                    messageContainer.classList.remove('hidden');
-                } catch (error) {
-                    console.error('Error parsing JSON:', error);
-                    messageContainer.innerHTML = 'An unexpected error occurred. Please try again.';
-                    messageContainer.style.color = 'red';
-                    messageContainer.classList.remove('hidden');
+          const form = document.getElementById("contactForm");
+          const formData = new FormData(form);
+
+          fetch("./inc/mailer.php", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.text())
+            .then((data) => {
+              const messageContainer = document.getElementById("form-message");
+              try {
+                const jsonData = JSON.parse(data);
+                if (jsonData.status === "success") {
+                  messageContainer.innerHTML = jsonData.message;
+                  messageContainer.style.color = "green";
+                  form.reset();
+                  isEmailVerified = false; // Reset verification status
+                } else {
+                  messageContainer.innerHTML = jsonData.message;
+                  messageContainer.style.color = "red";
                 }
+                messageContainer.classList.remove("hidden");
+              } catch (error) {
+                console.error("Error parsing JSON:", error);
+                messageContainer.innerHTML =
+                  "An unexpected error occurred. Please try again.";
+                messageContainer.style.color = "red";
+                messageContainer.classList.remove("hidden");
+              }
             })
-            .catch(error => console.error('Error:', error));
+            .catch((error) => console.error("Error:", error));
         }
-    });
+      });
     </script>
     <script>
       AOS.init();
