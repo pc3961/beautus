@@ -24,7 +24,7 @@
     
     })(window,document,'script','dataLayer','GTM-PNF89GR5');</script>
   <!-- Google tag (gtag.js) -->
-  <script>
+  <script defer>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -37,7 +37,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo:wght@400&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League Spartan:wght@400&display=swap" />
   <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
@@ -45,7 +44,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}</script>
   <script async src="https://cdn-ca.pagesense.io/js/zoho3419/8a93ff5516d1450b837c6ffdc0daffcb.js"></script>
-  <script id="zsiqscript" src="https://salesiq.zohopublic.ca/widget?wc=77a5e6d96d632b0a91f8bb237dc0d72919fd2a83d90e88ea6108ccba9b3d4e3c" defer></script>
+  <script async defer id="zsiqscript" src="https://salesiq.zohopublic.ca/widget?wc=77a5e6d96d632b0a91f8bb237dc0d72919fd2a83d90e88ea6108ccba9b3d4e3c"></script>
   <style>
     .form {
       width: 100%;
@@ -270,7 +269,7 @@
     </div>
 
     <div class="w-full h-[700px] my-10">
-      <video src="/public/bg-ad.mp4" class="w-full h-full object-cover" type="video/mov" autoplay muted loop playsinline></video>
+      <video src="/public/bg-ad.mp4" class="w-full h-full object-cover" type="video/mov" autoplay muted loop playsinline preload="none"></video>
     </div>
     <div class="flex w-full my-10 justify-center">
       <h2
@@ -292,20 +291,20 @@
     <div class="flex flex-col">
       <div class="flex flex-wrap md:flex-nowrap md:gap-x-2 md:px-40">
         <div>
-          <img id="image1" class="w-auto h-[96px] md:size-40 " src="./public/green 5.svg" alt="">
+          <img id="image1" class="w-auto h-[96px] md:size-40 " src="./public/green 5.svg" alt="" loading="lazy" >
           <div class="h-4 w-auto img-pods md:underline-effect rounded-full duration-500 underline-active"></div>
         </div>
         <div>
-          <img id="image4" class="w-auto h-[96px] md:size-40" src="./public/yellow 3.svg" alt="">
+          <img id="image4" class="w-auto h-[96px] md:size-40" src="./public/yellow 3.svg" alt="" loading="lazy">
           <div class="h-4 w-auto img-pods md:underline-effect rounded-full duration-500"></div>
         </div>
         <div>
-          <img id="image2" class="w-auto h-[96px] md:size-40" src="./public/green 6.svg" alt="">
+          <img id="image2" class="w-auto h-[96px] md:size-40" src="./public/green 6.svg" alt="" loading="lazy">
           <div class="h-4 w-auto img-pods md:underline-effect rounded-full duration-500"></div>
 
         </div>
         <div>
-          <img id="image3" class="w-auto h-[96px] md:size-40" src="./public/white 3.svg" alt="">
+          <img id="image3" class="w-auto h-[96px] md:size-40" src="./public/white 3.svg" alt="" loading="lazy">
           <div class="h-4 w-auto img-pods md:underline-effect rounded-full duration-500"></div>
         </div>
       </div>
@@ -320,10 +319,10 @@
       </div>
       <div class="flex w-full items-end md:overflow-hidden" id="image-container">
         <img src="./public/elip.svg" class="absolute h-[370px] md:h-[500px] bottom-0 right-0 " alt="" id="image-3">
-        <img id="image-1" src="./public/menta 2.svg" class="absolute size-[200px] md:size-[470px] bottom-56 right-[-10px] md:top-0 md:right-0" alt="">
+        <img id="image-1" src="./public/menta 2.svg" class="absolute size-[200px] md:size-[470px] bottom-56 right-[-10px] md:top-0 md:right-0" alt="" loading="lazy">
         <img id="image-2" src="./public/menta 1.svg" class="absolute size-[200px] md:size-[470px] bottom-[-20px] z-[100] right-56 md:bottom-[-30px] md:right-[450px]"
-        alt="">
-        <img src="./public/pods.png" class="absolute size-[400px] md:size-[800px] right-[-180px] md:-right-[350px] bottom-[-230px] md:-bottom-[460px] duration-500 z-50"  alt="" id="myDiv">
+        alt="" loading="lazy">
+        <img src="./public/pods.png" class="absolute size-[400px] md:size-[800px] right-[-180px] md:-right-[350px] bottom-[-230px] md:-bottom-[460px] duration-500 z-50"  alt="" id="myDiv" loading="lazy">
         <div class="bg-[#c1eaf3] rounded-full size-[350px] md:size-[300px] z-40 absolute -right-[120px] -bottom-[120px] md:overflow-hidden" id="elip1"></div>
       </div>
     </div>
@@ -361,22 +360,22 @@
         </div>
         <div class="swiper-slide">
           <div class="image-container">
-            <img src="./public/showcase-2.png" class="h-full" alt="">
+            <img src="./public/showcase-2.png" class="h-full" alt="" loading="lazy">
           </div>
         </div>
         <div class="swiper-slide">
           <div class="image-container">
-            <img src="./public/showcase-3.png" class="h-full" alt="">
+            <img src="./public/showcase-3.png" class="h-full" alt="" loading="lazy">
           </div>
         </div>
         <div class="swiper-slide">
           <div class="image-container">
-            <img src="./public/showcase-4.jpg" class="h-full" alt="">
+            <img src="./public/showcase-4.jpg" class="h-full" alt="" loading="lazy">
           </div>
         </div>
         <div class="swiper-slide">
           <div class="image-container">
-            <img src="./public/showcase-5.jpg" class="h-full" alt="">
+            <img src="./public/showcase-5.jpg" class="h-full" alt="" loading="lazy">
           </div>
         </div>
       </div>
@@ -397,7 +396,7 @@
             surprise and delight your customers. Add your brand to customize the pod.</p>
         </div>
         <div class="">
-          <img class="h-[337px] w-[938px] relative overflow-hidden" src="./public/whitelogo.svg" alt="logo">
+          <img class="h-[337px] w-[938px] relative overflow-hidden" src="./public/whitelogo.svg" alt="logo" loading="lazy">
         </div>
       </div>
     </div>
