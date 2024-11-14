@@ -500,24 +500,6 @@
     </div>    
     </div>
   </section>
-
-    <!-- Cookies Code -->
-    <div
-    id="cookie-banner"
-    class="flex fixed z-[300] bottom-0 left-0 right-0 bg-gray-800 text-white p-5 justify-between items-center flex-col md:flex-row md:space-x-4"
-  >
-    <p class="text-lg text-center md:text-left league-spartan">
-      We use cookies to enhance your experience. By continuing to visit this
-      site, you agree to our use of cookies.
-    </p>
-    <button
-      id="accept-cookies"
-      class="bg-blue-500 text-white py-2 px-4 mt-3 md:mt-0 rounded-full league-spartan"
-    >
-      Accept Cookies
-    </button>
-  </div>
-
   <!-- Footer Section-->
   <section>
     <div class="bg-[#3A50B3] px-4 md:px-16 py-10 flex flex-col md:flex-row justify-between gap-4">
@@ -814,27 +796,6 @@ document.addEventListener("DOMContentLoaded", function () {
             window.open("https://www.facebook.com/profile.php?id=61565429330359","_blank");
           });
   </script>
-<script>
-  // Cookies Logic 
-  document.getElementById('accept-cookies').addEventListener('click', function() {
-    // Set a cookie indicating that the user has accepted cookies
-    document.cookie = "cookiesAccepted=true; path=/; max-age=" + (60 * 60 * 24 * 365); // Cookie valid for 1 year
-
-    // Hide the cookie banner
-    document.getElementById('cookie-banner').style.display = 'none';
-
-    // Show a dialog box confirming the acceptance
-    alert("Thank you! You have accepted cookies.");
-});
-function checkCookiesAccepted() {
-    if (document.cookie.split('; ').find(row => row.startsWith('cookiesAccepted'))) {
-        // Cookie is set, hide the banner
-        document.getElementById('cookie-banner').style.display = 'none';
-    }
-}
-
-window.onload = checkCookiesAccepted;
-</script>
 <script>
   // Remove Links Function
  function removeLinks(textarea) {
