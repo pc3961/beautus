@@ -200,8 +200,8 @@
           <img src="./public/yellow 3.svg" alt="" class="size-auto absolute bottom-10 right-56">
         </div>
       </div>
-      <video id="videoPlayer" class="object-cover w-full md:h-full h-[900px] lazy-video" loop muted playsinline>
-        <source src="./public/landing.mp4" type="video/mp4" />
+      <video id="videoPlayer" class="object-cover w-full md:h-full h-[900px]" loop muted playsinline>
+        <source src="./public/landing.mp4" loading="lazy" type="video/mp4" />
       </video>
     </div>
   </section>
@@ -763,19 +763,6 @@ document.addEventListener('DOMContentLoaded', function () {
         },1000);  
        },1000)
     },1000); 
-});
-// Lazy load video
-document.addEventListener("DOMContentLoaded", function () {
-    const videoPlayer = document.getElementById("videoPlayer");
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                videoPlayer.play();
-                observer.unobserve(videoPlayer);
-            }
-        });
-    });
-    observer.observe(videoPlayer);
 });
   </script>
   <!-- Social Media Links -->
