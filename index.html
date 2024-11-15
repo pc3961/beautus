@@ -53,8 +53,10 @@
     />
     <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
     <link
-      rel="stylesheet"
+      rel="preload"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
@@ -1017,15 +1019,6 @@
       });
     </script>
     <script>
-      // Remove Links Function
-      function removeLinks(textarea) {
-        textarea.value = textarea.value.replace(/https?:\/\/[^\s]+/g, "");
-        const domainRegex =
-          /(?:https?:\/\/|www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(\/[^\s]*)?/g;
-        textarea.value = textarea.value.replace(domainRegex, "");
-      }
-    </script>
-    <script>
       const documentSection = document.getElementById("document-section");
       const documentHeading2 = document.getElementById("document-heading2");
       const documentTitle = document.getElementById("document-title");
@@ -1105,7 +1098,6 @@
         }
       });
     </script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
       const hamburger = document.getElementById("hamburger");
       const menuDrawer = document.getElementById("menu-drawer");
@@ -1125,7 +1117,7 @@
         document.getElementById(
           "myDiv"
         ).style.transform = `rotate(${angle}deg)`;
-      }, 3000);
+      }, 2000);
     </script>
     <script>
       const documentHeading = document.getElementById("document-heading");
@@ -1161,7 +1153,7 @@
         images[currentImageIndex].classList.add("underline-active");
         // Move to the next image
         currentImageIndex = (currentImageIndex + 1) % images.length;
-      }, 3000);
+      }, 2000);
 
       const texts = [
         { text: "Lemon", color: "text-[#FCD901]" },
@@ -1188,7 +1180,7 @@
         }, 300); // Wait for the fade-out animation to finish
       }
       // Start the cycle
-      setInterval(changeText, 3000);
+      setInterval(changeText, 2000);
 
       // Initially, fade in the first text
       textContainer.classList.add("fadeIn1");
@@ -1196,25 +1188,21 @@
       // Background Color Change
       const colors = ["#FEFA9F", "#D1F3C1", "#C1DFF3", "#c1eaf3"]; // List of colors
       let currentColorIndex = 0;
-
       function changeBackgroundColor() {
         const section = document.getElementById("colorSection");
         section.style.backgroundColor = colors[currentColorIndex];
         currentColorIndex = (currentColorIndex + 1) % colors.length; // Cycle through colors
       }
-
-      setInterval(changeBackgroundColor, 3000);
-
+      setInterval(changeBackgroundColor, 2000);
       // Color change near the pods
       const elips = ["#FEFA9F", "#D1F3C1", "#C1DFF3", "#c1eaf3"];
       let currentElipIndex = 0;
-
       function changeColorNearPods() {
         const pods = document.getElementById("elip1");
         pods.style.backgroundColor = elips[currentElipIndex];
         currentElipIndex = (currentElipIndex + 1) % elips.length; // Cycle through colors
       }
-      setInterval(changeColorNearPods, 3000);
+      setInterval(changeColorNearPods, 2000);
       // Leaf Animation
       const imageContainer = document.getElementById("image-container");
       const imageElement = document.getElementById("image-1");
@@ -1261,8 +1249,9 @@
           imageElement2.src = imageArray2[currentIndex2];
         });
       }
-      setInterval(changeImage, 3000);
+      setInterval(changeImage, 2000);
     </script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
       var swiper = new Swiper(".swiper-container", {
         loop: true,
@@ -1287,6 +1276,12 @@
           },
         },
       });
+      function removeLinks(textarea) {
+        textarea.value = textarea.value.replace(/https?:\/\/[^\s]+/g, "");
+        const domainRegex =
+          /(?:https?:\/\/|www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(\/[^\s]*)?/g;
+        textarea.value = textarea.value.replace(domainRegex, "");
+      }
       document.addEventListener("DOMContentLoaded", function () {
         const verifyButton = document.querySelector("#verifyButton");
         const submitButton = document.querySelector("#submitButton");
@@ -1377,8 +1372,6 @@
             })
             .catch((error) => console.error("Error:", error));
         }
-
-        // Form Submission
         submitButton.addEventListener("click", function (e) {
           e.preventDefault();
           clearErrors();
