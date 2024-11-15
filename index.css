@@ -4,12 +4,12 @@
   --text-transform: uppercase;
 }
 h1 {
-  font-family: "Concert One", sans-serif;
-  font-weight: 700;
+  font-family: "Concert One", sans-serif !important;
+  font-weight: 700 !important;
 }
 h2 {
-  font-family: "Mitr", sans-serif;
-  font-weight: 500;
+  font-family: "Mitr", sans-serif !important;
+  font-weight: 500 !important;
 }
 .text-gradient {
   font-family: "Concert One", sans-serif;
