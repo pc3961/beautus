@@ -481,139 +481,6 @@
       </div>
     </div>
   </section>
-  <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const verifyButton = document.querySelector('#verifyButton');
-    const submitButton = document.querySelector('#submitButton');
-    const emailInput = document.querySelector('#bemail');
-    const otp = document.getElementById('otp');
-    const messageContainer = document.getElementById('form-message');
-    let isEmailVerified = false; // Track if email is verified
-
-    function validateForm() {
-        const fields = [
-            { id: 'fname', minLength: 2, name: 'First Name' },
-            { id: 'lname', minLength: 2, name: 'Last Name' },
-            { id: 'bemail', type: 'email', name: 'Business Email' },
-            { id: 'pnum', pattern: /^[0-9]{10}$/, name: 'Phone Number' },
-            { id: 'company', minLength: 2, name: 'Company Name' },
-            { id: 'message', minLength: 10, name: 'Message' }
-        ];   
-        const errors = [];
-        fields.forEach(field => {
-            const input = document.getElementById(field.id);
-            const value = input.value.trim();
-            if (!value) {
-                showError(field.id, `${field.name} is required.`);
-                errors.push(field.id);
-            } else if (field.minLength && value.length < field.minLength) {
-                showError(field.id, `${field.name} must be at least ${field.minLength} characters.`);
-                errors.push(field.id);
-            } else if (field.pattern && !field.pattern.test(value)) {
-                showError(field.id, `${field.name} is invalid.`);
-                errors.push(field.id);
-            }
-        });
-
-        return errors;
-    }
-    function showError(fieldId, message) {
-        const errorContainer = document.getElementById(`${fieldId}-error`);
-        if (errorContainer) {
-            errorContainer.textContent = message;
-            errorContainer.style.color = 'red';
-        }
-    }
-    function clearErrors() {
-        const errorMessages = document.querySelectorAll('.error-message');
-        errorMessages.forEach(errorMessage => {
-            errorMessage.textContent = '';
-        });
-    }
-    // OTP Verification
-    verifyButton.addEventListener('click', function (e) {
-        e.preventDefault();
-        const email = emailInput.value;
-        if (email) {
-            sendOtp(email);
-        } else {
-            const messageContainer1 = document.getElementById('otp-message');
-            messageContainer1.classList.remove('hidden');
-            messageContainer1.textContent = 'Please enter a valid email address';
-            messageContainer1.style.color = 'red';
-        }
-    });
-
-    function sendOtp(email) {
-        fetch('./inc/send_otp.php', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: email }),
-        })
-        .then(response => response.json())
-        .then(data => {
-            const messageContainer1 = document.getElementById('otp-message');
-            if (data.success) {
-                otp.classList.remove('hidden');
-                isEmailVerified = true;
-                messageContainer1.textContent = 'Please enter the OTP sent to your email address';
-                messageContainer1.style.color = 'green';
-            } else {
-                isEmailVerified = false;
-                messageContainer1.textContent = 'Failed to send OTP. Please try again.';
-                messageContainer1.style.color = 'red';
-            }
-        })
-        .catch(error => console.error('Error:', error));
-    }
-
-    // Form Submission
-    submitButton.addEventListener('click', function (e) {
-        e.preventDefault();
-        clearErrors();
-        const errors = validateForm();
-        
-        if (errors.length === 0 && isEmailVerified) {
-            submitForm();
-        } else if (!isEmailVerified) {
-            showError('bemail', 'Please verify your email before submitting.');
-        }
-    });
-
-    function submitForm() {
-        const form = document.getElementById("contactForm");
-        const formData = new FormData(form);
-
-        fetch('./inc/mailer.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.text())
-        .then(data => {
-            const messageContainer = document.getElementById('form-message');
-            try {
-                const jsonData = JSON.parse(data);
-                if (jsonData.status === 'success') {
-                    messageContainer.innerHTML = jsonData.message;
-                    messageContainer.style.color = 'green';
-                    form.reset();
-                    isEmailVerified = false; // Reset verification status
-                } else {
-                    messageContainer.innerHTML = jsonData.message;
-                    messageContainer.style.color = 'red';
-                }
-                messageContainer.classList.remove('hidden');
-            } catch (error) {
-                console.error('Error parsing JSON:', error);
-                messageContainer.innerHTML = 'An unexpected error occurred. Please try again.';
-                messageContainer.style.color = 'red';
-                messageContainer.classList.remove('hidden');
-            }
-        })
-        .catch(error => console.error('Error:', error));
-    }
-});
-</script>
   <!-- Welcome Banner Video Logic -->
   <script>
   document.addEventListener('DOMContentLoaded', function () {
@@ -1019,6 +886,137 @@ setInterval(changeImage, 3000);
         },
       },
     });
+    document.addEventListener('DOMContentLoaded', function () {
+    const verifyButton = document.querySelector('#verifyButton');
+    const submitButton = document.querySelector('#submitButton');
+    const emailInput = document.querySelector('#bemail');
+    const otp = document.getElementById('otp');
+    const messageContainer = document.getElementById('form-message');
+    let isEmailVerified = false; // Track if email is verified
+
+    function validateForm() {
+        const fields = [
+            { id: 'fname', minLength: 2, name: 'First Name' },
+            { id: 'lname', minLength: 2, name: 'Last Name' },
+            { id: 'bemail', type: 'email', name: 'Business Email' },
+            { id: 'pnum', pattern: /^[0-9]{10}$/, name: 'Phone Number' },
+            { id: 'company', minLength: 2, name: 'Company Name' },
+            { id: 'message', minLength: 10, name: 'Message' }
+        ];   
+        const errors = [];
+        fields.forEach(field => {
+            const input = document.getElementById(field.id);
+            const value = input.value.trim();
+            if (!value) {
+                showError(field.id, `${field.name} is required.`);
+                errors.push(field.id);
+            } else if (field.minLength && value.length < field.minLength) {
+                showError(field.id, `${field.name} must be at least ${field.minLength} characters.`);
+                errors.push(field.id);
+            } else if (field.pattern && !field.pattern.test(value)) {
+                showError(field.id, `${field.name} is invalid.`);
+                errors.push(field.id);
+            }
+        });
+
+        return errors;
+    }
+    function showError(fieldId, message) {
+        const errorContainer = document.getElementById(`${fieldId}-error`);
+        if (errorContainer) {
+            errorContainer.textContent = message;
+            errorContainer.style.color = 'red';
+        }
+    }
+    function clearErrors() {
+        const errorMessages = document.querySelectorAll('.error-message');
+        errorMessages.forEach(errorMessage => {
+            errorMessage.textContent = '';
+        });
+    }
+    // OTP Verification
+    verifyButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        const email = emailInput.value;
+        if (email) {
+            sendOtp(email);
+        } else {
+            const messageContainer1 = document.getElementById('otp-message');
+            messageContainer1.classList.remove('hidden');
+            messageContainer1.textContent = 'Please enter a valid email address';
+            messageContainer1.style.color = 'red';
+        }
+    });
+
+    function sendOtp(email) {
+        fetch('./inc/send_otp.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            const messageContainer1 = document.getElementById('otp-message');
+            if (data.success) {
+                otp.classList.remove('hidden');
+                isEmailVerified = true;
+                messageContainer1.textContent = 'Please enter the OTP sent to your email address';
+                messageContainer1.style.color = 'green';
+            } else {
+                isEmailVerified = false;
+                messageContainer1.textContent = 'Failed to send OTP. Please try again.';
+                messageContainer1.style.color = 'red';
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    // Form Submission
+    submitButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        clearErrors();
+        const errors = validateForm();
+        
+        if (errors.length === 0 && isEmailVerified) {
+            submitForm();
+        } else if (!isEmailVerified) {
+            showError('bemail', 'Please verify your email before submitting.');
+        }
+    });
+
+    function submitForm() {
+        const form = document.getElementById("contactForm");
+        const formData = new FormData(form);
+
+        fetch('./inc/mailer.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            const messageContainer = document.getElementById('form-message');
+            try {
+                const jsonData = JSON.parse(data);
+                if (jsonData.status === 'success') {
+                    messageContainer.innerHTML = jsonData.message;
+                    messageContainer.style.color = 'green';
+                    form.reset();
+                    isEmailVerified = false; // Reset verification status
+                } else {
+                    messageContainer.innerHTML = jsonData.message;
+                    messageContainer.style.color = 'red';
+                }
+                messageContainer.classList.remove('hidden');
+            } catch (error) {
+                console.error('Error parsing JSON:', error);
+                messageContainer.innerHTML = 'An unexpected error occurred. Please try again.';
+                messageContainer.style.color = 'red';
+                messageContainer.classList.remove('hidden');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+});
   </script>
   <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-E50PFDVXYE"></script>
 </body>
