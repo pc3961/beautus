@@ -960,7 +960,6 @@
               const slideYellowElement = ["./public/yellow 3.svg"];
               grid1.querySelectorAll("img").forEach((element) => {
                 const imgSrc1 = element.getAttribute("src");
-
                 if (slideBlueElement.includes(imgSrc1)) {
                   element.classList.add("slide1");
                 }
@@ -980,7 +979,7 @@
               grid1.addEventListener("animationend", () => {
                 setTimeout(() => {
                   grid1.classList.add("hidden");
-                }, 1000); // 200ms delay before hiding
+                }, 1000);
               });
             }
             if (isMobile) {
@@ -992,21 +991,18 @@
                 "./public/green 6.svg",
                 "./public/white 3.svg",
               ];
-
               grid.querySelectorAll("img").forEach((element) => {
                 const imgSrc = element.getAttribute("src");
-
                 if (slideBlueElements.includes(imgSrc)) {
                   element.classList.add("slide-blue");
                 }
-
                 if (slideGreenElements.includes(imgSrc)) {
                   element.classList.add("slide-green");
                 }
                 grid.addEventListener("animationend", () => {
                   setTimeout(() => {
                     grid.classList.add("hidden");
-                  }, 500); // 200ms delay before hiding
+                  }, 500);
                 });
               });
             }
@@ -1062,7 +1058,6 @@
         documentSlidingCards75.classList.add("slide-to-start3");
         documentAniVideoCard.classList.add("document-ani-video-card");
       });
-      // Lets make hygiene fun  and desirable logic
       document.addEventListener("DOMContentLoaded", function () {
         const targetElement = document.getElementById("hygiene-heading");
 
@@ -1085,17 +1080,6 @@
         fadeOutCircle.addEventListener("animationend", () => {
           parentDiv.classList.add("hidden");
         });
-      });
-    </script>
-    <script>
-      document.getElementById("message").addEventListener("input", function () {
-        if (this.value.length < 10) {
-          this.setCustomValidity(
-            "Please provide a more detailed description of your inquiry."
-          );
-        } else {
-          this.setCustomValidity("");
-        }
       });
     </script>
     <script>
@@ -1179,19 +1163,15 @@
           textContainer.classList.add("fadeIn1");
         }, 300); // Wait for the fade-out animation to finish
       }
-      // Start the cycle
       setInterval(changeText, 2000);
-
-      // Initially, fade in the first text
       textContainer.classList.add("fadeIn1");
-
       // Background Color Change
       const colors = ["#FEFA9F", "#D1F3C1", "#C1DFF3", "#c1eaf3"]; // List of colors
       let currentColorIndex = 0;
       function changeBackgroundColor() {
         const section = document.getElementById("colorSection");
         section.style.backgroundColor = colors[currentColorIndex];
-        currentColorIndex = (currentColorIndex + 1) % colors.length; // Cycle through colors
+        currentColorIndex = (currentColorIndex + 1) % colors.length;
       }
       setInterval(changeBackgroundColor, 2000);
       // Color change near the pods
@@ -1200,7 +1180,7 @@
       function changeColorNearPods() {
         const pods = document.getElementById("elip1");
         pods.style.backgroundColor = elips[currentElipIndex];
-        currentElipIndex = (currentElipIndex + 1) % elips.length; // Cycle through colors
+        currentElipIndex = (currentElipIndex + 1) % elips.length;
       }
       setInterval(changeColorNearPods, 2000);
       // Leaf Animation
@@ -1226,11 +1206,9 @@
         "./public/green-ellip.png",
         "./public/ice-ellip.png",
       ];
-
       let currentIndex = 0;
       let currentIndex1 = 0;
       let currentIndex2 = 0;
-
       function changeImage() {
         imageElement.classList.remove("slide-in-down1");
         imageElement1.classList.remove("slide-in-up1");
@@ -1258,7 +1236,7 @@
         slidesPerView: 1, // Default setting for larger screens
         autoplay: {
           delay: 3000, // 3 seconds delay between slides
-          disableOnInteraction: false, // Autoplay won't stop after user interaction
+          disableOnInteraction: false,
         },
         spaceBetween: 30,
         pagination: {
@@ -1276,6 +1254,15 @@
           },
         },
       });
+      document.getElementById("message").addEventListener("input", function () {
+        if (this.value.length < 10) {
+          this.setCustomValidity(
+            "Please provide a more detailed description of your inquiry."
+          );
+        } else {
+          this.setCustomValidity("");
+        }
+      });
       function removeLinks(textarea) {
         textarea.value = textarea.value.replace(/https?:\/\/[^\s]+/g, "");
         const domainRegex =
@@ -1289,7 +1276,6 @@
         const otp = document.getElementById("otp");
         const messageContainer = document.getElementById("form-message");
         let isEmailVerified = false; // Track if email is verified
-
         function validateForm() {
           const fields = [
             { id: "fname", minLength: 2, name: "First Name" },
@@ -1317,7 +1303,6 @@
               errors.push(field.id);
             }
           });
-
           return errors;
         }
         function showError(fieldId, message) {
@@ -1347,7 +1332,6 @@
             messageContainer1.style.color = "red";
           }
         });
-
         function sendOtp(email) {
           fetch("./inc/send_otp.php", {
             method: "POST",
@@ -1383,7 +1367,6 @@
             showError("bemail", "Please verify your email before submitting.");
           }
         });
-
         function submitForm() {
           const form = document.getElementById("contactForm");
           const formData = new FormData(form);
