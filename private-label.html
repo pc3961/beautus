@@ -49,7 +49,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="stylesheet" href="./index.css" />
-    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/aos@next/dist/aos.css"
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
