@@ -605,13 +605,10 @@
           });
   </script>
 <script>
-  // Remove Links Function
- function removeLinks(textarea) {
-        // Remove any links by replacing them with an empty string
+// Remove Links Function
+function removeLinks(textarea) {
         textarea.value = textarea.value.replace(/https?:\/\/[^\s]+/g, '');
         const domainRegex = /(?:https?:\/\/|www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(\/[^\s]*)?/g;
-    
-    // Remove any links or domain names by replacing them with an empty string
     textarea.value = textarea.value.replace(domainRegex, '');
     }
 </script>
@@ -623,8 +620,6 @@
     const documentSlidingCards50 = document.getElementById("document-sliding-cards50");
     const documentSlidingCards75 = document.getElementById("document-sliding-cards75");
     const documentAniVideoCard = document.getElementById("document-ani-video-card");
-
-
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -632,7 +627,6 @@
             }
           });
         });
-
         const observer2 = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -641,11 +635,8 @@
             }
           });
         });
-
         observer2.observe(documentTitle);
-
         observer.observe(documentSlidingCards25);
-
         documentSlidingCards25.addEventListener('animationend', function () {
           documentSlidingCards50.classList.add('slide-left-cards50');
         });
@@ -694,8 +685,6 @@
       this.setCustomValidity("");
     }
   });
-
-
 </script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
@@ -704,7 +693,6 @@
     hamburger.addEventListener('click', () => {
       menuDrawer.classList.toggle('translate-x-full');
     });
-
     // Close the drawer when clicking outside (optional)
     document.addEventListener('click', (e) => {
       if (!menuDrawer.contains(e.target) && !hamburger.contains(e.target)) {
@@ -714,7 +702,6 @@
   </script>
  <script>
   let angle = 0;
-
   setInterval(() => {
       angle -= 90;
       document.getElementById('myDiv').style.transform = `rotate(${angle}deg)`;
@@ -750,10 +737,8 @@
     for (let i = 0; i < images.length; i++) {
       images[i].classList.remove('underline-active');
     }
-
     // Add underline to the current image
     images[currentImageIndex].classList.add('underline-active');
-
     // Move to the next image
     currentImageIndex = (currentImageIndex + 1) % images.length;
   }, 3000);
