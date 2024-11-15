@@ -3,12 +3,12 @@
   --line-height: 16px;
   --text-transform: uppercase;
 }
-h1{
+h1 {
   font-family: "Concert One", sans-serif !important;
   font-weight: 700 !important;
 }
 
-h2{
+h2 {
   font-family: "Mitr", sans-serif !important;
   font-weight: 500 !important;
 }
@@ -39,75 +39,93 @@ h2{
 .urbanist-regular {
   font-family: "Urbanist", sans-serif;
 }
-@keyframes fadeOutAnimation
-{
-   0%
-   { 
-   scale: 1;
-   opacity: 1;
-   }
-
-   100% 
-   {
-   scale: 3;
-   opacity: 0;
-   }
+.form {
+  width: 100%;
+  background: #fff;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  border-bottom: solid #b2b2b2;
 }
-@keyframes fadeOutSlide
-{
-   0%
-   { 
-   transform: translateX(0);
-   opacity: 1;
-   }
 
-   100% 
-   {
-   transform: translateX(700%);
-   opacity: 0;
-   }
+.hovered-design {
+  color: #3a50b3;
+  /* Change to the color you want */
 }
-@keyframes fadeOutSlide1
-{
-   0%
-   { 
-   transform: translateX(0);
-   opacity: 1;
-   }
-
-   100% 
-   {
-   transform: translateX(900%);
-   opacity: 0;
-   }
+.underline-effect {
+  position: relative;
 }
-@keyframes fadeOutSlide2
-{
-   0%
-   { 
-   transform: translateX(0);
-   opacity: 1;
-   }
-
-   100% 
-   {
-   transform: translateX(1000%);
-   opacity: 0;
-   }
+.underline-effect::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 4px;
+  background-color: #fff;
+  transition: width 0.3s ease;
 }
-@keyframes fadeOutSlide3
-{
-   0%
-   { 
-   transform: translateX(0);
-   opacity: 1;
-   }
+.underline-active::after {
+  width: 100%;
+}
+.underline-active {
+  background-color: #fff;
+}
+@keyframes fadeOutAnimation {
+  0% {
+    scale: 1;
+    opacity: 1;
+  }
 
-   100% 
-   {
-   transform: translateX(1200%);
-   opacity: 0;
-   }
+  100% {
+    scale: 3;
+    opacity: 0;
+  }
+}
+@keyframes fadeOutSlide {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(700%);
+    opacity: 0;
+  }
+}
+@keyframes fadeOutSlide1 {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(900%);
+    opacity: 0;
+  }
+}
+@keyframes fadeOutSlide2 {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(1000%);
+    opacity: 0;
+  }
+}
+@keyframes fadeOutSlide3 {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(1200%);
+    opacity: 0;
+  }
 }
 @keyframes slideInLeft {
   0% {
@@ -289,7 +307,7 @@ h2{
 }
 @keyframes pod3 {
   from {
-    transform: translate(-50%,-20%);
+    transform: translate(-50%, -20%);
     opacity: 0;
   }
   to {
@@ -299,7 +317,7 @@ h2{
 }
 @keyframes pod4 {
   from {
-    transform: translate(50%,-20%);
+    transform: translate(50%, -20%);
     opacity: 0;
   }
   to {
@@ -309,7 +327,7 @@ h2{
 }
 @keyframes pod5 {
   from {
-    transform: translate(-50%,20%);
+    transform: translate(-50%, 20%);
     opacity: 0;
   }
   to {
@@ -319,7 +337,7 @@ h2{
 }
 @keyframes pod6 {
   from {
-    transform: translate(50%,20%);
+    transform: translate(50%, 20%);
     opacity: 0;
   }
   to {
@@ -370,11 +388,11 @@ h2{
 }
 @keyframes pods {
   0% {
-    transform: translate(0,0);
+    transform: translate(0, 0);
     opacity: 1;
   }
   100% {
-    transform: translate(0,100%);
+    transform: translate(0, 100%);
     opacity: 0;
     display: hidden;
   }
@@ -393,19 +411,19 @@ h2{
 .fade-out-circles {
   animation: fadeOutAnimation 2s ease-in-out forwards;
 }
-.fade-circles-1{
+.fade-circles-1 {
   animation: fadeOutSlide 1s ease-in-out forwards;
   animation-delay: 300ms;
 }
-.fade-circles-2{
+.fade-circles-2 {
   animation: fadeOutSlide1 1s ease-in-out forwards;
   animation-delay: 250ms;
 }
-.fade-circles-3{
+.fade-circles-3 {
   animation: fadeOutSlide2 1s ease-in-out forwards;
   animation-delay: 200ms;
 }
-.fade-circles-4{
+.fade-circles-4 {
   animation: fadeOutSlide3 1s ease-in-out forwards;
   animation-delay: 150ms;
 }
@@ -415,25 +433,25 @@ h2{
 .slide-blue {
   animation: pod2 500ms ease-in-out forwards;
 }
-.slide1{
+.slide1 {
   animation: pod3 500ms ease-in-out forwards;
 }
-.slide2{
+.slide2 {
   animation: pod4 500ms ease-in-out forwards;
 }
-.slide3{
+.slide3 {
   animation: pod5 500ms ease-in-out forwards;
 }
-.slide4{
+.slide4 {
   animation: pod6 500ms ease-in-out forwards;
 }
-.slide-out-right{
+.slide-out-right {
   animation: slideOutRight 1s ease-in-out forwards;
   animation-delay: 1s !important;
 }
 
 .pods {
-  animation: pods 1s ease-in-out forwards ;
+  animation: pods 1s ease-in-out forwards;
 }
 
 .step3 {

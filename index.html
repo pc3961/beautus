@@ -45,39 +45,7 @@
   <script async src="https://cdn-ca.pagesense.io/js/zoho3419/8a93ff5516d1450b837c6ffdc0daffcb.js"></script>
   <script async defer id="zsiqscript" src="https://salesiq.zohopublic.ca/widget?wc=77a5e6d96d632b0a91f8bb237dc0d72919fd2a83d90e88ea6108ccba9b3d4e3c"></script>
   <style>
-    .form {
-      width: 100%;
-      background: #fff;
-      padding-top: 15px;
-      padding-bottom: 15px;
-      padding-left: 15px;
-      border-bottom: solid #b2b2b2;
-    }
 
-    .hovered-design {
-      color: #3a50b3;
-      /* Change to the color you want */
-    }
-  .underline-effect {
-    position: relative;
-  }
-  .underline-effect::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: -10px;
-    transform: translateX(-50%);
-    width: 0;
-    height: 4px;
-    background-color: #fff;
-    transition: width 0.3s ease;
-  }
-  .underline-active::after {
-    width: 100%;
-  }
-  .underline-active{
-    background-color:#FFF;
-  }
   </style>
   <meta name="description" content="Unique biodegradable towel compressed in recyclable pod with natural cleansing solution to clean hands">
   <link rel="canonical" href="https://www.wickedwipes.ca" />
@@ -203,7 +171,6 @@
   </section>
 
   <!-- Video and Features Section -->
-
   <section class="w-full flex flex-col overflow-hidden">
     <div class="w-full flex flex-col md:flex-row md:px-40 md:py-16 px-4 py-6 gap-x-6 opacity-0" id="document-title">
       <div class="w-full">
@@ -222,7 +189,6 @@
         </p>
       </div>
     </div>
-
     <div class="md:flex md:justify-evenly justify-around items-start mx-4 md:px-40 md:mx-0 md:gap-x-6 overflow-hidden md:overflow-hidden h-full">
       <div class="relative  h-full">
         <div id="document-sliding-cards25"
@@ -266,7 +232,6 @@
         </div>
       </div>
     </div>
-
     <div class="w-full h-[700px] my-10">
       <video src="/public/bg-ad.mp4" class="w-full h-full object-cover" type="video/mov" autoplay muted loop playsinline preload="none"></video>
     </div>
@@ -280,9 +245,7 @@
     </div>
   </section>
 
-
   <!-- Categories Section -->
-
   <section class=" flex flex-col md:pt-[100px] bg-[#c1eaf3] h-[903px] md:h-[903px] relative overflow-hidden" id="colorSection">
     <h4 class="px-4 md:px-40 text-[#3a50b3] text-[28px] md:text-[46px] mitr-regular font-medium">
       Refreshing natural fragrances
@@ -348,7 +311,6 @@
   </section>
 
   <!-- Image Gallery Section -->
-
   <section class="py-0 md:pt-10 relative">
     <div class="swiper-container z-50 overflow-hidden">
       <div class="swiper-wrapper">
@@ -452,8 +414,7 @@
                 <input type="text" id="lname" placeholder="Last Name" name="lname" class="form" required minlength="2" />
                 <div class="error-message" id="lname-error"></div>
             </div>
-        </div>
-        
+        </div>   
         <div class="flex justify-between w-full gap-x-6 relative">
             <div class="flex w-full justify-between items-center">
             <div class="flex flex-col w-full">
@@ -537,8 +498,7 @@ document.addEventListener('DOMContentLoaded', function () {
             { id: 'pnum', pattern: /^[0-9]{10}$/, name: 'Phone Number' },
             { id: 'company', minLength: 2, name: 'Company Name' },
             { id: 'message', minLength: 10, name: 'Message' }
-        ];
-        
+        ];   
         const errors = [];
         fields.forEach(field => {
             const input = document.getElementById(field.id);
@@ -564,14 +524,12 @@ document.addEventListener('DOMContentLoaded', function () {
             errorContainer.style.color = 'red';
         }
     }
-
     function clearErrors() {
         const errorMessages = document.querySelectorAll('.error-message');
         errorMessages.forEach(errorMessage => {
             errorMessage.textContent = '';
         });
     }
-
     // OTP Verification
     verifyButton.addEventListener('click', function (e) {
         e.preventDefault();
