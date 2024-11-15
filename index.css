@@ -7,7 +7,6 @@ h1 {
   font-family: "Concert One", sans-serif !important;
   font-weight: 700 !important;
 }
-
 h2 {
   font-family: "Mitr", sans-serif !important;
   font-weight: 500 !important;
@@ -47,10 +46,8 @@ h2 {
   padding-left: 15px;
   border-bottom: solid #b2b2b2;
 }
-
 .hovered-design {
   color: #3a50b3;
-  /* Change to the color you want */
 }
 .underline-effect {
   position: relative;
@@ -449,11 +446,9 @@ h2 {
   animation: slideOutRight 1s ease-in-out forwards;
   animation-delay: 1s !important;
 }
-
 .pods {
   animation: pods 1s ease-in-out forwards;
 }
-
 .step3 {
   animation: step3 1s ease-in-out forwards;
 }
@@ -490,35 +485,27 @@ h2 {
 .slide-in-left {
   animation: slideInLeft 2s ease-in-out forwards;
 }
-
 .slide-left-cards25 {
   animation: slideLeftCard25 0.5s ease-in-out forwards;
 }
-
 .slide-left-cards50 {
   animation: slideLeftCard50 0.5s ease-in-out forwards;
 }
-
 .slide-left-cards75 {
   animation: slideLeftCard75 0.5s ease-in-out forwards;
 }
-
 .slide-to-start2 {
   animation: slidetostart2 0.5s ease-in-out forwards;
 }
-
 .slide-to-start3 {
   animation: slidetostart3 0.5s ease-in-out forwards;
 }
-
 .document-ani-video-card {
   animation: slideAniVideoCard 0.5s ease-in-out forwards;
 }
-
 .slide-in-right {
   animation: slideInRight 2s ease-in-out forwards;
 }
-
 .wow-text {
   -webkit-text-stroke: 1.5px #3a50b3;
   color: #97caeb; /* Fill color of the text */
@@ -535,11 +522,9 @@ h2 {
   font-weight: 500;
   font-style: normal;
 }
-
 .translate {
   transform: translateY(4rem);
 }
-
 .translateOnHover {
   transform: translateY(0);
 }
@@ -578,7 +563,6 @@ h2 {
 .hidden.show-during-animation {
   display: block !important;
 }
-
 .delay {
   animation-delay: 0.5s;
 }
@@ -588,13 +572,11 @@ h2 {
 .delay3 {
   animation-delay: 1s;
 }
-
 .gradient-text {
   background: linear-gradient(to right, #97caeb 0%, #0d269f 50%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 .swiper-container {
   width: 100%;
   height: 592px;
@@ -648,16 +630,12 @@ h2 {
 .bg-radial-gradient {
   background: radial-gradient(circle, #37a3f1 32%, #3a50b3 100%);
 }
-
 .fade-in {
   animation: fadeIn 1s forwards;
 }
-
-/* Fade-out animation */
 .fade-out {
   animation: fadeOut 1s forwards;
 }
-
 .fade-text {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;

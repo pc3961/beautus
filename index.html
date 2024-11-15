@@ -837,7 +837,6 @@
               />
               <div class="error-message" id="company-error"></div>
             </div>
-
             <div class="flex flex-col w-full">
               <textarea
                 id="message"
@@ -910,7 +909,6 @@
               alt="Insta"
               id="instaImage"
             />
-
             <img
               src="./public/LinkedIn.svg"
               class="size-7"
@@ -923,6 +921,16 @@
     </section>
     <!-- Welcome Banner Video Logic -->
     <script>
+      const hamburger = document.getElementById("hamburger");
+      const menuDrawer = document.getElementById("menu-drawer");
+      hamburger.addEventListener("click", () => {
+        menuDrawer.classList.toggle("translate-x-full");
+      });
+      document.addEventListener("click", (e) => {
+        if (!menuDrawer.contains(e.target) && !hamburger.contains(e.target)) {
+          menuDrawer.classList.add("translate-x-full");
+        }
+      });
       document.addEventListener("DOMContentLoaded", function () {
         const gradient = document.getElementById("gradient");
         const gradient1 = document.getElementById("gradient-1");
@@ -1012,6 +1020,13 @@
           }, 1000);
         }, 1000);
       });
+      document.addEventListener("DOMContentLoaded", () => {
+        const fadeOutCircle = document.querySelector(".fade-out-circles");
+        const parentDiv = fadeOutCircle.parentElement;
+        fadeOutCircle.addEventListener("animationend", () => {
+          parentDiv.classList.add("hidden");
+        });
+      });
     </script>
     <script>
       const documentSection = document.getElementById("document-section");
@@ -1070,27 +1085,6 @@
           });
         });
         observer.observe(targetElement);
-      });
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const fadeOutCircle = document.querySelector(".fade-out-circles");
-        const parentDiv = fadeOutCircle.parentElement;
-        fadeOutCircle.addEventListener("animationend", () => {
-          parentDiv.classList.add("hidden");
-        });
-      });
-    </script>
-    <script>
-      const hamburger = document.getElementById("hamburger");
-      const menuDrawer = document.getElementById("menu-drawer");
-      hamburger.addEventListener("click", () => {
-        menuDrawer.classList.toggle("translate-x-full");
-      });
-      document.addEventListener("click", (e) => {
-        if (!menuDrawer.contains(e.target) && !hamburger.contains(e.target)) {
-          menuDrawer.classList.add("translate-x-full");
-        }
       });
     </script>
     <script>
