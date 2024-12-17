@@ -54,6 +54,8 @@
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
       rel="stylesheet"
     />
+    <!-- Google Tag Manager -->
+
     <script>
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
@@ -65,6 +67,21 @@
         j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
         f.parentNode.insertBefore(j, f);
       })(window, document, "script", "dataLayer", "GTM-PNF89GR5");
+    </script>
+
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-E50PFDVXYE"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-E50PFDVXYE");
     </script>
     <script
       async
@@ -117,6 +134,7 @@
         style="display: none; visibility: hidden"
       ></iframe
     ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!-- Navbar Section -->
     <section class="flex flex-col items-center py-10 w-full">
       <!-- Logo and Navigation -->
@@ -314,14 +332,10 @@
           <div
             class="rounded-full w-64 h-64 bg-[#77B5FF] absolute top-20 right-[-150px] md:top-40 md:right-[-100px] z-50 overflow-hidden"
           ></div>
-          <h2
-            class="text-white text-[14px] md:text-[28px]"
-          >
+          <h2 class="text-white text-[14px] md:text-[28px]">
             Get in touch with us!
           </h2>
-          <h2
-            class="text-white [text-8px] md:text-[16px]"
-          >
+          <h2 class="text-white [text-8px] md:text-[16px]">
             to discuss your interest in Wicked Wipes
           </h2>
           <div class="w-full py-8 md:pt-16 flex gap-x-6">
@@ -463,9 +477,7 @@
           </nav>
         </div>
         <div class="flex md:flex-col gap-2">
-          <h2 class="text-white text-base">
-            Follow us
-          </h2>
+          <h2 class="text-white text-base">Follow us</h2>
           <div class="flex gap-3 items-center">
             <img src="./public/Fb.svg" class="size-7" alt="fb" id="fbImage" />
             <img
@@ -556,10 +568,13 @@
             .catch((error) => console.error("Error:", error)); // Log any errors
         });
 
-        function redirectToPage() {
-            window.location.href = './blog-details.html'; // Replace with your target HTML file
-        }
+      function redirectToPage() {
+        window.location.href = "./blog-details.html"; // Replace with your target HTML file
+      }
     </script>
-    </script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-E50PFDVXYE"
+    ></script>
   </body>
 </html>
