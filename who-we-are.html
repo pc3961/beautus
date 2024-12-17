@@ -25,6 +25,7 @@
       property="og:url"
       content="https://www.wickedwipes.ca/who-we-are.html "
     />
+    <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
@@ -37,10 +38,20 @@
         f.parentNode.insertBefore(j, f);
       })(window, document, "script", "dataLayer", "GTM-PNF89GR5");
     </script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-E50PFDVXYE"
     ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-E50PFDVXYE");
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="stylesheet" href="./index.css" />
@@ -66,19 +77,6 @@
       defer
     ></script>
     <script src="https://cdn-ca.pagesense.io/js/zoho3419/8a93ff5516d1450b837c6ffdc0daffcb.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-E50PFDVXYE"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-E50PFDVXYE");
-    </script>
     <style>
       .form {
         width: 100%;
@@ -107,6 +105,7 @@
         style="display: none; visibility: hidden"
       ></iframe
     ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!-- Header Section -->
     <section
       class="p-4 md:px-40 md:py-10 flex flex-col items-end w-full bg-[url('/public/banner.png')] bg-no-repeat bg-cover h-full"
@@ -210,11 +209,7 @@
         </a>
       </div>
       <div class="flex flex-col w-full mt-96 pt-20">
-        <h1
-          class="text-5xl"
-          data-aos="fade-right"
-          data-aos-duration="700"
-        >
+        <h1 class="text-5xl" data-aos="fade-right" data-aos-duration="700">
           About US
         </h1>
         <p class="text-xl pt-10 league-spartan font-normal">
@@ -267,9 +262,7 @@
               alt=""
               class="rounded-full h-full object-cover duration-300 ease-in-out translate-y-16 group-hover:translate-y-0"
             />
-            <h2
-              class="text-xl font-bold text-center text-[#3A50B3] pt-4"
-            >
+            <h2 class="text-xl font-bold text-center text-[#3A50B3] pt-4">
               Shailesh Merai
             </h2>
           </div>
@@ -281,9 +274,7 @@
               alt=""
               class="rounded-full h-full object-cover duration-300 ease-in-out translate-y-16 group-hover:translate-y-0"
             />
-            <h2
-              class="text-xl font-bold text-center text-[#3A50B3] pt-4"
-            >
+            <h2 class="text-xl font-bold text-center text-[#3A50B3] pt-4">
               John Sasso
             </h2>
           </div>
@@ -324,14 +315,10 @@
           <div
             class="rounded-full w-64 h-64 bg-[#77B5FF] absolute top-20 right-[-150px] md:top-40 md:right-[-100px] z-50 overflow-hidden"
           ></div>
-          <h2
-            class="text-white text-[14px] md:text-[28px]"
-          >
+          <h2 class="text-white text-[14px] md:text-[28px]">
             Get in touch with us!
           </h2>
-          <h2
-            class="text-white [text-8px] md:text-[16px]"
-          >
+          <h2 class="text-white [text-8px] md:text-[16px]">
             to discuss your interest in Wicked Wipes
           </h2>
           <div class="w-full py-8 md:pt-16 flex gap-x-6">
@@ -519,9 +506,7 @@
           </nav>
         </div>
         <div class="flex md:flex-col gap-4 md:gap-2 py-4 md:py-0">
-          <h2 class="text-white text-base">
-            Follow us
-          </h2>
+          <h2 class="text-white text-base">Follow us</h2>
           <div class="flex gap-3 items-center">
             <img src="./public/Fb.svg" class="size-7" alt="fb" id="fbImage" />
             <img
@@ -775,5 +760,9 @@
         );
       });
     </script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-E50PFDVXYE"
+    ></script>
   </body>
 </html>
