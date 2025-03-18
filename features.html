@@ -1375,17 +1375,24 @@
           Arrow2.classList.remove("arrow-right-reverse");
         }
       });
-      const playButton = document.getElementById("play-button");
-      const videoSection1 = document.getElementById("video-section1");
-      const bgOverlay = document.getElementById("bg-overlay");
-      const round1 = document.getElementById("round-1");
-      const round2 = document.getElementById("round-2");
-      playButton.addEventListener("click", function () {
-        videoSection1.classList.add("opacity-0");
-        bgOverlay.classList.add("invisible");
-        playButton.classList.add("opacity-0");
-        round1.classList.add("invisible");
-        round2.classList.add("invisible");
+      document.addEventListener("DOMContentLoaded", function () {
+        const playButton = document.getElementById("play-button");
+        const videoSection1 = document.getElementById("video-section1");
+        const bgOverlay = document.getElementById("bg-overlay");
+        const round1 = document.getElementById("round-1");
+        const round2 = document.getElementById("round-2");
+
+        if (playButton) {
+          playButton.addEventListener("click", function () {
+            videoSection1.classList.add("opacity-0");
+            bgOverlay.classList.add("invisible");
+            playButton.classList.add("opacity-0");
+            round1.classList.add("invisible");
+            round2.classList.add("invisible");
+          });
+        } else {
+          console.error("Play button not found!");
+        }
       });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -1398,6 +1405,9 @@
         },
       });
     </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E50PFDVXYE"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-E50PFDVXYE"
+    ></script>
   </body>
 </html>
